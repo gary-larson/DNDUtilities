@@ -1,3 +1,16 @@
+# Player User Interface Requirements
+1.  **Name:** Character Record  
+    **Type:** functional.  
+    **Summary:** A Character record sheet.
+    
+2. **Name:** Print Character Record  
+    **Type:** functional.  
+    **Summary:** Be able to print Character record sheet.
+    
+2. **Name:** Edit/Update Character Record  
+    **Type:** functional.  
+    **Summary:** Be able to edit and update the Character record sheet.
+
 # Game Master User Interface Requirements
 1.  **Name:** Form for entering spell data.  
     **Type:** functional.  
@@ -78,3 +91,25 @@
 21. **Name:** System for storing Items.  
     **Type:** functional.  
     **Summary:** Keeps records of magical and mundane items within the game world, with links to effects[4] like the other storage systems. Items have the additional descriptor of having a cost.   
+
+# System Requirements
+1.  **Name:** Operating systems  
+    **Type:** Constraint.  
+    **Summary:** System will run on Windows 7 and above  
+    
+2. **Name:** Wizards of the Coast Copyright  
+   **Type:** Constraint.  
+   **Summary:** System will be designed within the limitations of Wizards of the Coast Open Game License.  
+    
+3. **Name:** Dungeon & Dragons System Reference Document 3.5  
+   **Type:** Constraint.  
+   **Summary** System will follow guidelines of the System Referenced Document 3.   
+   
+4. **Name:** Display Open Game License Copyright  
+   **Type:** Constraint.  
+   **Summary:** Open Game License will be displayed per the Open Game License.  
+   
+5. **Name:** Database  
+   **Type:** Constraint.  
+   **Summary:** System will include an embedded database.
+
