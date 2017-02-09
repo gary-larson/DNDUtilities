@@ -1,3 +1,16 @@
+# Player User Interface Requirements
+1.  **Name:** Character Record  
+    **Type:** functional.  
+    **Summary:** A Character record sheet.
+    
+2. **Name:** Print Character Record  
+    **Type:** functional.  
+    **Summary:** Be able to print Character record sheet.
+    
+2. **Name:** Edit/Update Character Record  
+    **Type:** functional.  
+    **Summary:** Be able to edit and update the Character record sheet.
+
 # Game Master User Interface Requirements
 1.  **Name:** Form for entering spell data.  
     **Type:** functional.  
@@ -25,7 +38,8 @@
     
 7.  **Name:** Activated Ability Selector.  
     **Type:** Functional.  
-    **Summary:** Using the Active Entity Selector's chosen entity, this is a populated dropdown list of Actions the being could preform.      
+    **Summary:** Using the Active Entity Selector's chosen entity, this is a populated dropdown list of Actions the being could preform.    
+    
 8.  **Name:** Target Entity(s) selector.  
     **Type:** Functional.  
     **Summary:** Will provide a dropdown of presently active entities, and will allow for the selection of multiple targeted beings.  
@@ -49,4 +63,26 @@
 13. **Name:** Speed of operations.  
     **Type:** constraint.  
     **Summary:** The system must operate faster than an experienced DM, Which means that initial setup should be within 10 minutes, Initializing an entity should take within 10 seconds, and the results button's functionality[16] within two minutes. Ideally, Bootup will be within a minute, and Any other action will be instantanious to the user's preception.  
-      
+
+    
+# System Requirements
+1.  **Name:** Operating systems  
+    **Type:** Constraint.  
+    **Summary:** System will run on Windows 7 and above  
+    
+2. **Name:** Wizards of the Coast Copyright  
+   **Type:** Constraint.  
+   **Summary:** System will be designed within the limitations of Wizards of the Coast Open Game License.  
+    
+3. **Name:** Dungeon & Dragons System Reference Document 3.5  
+   **Type:** Constraint.  
+   **Summary** System will follow guidelines of the System Referenced Document 3.   
+   
+4. **Name:** Display Open Game License Copyright  
+   **Type:** Constraint.  
+   **Summary:** Open Game License will be displayed per the Open Game License.  
+   
+5. **Name:** Database  
+   **Type:** Constraint.  
+   **Summary:** System will include an embedded database.
+
