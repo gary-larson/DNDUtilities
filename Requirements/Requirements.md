@@ -41,6 +41,9 @@
       3. **Name:**  Items  
          **Type:**  Functional  
          **Summary:**  A listing of all items held by a character, with a note of if something is presently equipped or not.  
+      4. **Name:**  Experience Points  
+         **Type:**  Functional  
+         **Summary:**  Expressed as "Total experience points gained," this keeps track of the character's total XP gain     
          
 2. **Name:** Print Character Record  
     **Type:** functional.  
@@ -49,23 +52,29 @@
 2. **Name:** Edit/Update Character Record  
     **Type:** functional.  
     **Summary:** Be able to edit and update the Character record sheet.
+      1. **Name:**   Field Avaibility
+         **Type:**   Constraint
+         **Summary:**   Fields will only be editable when characters have sufficient experience to "level up". Even then, Past choices will not be changeable, beyond what the system normally allows.    
+      2. **Name:**   Player Choices
+         **Type:**   Constraint
+         **Summary:**   Choices will only be presented when the system can verify that the character in question already fufills the prequisites.    
 
 # Game Master User Interface Requirements
-1.  **Name:** Form for entering spell data.  
+1.  **Name:** Form for entering Homebrew data.  
     **Type:** functional.  
-    **Summary:** A data entry form for the spell information used by the Game Master.
-   
-2.  **Name:** Form for entering creature data.  
-    **Type:** functional.    
-    **Summary:** A data entry form for the creature information used by the Game Master.
-
-3.  **Name:** Form for entering item data.  
-    **Type:** functional.    
-    **Summary:** A data entry form for the item information used by the Game Master.
-
-4.  **Name:** Form for entering class data.  
-    **Type:** functional.    
-    **Summary:** A data entry form for the class information used by the Game Master.
+    **Summary:** A data entry form for homebrew data used by the Game Master.  
+      1.  **Name:** Form for entering spell data.  
+          **Type:** functional.  
+          **Summary:** A data entry form for the spell information used by the Game Master.
+      2.  **Name:** Form for entering creature data.  
+          **Type:** functional.    
+          **Summary:** A data entry form for the creature information used by the Game Master.
+      3.  **Name:** Form for entering item data.  
+          **Type:** functional.    
+          **Summary:** A data entry form for the item information used by the Game Master.
+      4.  **Name:** Form for entering class data.  
+          **Type:** functional.    
+          **Summary:** A data entry form for the class information used by the Game Master.
 
 5.  **Name:** System Accuracy.  
     **Type:** Constraint.  
