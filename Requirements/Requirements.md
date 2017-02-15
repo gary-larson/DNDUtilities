@@ -1,5 +1,5 @@
 # Player User Interface Requirements
-1.  **Name:** Character Record  
+1.  **Name:** Character Record  **UPDATED**  
     **Type:** functional.  
     **Summary:** A Character record sheet, containing the following fields.  
       1. **Name:**  Character Name  
@@ -55,7 +55,7 @@
     **Type:** functional.  
     **Summary:** Be able to print Character record sheet.
     
-3. **Name:** Edit/Update Character Record  
+3. **Name:** Edit/Update Character Record  **UPDATED**  
     **Type:** functional.  
     **Summary:** Be able to edit and update the Character record sheet.
       1. **Name:**   Field Avaibility  
@@ -65,16 +65,16 @@
          **Type:**   Constraint  
          **Summary:**   Choices will only be presented when the system can verify that the character in question already fufills the prequisites.    
 
-4. **Name:** Character Export  
+4. **Name:** Character Export  **NEW**  
     **Type:** functional.  
     **Summary:** The character sheet will be exported though XML, allowing for the players to transfer it to the DM through a method fo their choosing.   
     
-5. **Name:** Character Presentation  
+5. **Name:** Character Presentation  **NEW**  
     **Type:** functional.  
     **Summary:** To minimize information overload, The charactersheet will be organized by categories of interest, such as Skills, feats, attributes, and Spells.  
     
 # Game Master User Interface Requirements
-1.  **Name:** Form for entering Homebrew data.  
+1.  **Name:** Form for entering Homebrew data.  **UPDATED**  
     **Type:** functional.  
     **Summary:** A data entry form for homebrew data used by the Game Master.  
       1.  **Name:** Form for entering spell data.  
@@ -94,7 +94,7 @@
     **Type:** Constraint.  
     **Summary:** The utility must adhere to both the system it was designed for (Dungeons and Dragons, 3.5th edition) and to the rules within, as such will need to preform mathmatical calculations accurately.  
 
-6.  **Name:** Entity Initialization.  
+6.  **Name:** Entity Initialization.  **UPDATED**
     **Type:** functional.  
     **Summary:** The utility will offer the ability to select anything stored in the utility and enable it, Creating an instance of that creature. To differentiate between clones, Duplicates, and the like, a numerical dientifier will also be provided.  
     1.  **Name:** Searchibility  
