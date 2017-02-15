@@ -44,6 +44,12 @@
       4. **Name:**  Experience Points  
          **Type:**  Functional  
          **Summary:**  Expressed as "Total experience points gained," this keeps track of the character's total XP gain     
+      5. **Name:**  Spells Known  
+         **Type:**  Functional  
+         **Summary:**  A list of spells a creature knows, does not handle prepared spells or spells per day. this is the Flesh-and-blood player's responsibility.     
+      6. **Name:**  Creature Rating  
+         **Type:**  Functional  
+         **Summary:**  The creature's Creature rating, with player characters having their ECL here instead.  
          
 2. **Name:** Print Character Record  
     **Type:** functional.  
@@ -83,6 +89,12 @@
 6.  **Name:** Entity Initialization.  
     **Type:** functional.  
     **Summary:** The utility will offer the ability to select anything stored in the utility and enable it, Creating an instance of that creature. To differentiate between clones, Duplicates, and the like, a numerical dientifier will also be provided.  
+    1.  **Name:** Searchibility  
+        **Type:** Functional
+        **Summary:** The Initializer will offer the ability to search by creature Type, subtype, CR, or Name.  
+    2.  **Name:** Mass initialization  
+        **Type:** Functional
+        **Summary:** The system will offer the DM the ability to initialize multiple creatures simultaniously, to allow for more rapid progression to the heart of an encounter.    
 
 7.  **Name:** Entity List.  
     **Type:** Functional.  
