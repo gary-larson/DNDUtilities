@@ -90,10 +90,10 @@
     **Type:** functional.  
     **Summary:** The utility will offer the ability to select anything stored in the utility and enable it, Creating an instance of that creature. To differentiate between clones, Duplicates, and the like, a numerical dientifier will also be provided.  
     1.  **Name:** Searchibility  
-        **Type:** Functional
+        **Type:** Functional  
         **Summary:** The Initializer will offer the ability to search by creature Type, subtype, CR, or Name.  
     2.  **Name:** Mass initialization  
-        **Type:** Functional
+        **Type:** Functional  
         **Summary:** The system will offer the DM the ability to initialize multiple creatures simultaniously, to allow for more rapid progression to the heart of an encounter.    
 
 7.  **Name:** Entity List.  
