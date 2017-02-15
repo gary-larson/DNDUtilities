@@ -1,8 +1,47 @@
 # Player User Interface Requirements
 1.  **Name:** Character Record  
     **Type:** functional.  
-    **Summary:** A Character record sheet.
-    
+    **Summary:** A Character record sheet, containing the following fields.  
+      1. **Name:**  Character Name  
+         **Type:**  Functional  
+         **Summary:**  the Character's name  
+      2. **Name:**  Player Name  
+         **Type:**  Functional  
+         **Summary:**  the Owner's name
+      3. **Name:**  Creature Classification  
+         **Type:**  Functional  
+         **Summary:**  the Character's type, followed by the subtype.   
+      4. **Name:**  Creature Class Levels  
+         **Type:**  Functional  
+         **Summary:**  the creature's class levels, if applicable  
+      5. **Name:**  Attribute Scores  
+         **Type:**  Functional  
+         **Summary:**  Every being has six attribute scores, which are intergers, or N/A for specific creature types
+      6. **Name:**  Creature hitpoints  
+         **Type:**  Functional  
+         **Summary:**  the Creatures Maximum hitpoints.    
+      7. **Name:**  Creature Alignment  
+         **Type:**  Functional  
+         **Summary:**  The creature's alignment, allowing for "mostly X Y" style entries.    
+      8. **Name:**  Creature Skills (simple)  
+         **Type:**  Functional  
+         **Summary:**  The number of accumulated skilranks in the non-ambigious skills. 39 skills in total  
+      9. **Name:**  Creature skills (Complex)  
+         **Type:**  Functional  
+         **Summary:**  The 4 remaining ambigious skills (Craft, knowledge, preform, and Profession), which require a descriptor on which sub-skill it represents. 
+      0. **Name:**  Monentary Wealth  
+         **Type:**  Functional  
+         **Summary:**  The total value of the creature's gold equivilant items  
+      1. **Name:**  Known Languages  
+         **Type:**  Functional  
+         **Summary:**  The languages known by the creature  
+      2. **Name:**  Feats  
+         **Type:**  Functional  
+         **Summary:**  A listing of all feats accumulated by a character    
+      3. **Name:**  Items  
+         **Type:**  Functional  
+         **Summary:**  A listing of all items held by a character, with a note of if something is presently equipped or not.  
+         
 2. **Name:** Print Character Record  
     **Type:** functional.  
     **Summary:** Be able to print Character record sheet.
