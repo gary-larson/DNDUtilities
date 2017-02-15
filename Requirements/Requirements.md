@@ -65,6 +65,14 @@
          **Type:**   Constraint  
          **Summary:**   Choices will only be presented when the system can verify that the character in question already fufills the prequisites.    
 
+4. **Name:** Character Export  
+    **Type:** functional.  
+    **Summary:** The character sheet will be exported though XML, allowing for the players to transfer it to the DM through a method fo their choosing.   
+    
+5. **Name:** Character Presentation  
+    **Type:** functional.  
+    **Summary:** To minimize information overload, The charactersheet will be organized by categories of interest, such as Skills, feats, attributes, and Spells.  
+    
 # Game Master User Interface Requirements
 1.  **Name:** Form for entering Homebrew data.  
     **Type:** functional.  
