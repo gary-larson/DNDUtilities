@@ -1,40 +1,108 @@
 # Player User Interface Requirements
-1.  **Name:** Character Record  
+1.  **Name:** Character Record  **UPDATED**  
     **Type:** functional.  
-    **Summary:** A Character record sheet.
-    
+    **Summary:** A Character record sheet, containing the following fields.  
+      1. **Name:**  Character Name  
+         **Type:**  Functional  
+         **Summary:**  the Character's name  
+      2. **Name:**  Player Name  
+         **Type:**  Functional  
+         **Summary:**  the Owner's name
+      3. **Name:**  Creature Classification  
+         **Type:**  Functional  
+         **Summary:**  the Character's type, followed by the subtype.   
+      4. **Name:**  Creature Class Levels  
+         **Type:**  Functional  
+         **Summary:**  the creature's class levels, if applicable  
+      5. **Name:**  Attribute Scores  
+         **Type:**  Functional  
+         **Summary:**  Every being has six attribute scores, which are intergers, or N/A for specific creature types
+      6. **Name:**  Creature hitpoints  
+         **Type:**  Functional  
+         **Summary:**  the Creatures Maximum hitpoints.    
+      7. **Name:**  Creature Alignment  
+         **Type:**  Functional  
+         **Summary:**  The creature's alignment, allowing for "mostly X Y" style entries.    
+      8. **Name:**  Creature Skills (simple)  
+         **Type:**  Functional  
+         **Summary:**  The number of accumulated skilranks in the non-ambigious skills. 39 skills in total  
+      9. **Name:**  Creature skills (Complex)  
+         **Type:**  Functional  
+         **Summary:**  The 4 remaining ambigious skills (Craft, knowledge, preform, and Profession), which require a descriptor on which sub-skill it represents. 
+      0. **Name:**  Monentary Wealth  
+         **Type:**  Functional  
+         **Summary:**  The total value of the creature's gold equivilant items  
+      1. **Name:**  Known Languages  
+         **Type:**  Functional  
+         **Summary:**  The languages known by the creature  
+      2. **Name:**  Feats  
+         **Type:**  Functional  
+         **Summary:**  A listing of all feats accumulated by a character    
+      3. **Name:**  Items  
+         **Type:**  Functional  
+         **Summary:**  A listing of all items held by a character, with a note of if something is presently equipped or not.  
+      4. **Name:**  Experience Points  
+         **Type:**  Functional  
+         **Summary:**  Expressed as "Total experience points gained," this keeps track of the character's total XP gain     
+      5. **Name:**  Spells Known  
+         **Type:**  Functional  
+         **Summary:**  A list of spells a creature knows, does not handle prepared spells or spells per day. this is the Flesh-and-blood player's responsibility.     
+      6. **Name:**  Creature Rating  
+         **Type:**  Functional  
+         **Summary:**  The creature's Creature rating, with player characters having their ECL here instead.  
+         
 2. **Name:** Print Character Record  
     **Type:** functional.  
     **Summary:** Be able to print Character record sheet.
     
-2. **Name:** Edit/Update Character Record  
+3. **Name:** Edit/Update Character Record  **UPDATED**  
     **Type:** functional.  
     **Summary:** Be able to edit and update the Character record sheet.
+      1. **Name:**   Field Avaibility  
+         **Type:**   Constraint  
+         **Summary:**   Fields will only be editable when characters have sufficient experience to "level up". Even then, Past choices will not be changeable, beyond what the system normally allows.    
+      2. **Name:**   Player Choices  
+         **Type:**   Constraint  
+         **Summary:**   Choices will only be presented when the system can verify that the character in question already fufills the prequisites.    
 
-# Game Master User Interface Requirements
-1.  **Name:** Form for entering spell data.  
+4. **Name:** Character Export  **NEW**  
     **Type:** functional.  
-    **Summary:** A data entry form for the spell information used by the Game Master.
-   
-2.  **Name:** Form for entering creature data.  
-    **Type:** functional.    
-    **Summary:** A data entry form for the creature information used by the Game Master.
-
-3.  **Name:** Form for entering item data.  
-    **Type:** functional.    
-    **Summary:** A data entry form for the item information used by the Game Master.
-
-4.  **Name:** Form for entering class data.  
-    **Type:** functional.    
-    **Summary:** A data entry form for the class information used by the Game Master.
+    **Summary:** The character sheet will be exported though XML, allowing for the players to transfer it to the DM through a method fo their choosing.   
+    
+5. **Name:** Character Presentation  **NEW**  
+    **Type:** functional.  
+    **Summary:** To minimize information overload, The charactersheet will be organized by categories of interest, such as Skills, feats, attributes, and Spells.  
+    
+# Game Master User Interface Requirements
+1.  **Name:** Form for entering Homebrew data.  **UPDATED**  
+    **Type:** functional.  
+    **Summary:** A data entry form for homebrew data used by the Game Master.  
+      1.  **Name:** Form for entering spell data.  
+          **Type:** functional.  
+          **Summary:** A data entry form for the spell information used by the Game Master.
+      2.  **Name:** Form for entering creature data.  
+          **Type:** functional.    
+          **Summary:** A data entry form for the creature information used by the Game Master.
+      3.  **Name:** Form for entering item data.  
+          **Type:** functional.    
+          **Summary:** A data entry form for the item information used by the Game Master.
+      4.  **Name:** Form for entering class data.  
+          **Type:** functional.    
+          **Summary:** A data entry form for the class information used by the Game Master.
 
 5.  **Name:** System Accuracy.  
     **Type:** Constraint.  
     **Summary:** The utility must adhere to both the system it was designed for (Dungeons and Dragons, 3.5th edition) and to the rules within, as such will need to preform mathmatical calculations accurately.  
 
-6.  **Name:** Entity Initialization.  
+6.  **Name:** Entity Initialization.  **UPDATED**
     **Type:** functional.  
     **Summary:** The utility will offer the ability to select anything stored in the utility and enable it, Creating an instance of that creature. To differentiate between clones, Duplicates, and the like, a numerical dientifier will also be provided.  
+    1.  **Name:** Searchibility  
+        **Type:** Functional  
+        **Summary:** The Initializer will offer the ability to search by creature Type, subtype, CR, or Name.  
+    2.  **Name:** Mass initialization  
+        **Type:** Functional  
+        **Summary:** The system will offer the DM the ability to initialize multiple creatures simultaniously, to allow for more rapid progression to the heart of an encounter.    
 
 7.  **Name:** Entity List.  
     **Type:** Functional.  
