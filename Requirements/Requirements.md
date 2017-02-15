@@ -49,14 +49,14 @@
     **Type:** functional.  
     **Summary:** Be able to print Character record sheet.
     
-2. **Name:** Edit/Update Character Record  
+3. **Name:** Edit/Update Character Record  
     **Type:** functional.  
     **Summary:** Be able to edit and update the Character record sheet.
-      1. **Name:**   Field Avaibility
-         **Type:**   Constraint
+      1. **Name:**   Field Avaibility  
+         **Type:**   Constraint  
          **Summary:**   Fields will only be editable when characters have sufficient experience to "level up". Even then, Past choices will not be changeable, beyond what the system normally allows.    
-      2. **Name:**   Player Choices
-         **Type:**   Constraint
+      2. **Name:**   Player Choices  
+         **Type:**   Constraint  
          **Summary:**   Choices will only be presented when the system can verify that the character in question already fufills the prequisites.    
 
 # Game Master User Interface Requirements
