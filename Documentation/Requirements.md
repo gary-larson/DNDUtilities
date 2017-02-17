@@ -2,52 +2,52 @@
 1.  **Name:** Character Record  **UPDATED**  
     **Type:** functional.  
     **Summary:** A Character record sheet, containing the following fields.  
-      1. **Name:**  Character Name  
+      1. **Name:**  Character Name  **NEW**  
          **Type:**  Functional  
          **Summary:**  the Character's name  
-      2. **Name:**  Player Name  
+      2. **Name:**  Player Name  **NEW**  
          **Type:**  Functional  
          **Summary:**  the Owner's name
-      3. **Name:**  Creature Classification  
+      3. **Name:**  Creature Classification  **NEW**  
          **Type:**  Functional  
          **Summary:**  the Character's type, followed by the subtype.   
-      4. **Name:**  Creature Class Levels  
+      4. **Name:**  Creature Class Levels  **NEW**  
          **Type:**  Functional  
          **Summary:**  the creature's class levels, if applicable  
-      5. **Name:**  Attribute Scores  
+      5. **Name:**  Attribute Scores  **NEW**  
          **Type:**  Functional  
          **Summary:**  Every being has six attribute scores, which are intergers, or N/A for specific creature types
-      6. **Name:**  Creature hitpoints  
+      6. **Name:**  Creature hitpoints  **NEW**  
          **Type:**  Functional  
          **Summary:**  the Creatures Maximum hitpoints.    
-      7. **Name:**  Creature Alignment  
+      7. **Name:**  Creature Alignment  **NEW**  
          **Type:**  Functional  
          **Summary:**  The creature's alignment, allowing for "mostly X Y" style entries.    
-      8. **Name:**  Creature Skills (simple)  
+      8. **Name:**  Creature Skills (simple)  **NEW**  
          **Type:**  Functional  
          **Summary:**  The number of accumulated skilranks in the non-ambigious skills. 39 skills in total  
-      9. **Name:**  Creature skills (Complex)  
+      9. **Name:**  Creature skills (Complex)  **NEW**  
          **Type:**  Functional  
          **Summary:**  The 4 remaining ambigious skills (Craft, knowledge, preform, and Profession), which require a descriptor on which sub-skill it represents. 
-      0. **Name:**  Monentary Wealth  
+      0. **Name:**  Monentary Wealth  **NEW**  
          **Type:**  Functional  
          **Summary:**  The total value of the creature's gold equivilant items  
-      1. **Name:**  Known Languages  
+      1. **Name:**  Known Languages  **NEW**  
          **Type:**  Functional  
          **Summary:**  The languages known by the creature  
-      2. **Name:**  Feats  
+      2. **Name:**  Feats  **NEW**  
          **Type:**  Functional  
          **Summary:**  A listing of all feats accumulated by a character    
-      3. **Name:**  Items  
+      3. **Name:**  Items  **NEW**  
          **Type:**  Functional  
          **Summary:**  A listing of all items held by a character, with a note of if something is presently equipped or not.  
-      4. **Name:**  Experience Points  
+      4. **Name:**  Experience Points  **NEW**  
          **Type:**  Functional  
          **Summary:**  Expressed as "Total experience points gained," this keeps track of the character's total XP gain     
-      5. **Name:**  Spells Known  
+      5. **Name:**  Spells Known  **NEW**  
          **Type:**  Functional  
          **Summary:**  A list of spells a creature knows, does not handle prepared spells or spells per day. this is the Flesh-and-blood player's responsibility.     
-      6. **Name:**  Creature Rating  
+      6. **Name:**  Creature Rating  **NEW**  
          **Type:**  Functional  
          **Summary:**  The creature's Creature rating, with player characters having their ECL here instead.  
          
@@ -58,10 +58,10 @@
 3. **Name:** Edit/Update Character Record  **UPDATED**  
     **Type:** functional.  
     **Summary:** Be able to edit and update the Character record sheet.
-      1. **Name:**   Field Avaibility  
+      1. **Name:**   Field Avaibility  **NEW**  
          **Type:**   Constraint  
          **Summary:**   Fields will only be editable when characters have sufficient experience to "level up". Even then, Past choices will not be changeable, beyond what the system normally allows.    
-      2. **Name:**   Player Choices  
+      2. **Name:**   Player Choices  **NEW**  
          **Type:**   Constraint  
          **Summary:**   Choices will only be presented when the system can verify that the character in question already fufills the prequisites.    
 
@@ -90,17 +90,17 @@
           **Type:** functional.    
           **Summary:** A data entry form for the class information used by the Game Master.
 
-5.  **Name:** System Accuracy.  
+5.  **Name:** System Accuracy  
     **Type:** Constraint.  
     **Summary:** The utility must adhere to both the system it was designed for (Dungeons and Dragons, 3.5th edition) and to the rules within, as such will need to preform mathmatical calculations accurately.  
 
 6.  **Name:** Entity Initialization.  **UPDATED**
     **Type:** functional.  
     **Summary:** The utility will offer the ability to select anything stored in the utility and enable it, Creating an instance of that creature. To differentiate between clones, Duplicates, and the like, a numerical dientifier will also be provided.  
-    1.  **Name:** Searchibility  
+    1.  **Name:** Entity Searchibility  **NEW**  
         **Type:** Functional  
         **Summary:** The Initializer will offer the ability to search by creature Type, subtype, CR, or Name.  
-    2.  **Name:** Mass initialization  
+    2.  **Name:** Mass initialization  **NEW**  
         **Type:** Functional  
         **Summary:** The system will offer the DM the ability to initialize multiple creatures simultaniously, to allow for more rapid progression to the heart of an encounter.    
 
