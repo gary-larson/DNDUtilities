@@ -1,0 +1,1253 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<modelStoreModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner" xmlns:dm9="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm10="http://schemas.microsoft.com/dsltools/UseCaseModel"
+  dslVersion="1.0.0.0"
+  Id="e872a8f9-855e-425c-81a1-62f54c345891"
+  name="ModelingProject" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
+  <ownedCommentsInternal>
+    <comment
+      Id="d1a6351a-3460-41af-a205-13d9502215db">
+      <body>New Players</body>
+      <annotatedElements>
+        <useCaseMoniker
+          Id="8f8ca627-b4e3-4df0-9e00-847acbf42c8c"
+          LastKnownName="Create Low Character"
+          LastKnownLocation="ModelingProject.uml" />
+      </annotatedElements>
+    </comment>
+    <comment
+      Id="7c5a32ae-101e-4cad-8a05-4bc67abf8d3d">
+      <body>For new items or to level up</body>
+      <annotatedElements>
+        <useCaseMoniker
+          Id="ff90bdb2-4430-4af3-9a16-4e0efa7495ca"
+          LastKnownName="Update Character"
+          LastKnownLocation="ModelingProject.uml" />
+      </annotatedElements>
+    </comment>
+    <comment
+      Id="4dc5d2e8-53c5-4b03-b734-c99c99655d55">
+      <body>Per Dungeon Master</body>
+      <annotatedElements>
+        <useCaseMoniker
+          Id="9c20dd00-a254-4455-96d1-5f38e0da8137"
+          LastKnownName="Create High Level Character"
+          LastKnownLocation="ModelingProject.uml" />
+        <useCaseMoniker
+          Id="5ffdb4cb-3336-489e-8a09-bca0acb1192a"
+          LastKnownName="Enter Character"
+          LastKnownLocation="ModelingProject.uml" />
+      </annotatedElements>
+    </comment>
+    <comment
+      Id="608468d9-de96-403c-b992-a7e3175135f5">
+      <body>Per round/turn</body>
+      <annotatedElements>
+        <useCaseMoniker
+          Id="90273659-bd48-4301-90d2-345fb214f378"
+          LastKnownName="Select Enounter Beings Actions"
+          LastKnownLocation="ModelingProject.uml" />
+        <useCaseMoniker
+          Id="c305f2ba-41c5-4ea6-906d-0eb255d989fc"
+          LastKnownName="Get Results of Actions"
+          LastKnownLocation="ModelingProject.uml" />
+      </annotatedElements>
+    </comment>
+    <comment
+      Id="3fbbdab9-2cfe-4cac-8c64-08841c53671e">
+      <body>On any generated action or result</body>
+      <annotatedElements>
+        <useCaseMoniker
+          Id="1542a0a8-a18e-4ada-bda0-526726e65c00"
+          LastKnownName="DM Override"
+          LastKnownLocation="ModelingProject.uml" />
+      </annotatedElements>
+    </comment>
+  </ownedCommentsInternal>
+  <profileInstances>
+    <packageHasProfileInstances
+      Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b">
+      <profileInstance
+        Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791"
+        name="StandardProfileL2" />
+    </packageHasProfileInstances>
+    <packageHasProfileInstances
+      Id="29349502-908c-4fda-9054-c48619c59ed0">
+      <profileInstance
+        Id="532ea607-fb19-44b8-8502-3351b05452be"
+        name="StandardProfileL3" />
+    </packageHasProfileInstances>
+  </profileInstances>
+  <packagedElements>
+    <packageHasNamedElement>
+      <useCase
+        Id="8f8ca627-b4e3-4df0-9e00-847acbf42c8c"
+        name="Create Low Character"
+        isAbstract="false"
+        isLeaf="false">
+        <targetEnds>
+          <association
+            Id="a810aedc-b518-4bcc-9ea5-fc1a703692a0"
+            isDerived="false"
+            sourceEndRoleName="Create Character"
+            targetEndRoleName="Database"
+            isLeaf="false"
+            isAbstract="false">
+            <actorMoniker
+              Id="f62386c2-8df5-482d-9772-6c6e719077cf"
+              LastKnownName="Database"
+              LastKnownLocation="ModelingProject.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="68c5696f-6cfc-4d23-84d1-998eef9c82ef"
+                  name="Create Character"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="80e3e686-4ad6-4620-af1e-18cc53ad25f8"
+                  name="Database"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <actor
+        Id="ce07fe93-4f3e-4d9b-a353-b8060b54b2ef"
+        name="Player"
+        isAbstract="false"
+        isLeaf="false">
+        <targetEnds>
+          <association
+            Id="59d5ced6-b2ca-4ee9-9988-3ec6aeb4cd82"
+            isDerived="false"
+            sourceEndRoleName="Player"
+            targetEndRoleName="Create Character"
+            isLeaf="false"
+            isAbstract="false">
+            <useCaseMoniker
+              Id="8f8ca627-b4e3-4df0-9e00-847acbf42c8c"
+              LastKnownName="Create Low Character"
+              LastKnownLocation="ModelingProject.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="f68fac1f-c235-4f82-beb8-7df8d6fb3e7a"
+                  name="Player"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="7390da48-b5f8-4c7b-8a11-7a2bcf248eea"
+                  name="Create Character"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+          <association
+            Id="42ffc1c2-0a7d-45cf-a6d7-5e66954a4e05"
+            isDerived="false"
+            sourceEndRoleName="Player"
+            targetEndRoleName="Update Character"
+            isLeaf="false"
+            isAbstract="false">
+            <useCaseMoniker
+              Id="ff90bdb2-4430-4af3-9a16-4e0efa7495ca"
+              LastKnownName="Update Character"
+              LastKnownLocation="ModelingProject.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="5e65256c-7693-492d-b03c-e974e79d7f00"
+                  name="Player"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="bc9a126f-7e5d-4245-aaa9-02f8466eff11"
+                  name="Update Character"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+          <association
+            Id="6616e079-877d-476b-9465-b8be7e6d48db"
+            isDerived="false"
+            sourceEndRoleName="Player"
+            targetEndRoleName="Create High Level Character"
+            isLeaf="false"
+            isAbstract="false">
+            <useCaseMoniker
+              Id="9c20dd00-a254-4455-96d1-5f38e0da8137"
+              LastKnownName="Create High Level Character"
+              LastKnownLocation="ModelingProject.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="6db68de4-9077-468a-a660-bc70931755b5"
+                  name="Player"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="c3d1101d-3fbe-465b-bc9a-5790139a82f1"
+                  name="Create High Level Character"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+          <association
+            Id="2fd01255-e969-4a1f-8dc2-0c1c79fd1b20"
+            isDerived="false"
+            sourceEndRoleName="Player"
+            targetEndRoleName="Enter Character"
+            isLeaf="false"
+            isAbstract="false">
+            <useCaseMoniker
+              Id="5ffdb4cb-3336-489e-8a09-bca0acb1192a"
+              LastKnownName="Enter Character"
+              LastKnownLocation="ModelingProject.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="ad781b6b-2eec-42ee-84e5-85f49e0117eb"
+                  name="Player"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="bcf2688b-698b-43b5-a829-01905d99aa5a"
+                  name="Enter Character"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
+      </actor>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <actor
+        Id="f62386c2-8df5-482d-9772-6c6e719077cf"
+        name="Database"
+        isAbstract="false"
+        isLeaf="false">
+        <targetEnds>
+          <association
+            Id="48cdbbff-36f1-44c8-9fab-17d18b0290fb"
+            isDerived="false"
+            sourceEndRoleName="Database"
+            targetEndRoleName="Print Character Sheet"
+            isLeaf="false"
+            isAbstract="false">
+            <useCaseMoniker
+              Id="3de6844d-8d96-4b53-87ae-808fe0a69175"
+              LastKnownName="Print Character Sheet"
+              LastKnownLocation="ModelingProject.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="c2675b95-6512-4a46-8ca6-7167ae658bf7"
+                  name="Database"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="7b5e120a-d167-4c23-8539-b06fc5747a2e"
+                  name="Print Character Sheet"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+          <association
+            Id="1d700787-647d-4fb2-9ffa-09dd81a1fed0"
+            isDerived="false"
+            sourceEndRoleName="Database"
+            targetEndRoleName="Export Character Sheet"
+            isLeaf="false"
+            isAbstract="false">
+            <useCaseMoniker
+              Id="611e22c9-c206-422a-8c82-da2179f7b3b1"
+              LastKnownName="Export Character Sheet"
+              LastKnownLocation="ModelingProject.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="a37b4ff3-8de6-4fe4-a867-2297961d508a"
+                  name="Database"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="df050c76-8205-4c9d-9f54-4e4985f79744"
+                  name="Export Character Sheet"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+          <association
+            Id="990386ff-f9c8-46c1-90fa-2a2615f9e5da"
+            isDerived="false"
+            sourceEndRoleName="Database"
+            targetEndRoleName="Email Character Sheet"
+            isLeaf="false"
+            isAbstract="false">
+            <useCaseMoniker
+              Id="e0513f8b-8b0e-482b-8369-740bd4156b91"
+              LastKnownName="Email Character Sheet"
+              LastKnownLocation="ModelingProject.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="9b354026-c609-4b52-b3eb-cf07078c02ca"
+                  name="Database"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="615bb300-1826-4f45-b03d-f016663558ed"
+                  name="Email Character Sheet"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
+      </actor>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="ff90bdb2-4430-4af3-9a16-4e0efa7495ca"
+        name="Update Character"
+        isAbstract="false"
+        isLeaf="false">
+        <targetEnds>
+          <association
+            Id="36c21183-c043-4121-b3f8-2c468257cd51"
+            isDerived="false"
+            sourceEndRoleName="Update Character"
+            targetEndRoleName="Database"
+            isLeaf="false"
+            isAbstract="false">
+            <actorMoniker
+              Id="f62386c2-8df5-482d-9772-6c6e719077cf"
+              LastKnownName="Database"
+              LastKnownLocation="ModelingProject.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="f64823e8-9bd4-441d-92df-2a37a4753513"
+                  name="Update Character"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="4f6809bd-a820-40d8-92fb-33a7a9d2b2dc"
+                  name="Database"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="9c20dd00-a254-4455-96d1-5f38e0da8137"
+        name="Create High Level Character"
+        isAbstract="false"
+        isLeaf="false">
+        <targetEnds>
+          <association
+            Id="f92345ca-4580-44f4-b948-1e6c2d4452f1"
+            isDerived="false"
+            sourceEndRoleName="Create High Level Character"
+            targetEndRoleName="Database"
+            isLeaf="false"
+            isAbstract="false">
+            <actorMoniker
+              Id="f62386c2-8df5-482d-9772-6c6e719077cf"
+              LastKnownName="Database"
+              LastKnownLocation="ModelingProject.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="a05c865a-582c-42d3-a570-02d28f1c765c"
+                  name="Create High Level Character"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="31da288e-3578-4c40-8b84-95eb6fb5ca00"
+                  name="Database"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="5ffdb4cb-3336-489e-8a09-bca0acb1192a"
+        name="Enter Character"
+        isAbstract="false"
+        isLeaf="false">
+        <targetEnds>
+          <association
+            Id="68afb126-8dc4-4a14-872e-5fe01ec8ad92"
+            isDerived="false"
+            sourceEndRoleName="Enter Character"
+            targetEndRoleName="Enter Character"
+            isLeaf="false"
+            isAbstract="false">
+            <useCaseMoniker
+              Id="5ffdb4cb-3336-489e-8a09-bca0acb1192a"
+              LastKnownName="Enter Character"
+              LastKnownLocation="ModelingProject.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="4a210d2f-69f8-4ee7-a9ae-83e936b6acab"
+                  name="Enter Character"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="bc80d608-4067-4a16-8b80-ec85cdbd2ad0"
+                  name="Enter Character"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+          <association
+            Id="94d9230a-90c4-4d2a-90b5-c6f154eab438"
+            isDerived="false"
+            sourceEndRoleName="Enter Character"
+            targetEndRoleName="Database"
+            isLeaf="false"
+            isAbstract="false">
+            <actorMoniker
+              Id="f62386c2-8df5-482d-9772-6c6e719077cf"
+              LastKnownName="Database"
+              LastKnownLocation="ModelingProject.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="116ef50c-52e3-49ce-8139-32bd55ce7795"
+                  name="Enter Character"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="1791479b-1ab9-405a-a936-78978d516e34"
+                  name="Database"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <actor
+        Id="cc17298d-4d37-491c-ac02-841621fbb683"
+        name="Dungeon Master"
+        isAbstract="false"
+        isLeaf="false">
+        <targetEnds>
+          <association
+            Id="d38d9c95-0d08-4dde-87d7-6a1f1f0c434e"
+            isDerived="false"
+            sourceEndRoleName="Dungeon Master"
+            targetEndRoleName="Enter Custom information"
+            isLeaf="false"
+            isAbstract="false">
+            <useCaseMoniker
+              Id="ad70c744-6a37-4ef3-9213-bb43bbd66cfa"
+              LastKnownName="Enter Custom information"
+              LastKnownLocation="ModelingProject.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="8b64b2d6-29a9-4851-a3e1-1a4612d5d822"
+                  name="Dungeon Master"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="efd829cf-16d2-4f73-af41-e05d5bdb1b63"
+                  name="Enter Custom information"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+          <association
+            Id="05229b07-8fa6-430d-b568-4150fd5f803e"
+            isDerived="false"
+            sourceEndRoleName="Dungeon Master"
+            targetEndRoleName="DM Override"
+            isLeaf="false"
+            isAbstract="false">
+            <useCaseMoniker
+              Id="1542a0a8-a18e-4ada-bda0-526726e65c00"
+              LastKnownName="DM Override"
+              LastKnownLocation="ModelingProject.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="5ee7c6ac-7e13-4d58-9a10-f7e6cb38beda"
+                  name="Dungeon Master"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="7e3401fe-b487-4496-b55f-25ae6fc2b47f"
+                  name="DM Override"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
+      </actor>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <actor
+        Id="6fd151a1-387c-4370-88c9-f8200ff8a247"
+        name="Database"
+        isAbstract="false"
+        isLeaf="false">
+        <targetEnds>
+          <association
+            Id="42a30e0e-6831-4591-a538-d15572509a33"
+            isDerived="false"
+            sourceEndRoleName="Database"
+            targetEndRoleName="Generate Encounter"
+            isLeaf="false"
+            isAbstract="false">
+            <useCaseMoniker
+              Id="0f0d45d4-68a4-4568-ba46-9dcf35bccb1d"
+              LastKnownName="Generate Encounter"
+              LastKnownLocation="ModelingProject.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="0062a8f3-9e57-46db-a801-a77543c7339c"
+                  name="Database"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="0a1b29d7-4413-44ce-9447-219c2161c085"
+                  name="Generate Encounter"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+          <association
+            Id="baf57ff4-6dc1-4ec1-bc8a-3704055acc7f"
+            isDerived="false"
+            sourceEndRoleName="Database"
+            targetEndRoleName="Select Enounter Beings Actions"
+            isLeaf="false"
+            isAbstract="false">
+            <useCaseMoniker
+              Id="90273659-bd48-4301-90d2-345fb214f378"
+              LastKnownName="Select Enounter Beings Actions"
+              LastKnownLocation="ModelingProject.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="87a19f24-23c4-4306-87a2-ac446ebe1f47"
+                  name="Database"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="0ddd6ce9-1b68-4d0f-9142-70d49d003349"
+                  name="Select Enounter Beings Actions"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
+      </actor>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="3de6844d-8d96-4b53-87ae-808fe0a69175"
+        name="Print Character Sheet"
+        isAbstract="false"
+        isLeaf="false">
+        <targetEnds>
+          <association
+            Id="ded73ee8-8e25-4630-8a23-668c4c00013b"
+            isDerived="false"
+            sourceEndRoleName="Print Character Sheet"
+            targetEndRoleName="Printer"
+            isLeaf="false"
+            isAbstract="false">
+            <actorMoniker
+              Id="824d16fa-986b-46f0-b4a5-1a094f774d96"
+              LastKnownName="Printer"
+              LastKnownLocation="ModelingProject.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="9354f198-eb7a-47e3-84c1-99aa602cce44"
+                  name="Print Character Sheet"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="25548964-48dc-4fb1-8445-e0b995a9dbb5"
+                  name="Printer"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <actor
+        Id="824d16fa-986b-46f0-b4a5-1a094f774d96"
+        name="Printer"
+        isAbstract="false"
+        isLeaf="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="611e22c9-c206-422a-8c82-da2179f7b3b1"
+        name="Export Character Sheet"
+        isAbstract="false"
+        isLeaf="false">
+        <targetEnds>
+          <association
+            Id="b29d7373-cfd3-408b-b25d-a8742e1f1f43"
+            isDerived="false"
+            sourceEndRoleName="Export Character Sheet"
+            targetEndRoleName="Storage Device"
+            isLeaf="false"
+            isAbstract="false">
+            <actorMoniker
+              Id="84d1dff1-639a-49fe-89fe-2ec5a36b0026"
+              LastKnownName="Storage Device"
+              LastKnownLocation="ModelingProject.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="4e98332d-bcd5-4ed5-896a-92f3414abca0"
+                  name="Export Character Sheet"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="f52c4710-200b-47f1-aff4-34d7fe85c5bb"
+                  name="Storage Device"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="e0513f8b-8b0e-482b-8369-740bd4156b91"
+        name="Email Character Sheet"
+        isAbstract="false"
+        isLeaf="false">
+        <targetEnds>
+          <association
+            Id="d52048fd-a3b7-4d37-89d2-7a0049d0e8cf"
+            isDerived="false"
+            sourceEndRoleName="Email Character Sheet"
+            targetEndRoleName="Email System"
+            isLeaf="false"
+            isAbstract="false">
+            <actorMoniker
+              Id="d498e5b8-f543-4716-a8a8-b30169e1ca21"
+              LastKnownName="Email System"
+              LastKnownLocation="ModelingProject.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="63f63b0c-697d-4965-8726-91c920ee0b2e"
+                  name="Email Character Sheet"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="ce54fa33-6b7a-431f-afe1-c18a3acda43a"
+                  name="Email System"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <actor
+        Id="84d1dff1-639a-49fe-89fe-2ec5a36b0026"
+        name="Storage Device"
+        isAbstract="false"
+        isLeaf="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <actor
+        Id="d498e5b8-f543-4716-a8a8-b30169e1ca21"
+        name="Email System"
+        isAbstract="false"
+        isLeaf="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="ad70c744-6a37-4ef3-9213-bb43bbd66cfa"
+        name="Enter Custom information"
+        isAbstract="false"
+        isLeaf="false">
+        <targetEnds>
+          <association
+            Id="36d0e129-a045-4171-abba-66cb6fef0d6d"
+            isDerived="false"
+            sourceEndRoleName="Enter Custom information"
+            targetEndRoleName="Database"
+            isLeaf="false"
+            isAbstract="false">
+            <actorMoniker
+              Id="6fd151a1-387c-4370-88c9-f8200ff8a247"
+              LastKnownName="Database"
+              LastKnownLocation="ModelingProject.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="1d4b94f5-a5d7-470e-b321-c789bb84a416"
+                  name="Enter Custom information"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="300e617b-082c-4a43-a37d-d923e53e45d6"
+                  name="Database"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="0f0d45d4-68a4-4568-ba46-9dcf35bccb1d"
+        name="Generate Encounter"
+        isAbstract="false"
+        isLeaf="false">
+        <targetEnds>
+          <association
+            Id="beccccf9-c713-472f-b381-0988b345d0cf"
+            isDerived="false"
+            sourceEndRoleName="Generate Encounter"
+            targetEndRoleName="Dungeon Master"
+            isLeaf="false"
+            isAbstract="false">
+            <actorMoniker
+              Id="cc17298d-4d37-491c-ac02-841621fbb683"
+              LastKnownName="Dungeon Master"
+              LastKnownLocation="ModelingProject.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="fa3e5dc3-7fe1-47db-b73d-978a66570ee1"
+                  name="Generate Encounter"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="92be3366-0b92-4f30-af29-22ed9285b00c"
+                  name="Dungeon Master"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="90273659-bd48-4301-90d2-345fb214f378"
+        name="Select Enounter Beings Actions"
+        isAbstract="false"
+        isLeaf="false">
+        <targetEnds>
+          <association
+            Id="114a9bbc-40c1-4cf9-9adf-49c8caf17a29"
+            isDerived="false"
+            sourceEndRoleName="Select Enounter Beings Actions"
+            targetEndRoleName="Dungeon Master"
+            isLeaf="false"
+            isAbstract="false">
+            <actorMoniker
+              Id="cc17298d-4d37-491c-ac02-841621fbb683"
+              LastKnownName="Dungeon Master"
+              LastKnownLocation="ModelingProject.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="a3d87283-6183-4a8c-98c1-5957de0274ac"
+                  name="Select Enounter Beings Actions"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="3ad240e9-826b-4bab-ae4c-2f74ee03fa04"
+                  name="Dungeon Master"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="c305f2ba-41c5-4ea6-906d-0eb255d989fc"
+        name="Get Results of Actions"
+        isAbstract="false"
+        isLeaf="false">
+        <targetEnds>
+          <association
+            Id="e449db1b-071a-41e7-8df2-8b4d7475d072"
+            isDerived="false"
+            sourceEndRoleName="Get Results of Actions"
+            targetEndRoleName="Dungeon Master"
+            isLeaf="false"
+            isAbstract="false">
+            <actorMoniker
+              Id="cc17298d-4d37-491c-ac02-841621fbb683"
+              LastKnownName="Dungeon Master"
+              LastKnownLocation="ModelingProject.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="9136f533-e948-4eec-8e83-284d946503d8"
+                  name="Get Results of Actions"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="0d65d84b-b3e4-41f1-af06-3f445a157876"
+                  name="Dungeon Master"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <subsystem
+        Id="89042724-60f3-4920-81fa-4bdc94f46928"
+        name="Subsystem1"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="1542a0a8-a18e-4ada-bda0-526726e65c00"
+        name="DM Override"
+        isAbstract="false"
+        isLeaf="false">
+        <suppliersInternal>
+          <dependency
+            Id="bbf9232f-5ec9-446c-b0be-8bb44f72dfb7">
+            <useCaseMoniker
+              Id="c305f2ba-41c5-4ea6-906d-0eb255d989fc"
+              LastKnownName="Get Results of Actions"
+              LastKnownLocation="ModelingProject.uml" />
+          </dependency>
+        </suppliersInternal>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="8c871ee2-bd18-49d6-8526-e47b407d3d00"
+        name="Log Results"
+        isAbstract="false"
+        isLeaf="false">
+        <suppliersInternal>
+          <dependency
+            Id="d19dd4b9-b10a-475a-bb45-7b26d4fb7156">
+            <useCaseMoniker
+              Id="1542a0a8-a18e-4ada-bda0-526726e65c00"
+              LastKnownName="DM Override"
+              LastKnownLocation="ModelingProject.uml" />
+          </dependency>
+        </suppliersInternal>
+        <targetEnds>
+          <association
+            Id="244b3a2e-9c2e-4fd4-8474-59d23ac87bad"
+            isDerived="false"
+            sourceEndRoleName="Log Results"
+            targetEndRoleName="Database"
+            isLeaf="false"
+            isAbstract="false">
+            <actorMoniker
+              Id="6fd151a1-387c-4370-88c9-f8200ff8a247"
+              LastKnownName="Database"
+              LastKnownLocation="ModelingProject.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="c431edf0-4b32-4504-8bef-c81645d743df"
+                  name="Log Results"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="9e5a3a66-5302-41f8-a02a-5fd6b13484f7"
+                  name="Database"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
+      </useCase>
+    </packageHasNamedElement>
+  </packagedElements>
+  <primitiveType
+    Id="220a3521-e091-4221-bae9-3ef9018e845c"
+    name="Integer"
+    isAbstract="false"
+    isLeaf="false" />
+  <primitiveType
+    Id="8943dc84-709e-4f62-b15a-a3273aa6f165"
+    name="Boolean"
+    isAbstract="false"
+    isLeaf="false" />
+  <primitiveType
+    Id="59259974-6d55-42c6-b7bd-763d77ac8ef9"
+    name="String"
+    isAbstract="false"
+    isLeaf="false" />
+  <primitiveType
+    Id="3ab42e7d-4969-445a-b209-471f5cb8209c"
+    name="UnlimitedNatural"
+    isAbstract="false"
+    isLeaf="false" />
+</modelStoreModel>

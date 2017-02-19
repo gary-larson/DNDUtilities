@@ -1,0 +1,364 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<useCaseModelRoot xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/dsltools/LogicalClassDesigner" xmlns:dm10="http://schemas.microsoft.com/dsltools/SimpleShapesModel" dslVersion="1.0.0.0" Id="752ccf1e-0e2a-471a-81e9-85a1645f26aa" name="UMLUseCaseDiagramPlayer" linkedPackageId="6d79dfdd-74c9-464f-bc05-172e7dc533a4" xmlns="http://schemas.microsoft.com/dsltools/UseCaseModel">
+  <ownedCommentsInternal>
+    <comment Id="3595d94f-81ae-4b1c-b1da-15755f27aa2b">
+      <elementDefinition Id="d1a6351a-3460-41af-a205-13d9502215db" />
+      <body>New Players</body>
+      <annotatedElements>
+        <useCaseMoniker Id="ceebbdb9-8332-4d56-8432-2745bd675caa" LastKnownName="Create Low Character" />
+      </annotatedElements>
+    </comment>
+    <comment Id="d00cbd8e-ffb1-4b25-8905-f79b4c37e2ca">
+      <elementDefinition Id="7c5a32ae-101e-4cad-8a05-4bc67abf8d3d" />
+      <body>For new items or to level up</body>
+      <annotatedElements>
+        <useCaseMoniker Id="697a5544-be70-40dd-8f54-0e35eeef8618" LastKnownName="Update Character" />
+      </annotatedElements>
+    </comment>
+    <comment Id="66c2f3aa-6efa-40fe-aec8-9cec95307565">
+      <elementDefinition Id="4dc5d2e8-53c5-4b03-b734-c99c99655d55" />
+      <body>Per Dungeon Master</body>
+      <annotatedElements>
+        <useCaseMoniker Id="c027071f-7f14-4407-9f6b-8da1a68355bd" LastKnownName="Create High Level Character" />
+        <useCaseMoniker Id="14c35819-02ad-40b2-bd98-f68c501711ce" LastKnownName="Enter Character" />
+      </annotatedElements>
+    </comment>
+  </ownedCommentsInternal>
+  <profileInstances>
+    <packageHasProfileInstances Id="6c815676-986c-40c6-865b-0a7a976c3da3">
+      <profileInstance Id="041f4f20-31fc-4bb5-ae1f-438eaae4be08" name="StandardProfileL2">
+        <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+      </profileInstance>
+      <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+    </packageHasProfileInstances>
+    <packageHasProfileInstances Id="09e6de19-123f-4639-9372-3a47cc74fe7e">
+      <profileInstance Id="65938be5-2e9f-4ceb-997f-419828e7fb05" name="StandardProfileL3">
+        <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+      </profileInstance>
+      <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+    </packageHasProfileInstances>
+  </profileInstances>
+  <packagedElements>
+    <useCaseModelRootHasTypes>
+      <useCase Id="ceebbdb9-8332-4d56-8432-2745bd675caa" name="Create Low Character" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="8f8ca627-b4e3-4df0-9e00-847acbf42c8c" />
+        <targetEnds>
+          <association Id="9a53f46f-75ec-4727-981c-bb61b724598f" isDerived="false" sourceEndRoleName="Create Character" targetEndRoleName="Database" isLeaf="false" isAbstract="false">
+            <actorMoniker Id="59d830af-e37b-4111-8f77-c8730ec928ba" LastKnownName="Database" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="f86a9699-b329-4a33-a968-d929121f86ef" name="Create Character" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="68c5696f-6cfc-4d23-84d1-998eef9c82ef" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="b1b6b06a-cae7-437e-b064-ab7ab28175cf" name="Database" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="80e3e686-4ad6-4620-af1e-18cc53ad25f8" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="a810aedc-b518-4bcc-9ea5-fc1a703692a0" />
+          </association>
+        </targetEnds>
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <actor Id="a389abdb-d198-4934-adf7-065666fe5037" name="Player" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="ce07fe93-4f3e-4d9b-a353-b8060b54b2ef" />
+        <targetEnds>
+          <association Id="2f34376c-4fa2-428c-9d5b-17f80b59bd01" isDerived="false" sourceEndRoleName="Player" targetEndRoleName="Create Character" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="ceebbdb9-8332-4d56-8432-2745bd675caa" LastKnownName="Create Low Character" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="f4a22ad4-3b48-42ca-92d5-370593877739" name="Player" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="f68fac1f-c235-4f82-beb8-7df8d6fb3e7a" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="ef79a2a5-6532-43c8-9978-c6532ebef2fe" name="Create Character" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="7390da48-b5f8-4c7b-8a11-7a2bcf248eea" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="59d5ced6-b2ca-4ee9-9988-3ec6aeb4cd82" />
+          </association>
+          <association Id="c85d790e-b8d7-4561-864e-5798e5615097" isDerived="false" sourceEndRoleName="Player" targetEndRoleName="Update Character" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="697a5544-be70-40dd-8f54-0e35eeef8618" LastKnownName="Update Character" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="c50a6743-0439-4972-98ee-a0b6be989445" name="Player" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="5e65256c-7693-492d-b03c-e974e79d7f00" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="40c9637b-dd08-4197-8b47-a68f07d736c1" name="Update Character" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="bc9a126f-7e5d-4245-aaa9-02f8466eff11" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="42ffc1c2-0a7d-45cf-a6d7-5e66954a4e05" />
+          </association>
+          <association Id="f76014d8-b76c-4fcc-9ac9-cf9b09ca5488" isDerived="false" sourceEndRoleName="Player" targetEndRoleName="Create High Level Character" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="c027071f-7f14-4407-9f6b-8da1a68355bd" LastKnownName="Create High Level Character" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="7acca861-877d-4e72-92f4-2fa1ff7720cc" name="Player" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="6db68de4-9077-468a-a660-bc70931755b5" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="59be8e4e-0d94-46d9-b1bc-460e182779cb" name="Create High Level Character" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="c3d1101d-3fbe-465b-bc9a-5790139a82f1" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="6616e079-877d-476b-9465-b8be7e6d48db" />
+          </association>
+          <association Id="73a7ad81-5b52-4a6f-a0a6-0dd691397d85" isDerived="false" sourceEndRoleName="Player" targetEndRoleName="Enter Character" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="14c35819-02ad-40b2-bd98-f68c501711ce" LastKnownName="Enter Character" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="e6d1f047-30cc-47aa-849e-1b427fc8235a" name="Player" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="ad781b6b-2eec-42ee-84e5-85f49e0117eb" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="0fb7fbf7-13d6-4b5f-90c6-9a68d3a21630" name="Enter Character" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="bcf2688b-698b-43b5-a829-01905d99aa5a" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="2fd01255-e969-4a1f-8dc2-0c1c79fd1b20" />
+          </association>
+        </targetEnds>
+      </actor>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <actor Id="59d830af-e37b-4111-8f77-c8730ec928ba" name="Database" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="f62386c2-8df5-482d-9772-6c6e719077cf" />
+        <targetEnds>
+          <association Id="66780796-b0f7-4db1-b9a1-c90c90a8fd08" isDerived="false" sourceEndRoleName="Database" targetEndRoleName="Print Character Sheet" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="6562d4db-0be6-461b-ab31-52a0ee6e7d02" LastKnownName="Print Character Sheet" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="a3c11313-bdc7-4562-b0e0-3167c123fa76" name="Database" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="c2675b95-6512-4a46-8ca6-7167ae658bf7" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="881bc329-26c3-40a9-acd7-831ed0108fa2" name="Print Character Sheet" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="7b5e120a-d167-4c23-8539-b06fc5747a2e" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="48cdbbff-36f1-44c8-9fab-17d18b0290fb" />
+          </association>
+          <association Id="aaaa3184-d1d1-4b45-b002-df3d5fd27673" isDerived="false" sourceEndRoleName="Database" targetEndRoleName="Export Character Sheet" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="4f33177b-f54a-457b-a3e8-224c2859607f" LastKnownName="Export Character Sheet" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="b1cb2e9c-72d7-47e7-8b61-ed68d999487f" name="Database" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="a37b4ff3-8de6-4fe4-a867-2297961d508a" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="85bb4acb-a6ec-4835-b5c2-53fb3e882c1e" name="Export Character Sheet" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="df050c76-8205-4c9d-9f54-4e4985f79744" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="1d700787-647d-4fb2-9ffa-09dd81a1fed0" />
+          </association>
+          <association Id="7a094aa7-9b82-4058-801c-fba7c663511c" isDerived="false" sourceEndRoleName="Database" targetEndRoleName="Email Character Sheet" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="ea6a1667-afce-4dca-abcb-c022a5ec80dc" LastKnownName="Email Character Sheet" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="73d0aad9-0b46-4a5d-8778-734607680726" name="Database" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="9b354026-c609-4b52-b3eb-cf07078c02ca" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="6b88987c-4355-498a-928b-4b7a407b850b" name="Email Character Sheet" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="615bb300-1826-4f45-b03d-f016663558ed" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="990386ff-f9c8-46c1-90fa-2a2615f9e5da" />
+          </association>
+        </targetEnds>
+      </actor>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="697a5544-be70-40dd-8f54-0e35eeef8618" name="Update Character" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="ff90bdb2-4430-4af3-9a16-4e0efa7495ca" />
+        <targetEnds>
+          <association Id="cf60d176-1760-420b-9138-21c71a55d613" isDerived="false" sourceEndRoleName="Update Character" targetEndRoleName="Database" isLeaf="false" isAbstract="false">
+            <actorMoniker Id="59d830af-e37b-4111-8f77-c8730ec928ba" LastKnownName="Database" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="0cec979c-e49e-434b-99f6-52198297ca39" name="Update Character" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="f64823e8-9bd4-441d-92df-2a37a4753513" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="14e1663c-8b3d-4745-aa35-b78a67e78f9b" name="Database" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="4f6809bd-a820-40d8-92fb-33a7a9d2b2dc" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="36c21183-c043-4121-b3f8-2c468257cd51" />
+          </association>
+        </targetEnds>
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="c027071f-7f14-4407-9f6b-8da1a68355bd" name="Create High Level Character" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="9c20dd00-a254-4455-96d1-5f38e0da8137" />
+        <targetEnds>
+          <association Id="00ee51c0-b078-4ddd-9d17-9afa9f60548a" isDerived="false" sourceEndRoleName="Create High Level Character" targetEndRoleName="Database" isLeaf="false" isAbstract="false">
+            <actorMoniker Id="59d830af-e37b-4111-8f77-c8730ec928ba" LastKnownName="Database" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="45537d4f-0e60-4686-b08a-139ba4d8dc11" name="Create High Level Character" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="a05c865a-582c-42d3-a570-02d28f1c765c" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="f0f8e44d-1725-4e54-a8e3-8e27f57f1153" name="Database" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="31da288e-3578-4c40-8b84-95eb6fb5ca00" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="f92345ca-4580-44f4-b948-1e6c2d4452f1" />
+          </association>
+        </targetEnds>
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="14c35819-02ad-40b2-bd98-f68c501711ce" name="Enter Character" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="5ffdb4cb-3336-489e-8a09-bca0acb1192a" />
+        <targetEnds>
+          <association Id="78df5c95-1a0b-45db-92b3-c30d029d7a48" isDerived="false" sourceEndRoleName="Enter Character" targetEndRoleName="Enter Character" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="14c35819-02ad-40b2-bd98-f68c501711ce" LastKnownName="Enter Character" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="0d78116b-4f3d-4878-be79-6c6f2ad81ed1" name="Enter Character" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="4a210d2f-69f8-4ee7-a9ae-83e936b6acab" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="c93d47db-c401-40c3-b441-193edee6ac6f" name="Enter Character" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="bc80d608-4067-4a16-8b80-ec85cdbd2ad0" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="68afb126-8dc4-4a14-872e-5fe01ec8ad92" />
+          </association>
+          <association Id="75556f1d-052e-4022-982e-0055abce5230" isDerived="false" sourceEndRoleName="Enter Character" targetEndRoleName="Database" isLeaf="false" isAbstract="false">
+            <actorMoniker Id="59d830af-e37b-4111-8f77-c8730ec928ba" LastKnownName="Database" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="4315db8b-1a45-4baf-a140-9a828c319742" name="Enter Character" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="116ef50c-52e3-49ce-8139-32bd55ce7795" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="c37b7b4e-ba56-48a9-be70-343d49d398a2" name="Database" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="1791479b-1ab9-405a-a936-78978d516e34" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="94d9230a-90c4-4d2a-90b5-c6f154eab438" />
+          </association>
+        </targetEnds>
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="6562d4db-0be6-461b-ab31-52a0ee6e7d02" name="Print Character Sheet" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="3de6844d-8d96-4b53-87ae-808fe0a69175" />
+        <targetEnds>
+          <association Id="592cda95-ab32-4cef-a685-9494af0996b4" isDerived="false" sourceEndRoleName="Print Character Sheet" targetEndRoleName="Printer" isLeaf="false" isAbstract="false">
+            <actorMoniker Id="7d01d039-0caf-42e5-8e55-243b68462f65" LastKnownName="Printer" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="9a8e245e-7442-48a6-80f5-c05cf4316d8d" name="Print Character Sheet" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="9354f198-eb7a-47e3-84c1-99aa602cce44" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="82b9eadc-c398-4af3-8fe0-b197e5e35230" name="Printer" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="25548964-48dc-4fb1-8445-e0b995a9dbb5" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="ded73ee8-8e25-4630-8a23-668c4c00013b" />
+          </association>
+        </targetEnds>
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <actor Id="7d01d039-0caf-42e5-8e55-243b68462f65" name="Printer" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="824d16fa-986b-46f0-b4a5-1a094f774d96" />
+      </actor>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="4f33177b-f54a-457b-a3e8-224c2859607f" name="Export Character Sheet" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="611e22c9-c206-422a-8c82-da2179f7b3b1" />
+        <targetEnds>
+          <association Id="6b3c624c-7205-44ca-9bb4-5a4420b9fa15" isDerived="false" sourceEndRoleName="Export Character Sheet" targetEndRoleName="Storage Device" isLeaf="false" isAbstract="false">
+            <actorMoniker Id="660cb98c-17e0-4cd7-9c86-127f1d9ec2eb" LastKnownName="Storage Device" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="a6f6eb05-edd7-491c-84d9-5349657864f2" name="Export Character Sheet" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="4e98332d-bcd5-4ed5-896a-92f3414abca0" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="2b478df0-df66-40ee-8e3d-38f76fdcce56" name="Storage Device" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="f52c4710-200b-47f1-aff4-34d7fe85c5bb" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="b29d7373-cfd3-408b-b25d-a8742e1f1f43" />
+          </association>
+        </targetEnds>
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="ea6a1667-afce-4dca-abcb-c022a5ec80dc" name="Email Character Sheet" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="e0513f8b-8b0e-482b-8369-740bd4156b91" />
+        <targetEnds>
+          <association Id="0c16168e-6acc-4181-a60a-ee98a23c05b9" isDerived="false" sourceEndRoleName="Email Character Sheet" targetEndRoleName="Email System" isLeaf="false" isAbstract="false">
+            <actorMoniker Id="08e98314-90f1-409f-9e59-98e85f3ff7cd" LastKnownName="Email System" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="ea288ff0-cda0-4a79-9ecb-6d84341b2e34" name="Email Character Sheet" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="63f63b0c-697d-4965-8726-91c920ee0b2e" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="d28c9668-2e14-4007-b686-472178c79c93" name="Email System" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="ce54fa33-6b7a-431f-afe1-c18a3acda43a" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="d52048fd-a3b7-4d37-89d2-7a0049d0e8cf" />
+          </association>
+        </targetEnds>
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <actor Id="660cb98c-17e0-4cd7-9c86-127f1d9ec2eb" name="Storage Device" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="84d1dff1-639a-49fe-89fe-2ec5a36b0026" />
+      </actor>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <actor Id="08e98314-90f1-409f-9e59-98e85f3ff7cd" name="Email System" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="d498e5b8-f543-4716-a8a8-b30169e1ca21" />
+      </actor>
+    </useCaseModelRootHasTypes>
+  </packagedElements>
+  <package Id="6d79dfdd-74c9-464f-bc05-172e7dc533a4" name="ModelingProject">
+    <elementDefinition Id="e872a8f9-855e-425c-81a1-62f54c345891" />
+  </package>
+</useCaseModelRoot>
