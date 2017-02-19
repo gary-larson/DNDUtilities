@@ -1,0 +1,249 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<useCaseModelRoot xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/dsltools/LogicalClassDesigner" xmlns:dm10="http://schemas.microsoft.com/dsltools/SimpleShapesModel" dslVersion="1.0.0.0" Id="3301c56a-7670-47ef-82b4-c3e754288292" name="UMLUseCaseDiagramDM" linkedPackageId="b7918dba-5a99-49be-ba33-df82d5218f0c" xmlns="http://schemas.microsoft.com/dsltools/UseCaseModel">
+  <ownedCommentsInternal>
+    <comment Id="2dcfa2b6-2b1c-4d72-9f51-a0e637101d8b">
+      <elementDefinition Id="608468d9-de96-403c-b992-a7e3175135f5" />
+      <body>Per round/turn</body>
+      <annotatedElements>
+        <useCaseMoniker Id="d617e59c-212e-4f30-9295-2bfac58217b3" LastKnownName="Select Enounter Beings Actions" />
+        <useCaseMoniker Id="b58dcb06-0bec-487c-9c68-502f09284694" LastKnownName="Get Results of Actions" />
+      </annotatedElements>
+    </comment>
+    <comment Id="392e2cc6-9103-4e78-83ae-8864ab890a0a">
+      <elementDefinition Id="3fbbdab9-2cfe-4cac-8c64-08841c53671e" />
+      <body>On any generated action or result</body>
+      <annotatedElements>
+        <useCaseMoniker Id="14bf73a7-1f10-4278-b8f3-9ebddba9510b" LastKnownName="DM Override" />
+      </annotatedElements>
+    </comment>
+  </ownedCommentsInternal>
+  <profileInstances>
+    <packageHasProfileInstances Id="f22a9de5-bfa9-4037-9cd6-ed0a9328a67f">
+      <profileInstance Id="5a7711a6-d8ae-40e5-aaf9-464898169c4e" name="StandardProfileL2">
+        <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+      </profileInstance>
+      <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+    </packageHasProfileInstances>
+    <packageHasProfileInstances Id="7b194f7c-6b59-4be2-9fe8-4b1e4822c1f0">
+      <profileInstance Id="154078e6-9bf1-4b76-8967-968a3f347252" name="StandardProfileL3">
+        <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+      </profileInstance>
+      <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+    </packageHasProfileInstances>
+  </profileInstances>
+  <packagedElements>
+    <useCaseModelRootHasTypes>
+      <actor Id="aa9a952b-2716-408d-9773-0f701fbcb85b" name="Dungeon Master" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="cc17298d-4d37-491c-ac02-841621fbb683" />
+        <targetEnds>
+          <association Id="fefb0576-3453-4c84-b28b-5920228b160d" isDerived="false" sourceEndRoleName="Dungeon Master" targetEndRoleName="Enter Custom information" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="bce464ca-cf7a-4f28-a6ed-7502ae930857" LastKnownName="Enter Custom information" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="65684d55-3edb-4834-a8fb-0d0b0eebbea0" name="Dungeon Master" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="8b64b2d6-29a9-4851-a3e1-1a4612d5d822" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="f5c8664a-2276-412d-9ac4-b41265123f25" name="Enter Custom information" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="efd829cf-16d2-4f73-af41-e05d5bdb1b63" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="d38d9c95-0d08-4dde-87d7-6a1f1f0c434e" />
+          </association>
+          <association Id="1a5e5f67-68b6-4153-ae52-c8531ed9b2f8" isDerived="false" sourceEndRoleName="Dungeon Master" targetEndRoleName="DM Override" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="14bf73a7-1f10-4278-b8f3-9ebddba9510b" LastKnownName="DM Override" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="186410c1-8009-47e6-9deb-9445e0d0fec3" name="Dungeon Master" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="5ee7c6ac-7e13-4d58-9a10-f7e6cb38beda" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="69abcdc8-d3f3-4604-b41c-34f87aac39b8" name="DM Override" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="7e3401fe-b487-4496-b55f-25ae6fc2b47f" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="05229b07-8fa6-430d-b568-4150fd5f803e" />
+          </association>
+        </targetEnds>
+      </actor>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <actor Id="d2bb5bdd-223e-44fd-9be5-2e96db6ebd87" name="Database" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="6fd151a1-387c-4370-88c9-f8200ff8a247" />
+        <targetEnds>
+          <association Id="ba464b83-fcd4-4914-b2d5-177eaf79cec4" isDerived="false" sourceEndRoleName="Database" targetEndRoleName="Generate Encounter" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="d7aa8d93-b3c9-4eee-a90f-7bf57e10dd48" LastKnownName="Generate Encounter" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="16f54182-ebf7-4f72-a30e-d6e2c5aea515" name="Database" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="0062a8f3-9e57-46db-a801-a77543c7339c" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="95eee910-ca53-426e-90f4-de515b073325" name="Generate Encounter" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="0a1b29d7-4413-44ce-9447-219c2161c085" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="42a30e0e-6831-4591-a538-d15572509a33" />
+          </association>
+          <association Id="a26c648c-d634-426d-8f0e-3b5c751fe152" isDerived="false" sourceEndRoleName="Database" targetEndRoleName="Select Enounter Beings Actions" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="d617e59c-212e-4f30-9295-2bfac58217b3" LastKnownName="Select Enounter Beings Actions" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="72a03a13-7b96-42ed-bd1a-97951e246fa2" name="Database" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="87a19f24-23c4-4306-87a2-ac446ebe1f47" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="3818a3cd-67bf-4d82-a243-1464d486b402" name="Select Enounter Beings Actions" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="0ddd6ce9-1b68-4d0f-9142-70d49d003349" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="baf57ff4-6dc1-4ec1-bc8a-3704055acc7f" />
+          </association>
+        </targetEnds>
+      </actor>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="bce464ca-cf7a-4f28-a6ed-7502ae930857" name="Enter Custom information" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="ad70c744-6a37-4ef3-9213-bb43bbd66cfa" />
+        <targetEnds>
+          <association Id="52f8a125-c342-4f60-a9d3-eac26235fa92" isDerived="false" sourceEndRoleName="Enter Custom information" targetEndRoleName="Database" isLeaf="false" isAbstract="false">
+            <actorMoniker Id="d2bb5bdd-223e-44fd-9be5-2e96db6ebd87" LastKnownName="Database" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="7cd9bfa7-5580-4f62-92bd-48cdfedf7850" name="Enter Custom information" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="1d4b94f5-a5d7-470e-b321-c789bb84a416" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="9b2d6d1f-adc6-4845-afaa-eb765023a011" name="Database" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="300e617b-082c-4a43-a37d-d923e53e45d6" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="36d0e129-a045-4171-abba-66cb6fef0d6d" />
+          </association>
+        </targetEnds>
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="d7aa8d93-b3c9-4eee-a90f-7bf57e10dd48" name="Generate Encounter" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="0f0d45d4-68a4-4568-ba46-9dcf35bccb1d" />
+        <targetEnds>
+          <association Id="13102ea9-aab7-4b5c-adf6-fe10dc2dfc39" isDerived="false" sourceEndRoleName="Generate Encounter" targetEndRoleName="Dungeon Master" isLeaf="false" isAbstract="false">
+            <actorMoniker Id="aa9a952b-2716-408d-9773-0f701fbcb85b" LastKnownName="Dungeon Master" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="68d1502a-78fc-4c38-abdd-c4f96bdc5db0" name="Generate Encounter" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="fa3e5dc3-7fe1-47db-b73d-978a66570ee1" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="19825b47-b4f3-4353-a32f-af47653bf28c" name="Dungeon Master" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="92be3366-0b92-4f30-af29-22ed9285b00c" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="beccccf9-c713-472f-b381-0988b345d0cf" />
+          </association>
+        </targetEnds>
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="d617e59c-212e-4f30-9295-2bfac58217b3" name="Select Enounter Beings Actions" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="90273659-bd48-4301-90d2-345fb214f378" />
+        <targetEnds>
+          <association Id="cb5f0e88-8f77-41e5-9252-4fd8ef527e71" isDerived="false" sourceEndRoleName="Select Enounter Beings Actions" targetEndRoleName="Dungeon Master" isLeaf="false" isAbstract="false">
+            <actorMoniker Id="aa9a952b-2716-408d-9773-0f701fbcb85b" LastKnownName="Dungeon Master" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="c0d8456c-629c-47ff-8f68-9a1a26ea13dc" name="Select Enounter Beings Actions" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="a3d87283-6183-4a8c-98c1-5957de0274ac" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="6761802a-5cb5-4b46-b6c6-89bdb2d4d32d" name="Dungeon Master" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="3ad240e9-826b-4bab-ae4c-2f74ee03fa04" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="114a9bbc-40c1-4cf9-9adf-49c8caf17a29" />
+          </association>
+        </targetEnds>
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="b58dcb06-0bec-487c-9c68-502f09284694" name="Get Results of Actions" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="c305f2ba-41c5-4ea6-906d-0eb255d989fc" />
+        <targetEnds>
+          <association Id="5bc186d7-1fb4-47c7-b10c-d239afa42d1d" isDerived="false" sourceEndRoleName="Get Results of Actions" targetEndRoleName="Dungeon Master" isLeaf="false" isAbstract="false">
+            <actorMoniker Id="aa9a952b-2716-408d-9773-0f701fbcb85b" LastKnownName="Dungeon Master" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="7534aec2-30f9-47f9-bad1-ef7e66b06d01" name="Get Results of Actions" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="9136f533-e948-4eec-8e83-284d946503d8" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="a76738c1-c19c-4296-a4e0-eb414c0cac1d" name="Dungeon Master" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="0d65d84b-b3e4-41f1-af06-3f445a157876" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="e449db1b-071a-41e7-8df2-8b4d7475d072" />
+          </association>
+        </targetEnds>
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="14bf73a7-1f10-4278-b8f3-9ebddba9510b" name="DM Override" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="1542a0a8-a18e-4ada-bda0-526726e65c00" />
+        <suppliersInternal>
+          <dependency Id="290f8534-24c2-4e68-a8cf-4dbe8eeb6a70">
+            <useCaseMoniker Id="b58dcb06-0bec-487c-9c68-502f09284694" LastKnownName="Get Results of Actions" />
+            <elementDefinition Id="bbf9232f-5ec9-446c-b0be-8bb44f72dfb7" />
+          </dependency>
+        </suppliersInternal>
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="547484d8-29a6-4a31-9b7b-39d8b099b5a0" name="Log Results" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="8c871ee2-bd18-49d6-8526-e47b407d3d00" />
+        <suppliersInternal>
+          <dependency Id="8bfaf016-a418-43b9-8b2d-761f188cdf9e">
+            <useCaseMoniker Id="14bf73a7-1f10-4278-b8f3-9ebddba9510b" LastKnownName="DM Override" />
+            <elementDefinition Id="d19dd4b9-b10a-475a-bb45-7b26d4fb7156" />
+          </dependency>
+        </suppliersInternal>
+        <targetEnds>
+          <association Id="0732c30a-b77a-4e96-8d90-d81e54b427a5" isDerived="false" sourceEndRoleName="Log Results" targetEndRoleName="Database" isLeaf="false" isAbstract="false">
+            <actorMoniker Id="d2bb5bdd-223e-44fd-9be5-2e96db6ebd87" LastKnownName="Database" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="d2fbcea3-6f38-411c-be65-46120191e480" name="Log Results" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="c431edf0-4b32-4504-8bef-c81645d743df" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="ea6cc97a-1666-4988-92de-aa134b070941" name="Database" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="9e5a3a66-5302-41f8-a02a-5fd6b13484f7" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="244b3a2e-9c2e-4fd4-8474-59d23ac87bad" />
+          </association>
+        </targetEnds>
+      </useCase>
+    </useCaseModelRootHasTypes>
+  </packagedElements>
+  <package Id="b7918dba-5a99-49be-ba33-df82d5218f0c" name="ModelingProject">
+    <elementDefinition Id="e872a8f9-855e-425c-81a1-62f54c345891" />
+  </package>
+</useCaseModelRoot>
