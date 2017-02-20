@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<modelStoreModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner" xmlns:dm9="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm10="http://schemas.microsoft.com/dsltools/UseCaseModel"
+<modelStoreModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner" xmlns:dm9="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm10="http://schemas.microsoft.com/dsltools/UseCaseModel" xmlns:dm11="http://schemas.microsoft.com/VisualStudio/TeamArchitect/ActivityDesigner"
   dslVersion="1.0.0.0"
   Id="e872a8f9-855e-425c-81a1-62f54c345891"
   name="ModelingProject" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
@@ -1228,6 +1228,310 @@
           </association>
         </targetEnds>
       </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <activity
+        Id="c08eb555-0ab8-473a-a637-9ad0874016d6"
+        name="ActivityCharacterCreation"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false"
+        isReentrant="false"
+        isReadOnly="false"
+        isSingleExecution="false">
+        <nodes>
+          <initialNode
+            Id="4e8e2bf5-e07f-4d0a-9b33-3f3e5e75aa0d"
+            name="Initial1"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="08b2309f-9cc7-4302-a9c0-e924c11edd80"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="bb41613e-3ab0-40c4-97e8-1ca93e06f45c"
+                  LastKnownName="Review Process With Dungeon Mster"
+                  LastKnownLocation="ModelingProject.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </initialNode>
+          <opaqueAction
+            Id="bb41613e-3ab0-40c4-97e8-1ca93e06f45c"
+            name="Review Process With Dungeon Mster"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="6d6c9548-b71c-4b86-aad8-f7154f2c2f98"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="375f179f-844c-4212-9eba-ff6ef65559ac"
+                  LastKnownName="Roll 6 Ability Scores"
+                  LastKnownLocation="ModelingProject.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction
+            Id="375f179f-844c-4212-9eba-ff6ef65559ac"
+            name="Roll 6 Ability Scores"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="d5ea270a-bf49-4753-b2c3-d69a90613c07"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="f0ef4d28-852c-46ce-9dec-24a09bc686c2"
+                  LastKnownName="Choose Class and Race"
+                  LastKnownLocation="ModelingProject.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction
+            Id="f0ef4d28-852c-46ce-9dec-24a09bc686c2"
+            name="Choose Class and Race"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="c04ac81a-8408-4d53-ad22-36511bfb891a"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="36dec751-fc7e-4e04-ba18-650edc7c28ae"
+                  LastKnownName="Assign abd Adjust Ability Scores"
+                  LastKnownLocation="ModelingProject.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction
+            Id="36dec751-fc7e-4e04-ba18-650edc7c28ae"
+            name="Assign abd Adjust Ability Scores"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="f7fa9183-e291-42a6-b2ee-40ed802cd7cc"
+                isLeaf="false">
+                <decisionNodeMoniker
+                  Id="9011ad39-f313-4bfa-ad46-5af706ac58b2"
+                  LastKnownName="Package"
+                  LastKnownLocation="ModelingProject.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <decisionNode
+            Id="9011ad39-f313-4bfa-ad46-5af706ac58b2"
+            name="Package"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="692788a8-b83a-4e2b-b028-eb45b83c7bb0"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="81dbc064-3c19-4d72-82ce-0b01507e84fd"
+                  LastKnownName="Choose A Starting Package"
+                  LastKnownLocation="ModelingProject.uml" />
+              </controlFlow>
+              <controlFlow
+                Id="38839b6c-8377-497f-953f-4aae7d144492"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="a4884307-cfca-45a9-91d5-0e20a4d800f1"
+                  LastKnownName="Record Racial and Class Features"
+                  LastKnownLocation="ModelingProject.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </decisionNode>
+          <opaqueAction
+            Id="81dbc064-3c19-4d72-82ce-0b01507e84fd"
+            name="Choose A Starting Package"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="848668bf-f55a-4ed0-b538-083eaec019b2"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="66dca9fb-ccea-4358-a5e1-d095a85a4b2f"
+                  LastKnownName="Record Starting Package on Character Sheet"
+                  LastKnownLocation="ModelingProject.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction
+            Id="66dca9fb-ccea-4358-a5e1-d095a85a4b2f"
+            name="Record Starting Package on Character Sheet"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="eb12d9ad-b3da-4dc0-adbe-d50309fdacbc"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="721a487f-b3f6-4256-9532-0a90d1271c94"
+                  LastKnownName="Create Charater Description (optional)"
+                  LastKnownLocation="ModelingProject.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction
+            Id="a4884307-cfca-45a9-91d5-0e20a4d800f1"
+            name="Record Racial and Class Features"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="a3c63c94-5f5b-4b00-a2d7-4d9faff7e687"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="9a95311f-1ad9-4929-bb64-5cf92b4b49bf"
+                  LastKnownName="Select Skills"
+                  LastKnownLocation="ModelingProject.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction
+            Id="9a95311f-1ad9-4929-bb64-5cf92b4b49bf"
+            name="Select Skills"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="146ec9a8-32ba-4f02-ac47-439682602744"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="6a8618ef-79a2-41b1-88c6-6ae0d822c81d"
+                  LastKnownName="Select a Feat"
+                  LastKnownLocation="ModelingProject.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction
+            Id="6a8618ef-79a2-41b1-88c6-6ae0d822c81d"
+            name="Select a Feat"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="6b440671-7333-4f56-b985-badf446aca87"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="721a487f-b3f6-4256-9532-0a90d1271c94"
+                  LastKnownName="Create Charater Description (optional)"
+                  LastKnownLocation="ModelingProject.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction
+            Id="721a487f-b3f6-4256-9532-0a90d1271c94"
+            name="Create Charater Description (optional)"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="02799bc3-9830-4bf6-92eb-a588ddfc37d3"
+                isLeaf="false">
+                <decisionNodeMoniker
+                  Id="5b3bd875-6ae7-4283-badf-2c989848bbad"
+                  LastKnownName="Decision2"
+                  LastKnownLocation="ModelingProject.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <decisionNode
+            Id="5b3bd875-6ae7-4283-badf-2c989848bbad"
+            name="Decision2"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="a3e195dc-a8f8-4e2e-a78f-c02526d4f443"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="f1eabe8d-73ee-4d74-9fc9-346f7a9165db"
+                  LastKnownName="Use Starting Pakage Equipment"
+                  LastKnownLocation="ModelingProject.uml" />
+              </controlFlow>
+              <controlFlow
+                Id="361ece22-edb3-4697-95e6-93ce28b16da0"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="d984ddae-546a-4400-b004-f28e37820e05"
+                  LastKnownName="Randonly Determine Starting Gold"
+                  LastKnownLocation="ModelingProject.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </decisionNode>
+          <opaqueAction
+            Id="f1eabe8d-73ee-4d74-9fc9-346f7a9165db"
+            name="Use Starting Pakage Equipment"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="ef3043f8-964e-4ff4-a4b5-d0d9281fc6b9"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="ac1137d2-336c-4cd2-8666-e0f79e5fdcf8"
+                  LastKnownName="Record Combat Numbers"
+                  LastKnownLocation="ModelingProject.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction
+            Id="d984ddae-546a-4400-b004-f28e37820e05"
+            name="Randonly Determine Starting Gold"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="2e26d461-6a38-432c-a5a3-4f26f5113a1f"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="cc6f9c6d-52c8-4e2e-9c4d-f6a1c2f88adc"
+                  LastKnownName="Purchase Equipment"
+                  LastKnownLocation="ModelingProject.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction
+            Id="cc6f9c6d-52c8-4e2e-9c4d-f6a1c2f88adc"
+            name="Purchase Equipment"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="338a7486-9a64-4e0e-8063-6def5847973d"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="ac1137d2-336c-4cd2-8666-e0f79e5fdcf8"
+                  LastKnownName="Record Combat Numbers"
+                  LastKnownLocation="ModelingProject.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction
+            Id="ac1137d2-336c-4cd2-8666-e0f79e5fdcf8"
+            name="Record Combat Numbers"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="ac729cd5-76bb-4f9a-91bc-34513f7ec0de"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="5c0c51a3-9dac-4b03-83d1-9c1f9aebe52e"
+                  LastKnownName="Choose/Determine Name, Gender, Alignment, Age, Appearance, and Finish Description"
+                  LastKnownLocation="ModelingProject.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction
+            Id="5c0c51a3-9dac-4b03-83d1-9c1f9aebe52e"
+            name="Choose/Determine Name, Gender, Alignment, Age, Appearance, and Finish Description"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="faa7072b-72ff-48a3-ab50-2516d6b3c694"
+                isLeaf="false">
+                <activityFinalNodeMoniker
+                  Id="2238b597-7bb7-44c1-9277-e2e53dda2815"
+                  LastKnownName="ActivityFinal1"
+                  LastKnownLocation="ModelingProject.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <activityFinalNode
+            Id="2238b597-7bb7-44c1-9277-e2e53dda2815"
+            name="ActivityFinal1"
+            isLeaf="false" />
+        </nodes>
+      </activity>
     </packageHasNamedElement>
   </packagedElements>
   <primitiveType
