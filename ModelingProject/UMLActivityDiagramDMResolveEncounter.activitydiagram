@@ -1,35 +1,15 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <activityRootModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/dsltools/LogicalClassDesigner" xmlns:dm10="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm11="http://schemas.microsoft.com/dsltools/UseCaseModel" xmlns:dm12="http://schemas.microsoft.com/VisualStudio/TeamArchitect/SequenceDesigner" dslVersion="1.0.0.0" Id="9250d34b-4564-487f-99f4-d3a71ac580ff" name="ActivityDMResolveEncounter" linkedPackageId="54da9a5f-58fb-4496-b9f1-926dabc68619" xmlns="http://schemas.microsoft.com/VisualStudio/TeamArchitect/ActivityDesigner">
   <ownedCommentsInternal>
-    <comment Id="a433c56d-f845-4be9-8c69-9ee38aaae57e">
-      <elementDefinition Id="280bdbda-efd7-443f-8580-ee72c04515b7" />
-      <body>Other side has no action and gains no Dexterity bonus to AC</body>
-      <annotatedElements>
-        <opaqueActionMoniker Id="ad88d530-bf5b-42e4-9d2c-765a3c171875" LastKnownName="Surprise Round - Standard Action" />
-      </annotatedElements>
-    </comment>
     <comment Id="ddc0cbff-55a2-4422-b533-fa7983173764">
       <elementDefinition Id="728c85b7-f479-4175-9c97-789a8752c552" />
-      <body>Unaware members have no action and gain no Dexterity bonus to AC</body>
+      <body>Unaware members have no action and are considered "Flat Footed"
+</body>
       <annotatedElements>
         <opaqueActionMoniker Id="2694465c-7cc2-4dac-85df-1c518dc5d44b" LastKnownName="Standard Action" />
       </annotatedElements>
     </comment>
   </ownedCommentsInternal>
-  <profileInstances>
-    <packageHasProfileInstances Id="6676065e-4282-4027-bd72-445fef9201fe">
-      <profileInstance Id="2033d922-b769-402a-baec-18897fc64e52" name="StandardProfileL2">
-        <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
-      </profileInstance>
-      <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
-    </packageHasProfileInstances>
-    <packageHasProfileInstances Id="facbfc56-64bd-4346-8cc9-b3819c5026c4">
-      <profileInstance Id="60252204-f56a-4764-b55b-d738cff16987" name="StandardProfileL3">
-        <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
-      </profileInstance>
-      <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
-    </packageHasProfileInstances>
-  </profileInstances>
   <packagedElements>
     <activityRootModelHasActivity>
       <activity Id="1a757434-ed7d-4dea-8a13-e6f9b91f2a7d" name="ActivityDMResolveEncounter" isAbstract="false" isLeaf="false" isActiveClass="false" isReentrant="false" isReadOnly="false" isSingleExecution="false">
@@ -48,37 +28,24 @@
             <elementDefinition Id="76d8bf78-022a-44f8-97be-919f768e4be0" />
             <flowNodeTargets>
               <controlFlow Id="0e754bc9-7fc5-4a94-b151-e7117fef5d91" isLeaf="false">
-                <opaqueActionMoniker Id="d2db9626-3d10-4b27-b4cb-9cd5ab23f627" LastKnownName="Determine Who is Aware" />
+                <opaqueActionMoniker Id="d2db9626-3d10-4b27-b4cb-9cd5ab23f627" LastKnownName="Determine Aware Entities" />
                 <elementDefinition Id="ac20acd4-5939-492c-b9f9-357c9f070929" />
               </controlFlow>
             </flowNodeTargets>
           </callBehaviorAction>
-          <decisionNode Id="0716a50f-5664-4564-93da-6bd0e74bd9e2" name="Decision1" isLeaf="false">
+          <decisionNode Id="0716a50f-5664-4564-93da-6bd0e74bd9e2" name="AwarenessDecision" isLeaf="false">
             <elementDefinition Id="6b59ef63-cdd5-4868-88fa-0c003fdd6376" />
             <flowNodeTargets>
-              <controlFlow Id="81937d46-514e-4ae0-af3c-ffe5fae33ada" guard="One Side Aware" isLeaf="false">
-                <opaqueActionMoniker Id="ad88d530-bf5b-42e4-9d2c-765a3c171875" LastKnownName="Surprise Round - Standard Action" />
-                <elementDefinition Id="431903f5-bf12-4044-a4c6-cd4a90fef146" />
-              </controlFlow>
-              <controlFlow Id="ba2fb206-06eb-469f-9547-9a872f3bea0a" guard="Some Creatures on One or Both Side Aware" isLeaf="false">
+              <controlFlow Id="ba2fb206-06eb-469f-9547-9a872f3bea0a" guard="Partial / incomplete Awareness" isLeaf="false">
                 <opaqueActionMoniker Id="2694465c-7cc2-4dac-85df-1c518dc5d44b" LastKnownName="Standard Action" />
                 <elementDefinition Id="660a5d7d-2684-4c7a-9188-799c97b9c620" />
               </controlFlow>
-              <controlFlow Id="28cfdd50-2683-4def-bd70-a75ec4a3019c" guard="Both Sides Aware at the Same Time" isLeaf="false">
+              <controlFlow Id="28cfdd50-2683-4def-bd70-a75ec4a3019c" guard="All entities are aware of each other" isLeaf="false">
                 <mergeNodeMoniker Id="15eb98da-dbba-4ec9-8eb8-5a50df38dde7" LastKnownName="Merge1" />
                 <elementDefinition Id="072890f0-11a1-4d4f-99fa-a027d67d812b" />
               </controlFlow>
             </flowNodeTargets>
           </decisionNode>
-          <opaqueAction Id="ad88d530-bf5b-42e4-9d2c-765a3c171875" name="Surprise Round - Standard Action" isLeaf="false">
-            <elementDefinition Id="9dafe4c8-0767-43a5-b02e-189a6a7e993e" />
-            <flowNodeTargets>
-              <controlFlow Id="e1516746-9dd3-4388-b6fa-20e97f61910f" isLeaf="false">
-                <decisionNodeMoniker Id="813aadde-8bcf-49e8-b5a5-b6e8420fcb41" LastKnownName="Decision2" />
-                <elementDefinition Id="26a4ead8-09b5-4508-9e2c-1e7f81e242b3" />
-              </controlFlow>
-            </flowNodeTargets>
-          </opaqueAction>
           <opaqueAction Id="2694465c-7cc2-4dac-85df-1c518dc5d44b" name="Standard Action" isLeaf="false">
             <elementDefinition Id="e07de1e0-e399-4388-8740-e2a72250fc5d" />
             <flowNodeTargets>
@@ -88,28 +55,15 @@
               </controlFlow>
             </flowNodeTargets>
           </opaqueAction>
-          <opaqueAction Id="d2db9626-3d10-4b27-b4cb-9cd5ab23f627" name="Determine Who is Aware" isLeaf="false">
+          <opaqueAction Id="d2db9626-3d10-4b27-b4cb-9cd5ab23f627" name="Determine Aware Entities" isLeaf="false">
             <elementDefinition Id="b959f623-11d3-49f5-adf7-0bef19355876" />
             <flowNodeTargets>
               <controlFlow Id="bc885701-4fb9-4ed2-b159-9eb1df7a5c2e" isLeaf="false">
-                <decisionNodeMoniker Id="0716a50f-5664-4564-93da-6bd0e74bd9e2" LastKnownName="Decision1" />
+                <decisionNodeMoniker Id="0716a50f-5664-4564-93da-6bd0e74bd9e2" LastKnownName="AwarenessDecision" />
                 <elementDefinition Id="1e2f237c-046c-486e-a5a1-6247439d56e9" />
               </controlFlow>
             </flowNodeTargets>
           </opaqueAction>
-          <decisionNode Id="813aadde-8bcf-49e8-b5a5-b6e8420fcb41" name="Decision2" isLeaf="false">
-            <elementDefinition Id="022e24bb-8924-409d-88f6-a60f120fb258" />
-            <flowNodeTargets>
-              <controlFlow Id="b28397f8-5f24-41c5-a9c5-e03625f7ff45" guard="Remains unknown to other group" isLeaf="false">
-                <opaqueActionMoniker Id="ad88d530-bf5b-42e4-9d2c-765a3c171875" LastKnownName="Surprise Round - Standard Action" />
-                <elementDefinition Id="c4ebaa06-58fe-4092-94ae-e639f37dec0b" />
-              </controlFlow>
-              <controlFlow Id="6236c61a-8904-408b-9d59-3c6dabc589e6" guard="Other group is aware" isLeaf="false">
-                <mergeNodeMoniker Id="15eb98da-dbba-4ec9-8eb8-5a50df38dde7" LastKnownName="Merge1" />
-                <elementDefinition Id="9cab7b1e-9314-4856-9040-cda0b75d54df" />
-              </controlFlow>
-            </flowNodeTargets>
-          </decisionNode>
           <opaqueAction Id="1ad519a3-b6db-461c-98b7-96199656c07e" name="Determine initiative" isLeaf="false">
             <elementDefinition Id="d6616738-b04b-4066-834d-bb2ecdeff22e" />
             <flowNodeTargets>
@@ -122,13 +76,13 @@
           <decisionNode Id="afa9301b-de66-498f-80c7-ac490a659208" name="Decision3" isLeaf="false">
             <elementDefinition Id="9d287041-68f7-4e19-ad7c-6b0f05c02567" />
             <flowNodeTargets>
-              <controlFlow Id="013d9bbe-ffd3-42d5-9139-f737a87bcf31" guard="Some members are Unaware" isLeaf="false">
-                <opaqueActionMoniker Id="2694465c-7cc2-4dac-85df-1c518dc5d44b" LastKnownName="Standard Action" />
-                <elementDefinition Id="c7cfa4b0-a4c8-4a2f-8fce-dcec12395222" />
-              </controlFlow>
               <controlFlow Id="57df4305-0aad-4791-9513-083a71ceb3cd" guard="All members Aware" isLeaf="false">
                 <mergeNodeMoniker Id="15eb98da-dbba-4ec9-8eb8-5a50df38dde7" LastKnownName="Merge1" />
                 <elementDefinition Id="e5dc24a2-c1ce-45ea-9945-41fdad52140b" />
+              </controlFlow>
+              <controlFlow Id="2d2f735d-83ee-4f78-92b6-859021b6a1a5" guard="Incomplete Awareness Persists" isLeaf="false">
+                <opaqueActionMoniker Id="d2db9626-3d10-4b27-b4cb-9cd5ab23f627" LastKnownName="Determine Aware Entities" />
+                <elementDefinition Id="43450af0-da4d-4e29-a5a5-2534aa8a5a6f" />
               </controlFlow>
             </flowNodeTargets>
           </decisionNode>
@@ -136,12 +90,12 @@
             <elementDefinition Id="ab22dd3a-1eab-41c9-941b-77ea54a4cdfd" />
             <flowNodeTargets>
               <controlFlow Id="7e402344-d353-4284-ab9b-ab82cfd7de88" isLeaf="false">
-                <decisionNodeMoniker Id="d4da1630-6ed6-4a8e-a146-f6dde11822ef" LastKnownName="Decision4" />
+                <decisionNodeMoniker Id="d4da1630-6ed6-4a8e-a146-f6dde11822ef" LastKnownName="newcomerCheck" />
                 <elementDefinition Id="c8a25feb-0034-4d8f-89be-f281bcef3433" />
               </controlFlow>
             </flowNodeTargets>
           </mergeNode>
-          <decisionNode Id="d4da1630-6ed6-4a8e-a146-f6dde11822ef" name="Decision4" isLeaf="false">
+          <decisionNode Id="d4da1630-6ed6-4a8e-a146-f6dde11822ef" name="newcomerCheck" isLeaf="false">
             <elementDefinition Id="5207c852-e211-4b1d-b622-6ab301093502" />
             <flowNodeTargets>
               <controlFlow Id="61720ffe-4dc2-41ca-bad9-8a4684bb79ab" guard="No Newcomers" isLeaf="false">
@@ -216,5 +170,19 @@
   </packagedElements>
   <package Id="54da9a5f-58fb-4496-b9f1-926dabc68619" name="ModelingProject">
     <elementDefinition Id="e872a8f9-855e-425c-81a1-62f54c345891" />
+    <profileInstances>
+      <packageHasProfileInstances Id="6676065e-4282-4027-bd72-445fef9201fe">
+        <profileInstance Id="2033d922-b769-402a-baec-18897fc64e52" name="StandardProfileL2">
+          <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+        </profileInstance>
+        <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+      </packageHasProfileInstances>
+      <packageHasProfileInstances Id="facbfc56-64bd-4346-8cc9-b3819c5026c4">
+        <profileInstance Id="60252204-f56a-4764-b55b-d738cff16987" name="StandardProfileL3">
+          <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+        </profileInstance>
+        <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+      </packageHasProfileInstances>
+    </profileInstances>
   </package>
 </activityRootModel>

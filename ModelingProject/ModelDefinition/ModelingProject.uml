@@ -63,22 +63,23 @@
       </annotatedElements>
     </comment>
     <comment
-      Id="280bdbda-efd7-443f-8580-ee72c04515b7">
-      <body>Other side has no action and gains no Dexterity bonus to AC</body>
-      <annotatedElements>
-        <opaqueActionMoniker
-          Id="9dafe4c8-0767-43a5-b02e-189a6a7e993e"
-          LastKnownName="Surprise Round - Standard Action"
-          LastKnownLocation="ModelingProject.uml" />
-      </annotatedElements>
-    </comment>
-    <comment
       Id="728c85b7-f479-4175-9c97-789a8752c552">
-      <body>Unaware members have no action and gain no Dexterity bonus to AC</body>
+      <body>Unaware members have no action and are considered "Flat Footed"
+</body>
       <annotatedElements>
         <opaqueActionMoniker
           Id="e07de1e0-e399-4388-8740-e2a72250fc5d"
           LastKnownName="Standard Action"
+          LastKnownLocation="ModelingProject.uml" />
+      </annotatedElements>
+    </comment>
+    <comment
+      Id="621c20b3-0af6-4284-9ed6-f8f40978ce0f">
+      <body>Due to the complexities involved, and the issues of avaibility, Items will only be handled with direct DM oversight, in person. this system does not offer a mechanic for theirpurchase. </body>
+      <annotatedElements>
+        <opaqueActionMoniker
+          Id="5c0c51a3-9dac-4b03-83d1-9c1f9aebe52e"
+          LastKnownName="Choose/Determine Name, Gender, Age, Appearance, and Write Description for your (the player's) records"
           LastKnownLocation="ModelingProject.uml" />
       </annotatedElements>
     </comment>
@@ -1353,7 +1354,7 @@
                 isLeaf="false">
                 <opaqueActionMoniker
                   Id="a4884307-cfca-45a9-91d5-0e20a4d800f1"
-                  LastKnownName="Record Racial and Class Features"
+                  LastKnownName="Chose Race"
                   LastKnownLocation="ModelingProject.uml" />
               </controlFlow>
             </flowNodeTargets>
@@ -1364,41 +1365,26 @@
             isLeaf="false">
             <flowNodeTargets>
               <controlFlow
-                Id="848668bf-f55a-4ed0-b538-083eaec019b2"
-                isLeaf="false">
-                <opaqueActionMoniker
-                  Id="66dca9fb-ccea-4358-a5e1-d095a85a4b2f"
-                  LastKnownName="Record Starting Package on Character Sheet"
-                  LastKnownLocation="ModelingProject.uml" />
-              </controlFlow>
-            </flowNodeTargets>
-          </opaqueAction>
-          <opaqueAction
-            Id="66dca9fb-ccea-4358-a5e1-d095a85a4b2f"
-            name="Record Starting Package on Character Sheet"
-            isLeaf="false">
-            <flowNodeTargets>
-              <controlFlow
-                Id="eb12d9ad-b3da-4dc0-adbe-d50309fdacbc"
+                Id="586a3afd-8297-4d59-8eb3-f78156b483d7"
                 isLeaf="false">
                 <opaqueActionMoniker
                   Id="721a487f-b3f6-4256-9532-0a90d1271c94"
-                  LastKnownName="Create Charater Description (optional)"
+                  LastKnownName="Choose Alignment"
                   LastKnownLocation="ModelingProject.uml" />
               </controlFlow>
             </flowNodeTargets>
           </opaqueAction>
           <opaqueAction
             Id="a4884307-cfca-45a9-91d5-0e20a4d800f1"
-            name="Record Racial and Class Features"
+            name="Chose Race"
             isLeaf="false">
             <flowNodeTargets>
               <controlFlow
-                Id="a3c63c94-5f5b-4b00-a2d7-4d9faff7e687"
+                Id="a17458b0-30af-4828-832a-13b40b355d89"
                 isLeaf="false">
                 <opaqueActionMoniker
-                  Id="9a95311f-1ad9-4929-bb64-5cf92b4b49bf"
-                  LastKnownName="Select Skills"
+                  Id="e8d44fac-398d-43fd-ac56-21c8923ae84d"
+                  LastKnownName="Choose Class"
                   LastKnownLocation="ModelingProject.uml" />
               </controlFlow>
             </flowNodeTargets>
@@ -1428,112 +1414,29 @@
                 isLeaf="false">
                 <opaqueActionMoniker
                   Id="721a487f-b3f6-4256-9532-0a90d1271c94"
-                  LastKnownName="Create Charater Description (optional)"
+                  LastKnownName="Choose Alignment"
                   LastKnownLocation="ModelingProject.uml" />
               </controlFlow>
             </flowNodeTargets>
           </opaqueAction>
           <opaqueAction
             Id="721a487f-b3f6-4256-9532-0a90d1271c94"
-            name="Create Charater Description (optional)"
+            name="Choose Alignment"
             isLeaf="false">
             <flowNodeTargets>
               <controlFlow
-                Id="02799bc3-9830-4bf6-92eb-a588ddfc37d3"
-                isLeaf="false">
-                <decisionNodeMoniker
-                  Id="5b3bd875-6ae7-4283-badf-2c989848bbad"
-                  LastKnownName="Decision2"
-                  LastKnownLocation="ModelingProject.uml" />
-              </controlFlow>
-            </flowNodeTargets>
-          </opaqueAction>
-          <decisionNode
-            Id="5b3bd875-6ae7-4283-badf-2c989848bbad"
-            name="Decision2"
-            isLeaf="false">
-            <flowNodeTargets>
-              <controlFlow
-                Id="a3e195dc-a8f8-4e2e-a78f-c02526d4f443"
-                isLeaf="false">
-                <opaqueActionMoniker
-                  Id="f1eabe8d-73ee-4d74-9fc9-346f7a9165db"
-                  LastKnownName="Use Starting Pakage Equipment"
-                  LastKnownLocation="ModelingProject.uml" />
-              </controlFlow>
-              <controlFlow
-                Id="361ece22-edb3-4697-95e6-93ce28b16da0"
-                isLeaf="false">
-                <opaqueActionMoniker
-                  Id="d984ddae-546a-4400-b004-f28e37820e05"
-                  LastKnownName="Randonly Determine Starting Gold"
-                  LastKnownLocation="ModelingProject.uml" />
-              </controlFlow>
-            </flowNodeTargets>
-          </decisionNode>
-          <opaqueAction
-            Id="f1eabe8d-73ee-4d74-9fc9-346f7a9165db"
-            name="Use Starting Pakage Equipment"
-            isLeaf="false">
-            <flowNodeTargets>
-              <controlFlow
-                Id="ef3043f8-964e-4ff4-a4b5-d0d9281fc6b9"
-                isLeaf="false">
-                <opaqueActionMoniker
-                  Id="ac1137d2-336c-4cd2-8666-e0f79e5fdcf8"
-                  LastKnownName="Record Combat Numbers"
-                  LastKnownLocation="ModelingProject.uml" />
-              </controlFlow>
-            </flowNodeTargets>
-          </opaqueAction>
-          <opaqueAction
-            Id="d984ddae-546a-4400-b004-f28e37820e05"
-            name="Randonly Determine Starting Gold"
-            isLeaf="false">
-            <flowNodeTargets>
-              <controlFlow
-                Id="2e26d461-6a38-432c-a5a3-4f26f5113a1f"
-                isLeaf="false">
-                <opaqueActionMoniker
-                  Id="cc6f9c6d-52c8-4e2e-9c4d-f6a1c2f88adc"
-                  LastKnownName="Purchase Equipment"
-                  LastKnownLocation="ModelingProject.uml" />
-              </controlFlow>
-            </flowNodeTargets>
-          </opaqueAction>
-          <opaqueAction
-            Id="cc6f9c6d-52c8-4e2e-9c4d-f6a1c2f88adc"
-            name="Purchase Equipment"
-            isLeaf="false">
-            <flowNodeTargets>
-              <controlFlow
-                Id="338a7486-9a64-4e0e-8063-6def5847973d"
-                isLeaf="false">
-                <opaqueActionMoniker
-                  Id="ac1137d2-336c-4cd2-8666-e0f79e5fdcf8"
-                  LastKnownName="Record Combat Numbers"
-                  LastKnownLocation="ModelingProject.uml" />
-              </controlFlow>
-            </flowNodeTargets>
-          </opaqueAction>
-          <opaqueAction
-            Id="ac1137d2-336c-4cd2-8666-e0f79e5fdcf8"
-            name="Record Combat Numbers"
-            isLeaf="false">
-            <flowNodeTargets>
-              <controlFlow
-                Id="ac729cd5-76bb-4f9a-91bc-34513f7ec0de"
+                Id="f1a38fe5-36f5-4372-9f5a-9248287ba696"
                 isLeaf="false">
                 <opaqueActionMoniker
                   Id="5c0c51a3-9dac-4b03-83d1-9c1f9aebe52e"
-                  LastKnownName="Choose/Determine Name, Gender, Alignment, Age, Appearance, and Finish Description"
+                  LastKnownName="Choose/Determine Name, Gender, Age, Appearance, and Write Description for your (the player's) records"
                   LastKnownLocation="ModelingProject.uml" />
               </controlFlow>
             </flowNodeTargets>
           </opaqueAction>
           <opaqueAction
             Id="5c0c51a3-9dac-4b03-83d1-9c1f9aebe52e"
-            name="Choose/Determine Name, Gender, Alignment, Age, Appearance, and Finish Description"
+            name="Choose/Determine Name, Gender, Age, Appearance, and Write Description for your (the player's) records"
             isLeaf="false">
             <flowNodeTargets>
               <controlFlow
@@ -1550,6 +1453,21 @@
             Id="2238b597-7bb7-44c1-9277-e2e53dda2815"
             name="ActivityFinal1"
             isLeaf="false" />
+          <opaqueAction
+            Id="e8d44fac-398d-43fd-ac56-21c8923ae84d"
+            name="Choose Class"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="dfde292b-a82e-40ab-8030-54f16eeeb09b"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="9a95311f-1ad9-4929-bb64-5cf92b4b49bf"
+                  LastKnownName="Select Skills"
+                  LastKnownLocation="ModelingProject.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
         </nodes>
       </activity>
     </packageHasNamedElement>
@@ -1755,6 +1673,16 @@
             </operands>
           </combinedFragment>
           <operandOccurrenceSpecification
+            Id="1774e307-8f49-4c85-81b8-d4efc1a5b547"
+            name="OperandOccurrenceSpecification1">
+            <covered>
+              <lifelineMoniker
+                Id="8736055b-4e0b-4d7a-affb-680599abfe44"
+                LastKnownName="Dice"
+                LastKnownLocation="ModelingProject.uml" />
+            </covered>
+          </operandOccurrenceSpecification>
+          <operandOccurrenceSpecification
             Id="4ba00bda-6836-434a-87bc-f60cc6bec70d"
             name="OperandOccurrenceSpecification5">
             <covered>
@@ -1771,16 +1699,6 @@
               <lifelineMoniker
                 Id="c9328f79-3260-41a3-ba5a-c262a85f6bf2"
                 LastKnownName="Player"
-                LastKnownLocation="ModelingProject.uml" />
-            </covered>
-          </operandOccurrenceSpecification>
-          <operandOccurrenceSpecification
-            Id="1774e307-8f49-4c85-81b8-d4efc1a5b547"
-            name="OperandOccurrenceSpecification1">
-            <covered>
-              <lifelineMoniker
-                Id="8736055b-4e0b-4d7a-affb-680599abfe44"
-                LastKnownName="Dice"
                 LastKnownLocation="ModelingProject.uml" />
             </covered>
           </operandOccurrenceSpecification>
@@ -2001,12 +1919,12 @@
             </covered>
           </executionOccurrenceSpecification>
           <operandOccurrenceSpecification
-            Id="a768d8b4-3c7b-40cf-b88d-dc81c0e17c49"
-            name="OperandOccurrenceSpecification2">
+            Id="643ee2a4-c2b3-4833-a450-87957ed3846f"
+            name="OperandOccurrenceSpecification6">
             <covered>
               <lifelineMoniker
-                Id="8736055b-4e0b-4d7a-affb-680599abfe44"
-                LastKnownName="Dice"
+                Id="31d84cb8-99b2-46c1-9753-fbcd8c96a00c"
+                LastKnownName="Computer"
                 LastKnownLocation="ModelingProject.uml" />
             </covered>
           </operandOccurrenceSpecification>
@@ -2021,12 +1939,12 @@
             </covered>
           </operandOccurrenceSpecification>
           <operandOccurrenceSpecification
-            Id="643ee2a4-c2b3-4833-a450-87957ed3846f"
-            name="OperandOccurrenceSpecification6">
+            Id="a768d8b4-3c7b-40cf-b88d-dc81c0e17c49"
+            name="OperandOccurrenceSpecification2">
             <covered>
               <lifelineMoniker
-                Id="31d84cb8-99b2-46c1-9753-fbcd8c96a00c"
-                LastKnownName="Computer"
+                Id="8736055b-4e0b-4d7a-affb-680599abfe44"
+                LastKnownName="Dice"
                 LastKnownLocation="ModelingProject.uml" />
             </covered>
           </operandOccurrenceSpecification>
@@ -2174,22 +2092,22 @@
             </covered>
           </messageOccurrenceSpecification>
           <messageOccurrenceSpecification
-            Id="99fb910c-f8b1-4e5b-9b24-cff06f48898d"
-            name="MessageOccurrenceSpecification23">
-            <covered>
-              <lifelineMoniker
-                Id="31d84cb8-99b2-46c1-9753-fbcd8c96a00c"
-                LastKnownName="Computer"
-                LastKnownLocation="ModelingProject.uml" />
-            </covered>
-          </messageOccurrenceSpecification>
-          <messageOccurrenceSpecification
             Id="b5414102-a673-41e9-bab1-8fde44d272a1"
             name="MessageOccurrenceSpecification24">
             <covered>
               <lifelineMoniker
                 Id="6d1fd3da-070f-4673-9539-79981b486e79"
                 LastKnownName="Player"
+                LastKnownLocation="ModelingProject.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="99fb910c-f8b1-4e5b-9b24-cff06f48898d"
+            name="MessageOccurrenceSpecification23">
+            <covered>
+              <lifelineMoniker
+                Id="31d84cb8-99b2-46c1-9753-fbcd8c96a00c"
+                LastKnownName="Computer"
                 LastKnownLocation="ModelingProject.uml" />
             </covered>
           </messageOccurrenceSpecification>
@@ -2598,12 +2516,12 @@
             customInteractionOperator="Starting Package">
             <coveredLifelines>
               <lifelineMoniker
-                Id="31d84cb8-99b2-46c1-9753-fbcd8c96a00c"
-                LastKnownName="Computer"
-                LastKnownLocation="ModelingProject.uml" />
-              <lifelineMoniker
                 Id="6d1fd3da-070f-4673-9539-79981b486e79"
                 LastKnownName="Player"
+                LastKnownLocation="ModelingProject.uml" />
+              <lifelineMoniker
+                Id="31d84cb8-99b2-46c1-9753-fbcd8c96a00c"
+                LastKnownName="Computer"
                 LastKnownLocation="ModelingProject.uml" />
             </coveredLifelines>
             <operands>
@@ -2612,12 +2530,12 @@
                 name="InteractionOperand1">
                 <coveredLifelines>
                   <lifelineMoniker
-                    Id="31d84cb8-99b2-46c1-9753-fbcd8c96a00c"
-                    LastKnownName="Computer"
-                    LastKnownLocation="ModelingProject.uml" />
-                  <lifelineMoniker
                     Id="6d1fd3da-070f-4673-9539-79981b486e79"
                     LastKnownName="Player"
+                    LastKnownLocation="ModelingProject.uml" />
+                  <lifelineMoniker
+                    Id="31d84cb8-99b2-46c1-9753-fbcd8c96a00c"
+                    LastKnownName="Computer"
                     LastKnownLocation="ModelingProject.uml" />
                 </coveredLifelines>
                 <guard>
@@ -2648,12 +2566,12 @@
                 name="InteractionOperand2">
                 <coveredLifelines>
                   <lifelineMoniker
-                    Id="31d84cb8-99b2-46c1-9753-fbcd8c96a00c"
-                    LastKnownName="Computer"
-                    LastKnownLocation="ModelingProject.uml" />
-                  <lifelineMoniker
                     Id="6d1fd3da-070f-4673-9539-79981b486e79"
                     LastKnownName="Player"
+                    LastKnownLocation="ModelingProject.uml" />
+                  <lifelineMoniker
+                    Id="31d84cb8-99b2-46c1-9753-fbcd8c96a00c"
+                    LastKnownName="Computer"
                     LastKnownLocation="ModelingProject.uml" />
                 </coveredLifelines>
                 <guard>
@@ -3212,12 +3130,12 @@
             interactionOperator="Opt">
             <coveredLifelines>
               <lifelineMoniker
-                Id="31d84cb8-99b2-46c1-9753-fbcd8c96a00c"
-                LastKnownName="Computer"
-                LastKnownLocation="ModelingProject.uml" />
-              <lifelineMoniker
                 Id="6d1fd3da-070f-4673-9539-79981b486e79"
                 LastKnownName="Player"
+                LastKnownLocation="ModelingProject.uml" />
+              <lifelineMoniker
+                Id="31d84cb8-99b2-46c1-9753-fbcd8c96a00c"
+                LastKnownName="Computer"
                 LastKnownLocation="ModelingProject.uml" />
             </coveredLifelines>
             <operands>
@@ -3226,12 +3144,12 @@
                 name="InteractionOperand1">
                 <coveredLifelines>
                   <lifelineMoniker
-                    Id="31d84cb8-99b2-46c1-9753-fbcd8c96a00c"
-                    LastKnownName="Computer"
-                    LastKnownLocation="ModelingProject.uml" />
-                  <lifelineMoniker
                     Id="6d1fd3da-070f-4673-9539-79981b486e79"
                     LastKnownName="Player"
+                    LastKnownLocation="ModelingProject.uml" />
+                  <lifelineMoniker
+                    Id="31d84cb8-99b2-46c1-9753-fbcd8c96a00c"
+                    LastKnownName="Computer"
                     LastKnownLocation="ModelingProject.uml" />
                 </coveredLifelines>
                 <guard>
@@ -3260,22 +3178,22 @@
             </operands>
           </combinedFragment>
           <operandOccurrenceSpecification
-            Id="239066d5-c5f9-4f0f-ba7c-179abcda8acf"
-            name="OperandOccurrenceSpecification61">
-            <covered>
-              <lifelineMoniker
-                Id="6d1fd3da-070f-4673-9539-79981b486e79"
-                LastKnownName="Player"
-                LastKnownLocation="ModelingProject.uml" />
-            </covered>
-          </operandOccurrenceSpecification>
-          <operandOccurrenceSpecification
             Id="6bb1defb-9354-406a-a28b-4c7a6cdcd120"
             name="OperandOccurrenceSpecification59">
             <covered>
               <lifelineMoniker
                 Id="31d84cb8-99b2-46c1-9753-fbcd8c96a00c"
                 LastKnownName="Computer"
+                LastKnownLocation="ModelingProject.uml" />
+            </covered>
+          </operandOccurrenceSpecification>
+          <operandOccurrenceSpecification
+            Id="239066d5-c5f9-4f0f-ba7c-179abcda8acf"
+            name="OperandOccurrenceSpecification61">
+            <covered>
+              <lifelineMoniker
+                Id="6d1fd3da-070f-4673-9539-79981b486e79"
+                LastKnownName="Player"
                 LastKnownLocation="ModelingProject.uml" />
             </covered>
           </operandOccurrenceSpecification>
@@ -3390,16 +3308,16 @@
             customInteractionOperator="Starting Package">
             <coveredLifelines>
               <lifelineMoniker
-                Id="31d84cb8-99b2-46c1-9753-fbcd8c96a00c"
-                LastKnownName="Computer"
-                LastKnownLocation="ModelingProject.uml" />
-              <lifelineMoniker
                 Id="6d1fd3da-070f-4673-9539-79981b486e79"
                 LastKnownName="Player"
                 LastKnownLocation="ModelingProject.uml" />
               <lifelineMoniker
                 Id="8736055b-4e0b-4d7a-affb-680599abfe44"
                 LastKnownName="Dice"
+                LastKnownLocation="ModelingProject.uml" />
+              <lifelineMoniker
+                Id="31d84cb8-99b2-46c1-9753-fbcd8c96a00c"
+                LastKnownName="Computer"
                 LastKnownLocation="ModelingProject.uml" />
             </coveredLifelines>
             <operands>
@@ -3408,16 +3326,16 @@
                 name="InteractionOperand1">
                 <coveredLifelines>
                   <lifelineMoniker
-                    Id="31d84cb8-99b2-46c1-9753-fbcd8c96a00c"
-                    LastKnownName="Computer"
-                    LastKnownLocation="ModelingProject.uml" />
-                  <lifelineMoniker
                     Id="6d1fd3da-070f-4673-9539-79981b486e79"
                     LastKnownName="Player"
                     LastKnownLocation="ModelingProject.uml" />
                   <lifelineMoniker
                     Id="8736055b-4e0b-4d7a-affb-680599abfe44"
                     LastKnownName="Dice"
+                    LastKnownLocation="ModelingProject.uml" />
+                  <lifelineMoniker
+                    Id="31d84cb8-99b2-46c1-9753-fbcd8c96a00c"
+                    LastKnownName="Computer"
                     LastKnownLocation="ModelingProject.uml" />
                 </coveredLifelines>
                 <guard>
@@ -3456,16 +3374,16 @@
                 name="InteractionOperand2">
                 <coveredLifelines>
                   <lifelineMoniker
-                    Id="31d84cb8-99b2-46c1-9753-fbcd8c96a00c"
-                    LastKnownName="Computer"
-                    LastKnownLocation="ModelingProject.uml" />
-                  <lifelineMoniker
                     Id="6d1fd3da-070f-4673-9539-79981b486e79"
                     LastKnownName="Player"
                     LastKnownLocation="ModelingProject.uml" />
                   <lifelineMoniker
                     Id="8736055b-4e0b-4d7a-affb-680599abfe44"
                     LastKnownName="Dice"
+                    LastKnownLocation="ModelingProject.uml" />
+                  <lifelineMoniker
+                    Id="31d84cb8-99b2-46c1-9753-fbcd8c96a00c"
+                    LastKnownName="Computer"
                     LastKnownLocation="ModelingProject.uml" />
                 </coveredLifelines>
                 <guard>
@@ -3503,12 +3421,12 @@
             </operands>
           </combinedFragment>
           <operandOccurrenceSpecification
-            Id="bc40335d-330d-43ee-988a-22051f91584e"
-            name="OperandOccurrenceSpecification55">
+            Id="d5c82962-6336-45e1-9eac-01b3281a508a"
+            name="OperandOccurrenceSpecification49">
             <covered>
               <lifelineMoniker
-                Id="8736055b-4e0b-4d7a-affb-680599abfe44"
-                LastKnownName="Dice"
+                Id="6d1fd3da-070f-4673-9539-79981b486e79"
+                LastKnownName="Player"
                 LastKnownLocation="ModelingProject.uml" />
             </covered>
           </operandOccurrenceSpecification>
@@ -3523,12 +3441,12 @@
             </covered>
           </operandOccurrenceSpecification>
           <operandOccurrenceSpecification
-            Id="d5c82962-6336-45e1-9eac-01b3281a508a"
-            name="OperandOccurrenceSpecification49">
+            Id="bc40335d-330d-43ee-988a-22051f91584e"
+            name="OperandOccurrenceSpecification55">
             <covered>
               <lifelineMoniker
-                Id="6d1fd3da-070f-4673-9539-79981b486e79"
-                LastKnownName="Player"
+                Id="8736055b-4e0b-4d7a-affb-680599abfe44"
+                LastKnownName="Dice"
                 LastKnownLocation="ModelingProject.uml" />
             </covered>
           </operandOccurrenceSpecification>
@@ -3617,16 +3535,6 @@
             </covered>
           </executionOccurrenceSpecification>
           <operandOccurrenceSpecification
-            Id="afbe65e2-806a-44e5-b83d-26ae56f0d6ab"
-            name="OperandOccurrenceSpecification50">
-            <covered>
-              <lifelineMoniker
-                Id="6d1fd3da-070f-4673-9539-79981b486e79"
-                LastKnownName="Player"
-                LastKnownLocation="ModelingProject.uml" />
-            </covered>
-          </operandOccurrenceSpecification>
-          <operandOccurrenceSpecification
             Id="2262f4a3-1c15-412a-9427-896643166ce8"
             name="OperandOccurrenceSpecification56">
             <covered>
@@ -3643,6 +3551,16 @@
               <lifelineMoniker
                 Id="31d84cb8-99b2-46c1-9753-fbcd8c96a00c"
                 LastKnownName="Computer"
+                LastKnownLocation="ModelingProject.uml" />
+            </covered>
+          </operandOccurrenceSpecification>
+          <operandOccurrenceSpecification
+            Id="afbe65e2-806a-44e5-b83d-26ae56f0d6ab"
+            name="OperandOccurrenceSpecification50">
+            <covered>
+              <lifelineMoniker
+                Id="6d1fd3da-070f-4673-9539-79981b486e79"
+                LastKnownName="Player"
                 LastKnownLocation="ModelingProject.uml" />
             </covered>
           </operandOccurrenceSpecification>
@@ -4728,7 +4646,7 @@
           </message>
           <message
             Id="1e4f38b6-7340-43e6-a937-e54b7955e3cb"
-            name="RecordSselected Race"
+            name="Record Selected Race"
             messageKind="Complete"
             messageSort="AsynchCall"
             createSelfMessage="false">
@@ -4956,7 +4874,7 @@
           </message>
           <message
             Id="4d6e120d-edfb-467b-8777-8e66fc013e3f"
-            name="Purchase Equioment and Record"
+            name="Purchase Equipment and Record"
             messageKind="Complete"
             messageSort="AsynchCall"
             createSelfMessage="false">
@@ -4975,7 +4893,7 @@
           </message>
           <message
             Id="c728b502-c2e4-4ef5-a85f-62502c6fada4"
-            name="Recodr Combat Numbers"
+            name="Record Combat Numbers"
             messageKind="Complete"
             messageSort="AsynchCall"
             createSelfMessage="false">
@@ -5290,28 +5208,19 @@
                 isLeaf="false">
                 <opaqueActionMoniker
                   Id="b959f623-11d3-49f5-adf7-0bef19355876"
-                  LastKnownName="Determine Who is Aware"
+                  LastKnownName="Determine Aware Entities"
                   LastKnownLocation="ModelingProject.uml" />
               </controlFlow>
             </flowNodeTargets>
           </callBehaviorAction>
           <decisionNode
             Id="6b59ef63-cdd5-4868-88fa-0c003fdd6376"
-            name="Decision1"
+            name="AwarenessDecision"
             isLeaf="false">
             <flowNodeTargets>
               <controlFlow
-                Id="431903f5-bf12-4044-a4c6-cd4a90fef146"
-                guard="One Side Aware"
-                isLeaf="false">
-                <opaqueActionMoniker
-                  Id="9dafe4c8-0767-43a5-b02e-189a6a7e993e"
-                  LastKnownName="Surprise Round - Standard Action"
-                  LastKnownLocation="ModelingProject.uml" />
-              </controlFlow>
-              <controlFlow
                 Id="660a5d7d-2684-4c7a-9188-799c97b9c620"
-                guard="Some Creatures on One or Both Side Aware"
+                guard="Partial / incomplete Awareness"
                 isLeaf="false">
                 <opaqueActionMoniker
                   Id="e07de1e0-e399-4388-8740-e2a72250fc5d"
@@ -5320,7 +5229,7 @@
               </controlFlow>
               <controlFlow
                 Id="072890f0-11a1-4d4f-99fa-a027d67d812b"
-                guard="Both Sides Aware at the Same Time"
+                guard="All entities are aware of each other"
                 isLeaf="false">
                 <mergeNodeMoniker
                   Id="ab22dd3a-1eab-41c9-941b-77ea54a4cdfd"
@@ -5329,21 +5238,6 @@
               </controlFlow>
             </flowNodeTargets>
           </decisionNode>
-          <opaqueAction
-            Id="9dafe4c8-0767-43a5-b02e-189a6a7e993e"
-            name="Surprise Round - Standard Action"
-            isLeaf="false">
-            <flowNodeTargets>
-              <controlFlow
-                Id="26a4ead8-09b5-4508-9e2c-1e7f81e242b3"
-                isLeaf="false">
-                <decisionNodeMoniker
-                  Id="022e24bb-8924-409d-88f6-a60f120fb258"
-                  LastKnownName="Decision2"
-                  LastKnownLocation="ModelingProject.uml" />
-              </controlFlow>
-            </flowNodeTargets>
-          </opaqueAction>
           <opaqueAction
             Id="e07de1e0-e399-4388-8740-e2a72250fc5d"
             name="Standard Action"
@@ -5361,7 +5255,7 @@
           </opaqueAction>
           <opaqueAction
             Id="b959f623-11d3-49f5-adf7-0bef19355876"
-            name="Determine Who is Aware"
+            name="Determine Aware Entities"
             isLeaf="false">
             <flowNodeTargets>
               <controlFlow
@@ -5369,36 +5263,11 @@
                 isLeaf="false">
                 <decisionNodeMoniker
                   Id="6b59ef63-cdd5-4868-88fa-0c003fdd6376"
-                  LastKnownName="Decision1"
+                  LastKnownName="AwarenessDecision"
                   LastKnownLocation="ModelingProject.uml" />
               </controlFlow>
             </flowNodeTargets>
           </opaqueAction>
-          <decisionNode
-            Id="022e24bb-8924-409d-88f6-a60f120fb258"
-            name="Decision2"
-            isLeaf="false">
-            <flowNodeTargets>
-              <controlFlow
-                Id="c4ebaa06-58fe-4092-94ae-e639f37dec0b"
-                guard="Remains unknown to other group"
-                isLeaf="false">
-                <opaqueActionMoniker
-                  Id="9dafe4c8-0767-43a5-b02e-189a6a7e993e"
-                  LastKnownName="Surprise Round - Standard Action"
-                  LastKnownLocation="ModelingProject.uml" />
-              </controlFlow>
-              <controlFlow
-                Id="9cab7b1e-9314-4856-9040-cda0b75d54df"
-                guard="Other group is aware"
-                isLeaf="false">
-                <mergeNodeMoniker
-                  Id="ab22dd3a-1eab-41c9-941b-77ea54a4cdfd"
-                  LastKnownName="Merge1"
-                  LastKnownLocation="ModelingProject.uml" />
-              </controlFlow>
-            </flowNodeTargets>
-          </decisionNode>
           <opaqueAction
             Id="d6616738-b04b-4066-834d-bb2ecdeff22e"
             name="Determine initiative"
@@ -5420,21 +5289,21 @@
             isLeaf="false">
             <flowNodeTargets>
               <controlFlow
-                Id="c7cfa4b0-a4c8-4a2f-8fce-dcec12395222"
-                guard="Some members are Unaware"
-                isLeaf="false">
-                <opaqueActionMoniker
-                  Id="e07de1e0-e399-4388-8740-e2a72250fc5d"
-                  LastKnownName="Standard Action"
-                  LastKnownLocation="ModelingProject.uml" />
-              </controlFlow>
-              <controlFlow
                 Id="e5dc24a2-c1ce-45ea-9945-41fdad52140b"
                 guard="All members Aware"
                 isLeaf="false">
                 <mergeNodeMoniker
                   Id="ab22dd3a-1eab-41c9-941b-77ea54a4cdfd"
                   LastKnownName="Merge1"
+                  LastKnownLocation="ModelingProject.uml" />
+              </controlFlow>
+              <controlFlow
+                Id="43450af0-da4d-4e29-a5a5-2534aa8a5a6f"
+                guard="Incomplete Awareness Persists"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="b959f623-11d3-49f5-adf7-0bef19355876"
+                  LastKnownName="Determine Aware Entities"
                   LastKnownLocation="ModelingProject.uml" />
               </controlFlow>
             </flowNodeTargets>
@@ -5449,14 +5318,14 @@
                 isLeaf="false">
                 <decisionNodeMoniker
                   Id="5207c852-e211-4b1d-b622-6ab301093502"
-                  LastKnownName="Decision4"
+                  LastKnownName="newcomerCheck"
                   LastKnownLocation="ModelingProject.uml" />
               </controlFlow>
             </flowNodeTargets>
           </mergeNode>
           <decisionNode
             Id="5207c852-e211-4b1d-b622-6ab301093502"
-            name="Decision4"
+            name="newcomerCheck"
             isLeaf="false">
             <flowNodeTargets>
               <controlFlow
