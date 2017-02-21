@@ -1,0 +1,220 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<activityRootModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/dsltools/LogicalClassDesigner" xmlns:dm10="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm11="http://schemas.microsoft.com/dsltools/UseCaseModel" xmlns:dm12="http://schemas.microsoft.com/VisualStudio/TeamArchitect/SequenceDesigner" dslVersion="1.0.0.0" Id="9250d34b-4564-487f-99f4-d3a71ac580ff" name="ActivityDMResolveEncounter" linkedPackageId="54da9a5f-58fb-4496-b9f1-926dabc68619" xmlns="http://schemas.microsoft.com/VisualStudio/TeamArchitect/ActivityDesigner">
+  <ownedCommentsInternal>
+    <comment Id="a433c56d-f845-4be9-8c69-9ee38aaae57e">
+      <elementDefinition Id="280bdbda-efd7-443f-8580-ee72c04515b7" />
+      <body>Other side has no action and gains no Dexterity bonus to AC</body>
+      <annotatedElements>
+        <opaqueActionMoniker Id="ad88d530-bf5b-42e4-9d2c-765a3c171875" LastKnownName="Surprise Round - Standard Action" />
+      </annotatedElements>
+    </comment>
+    <comment Id="ddc0cbff-55a2-4422-b533-fa7983173764">
+      <elementDefinition Id="728c85b7-f479-4175-9c97-789a8752c552" />
+      <body>Unaware members have no action and gain no Dexterity bonus to AC</body>
+      <annotatedElements>
+        <opaqueActionMoniker Id="2694465c-7cc2-4dac-85df-1c518dc5d44b" LastKnownName="Standard Action" />
+      </annotatedElements>
+    </comment>
+  </ownedCommentsInternal>
+  <profileInstances>
+    <packageHasProfileInstances Id="6676065e-4282-4027-bd72-445fef9201fe">
+      <profileInstance Id="2033d922-b769-402a-baec-18897fc64e52" name="StandardProfileL2">
+        <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+      </profileInstance>
+      <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+    </packageHasProfileInstances>
+    <packageHasProfileInstances Id="facbfc56-64bd-4346-8cc9-b3819c5026c4">
+      <profileInstance Id="60252204-f56a-4764-b55b-d738cff16987" name="StandardProfileL3">
+        <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+      </profileInstance>
+      <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+    </packageHasProfileInstances>
+  </profileInstances>
+  <packagedElements>
+    <activityRootModelHasActivity>
+      <activity Id="1a757434-ed7d-4dea-8a13-e6f9b91f2a7d" name="ActivityDMResolveEncounter" isAbstract="false" isLeaf="false" isActiveClass="false" isReentrant="false" isReadOnly="false" isSingleExecution="false">
+        <elementDefinition Id="8f995028-8eb9-4f0d-bfff-1378a707b7f7" />
+        <nodes>
+          <initialNode Id="16467882-ba23-4d48-84a3-3ae2dc4cedb5" name="Initial1" isLeaf="false">
+            <elementDefinition Id="0ebc8018-6e58-49be-98a6-82519271db44" />
+            <flowNodeTargets>
+              <controlFlow Id="5d484fbb-f74f-45ee-b360-55a2bf54001a" isLeaf="false">
+                <callBehaviorActionMoniker Id="6600d963-a352-47cc-a6e7-2803ce1afa1a" LastKnownName="DMGenerateActivity" />
+                <elementDefinition Id="63dee940-6786-4ac5-b4f3-62d5141cb1a4" />
+              </controlFlow>
+            </flowNodeTargets>
+          </initialNode>
+          <callBehaviorAction Id="6600d963-a352-47cc-a6e7-2803ce1afa1a" name="DMGenerateActivity" isLeaf="false">
+            <elementDefinition Id="76d8bf78-022a-44f8-97be-919f768e4be0" />
+            <flowNodeTargets>
+              <controlFlow Id="0e754bc9-7fc5-4a94-b151-e7117fef5d91" isLeaf="false">
+                <opaqueActionMoniker Id="d2db9626-3d10-4b27-b4cb-9cd5ab23f627" LastKnownName="Determine Who is Aware" />
+                <elementDefinition Id="ac20acd4-5939-492c-b9f9-357c9f070929" />
+              </controlFlow>
+            </flowNodeTargets>
+          </callBehaviorAction>
+          <decisionNode Id="0716a50f-5664-4564-93da-6bd0e74bd9e2" name="Decision1" isLeaf="false">
+            <elementDefinition Id="6b59ef63-cdd5-4868-88fa-0c003fdd6376" />
+            <flowNodeTargets>
+              <controlFlow Id="81937d46-514e-4ae0-af3c-ffe5fae33ada" guard="One Side Aware" isLeaf="false">
+                <opaqueActionMoniker Id="ad88d530-bf5b-42e4-9d2c-765a3c171875" LastKnownName="Surprise Round - Standard Action" />
+                <elementDefinition Id="431903f5-bf12-4044-a4c6-cd4a90fef146" />
+              </controlFlow>
+              <controlFlow Id="ba2fb206-06eb-469f-9547-9a872f3bea0a" guard="Some Creatures on One or Both Side Aware" isLeaf="false">
+                <opaqueActionMoniker Id="2694465c-7cc2-4dac-85df-1c518dc5d44b" LastKnownName="Standard Action" />
+                <elementDefinition Id="660a5d7d-2684-4c7a-9188-799c97b9c620" />
+              </controlFlow>
+              <controlFlow Id="28cfdd50-2683-4def-bd70-a75ec4a3019c" guard="Both Sides Aware at the Same Time" isLeaf="false">
+                <mergeNodeMoniker Id="15eb98da-dbba-4ec9-8eb8-5a50df38dde7" LastKnownName="Merge1" />
+                <elementDefinition Id="072890f0-11a1-4d4f-99fa-a027d67d812b" />
+              </controlFlow>
+            </flowNodeTargets>
+          </decisionNode>
+          <opaqueAction Id="ad88d530-bf5b-42e4-9d2c-765a3c171875" name="Surprise Round - Standard Action" isLeaf="false">
+            <elementDefinition Id="9dafe4c8-0767-43a5-b02e-189a6a7e993e" />
+            <flowNodeTargets>
+              <controlFlow Id="e1516746-9dd3-4388-b6fa-20e97f61910f" isLeaf="false">
+                <decisionNodeMoniker Id="813aadde-8bcf-49e8-b5a5-b6e8420fcb41" LastKnownName="Decision2" />
+                <elementDefinition Id="26a4ead8-09b5-4508-9e2c-1e7f81e242b3" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction Id="2694465c-7cc2-4dac-85df-1c518dc5d44b" name="Standard Action" isLeaf="false">
+            <elementDefinition Id="e07de1e0-e399-4388-8740-e2a72250fc5d" />
+            <flowNodeTargets>
+              <controlFlow Id="992ee0d7-589f-4293-bdea-06c08d35f71d" isLeaf="false">
+                <decisionNodeMoniker Id="afa9301b-de66-498f-80c7-ac490a659208" LastKnownName="Decision3" />
+                <elementDefinition Id="70dc316c-fc69-4362-bca8-22ee17e65906" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction Id="d2db9626-3d10-4b27-b4cb-9cd5ab23f627" name="Determine Who is Aware" isLeaf="false">
+            <elementDefinition Id="b959f623-11d3-49f5-adf7-0bef19355876" />
+            <flowNodeTargets>
+              <controlFlow Id="bc885701-4fb9-4ed2-b159-9eb1df7a5c2e" isLeaf="false">
+                <decisionNodeMoniker Id="0716a50f-5664-4564-93da-6bd0e74bd9e2" LastKnownName="Decision1" />
+                <elementDefinition Id="1e2f237c-046c-486e-a5a1-6247439d56e9" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <decisionNode Id="813aadde-8bcf-49e8-b5a5-b6e8420fcb41" name="Decision2" isLeaf="false">
+            <elementDefinition Id="022e24bb-8924-409d-88f6-a60f120fb258" />
+            <flowNodeTargets>
+              <controlFlow Id="b28397f8-5f24-41c5-a9c5-e03625f7ff45" guard="Remains unknown to other group" isLeaf="false">
+                <opaqueActionMoniker Id="ad88d530-bf5b-42e4-9d2c-765a3c171875" LastKnownName="Surprise Round - Standard Action" />
+                <elementDefinition Id="c4ebaa06-58fe-4092-94ae-e639f37dec0b" />
+              </controlFlow>
+              <controlFlow Id="6236c61a-8904-408b-9d59-3c6dabc589e6" guard="Other group is aware" isLeaf="false">
+                <mergeNodeMoniker Id="15eb98da-dbba-4ec9-8eb8-5a50df38dde7" LastKnownName="Merge1" />
+                <elementDefinition Id="9cab7b1e-9314-4856-9040-cda0b75d54df" />
+              </controlFlow>
+            </flowNodeTargets>
+          </decisionNode>
+          <opaqueAction Id="1ad519a3-b6db-461c-98b7-96199656c07e" name="Determine initiative" isLeaf="false">
+            <elementDefinition Id="d6616738-b04b-4066-834d-bb2ecdeff22e" />
+            <flowNodeTargets>
+              <controlFlow Id="796f184f-6630-4f7c-9a64-5944aa09270b" isLeaf="false">
+                <opaqueActionMoniker Id="c4aa2d4b-c6bb-4b18-b32f-7af9b94ecb2e" LastKnownName="Detemine Action and targets of All  Combatants" />
+                <elementDefinition Id="99b85e50-d0a6-4306-b547-0c83d1052206" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <decisionNode Id="afa9301b-de66-498f-80c7-ac490a659208" name="Decision3" isLeaf="false">
+            <elementDefinition Id="9d287041-68f7-4e19-ad7c-6b0f05c02567" />
+            <flowNodeTargets>
+              <controlFlow Id="013d9bbe-ffd3-42d5-9139-f737a87bcf31" guard="Some members are Unaware" isLeaf="false">
+                <opaqueActionMoniker Id="2694465c-7cc2-4dac-85df-1c518dc5d44b" LastKnownName="Standard Action" />
+                <elementDefinition Id="c7cfa4b0-a4c8-4a2f-8fce-dcec12395222" />
+              </controlFlow>
+              <controlFlow Id="57df4305-0aad-4791-9513-083a71ceb3cd" guard="All members Aware" isLeaf="false">
+                <mergeNodeMoniker Id="15eb98da-dbba-4ec9-8eb8-5a50df38dde7" LastKnownName="Merge1" />
+                <elementDefinition Id="e5dc24a2-c1ce-45ea-9945-41fdad52140b" />
+              </controlFlow>
+            </flowNodeTargets>
+          </decisionNode>
+          <mergeNode Id="15eb98da-dbba-4ec9-8eb8-5a50df38dde7" name="Merge1" isLeaf="false">
+            <elementDefinition Id="ab22dd3a-1eab-41c9-941b-77ea54a4cdfd" />
+            <flowNodeTargets>
+              <controlFlow Id="7e402344-d353-4284-ab9b-ab82cfd7de88" isLeaf="false">
+                <decisionNodeMoniker Id="d4da1630-6ed6-4a8e-a146-f6dde11822ef" LastKnownName="Decision4" />
+                <elementDefinition Id="c8a25feb-0034-4d8f-89be-f281bcef3433" />
+              </controlFlow>
+            </flowNodeTargets>
+          </mergeNode>
+          <decisionNode Id="d4da1630-6ed6-4a8e-a146-f6dde11822ef" name="Decision4" isLeaf="false">
+            <elementDefinition Id="5207c852-e211-4b1d-b622-6ab301093502" />
+            <flowNodeTargets>
+              <controlFlow Id="61720ffe-4dc2-41ca-bad9-8a4684bb79ab" guard="No Newcomers" isLeaf="false">
+                <opaqueActionMoniker Id="1ad519a3-b6db-461c-98b7-96199656c07e" LastKnownName="Determine initiative" />
+                <elementDefinition Id="9131c2ef-8e0e-4aef-b152-ed75480df86a" />
+              </controlFlow>
+              <controlFlow Id="d6f82e27-87d5-4ccb-bc7f-6728f3a9693a" guard="Newcomers are Aware" isLeaf="false">
+                <opaqueActionMoniker Id="410c18c5-3310-4028-a5cd-5a15c1b515ab" LastKnownName="Newcomers Get First initiative" />
+                <elementDefinition Id="12f531b2-6e8c-41a0-bae6-69ddba24888e" />
+              </controlFlow>
+              <controlFlow Id="f67397c6-e01e-43c8-8ab5-02c99a3884ff" guard="Newcomers are not aware" isLeaf="false">
+                <opaqueActionMoniker Id="781a3df1-9850-40de-9290-23043d1ab1ab" LastKnownName="Newcomers Roll Initiative Normally" />
+                <elementDefinition Id="280ddc78-a3ea-4e9a-b0e5-3c93a909a6b1" />
+              </controlFlow>
+            </flowNodeTargets>
+          </decisionNode>
+          <opaqueAction Id="410c18c5-3310-4028-a5cd-5a15c1b515ab" name="Newcomers Get First initiative" isLeaf="false">
+            <elementDefinition Id="9178000a-bb8e-4f98-998b-49144f6beefd" />
+            <flowNodeTargets>
+              <controlFlow Id="f55da322-2b34-4e07-b4e0-be8f464d3ece" isLeaf="false">
+                <opaqueActionMoniker Id="1ad519a3-b6db-461c-98b7-96199656c07e" LastKnownName="Determine initiative" />
+                <elementDefinition Id="11c9ca69-07f7-4506-9e1e-98a62a8d6c2f" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction Id="781a3df1-9850-40de-9290-23043d1ab1ab" name="Newcomers Roll Initiative Normally" isLeaf="false">
+            <elementDefinition Id="aadc292d-f150-40c3-9aa3-3403da5c07da" />
+            <flowNodeTargets>
+              <controlFlow Id="d27c7940-8fbe-46b1-8dc6-0bf7c4606f3c" isLeaf="false">
+                <opaqueActionMoniker Id="1ad519a3-b6db-461c-98b7-96199656c07e" LastKnownName="Determine initiative" />
+                <elementDefinition Id="036155e0-e0a4-46f0-b2e6-e3818c9cb884" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction Id="c4aa2d4b-c6bb-4b18-b32f-7af9b94ecb2e" name="Detemine Action and targets of All  Combatants" isLeaf="false">
+            <elementDefinition Id="d03273de-6f6a-457e-a5fc-3387d03ff60b" />
+            <flowNodeTargets>
+              <controlFlow Id="511b4964-3e5e-48f8-a3fd-f9ed6f45212a" isLeaf="false">
+                <opaqueActionMoniker Id="98106a8f-cbab-4498-93b6-c527fe0a7c77" LastKnownName="Determine and Log Results" />
+                <elementDefinition Id="39ef780f-0a27-442e-9d2f-d8c0bfa5b9b7" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction Id="98106a8f-cbab-4498-93b6-c527fe0a7c77" name="Determine and Log Results" isLeaf="false">
+            <elementDefinition Id="bdbffbd7-2d61-4624-8914-651bc6bd19d4" />
+            <flowNodeTargets>
+              <controlFlow Id="80d7642a-be65-4bcb-9144-1643bb9e0dea" isLeaf="false">
+                <decisionNodeMoniker Id="3e8cdf46-395c-466a-b587-da7940d6f11d" LastKnownName="Decision5" />
+                <elementDefinition Id="bf1fd409-8ccb-4fc9-8246-71708ad9bfc9" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <decisionNode Id="3e8cdf46-395c-466a-b587-da7940d6f11d" name="Decision5" isLeaf="false">
+            <elementDefinition Id="064f8e83-8dc4-49f1-9fc8-1caedbfce152" />
+            <flowNodeTargets>
+              <controlFlow Id="7552ead9-a8aa-4300-9a5a-70c6be15a6bf" guard="Only One Side Capable of Fighting" isLeaf="false">
+                <activityFinalNodeMoniker Id="74bcfa4d-2527-4035-9c92-a0603766e8fc" LastKnownName="ActivityFinal1" />
+                <elementDefinition Id="9840f521-296e-4ed7-af0e-74e98dd52afb" />
+              </controlFlow>
+              <controlFlow Id="8d50575a-6637-47e7-acb8-34e7331c4850" guard="At Least Two opposing Members" isLeaf="false">
+                <mergeNodeMoniker Id="15eb98da-dbba-4ec9-8eb8-5a50df38dde7" LastKnownName="Merge1" />
+                <elementDefinition Id="5da10d42-fd03-4ea3-8218-2fa75e3aeac0" />
+              </controlFlow>
+            </flowNodeTargets>
+          </decisionNode>
+          <activityFinalNode Id="74bcfa4d-2527-4035-9c92-a0603766e8fc" name="ActivityFinal1" isLeaf="false">
+            <elementDefinition Id="1109e37e-d285-4a3b-b731-aaa2b4104e3b" />
+          </activityFinalNode>
+        </nodes>
+      </activity>
+    </activityRootModelHasActivity>
+  </packagedElements>
+  <package Id="54da9a5f-58fb-4496-b9f1-926dabc68619" name="ModelingProject">
+    <elementDefinition Id="e872a8f9-855e-425c-81a1-62f54c345891" />
+  </package>
+</activityRootModel>

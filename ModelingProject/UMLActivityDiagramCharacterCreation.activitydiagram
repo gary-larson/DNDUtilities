@@ -1,19 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<activityRootModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/dsltools/LogicalClassDesigner" xmlns:dm10="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm11="http://schemas.microsoft.com/dsltools/UseCaseModel" dslVersion="1.0.0.0" Id="b44ffe42-8721-44ee-bab9-eb7906a930ae" name="ActivityCharacterCreation" linkedPackageId="86305f96-0a09-4966-9612-e29f6d6139f6" xmlns="http://schemas.microsoft.com/VisualStudio/TeamArchitect/ActivityDesigner">
-  <profileInstances>
-    <packageHasProfileInstances Id="58864bb4-86ef-4292-aca0-a08580208e04">
-      <profileInstance Id="2e2ddced-b5dc-4e2c-80fb-867a6a559c00" name="StandardProfileL2">
-        <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
-      </profileInstance>
-      <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
-    </packageHasProfileInstances>
-    <packageHasProfileInstances Id="e042fce6-c2c1-4869-badc-1fa4566d4f89">
-      <profileInstance Id="eef257d9-308e-421c-8a5b-cb972d6d1c08" name="StandardProfileL3">
-        <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
-      </profileInstance>
-      <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
-    </packageHasProfileInstances>
-  </profileInstances>
+<activityRootModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/dsltools/LogicalClassDesigner" xmlns:dm10="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm11="http://schemas.microsoft.com/dsltools/UseCaseModel" xmlns:dm12="http://schemas.microsoft.com/VisualStudio/TeamArchitect/SequenceDesigner" dslVersion="1.0.0.0" Id="b44ffe42-8721-44ee-bab9-eb7906a930ae" name="ActivityCharacterCreation" linkedPackageId="86305f96-0a09-4966-9612-e29f6d6139f6" xmlns="http://schemas.microsoft.com/VisualStudio/TeamArchitect/ActivityDesigner">
   <packagedElements>
     <activityRootModelHasActivity>
       <activity Id="8bf971b8-c823-47fc-bb01-f0e0572091ea" name="ActivityCharacterCreation" isAbstract="false" isLeaf="false" isActiveClass="false" isReentrant="false" isReadOnly="false" isSingleExecution="false">
@@ -50,12 +36,12 @@
             <elementDefinition Id="f0ef4d28-852c-46ce-9dec-24a09bc686c2" />
             <flowNodeTargets>
               <controlFlow Id="d0bd60e6-7cd2-46bc-b30f-799f0176ed87" isLeaf="false">
-                <opaqueActionMoniker Id="f213d1cb-f506-443f-917a-12a6eb61ae1e" LastKnownName="Assign abd Adjust Ability Scores" />
+                <opaqueActionMoniker Id="f213d1cb-f506-443f-917a-12a6eb61ae1e" LastKnownName="Assign and Adjust Ability Scores" />
                 <elementDefinition Id="c04ac81a-8408-4d53-ad22-36511bfb891a" />
               </controlFlow>
             </flowNodeTargets>
           </opaqueAction>
-          <opaqueAction Id="f213d1cb-f506-443f-917a-12a6eb61ae1e" name="Assign abd Adjust Ability Scores" isLeaf="false">
+          <opaqueAction Id="f213d1cb-f506-443f-917a-12a6eb61ae1e" name="Assign and Adjust Ability Scores" isLeaf="false">
             <elementDefinition Id="36dec751-fc7e-4e04-ba18-650edc7c28ae" />
             <flowNodeTargets>
               <controlFlow Id="0da23a75-c22b-471b-9a60-8893d6c51862" isLeaf="false">
@@ -198,5 +184,19 @@
   </packagedElements>
   <package Id="86305f96-0a09-4966-9612-e29f6d6139f6" name="ModelingProject">
     <elementDefinition Id="e872a8f9-855e-425c-81a1-62f54c345891" />
+    <profileInstances>
+      <packageHasProfileInstances Id="58864bb4-86ef-4292-aca0-a08580208e04">
+        <profileInstance Id="2e2ddced-b5dc-4e2c-80fb-867a6a559c00" name="StandardProfileL2">
+          <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+        </profileInstance>
+        <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+      </packageHasProfileInstances>
+      <packageHasProfileInstances Id="e042fce6-c2c1-4869-badc-1fa4566d4f89">
+        <profileInstance Id="eef257d9-308e-421c-8a5b-cb972d6d1c08" name="StandardProfileL3">
+          <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+        </profileInstance>
+        <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+      </packageHasProfileInstances>
+    </profileInstances>
   </package>
 </activityRootModel>

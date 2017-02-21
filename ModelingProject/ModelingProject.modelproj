@@ -29,6 +29,20 @@
       <SubType>Content</SubType>
       <DependentUpon>UMLActivityDiagramCharacterCreation.activitydiagram</DependentUpon>
     </Content>
+    <Content Include="UMLActivityDiagramDMResolveEncounter.activitydiagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="UMLActivityDiagramDMResolveEncounter.activitydiagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>UMLActivityDiagramDMResolveEncounter.activitydiagram</DependentUpon>
+    </Content>
+    <Content Include="UMLSequenceDiagramCharacterGeneration.sequencediagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="UMLSequenceDiagramCharacterGeneration.sequencediagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>UMLSequenceDiagramCharacterGeneration.sequencediagram</DependentUpon>
+    </Content>
     <Content Include="UMLUseCaseDiagramDM.usecasediagram">
       <SubType>Content</SubType>
     </Content>
