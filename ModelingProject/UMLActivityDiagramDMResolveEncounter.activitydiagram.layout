@@ -5,7 +5,7 @@
     <initialNodeShape Id="f2231045-7f7b-42be-95b2-0f47581b4636" absoluteBounds="3.875, 0.875, 0.125, 0.125" customColor="89, 89, 89">
       <initialNodeMoniker Id="16467882-ba23-4d48-84a3-3ae2dc4cedb5" LastKnownName="Initial1" />
     </initialNodeShape>
-    <callBehaviorActionShape Id="6742a717-0cbe-422c-b728-f84973dbf96c" absoluteBounds="3.125, 1.25, 1.625, 0.5" customColor="161, 199, 231">
+    <callBehaviorActionShape Id="6742a717-0cbe-422c-b728-f84973dbf96c" absoluteBounds="5.625, 1.25, 1.125, 0.5" customColor="161, 199, 231">
       <callBehaviorActionMoniker Id="6600d963-a352-47cc-a6e7-2803ce1afa1a" LastKnownName="DMGenerateEncounterActivity" />
     </callBehaviorActionShape>
     <controlFlowConnector edgePoints="[(3.9375 : 1); (3.9375 : 1.25)]" fixedFrom="Algorithm" fixedTo="Algorithm" customColor="Black">
