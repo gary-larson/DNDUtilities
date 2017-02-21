@@ -19,12 +19,12 @@
             <elementDefinition Id="0ebc8018-6e58-49be-98a6-82519271db44" />
             <flowNodeTargets>
               <controlFlow Id="5d484fbb-f74f-45ee-b360-55a2bf54001a" isLeaf="false">
-                <callBehaviorActionMoniker Id="6600d963-a352-47cc-a6e7-2803ce1afa1a" LastKnownName="DMGenerateActivity" />
+                <callBehaviorActionMoniker Id="6600d963-a352-47cc-a6e7-2803ce1afa1a" LastKnownName="DMGenerateEncounterActivity" />
                 <elementDefinition Id="63dee940-6786-4ac5-b4f3-62d5141cb1a4" />
               </controlFlow>
             </flowNodeTargets>
           </initialNode>
-          <callBehaviorAction Id="6600d963-a352-47cc-a6e7-2803ce1afa1a" name="DMGenerateActivity" isLeaf="false">
+          <callBehaviorAction Id="6600d963-a352-47cc-a6e7-2803ce1afa1a" name="DMGenerateEncounterActivity" isLeaf="false">
             <elementDefinition Id="76d8bf78-022a-44f8-97be-919f768e4be0" />
             <flowNodeTargets>
               <controlFlow Id="0e754bc9-7fc5-4a94-b151-e7117fef5d91" isLeaf="false">
