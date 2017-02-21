@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<useCaseModelRoot xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/dsltools/LogicalClassDesigner" xmlns:dm10="http://schemas.microsoft.com/dsltools/SimpleShapesModel" dslVersion="1.0.0.0" Id="752ccf1e-0e2a-471a-81e9-85a1645f26aa" name="UMLUseCaseDiagramPlayer" linkedPackageId="6d79dfdd-74c9-464f-bc05-172e7dc533a4" xmlns="http://schemas.microsoft.com/dsltools/UseCaseModel">
+<useCaseModelRoot xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/dsltools/LogicalClassDesigner" xmlns:dm10="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm11="http://schemas.microsoft.com/VisualStudio/TeamArchitect/ActivityDesigner" xmlns:dm12="http://schemas.microsoft.com/VisualStudio/TeamArchitect/SequenceDesigner" dslVersion="1.0.0.0" Id="752ccf1e-0e2a-471a-81e9-85a1645f26aa" name="UMLUseCaseDiagramPlayer" linkedPackageId="6d79dfdd-74c9-464f-bc05-172e7dc533a4" xmlns="http://schemas.microsoft.com/dsltools/UseCaseModel">
   <ownedCommentsInternal>
     <comment Id="3595d94f-81ae-4b1c-b1da-15755f27aa2b">
       <elementDefinition Id="d1a6351a-3460-41af-a205-13d9502215db" />
@@ -24,20 +24,6 @@
       </annotatedElements>
     </comment>
   </ownedCommentsInternal>
-  <profileInstances>
-    <packageHasProfileInstances Id="6c815676-986c-40c6-865b-0a7a976c3da3">
-      <profileInstance Id="041f4f20-31fc-4bb5-ae1f-438eaae4be08" name="StandardProfileL2">
-        <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
-      </profileInstance>
-      <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
-    </packageHasProfileInstances>
-    <packageHasProfileInstances Id="09e6de19-123f-4639-9372-3a47cc74fe7e">
-      <profileInstance Id="65938be5-2e9f-4ceb-997f-419828e7fb05" name="StandardProfileL3">
-        <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
-      </profileInstance>
-      <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
-    </packageHasProfileInstances>
-  </profileInstances>
   <packagedElements>
     <useCaseModelRootHasTypes>
       <useCase Id="ceebbdb9-8332-4d56-8432-2745bd675caa" name="Create Low Character" isAbstract="false" isLeaf="false">
@@ -360,5 +346,19 @@
   </packagedElements>
   <package Id="6d79dfdd-74c9-464f-bc05-172e7dc533a4" name="ModelingProject">
     <elementDefinition Id="e872a8f9-855e-425c-81a1-62f54c345891" />
+    <profileInstances>
+      <packageHasProfileInstances Id="6c815676-986c-40c6-865b-0a7a976c3da3">
+        <profileInstance Id="041f4f20-31fc-4bb5-ae1f-438eaae4be08" name="StandardProfileL2">
+          <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+        </profileInstance>
+        <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+      </packageHasProfileInstances>
+      <packageHasProfileInstances Id="09e6de19-123f-4639-9372-3a47cc74fe7e">
+        <profileInstance Id="65938be5-2e9f-4ceb-997f-419828e7fb05" name="StandardProfileL3">
+          <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+        </profileInstance>
+        <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+      </packageHasProfileInstances>
+    </profileInstances>
   </package>
 </useCaseModelRoot>
