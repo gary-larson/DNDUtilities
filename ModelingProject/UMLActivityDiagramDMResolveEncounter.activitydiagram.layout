@@ -6,7 +6,7 @@
       <initialNodeMoniker Id="16467882-ba23-4d48-84a3-3ae2dc4cedb5" LastKnownName="Initial1" />
     </initialNodeShape>
     <callBehaviorActionShape Id="6742a717-0cbe-422c-b728-f84973dbf96c" absoluteBounds="5.625, 1.25, 1.125, 0.5" customColor="161, 199, 231">
-      <callBehaviorActionMoniker Id="6600d963-a352-47cc-a6e7-2803ce1afa1a" LastKnownName="DMGenerateActivity" />
+      <callBehaviorActionMoniker Id="6600d963-a352-47cc-a6e7-2803ce1afa1a" LastKnownName="DMGenerateEncounterActivity" />
     </callBehaviorActionShape>
     <controlFlowConnector edgePoints="[(6.1875 : 1); (6.1875 : 1.25)]" fixedFrom="Algorithm" fixedTo="Algorithm" customColor="Black">
       <controlFlowMoniker Id="5d484fbb-f74f-45ee-b360-55a2bf54001a" />

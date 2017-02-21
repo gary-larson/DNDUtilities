@@ -5275,14 +5275,14 @@
                 isLeaf="false">
                 <callBehaviorActionMoniker
                   Id="76d8bf78-022a-44f8-97be-919f768e4be0"
-                  LastKnownName="DMGenerateActivity"
+                  LastKnownName="DMGenerateEncounterActivity"
                   LastKnownLocation="ModelingProject.uml" />
               </controlFlow>
             </flowNodeTargets>
           </initialNode>
           <callBehaviorAction
             Id="76d8bf78-022a-44f8-97be-919f768e4be0"
-            name="DMGenerateActivity"
+            name="DMGenerateEncounterActivity"
             isLeaf="false">
             <flowNodeTargets>
               <controlFlow
