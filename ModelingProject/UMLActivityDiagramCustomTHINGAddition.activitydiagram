@@ -1,0 +1,395 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<activityRootModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/dsltools/LogicalClassDesigner" xmlns:dm10="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm11="http://schemas.microsoft.com/dsltools/UseCaseModel" xmlns:dm12="http://schemas.microsoft.com/VisualStudio/TeamArchitect/SequenceDesigner" dslVersion="1.0.0.0" Id="049285b8-6c6d-435d-9b12-b02621b64219" name="Homebrew Information Addition" linkedPackageId="b46a4846-8a59-4984-ad6d-f524af1a53f8" xmlns="http://schemas.microsoft.com/VisualStudio/TeamArchitect/ActivityDesigner">
+  <profileInstances>
+    <packageHasProfileInstances Id="73d5cdda-99d0-4d4c-a736-1cb51c2d9e21">
+      <profileInstance Id="7916c98e-eff7-415b-a2bd-d97961218f91" name="StandardProfileL2">
+        <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+      </profileInstance>
+      <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+    </packageHasProfileInstances>
+    <packageHasProfileInstances Id="a7243005-82e2-455e-848d-e91ff9460a72">
+      <profileInstance Id="0422bf20-30f6-4530-8913-acc90129ce8c" name="StandardProfileL3">
+        <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+      </profileInstance>
+      <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+    </packageHasProfileInstances>
+  </profileInstances>
+  <packagedElements>
+    <activityRootModelHasActivity>
+      <activity Id="e413bc76-2359-4c99-8e47-2adf2678d34b" name="Homebrew Information Addition" isAbstract="false" isLeaf="false" isActiveClass="false" isReentrant="false" isReadOnly="false" isSingleExecution="false">
+        <elementDefinition Id="45a0945f-c681-41c0-97fa-539f6a1d572b" />
+        <nodes>
+          <activityFinalNode Id="eedd8472-3f78-40e3-b32c-9ff68e1c3a94" name="ActivityFinal1" isLeaf="false">
+            <elementDefinition Id="83148310-8f60-4b73-9e43-42bc9c2028e2" />
+          </activityFinalNode>
+          <decisionNode Id="2a4d088f-a2cd-4014-be25-b3344a3c881c" name="typeOfAddition" isLeaf="false">
+            <elementDefinition Id="77e6bd4b-4848-4b42-a41e-b4abd36b3807" />
+            <objectFlowTargets>
+              <objectFlow Id="91c4af47-041a-4ee0-8c62-6f3ec3152405" isLeaf="false" isMulticast="false" isMultireceive="false">
+                <objectNodeMoniker Id="8eda202b-e947-47ab-bc8a-0e18860f3fc8" LastKnownName="creature Feature" />
+                <elementDefinition Id="a4e883a7-c495-4ab9-951c-a96817c93f2b" />
+              </objectFlow>
+              <objectFlow Id="cb04b5fc-b116-4e5c-91fb-57568c09414c" isLeaf="false" isMulticast="false" isMultireceive="false">
+                <objectNodeMoniker Id="f9234479-2f00-488a-99d6-764162f78de2" LastKnownName="creature" />
+                <elementDefinition Id="d32d82b9-cbd0-404a-ab88-3c41d125ee66" />
+              </objectFlow>
+            </objectFlowTargets>
+          </decisionNode>
+          <objectNode Id="8eda202b-e947-47ab-bc8a-0e18860f3fc8" name="creature Feature" isLeaf="false" ordering="Unordered" isControlType="false">
+            <elementDefinition Id="21949533-b7d4-475b-a19d-d16e0b1361cc" />
+            <objectFlowTargets>
+              <objectFlow Id="09411dfa-fa3b-4e3e-86a0-e0a64311ac0f" isLeaf="false" isMulticast="false" isMultireceive="false">
+                <decisionNodeMoniker Id="6042cd10-5c9f-4bf3-9baa-fa92128dada9" LastKnownName="featureSpecifier" />
+                <elementDefinition Id="af68717a-5792-4303-b3b4-659ad493b4cb" />
+              </objectFlow>
+            </objectFlowTargets>
+            <upperBound>
+              <literalInteger Id="f89ceb31-165a-4f42-b14e-7c4cac890e55" name="2147483647" value="2147483647">
+                <elementDefinition Id="4e4bc961-6070-4382-a4e7-74f3884cf49b" />
+              </literalInteger>
+            </upperBound>
+          </objectNode>
+          <objectNode Id="f9234479-2f00-488a-99d6-764162f78de2" name="creature" isLeaf="false" ordering="Unordered" isControlType="false">
+            <elementDefinition Id="b98d8c6b-0f89-4bce-bd14-86f7d3672d50" />
+            <objectFlowTargets>
+              <objectFlow Id="3203f4d0-cd8b-4a52-94cf-9ed09d26bc4a" isLeaf="false" isMulticast="false" isMultireceive="false">
+                <decisionNodeMoniker Id="9541c7a9-9cbc-4805-a6c9-7c315ecd9a73" LastKnownName="creatureSpecifier" />
+                <elementDefinition Id="26971ef9-a71c-493e-9c4d-6105973f1215" />
+              </objectFlow>
+            </objectFlowTargets>
+            <upperBound>
+              <literalInteger Id="8e510eea-0b1d-49f7-9d8c-3be8dada2ff2" name="2147483647" value="2147483647">
+                <elementDefinition Id="ff4846e1-2351-44eb-8ffe-9a114303caf0" />
+              </literalInteger>
+            </upperBound>
+          </objectNode>
+          <objectNode Id="1f6fbcff-8044-4c57-a23e-efdd7d864f0d" name="items" isLeaf="false" ordering="Unordered" isControlType="false">
+            <elementDefinition Id="7bf1984d-33ab-47b5-9298-6d46e5dd3d5b" />
+            <objectFlowTargets>
+              <objectFlow Id="37c46a84-33cb-4cca-af9d-b9aa5eee84f5" isLeaf="false" isMulticast="false" isMultireceive="false">
+                <opaqueActionMoniker Id="c17a3fca-15ea-4e93-9d09-34982c8f56da" LastKnownName="Determine type of item" />
+                <elementDefinition Id="24d12211-268b-4dcf-bdfd-fc9a0d9db43c" />
+              </objectFlow>
+            </objectFlowTargets>
+            <upperBound>
+              <literalInteger Id="ec4a8cdf-60fd-46f7-9a85-754caa810182" name="2147483647" value="2147483647">
+                <elementDefinition Id="a164c321-5a2d-45b2-8fb8-7db4a15fbaa1" />
+              </literalInteger>
+            </upperBound>
+          </objectNode>
+          <objectNode Id="804609eb-b332-495f-aaa4-4cb73031d69b" name="abilities" isLeaf="false" ordering="Unordered" isControlType="false">
+            <elementDefinition Id="b9ee9069-d067-4551-99b8-fb916b00c294" />
+            <objectFlowTargets>
+              <objectFlow Id="7ea77086-9e00-41f2-973f-4b63648c0793" isLeaf="false" isMulticast="false" isMultireceive="false">
+                <opaqueActionMoniker Id="504d481f-8f22-43c8-b913-f13157e350a2" LastKnownName="determine type of ability" />
+                <elementDefinition Id="79c56a4c-be48-42d4-b6fb-612a17200624" />
+              </objectFlow>
+            </objectFlowTargets>
+            <upperBound>
+              <literalInteger Id="d91daf68-5dc4-4e60-bf7f-81bc2cfc803f" name="2147483647" value="2147483647">
+                <elementDefinition Id="8cb2845c-7a3c-45b8-84a9-e72c8890c5a1" />
+              </literalInteger>
+            </upperBound>
+          </objectNode>
+          <decisionNode Id="6042cd10-5c9f-4bf3-9baa-fa92128dada9" name="featureSpecifier" isLeaf="false">
+            <elementDefinition Id="6b7a4630-c038-4403-849e-3fab7a615c55" />
+            <objectFlowTargets>
+              <objectFlow Id="56c6b041-e212-40b4-bd36-becb4df3bce3" isLeaf="false" isMulticast="false" isMultireceive="false">
+                <objectNodeMoniker Id="1f6fbcff-8044-4c57-a23e-efdd7d864f0d" LastKnownName="items" />
+                <elementDefinition Id="5e54b6f5-f6df-4947-babc-b9761d2733f5" />
+              </objectFlow>
+              <objectFlow Id="3e345d20-a168-4f50-b3b3-0c3f0e27a324" isLeaf="false" isMulticast="false" isMultireceive="false">
+                <objectNodeMoniker Id="804609eb-b332-495f-aaa4-4cb73031d69b" LastKnownName="abilities" />
+                <elementDefinition Id="a905d555-6ef6-4ea5-a8b3-d5287f9e7e01" />
+              </objectFlow>
+            </objectFlowTargets>
+          </decisionNode>
+          <objectNode Id="919ba49a-fae3-44e4-be31-bbe41689d5d5" name="race" isLeaf="false" ordering="Unordered" isControlType="false">
+            <elementDefinition Id="94f6b497-f96c-4b63-ad3d-f29546aac46f" />
+            <objectFlowTargets>
+              <objectFlow Id="5192a209-03db-4a8f-8e6f-c631678a759e" isLeaf="false" isMulticast="false" isMultireceive="false">
+                <opaqueActionMoniker Id="a8f29d97-0a1b-4f50-8d32-0111eb8cc485" LastKnownName="Provide a cosmetic description and name" />
+                <elementDefinition Id="82eb7487-3da9-49d8-8b34-936e88f3823e" />
+              </objectFlow>
+            </objectFlowTargets>
+            <upperBound>
+              <literalInteger Id="295eaf1f-709d-4ecd-9233-e0096efefe00" name="2147483647" value="2147483647">
+                <elementDefinition Id="54b17853-6cd2-4a16-bf6a-43eebcc62fbc" />
+              </literalInteger>
+            </upperBound>
+          </objectNode>
+          <objectNode Id="20ff962f-ae39-428b-b0de-b376cba6ede5" name="class" isLeaf="false" ordering="Unordered" isControlType="false">
+            <elementDefinition Id="1b9dc191-2aef-4e74-af40-2fc8813b9ff9" />
+            <objectFlowTargets>
+              <objectFlow Id="7dda50f2-0dd0-4232-8dda-785fbfa874a9" isLeaf="false" isMulticast="false" isMultireceive="false">
+                <opaqueActionMoniker Id="a1482d9b-9c65-478d-8103-49a1d1b01038" LastKnownName="Provide name and description" />
+                <elementDefinition Id="d22a11a1-a0bd-4248-baa2-80613da62097" />
+              </objectFlow>
+            </objectFlowTargets>
+            <upperBound>
+              <literalInteger Id="46a7dda5-7f97-464e-9ec2-a9be66c3ecbd" name="2147483647" value="2147483647">
+                <elementDefinition Id="e947a14d-da2f-4bf1-baa4-c5703376b179" />
+              </literalInteger>
+            </upperBound>
+          </objectNode>
+          <decisionNode Id="9541c7a9-9cbc-4805-a6c9-7c315ecd9a73" name="creatureSpecifier" isLeaf="false">
+            <elementDefinition Id="7335d5d7-e839-4b19-bde0-e484d9611fd2" />
+            <objectFlowTargets>
+              <objectFlow Id="2cc8e216-9cab-4869-b319-fd6e3c8804a8" isLeaf="false" isMulticast="false" isMultireceive="false">
+                <objectNodeMoniker Id="919ba49a-fae3-44e4-be31-bbe41689d5d5" LastKnownName="race" />
+                <elementDefinition Id="00286f03-6b32-4c38-b6c9-d58dc2d46253" />
+              </objectFlow>
+              <objectFlow Id="915391b1-d86e-4e91-b814-b2a6700b7250" isLeaf="false" isMulticast="false" isMultireceive="false">
+                <objectNodeMoniker Id="20ff962f-ae39-428b-b0de-b376cba6ede5" LastKnownName="class" />
+                <elementDefinition Id="a8efc5b1-7ab3-498d-b3a3-4dda4b264fc2" />
+              </objectFlow>
+            </objectFlowTargets>
+          </decisionNode>
+          <opaqueAction Id="c17a3fca-15ea-4e93-9d09-34982c8f56da" name="Determine type of item" isLeaf="false">
+            <elementDefinition Id="5e9b41be-fc7f-44fa-8229-dda4d7ed3c4f" />
+            <flowNodeTargets>
+              <controlFlow Id="16eeea92-0f20-44cc-9f55-a263bd5796ce" isLeaf="false">
+                <opaqueActionMoniker Id="6a220508-500e-4135-8c0f-729abc332932" LastKnownName="Assign valid attributes" />
+                <elementDefinition Id="deb46c77-a4c6-476d-8e3a-5620b062b1ba" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction Id="6a220508-500e-4135-8c0f-729abc332932" name="Assign valid attributes" isLeaf="false">
+            <elementDefinition Id="e2aa6a6e-acc1-4d58-b04b-c99f0cb9a2ab" />
+            <flowNodeTargets>
+              <controlFlow Id="f8a8f128-f126-4ffd-b32f-e4576b80f72b" isLeaf="false">
+                <opaqueActionMoniker Id="04987092-6ed1-47d5-8248-890c6da44011" LastKnownName="Describe the effects of the item" />
+                <elementDefinition Id="d24dc866-19ac-414b-aa61-fb388c52ff56" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction Id="04987092-6ed1-47d5-8248-890c6da44011" name="Describe the effects of the item" isLeaf="false">
+            <elementDefinition Id="937b3022-76f4-4e35-9c49-1c73d0fcceb0" />
+            <flowNodeTargets>
+              <controlFlow Id="dde30b8d-034c-41d9-a6b8-c8cc2bf4f8b6" isLeaf="false">
+                <opaqueActionMoniker Id="ec410ea5-a241-4845-8227-09b52e577e86" LastKnownName="Save the item" />
+                <elementDefinition Id="f42e3791-293b-4c00-bf09-ae4b1621bbe2" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction Id="504d481f-8f22-43c8-b913-f13157e350a2" name="determine type of ability" isLeaf="false">
+            <elementDefinition Id="20cfc342-69fd-47db-bbfa-4d4c326fd936" />
+            <flowNodeTargets>
+              <controlFlow Id="7dd57820-de83-4abd-bac4-b5e2bb951ad2" isLeaf="false">
+                <opaqueActionMoniker Id="5ed5887a-9d38-4c67-9df9-18cc2cccdc6f" LastKnownName="Assign prerequisites / attributes" />
+                <elementDefinition Id="6ea6a93e-8179-47ed-be45-2cba36b0315e" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction Id="5ed5887a-9d38-4c67-9df9-18cc2cccdc6f" name="Assign prerequisites / attributes" isLeaf="false">
+            <elementDefinition Id="b5dc3a4c-2f8d-41e2-a120-85194afce310" />
+            <flowNodeTargets>
+              <controlFlow Id="75426a0d-76c6-4a05-b0f2-0ff64f641d76" isLeaf="false">
+                <opaqueActionMoniker Id="2f0b3af2-21fb-4757-a24c-dc6cdaf7403f" LastKnownName="Describe ability Effects" />
+                <elementDefinition Id="271ebeef-1d7b-44ac-b167-4ac59141586a" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction Id="2f0b3af2-21fb-4757-a24c-dc6cdaf7403f" name="Describe ability Effects" isLeaf="false">
+            <elementDefinition Id="e509c1ba-21b2-4901-90fa-faceaf9a8d2f" />
+            <flowNodeTargets>
+              <controlFlow Id="0043cae7-1c82-44c1-bb55-15cfcedddbcc" isLeaf="false">
+                <opaqueActionMoniker Id="2fd9fad1-0d59-4d9f-bea8-e3ef7f1d5e39" LastKnownName="Save the ability" />
+                <elementDefinition Id="ca101254-efeb-43e5-9c64-518d548229a5" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <mergeNode Id="cd300755-6b46-48d2-9021-066e767dff7b" name="save" isLeaf="false">
+            <elementDefinition Id="a949734f-288f-4e25-94d9-e59e8e3a2590" />
+            <flowNodeTargets>
+              <controlFlow Id="3b84cad7-ce9a-444f-90be-9f10adb6df48" isLeaf="false">
+                <activityFinalNodeMoniker Id="eedd8472-3f78-40e3-b32c-9ff68e1c3a94" LastKnownName="ActivityFinal1" />
+                <elementDefinition Id="4ce42d7c-b838-49bc-88b3-e49e5d83bce6" />
+              </controlFlow>
+            </flowNodeTargets>
+          </mergeNode>
+          <opaqueAction Id="a8f29d97-0a1b-4f50-8d32-0111eb8cc485" name="Provide a cosmetic description and name" isLeaf="false">
+            <elementDefinition Id="7e9615d2-9046-4e2a-9917-caa6981b48d3" />
+            <flowNodeTargets>
+              <controlFlow Id="70c222e3-3808-401f-bfd1-f7cfc3b0c04e" isLeaf="false">
+                <opaqueActionMoniker Id="5efeb24b-d6a8-4b69-9bce-8404773c8f96" LastKnownName="Determine typing, Subtyping, and bonuses" />
+                <elementDefinition Id="a76e6f23-241b-4c6b-8baf-8e5cd64435bf" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction Id="5efeb24b-d6a8-4b69-9bce-8404773c8f96" name="Determine typing, Subtyping, and bonuses" isLeaf="false">
+            <elementDefinition Id="09858174-7df0-44f9-865d-6e9c1df62499" />
+            <flowNodeTargets>
+              <controlFlow Id="117d358d-ce67-48d2-8baa-91bf5f640968" isLeaf="false">
+                <opaqueActionMoniker Id="f0bdb2ae-fd9c-48e4-b87b-4335078b3772" LastKnownName="add a racial ability" />
+                <elementDefinition Id="add15a3d-c9a2-41c6-ab37-863d2f46fb13" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <decisionNode Id="6d6d4a85-442b-4ef2-9a04-8fbac1e50d4f" name="new or existing ability" isLeaf="false">
+            <elementDefinition Id="05b8ff22-e232-48ff-ad93-69627ac462c8" />
+            <flowNodeTargets>
+              <controlFlow Id="3c2347f0-8259-473a-b096-a8064b8a47e4" isLeaf="false">
+                <opaqueActionMoniker Id="d353e2f8-e67e-4b09-9966-303a7abf764e" LastKnownName="Use pre-existing abilities for race" />
+                <elementDefinition Id="d7b05afe-448e-4ad1-a648-ae400d1aef58" />
+              </controlFlow>
+              <controlFlow Id="f1e49d49-e828-44de-bb9f-4e6a538cbbac" guard="Create a new ability" isLeaf="false">
+                <opaqueActionMoniker Id="504d481f-8f22-43c8-b913-f13157e350a2" LastKnownName="determine type of ability" />
+                <elementDefinition Id="18f6962f-fa01-43bf-bb14-a9d277262e9f" />
+              </controlFlow>
+              <controlFlow Id="8466855d-47a5-4d41-817b-e4e0e365fc4e" guard="No more Abilities" isLeaf="false">
+                <opaqueActionMoniker Id="861234ca-104e-4beb-aefc-59df7aabd083" LastKnownName="Save the race" />
+                <elementDefinition Id="444413cd-40de-4d3a-a239-f1828c756f71" />
+              </controlFlow>
+            </flowNodeTargets>
+          </decisionNode>
+          <opaqueAction Id="d353e2f8-e67e-4b09-9966-303a7abf764e" name="Use pre-existing abilities for race" isLeaf="false">
+            <elementDefinition Id="fd29c997-8a14-4345-adf4-84f46ea16f73" />
+            <flowNodeTargets>
+              <controlFlow Id="21507125-4c76-4951-bb79-94300a876b91" isLeaf="false">
+                <opaqueActionMoniker Id="f0bdb2ae-fd9c-48e4-b87b-4335078b3772" LastKnownName="add a racial ability" />
+                <elementDefinition Id="38409402-b1a8-4261-98ad-9a6398175cb7" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction Id="f0bdb2ae-fd9c-48e4-b87b-4335078b3772" name="add a racial ability" isLeaf="false">
+            <elementDefinition Id="11c4f3d4-7dfd-414c-b198-3bdfd50f5886" />
+            <flowNodeTargets>
+              <controlFlow Id="c4480d11-d88a-4011-afba-4dc831780f7a" isLeaf="false">
+                <decisionNodeMoniker Id="6d6d4a85-442b-4ef2-9a04-8fbac1e50d4f" LastKnownName="new or existing ability" />
+                <elementDefinition Id="10daf413-9016-4ad9-ab1b-686d12133299" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction Id="ec410ea5-a241-4845-8227-09b52e577e86" name="Save the item" isLeaf="false">
+            <elementDefinition Id="4b7e01f0-efde-4c1a-9b6c-b68790bb27e2" />
+            <flowNodeTargets>
+              <controlFlow Id="36037719-f2dc-47e2-99b7-89a7610a5a01" isLeaf="false">
+                <mergeNodeMoniker Id="cd300755-6b46-48d2-9021-066e767dff7b" LastKnownName="save" />
+                <elementDefinition Id="2dfae89f-15c6-4e41-b3d3-626cabc1c26f" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction Id="2fd9fad1-0d59-4d9f-bea8-e3ef7f1d5e39" name="Save the ability" isLeaf="false">
+            <elementDefinition Id="21082081-21ce-47b7-9b40-383ac097f0db" />
+            <flowNodeTargets>
+              <controlFlow Id="58deda21-2e18-437f-b971-b89a19d1a838" isLeaf="false">
+                <decisionNodeMoniker Id="8ed8f13a-5169-4cb3-8cdc-28775de9517e" LastKnownName="return to proper interface" />
+                <elementDefinition Id="010ee6e9-5442-41a2-808d-010873f97faa" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <decisionNode Id="8ed8f13a-5169-4cb3-8cdc-28775de9517e" name="return to proper interface" isLeaf="false">
+            <elementDefinition Id="815eb9c7-b9e1-454e-90a1-d4a8dc9ec842" />
+            <flowNodeTargets>
+              <controlFlow Id="faa66cee-133e-44fc-86e2-0e0e672d88b6" guard="return to class" isLeaf="false">
+                <opaqueActionMoniker Id="cf4a8956-815d-43af-b19a-c1c27072f150" LastKnownName="Add class Ability" />
+                <elementDefinition Id="9a54a4c3-9794-433d-86db-8a6e5a618ff2" />
+              </controlFlow>
+              <controlFlow Id="76d7f5df-6f27-42d1-bcbc-3667a8502041" guard="return to race" isLeaf="false">
+                <opaqueActionMoniker Id="f0bdb2ae-fd9c-48e4-b87b-4335078b3772" LastKnownName="add a racial ability" />
+                <elementDefinition Id="9ad8b529-b23c-496c-96fe-0ea473c3310f" />
+              </controlFlow>
+              <controlFlow Id="45e1405f-369f-40e6-967f-73feefefe8f5" guard="stand-alone ability" isLeaf="false">
+                <mergeNodeMoniker Id="cd300755-6b46-48d2-9021-066e767dff7b" LastKnownName="save" />
+                <elementDefinition Id="8342fe96-1739-4fb0-815f-f6353799f042" />
+              </controlFlow>
+            </flowNodeTargets>
+          </decisionNode>
+          <opaqueAction Id="a1482d9b-9c65-478d-8103-49a1d1b01038" name="Provide name and description" isLeaf="false">
+            <elementDefinition Id="9def891a-51db-4e55-b91a-c7b1101be3db" />
+            <flowNodeTargets>
+              <controlFlow Id="636ba52f-6e13-45a9-92b5-1591d60ef5a7" isLeaf="false">
+                <opaqueActionMoniker Id="a957a358-d299-44bc-83cc-3218927f3a82" LastKnownName="Determine Class skills, Hit die, saving throws, and Base attack bonus" />
+                <elementDefinition Id="2bcdfdf6-cb5a-4e29-8aa4-0526f76cbbf2" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction Id="a957a358-d299-44bc-83cc-3218927f3a82" name="Determine Class skills, Hit die, saving throws, and Base attack bonus" isLeaf="false">
+            <elementDefinition Id="002cbaf3-893d-4df4-ad03-190a7dc99b62" />
+            <flowNodeTargets>
+              <controlFlow Id="92ce462a-3717-4472-993b-644a0c7bb09f" isLeaf="false">
+                <opaqueActionMoniker Id="2bb66dce-e840-4977-a513-cfd76e385d37" LastKnownName="add spellcasting information (spells known, spells per day, casting stat, etc.)" />
+                <elementDefinition Id="5bd8743c-b7ca-4fc9-95ca-ef504578f4a5" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction Id="2bb66dce-e840-4977-a513-cfd76e385d37" name="add spellcasting information (spells known, spells per day, casting stat, etc.)" isLeaf="false">
+            <elementDefinition Id="35004c6b-5432-4d82-a4c5-a477cf2f14f1" />
+            <flowNodeTargets>
+              <controlFlow Id="674af25b-541f-452b-b9b2-f356ed7e8dc1" isLeaf="false">
+                <opaqueActionMoniker Id="cf4a8956-815d-43af-b19a-c1c27072f150" LastKnownName="Add class Ability" />
+                <elementDefinition Id="1835c21c-f54e-4455-94f1-094fdc5b21de" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction Id="861234ca-104e-4beb-aefc-59df7aabd083" name="Save the race" isLeaf="false">
+            <elementDefinition Id="6c734ba7-f173-4fc7-bff2-0c488d5d4917" />
+            <flowNodeTargets>
+              <controlFlow Id="5104fd27-a97d-4de1-b13a-8d444ad40064" isLeaf="false">
+                <mergeNodeMoniker Id="cd300755-6b46-48d2-9021-066e767dff7b" LastKnownName="save" />
+                <elementDefinition Id="e784508f-5c77-4b69-a901-038397641948" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction Id="cf4a8956-815d-43af-b19a-c1c27072f150" name="Add class Ability" isLeaf="false">
+            <elementDefinition Id="164fd9ea-2a4a-41be-b3b0-fb23fa24af97" />
+            <flowNodeTargets>
+              <controlFlow Id="795d451d-a3df-4a4a-a73c-2ad56e25e758" isLeaf="false">
+                <decisionNodeMoniker Id="9f8259ea-3e35-42d7-9b76-ed88683611ef" LastKnownName="Decision1" />
+                <elementDefinition Id="dfd8b86c-4888-4cce-aae5-ad28f77513df" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <decisionNode Id="9f8259ea-3e35-42d7-9b76-ed88683611ef" name="Decision1" isLeaf="false">
+            <elementDefinition Id="579a4004-ad3b-44e8-8906-c088fe248d6a" />
+            <flowNodeTargets>
+              <controlFlow Id="6724b4a9-334c-4871-96d0-35ff6a3a35f8" isLeaf="false">
+                <opaqueActionMoniker Id="6aaa60d4-d125-43ae-ae06-ea3975323ff7" LastKnownName="Use pre-existing abilities for class" />
+                <elementDefinition Id="3f85103b-ffea-4446-b14a-acf0b73df6d2" />
+              </controlFlow>
+              <controlFlow Id="6a5974a1-56ea-4965-85c9-d65277d2ed45" guard="Create a new ability" isLeaf="false">
+                <opaqueActionMoniker Id="504d481f-8f22-43c8-b913-f13157e350a2" LastKnownName="determine type of ability" />
+                <elementDefinition Id="2c1182c9-e4d5-4936-92c7-8e5ad37e3858" />
+              </controlFlow>
+              <controlFlow Id="f02ed83e-ff45-45ea-84fb-61183a5fe12e" guard="no more abilities" isLeaf="false">
+                <opaqueActionMoniker Id="568ade0f-785c-499f-8456-20e04e10c994" LastKnownName="save the Class" />
+                <elementDefinition Id="7072ee42-4c25-46c9-a603-a05145b1be5b" />
+              </controlFlow>
+            </flowNodeTargets>
+          </decisionNode>
+          <opaqueAction Id="6aaa60d4-d125-43ae-ae06-ea3975323ff7" name="Use pre-existing abilities for class" isLeaf="false">
+            <elementDefinition Id="8f9b2140-1d07-4aea-a867-d89face126a7" />
+            <flowNodeTargets>
+              <controlFlow Id="2b7990c8-b459-492b-84de-86f2141b2318" isLeaf="false">
+                <opaqueActionMoniker Id="cf4a8956-815d-43af-b19a-c1c27072f150" LastKnownName="Add class Ability" />
+                <elementDefinition Id="78480e6d-b00a-4ddb-b3cd-c6037d8109a5" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction Id="568ade0f-785c-499f-8456-20e04e10c994" name="save the Class" isLeaf="false">
+            <elementDefinition Id="4d01c33b-4451-419b-826e-0e3ab247440e" />
+            <flowNodeTargets>
+              <controlFlow Id="e6e1509e-05b9-4457-b971-1015f143188f" isLeaf="false">
+                <mergeNodeMoniker Id="cd300755-6b46-48d2-9021-066e767dff7b" LastKnownName="save" />
+                <elementDefinition Id="e8afd25f-b688-41f3-88dd-4588f0699727" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <initialNode Id="59d2756e-90e8-4df7-88b2-40b373f4b93f" name="Initial1" isLeaf="false">
+            <elementDefinition Id="840118c7-4946-4291-ba0a-6485cce8c3a5" />
+            <flowNodeTargets>
+              <controlFlow Id="7aaaeab3-75d0-4ad0-875b-95af25783d7d" isLeaf="false">
+                <decisionNodeMoniker Id="2a4d088f-a2cd-4014-be25-b3344a3c881c" LastKnownName="typeOfAddition" />
+                <elementDefinition Id="34aa7df4-ef70-4a09-ab0a-bef2e54b5cad" />
+              </controlFlow>
+            </flowNodeTargets>
+          </initialNode>
+        </nodes>
+      </activity>
+    </activityRootModelHasActivity>
+  </packagedElements>
+  <package Id="b46a4846-8a59-4984-ad6d-f524af1a53f8" name="ModelingProject">
+    <elementDefinition Id="e872a8f9-855e-425c-81a1-62f54c345891" />
+  </package>
+</activityRootModel>

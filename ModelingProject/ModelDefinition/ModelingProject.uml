@@ -1673,6 +1673,16 @@
             </operands>
           </combinedFragment>
           <operandOccurrenceSpecification
+            Id="8fb2ec4d-a3ee-4c60-8b63-b1c33e680bfd"
+            name="OperandOccurrenceSpecification3">
+            <covered>
+              <lifelineMoniker
+                Id="c9328f79-3260-41a3-ba5a-c262a85f6bf2"
+                LastKnownName="Player"
+                LastKnownLocation="ModelingProject.uml" />
+            </covered>
+          </operandOccurrenceSpecification>
+          <operandOccurrenceSpecification
             Id="1774e307-8f49-4c85-81b8-d4efc1a5b547"
             name="OperandOccurrenceSpecification1">
             <covered>
@@ -1689,16 +1699,6 @@
               <lifelineMoniker
                 Id="31d84cb8-99b2-46c1-9753-fbcd8c96a00c"
                 LastKnownName="Computer"
-                LastKnownLocation="ModelingProject.uml" />
-            </covered>
-          </operandOccurrenceSpecification>
-          <operandOccurrenceSpecification
-            Id="8fb2ec4d-a3ee-4c60-8b63-b1c33e680bfd"
-            name="OperandOccurrenceSpecification3">
-            <covered>
-              <lifelineMoniker
-                Id="c9328f79-3260-41a3-ba5a-c262a85f6bf2"
-                LastKnownName="Player"
                 LastKnownLocation="ModelingProject.uml" />
             </covered>
           </operandOccurrenceSpecification>
@@ -1919,12 +1919,12 @@
             </covered>
           </executionOccurrenceSpecification>
           <operandOccurrenceSpecification
-            Id="643ee2a4-c2b3-4833-a450-87957ed3846f"
-            name="OperandOccurrenceSpecification6">
+            Id="a768d8b4-3c7b-40cf-b88d-dc81c0e17c49"
+            name="OperandOccurrenceSpecification2">
             <covered>
               <lifelineMoniker
-                Id="31d84cb8-99b2-46c1-9753-fbcd8c96a00c"
-                LastKnownName="Computer"
+                Id="8736055b-4e0b-4d7a-affb-680599abfe44"
+                LastKnownName="Dice"
                 LastKnownLocation="ModelingProject.uml" />
             </covered>
           </operandOccurrenceSpecification>
@@ -1939,12 +1939,12 @@
             </covered>
           </operandOccurrenceSpecification>
           <operandOccurrenceSpecification
-            Id="a768d8b4-3c7b-40cf-b88d-dc81c0e17c49"
-            name="OperandOccurrenceSpecification2">
+            Id="643ee2a4-c2b3-4833-a450-87957ed3846f"
+            name="OperandOccurrenceSpecification6">
             <covered>
               <lifelineMoniker
-                Id="8736055b-4e0b-4d7a-affb-680599abfe44"
-                LastKnownName="Dice"
+                Id="31d84cb8-99b2-46c1-9753-fbcd8c96a00c"
+                LastKnownName="Computer"
                 LastKnownLocation="ModelingProject.uml" />
             </covered>
           </operandOccurrenceSpecification>
@@ -2092,22 +2092,22 @@
             </covered>
           </messageOccurrenceSpecification>
           <messageOccurrenceSpecification
-            Id="b5414102-a673-41e9-bab1-8fde44d272a1"
-            name="MessageOccurrenceSpecification24">
-            <covered>
-              <lifelineMoniker
-                Id="6d1fd3da-070f-4673-9539-79981b486e79"
-                LastKnownName="Player"
-                LastKnownLocation="ModelingProject.uml" />
-            </covered>
-          </messageOccurrenceSpecification>
-          <messageOccurrenceSpecification
             Id="99fb910c-f8b1-4e5b-9b24-cff06f48898d"
             name="MessageOccurrenceSpecification23">
             <covered>
               <lifelineMoniker
                 Id="31d84cb8-99b2-46c1-9753-fbcd8c96a00c"
                 LastKnownName="Computer"
+                LastKnownLocation="ModelingProject.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="b5414102-a673-41e9-bab1-8fde44d272a1"
+            name="MessageOccurrenceSpecification24">
+            <covered>
+              <lifelineMoniker
+                Id="6d1fd3da-070f-4673-9539-79981b486e79"
+                LastKnownName="Player"
                 LastKnownLocation="ModelingProject.uml" />
             </covered>
           </messageOccurrenceSpecification>
@@ -3178,22 +3178,22 @@
             </operands>
           </combinedFragment>
           <operandOccurrenceSpecification
-            Id="6bb1defb-9354-406a-a28b-4c7a6cdcd120"
-            name="OperandOccurrenceSpecification59">
-            <covered>
-              <lifelineMoniker
-                Id="31d84cb8-99b2-46c1-9753-fbcd8c96a00c"
-                LastKnownName="Computer"
-                LastKnownLocation="ModelingProject.uml" />
-            </covered>
-          </operandOccurrenceSpecification>
-          <operandOccurrenceSpecification
             Id="239066d5-c5f9-4f0f-ba7c-179abcda8acf"
             name="OperandOccurrenceSpecification61">
             <covered>
               <lifelineMoniker
                 Id="6d1fd3da-070f-4673-9539-79981b486e79"
                 LastKnownName="Player"
+                LastKnownLocation="ModelingProject.uml" />
+            </covered>
+          </operandOccurrenceSpecification>
+          <operandOccurrenceSpecification
+            Id="6bb1defb-9354-406a-a28b-4c7a6cdcd120"
+            name="OperandOccurrenceSpecification59">
+            <covered>
+              <lifelineMoniker
+                Id="31d84cb8-99b2-46c1-9753-fbcd8c96a00c"
+                LastKnownName="Computer"
                 LastKnownLocation="ModelingProject.uml" />
             </covered>
           </operandOccurrenceSpecification>
@@ -3421,12 +3421,12 @@
             </operands>
           </combinedFragment>
           <operandOccurrenceSpecification
-            Id="d5c82962-6336-45e1-9eac-01b3281a508a"
-            name="OperandOccurrenceSpecification49">
+            Id="bc40335d-330d-43ee-988a-22051f91584e"
+            name="OperandOccurrenceSpecification55">
             <covered>
               <lifelineMoniker
-                Id="6d1fd3da-070f-4673-9539-79981b486e79"
-                LastKnownName="Player"
+                Id="8736055b-4e0b-4d7a-affb-680599abfe44"
+                LastKnownName="Dice"
                 LastKnownLocation="ModelingProject.uml" />
             </covered>
           </operandOccurrenceSpecification>
@@ -3441,12 +3441,12 @@
             </covered>
           </operandOccurrenceSpecification>
           <operandOccurrenceSpecification
-            Id="bc40335d-330d-43ee-988a-22051f91584e"
-            name="OperandOccurrenceSpecification55">
+            Id="d5c82962-6336-45e1-9eac-01b3281a508a"
+            name="OperandOccurrenceSpecification49">
             <covered>
               <lifelineMoniker
-                Id="8736055b-4e0b-4d7a-affb-680599abfe44"
-                LastKnownName="Dice"
+                Id="6d1fd3da-070f-4673-9539-79981b486e79"
+                LastKnownName="Player"
                 LastKnownLocation="ModelingProject.uml" />
             </covered>
           </operandOccurrenceSpecification>
@@ -3535,16 +3535,6 @@
             </covered>
           </executionOccurrenceSpecification>
           <operandOccurrenceSpecification
-            Id="2262f4a3-1c15-412a-9427-896643166ce8"
-            name="OperandOccurrenceSpecification56">
-            <covered>
-              <lifelineMoniker
-                Id="8736055b-4e0b-4d7a-affb-680599abfe44"
-                LastKnownName="Dice"
-                LastKnownLocation="ModelingProject.uml" />
-            </covered>
-          </operandOccurrenceSpecification>
-          <operandOccurrenceSpecification
             Id="6eea86fa-f562-4428-aa5c-c9d76773f66d"
             name="OperandOccurrenceSpecification48">
             <covered>
@@ -3561,6 +3551,16 @@
               <lifelineMoniker
                 Id="6d1fd3da-070f-4673-9539-79981b486e79"
                 LastKnownName="Player"
+                LastKnownLocation="ModelingProject.uml" />
+            </covered>
+          </operandOccurrenceSpecification>
+          <operandOccurrenceSpecification
+            Id="2262f4a3-1c15-412a-9427-896643166ce8"
+            name="OperandOccurrenceSpecification56">
+            <covered>
+              <lifelineMoniker
+                Id="8736055b-4e0b-4d7a-affb-680599abfe44"
+                LastKnownName="Dice"
                 LastKnownLocation="ModelingProject.uml" />
             </covered>
           </operandOccurrenceSpecification>
@@ -5446,6 +5446,670 @@
             Id="1109e37e-d285-4a3b-b731-aaa2b4104e3b"
             name="ActivityFinal1"
             isLeaf="false" />
+        </nodes>
+      </activity>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <activity
+        Id="45a0945f-c681-41c0-97fa-539f6a1d572b"
+        name="Homebrew Information Addition"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false"
+        isReentrant="false"
+        isReadOnly="false"
+        isSingleExecution="false">
+        <nodes>
+          <activityFinalNode
+            Id="83148310-8f60-4b73-9e43-42bc9c2028e2"
+            name="ActivityFinal1"
+            isLeaf="false" />
+          <decisionNode
+            Id="77e6bd4b-4848-4b42-a41e-b4abd36b3807"
+            name="typeOfAddition"
+            isLeaf="false">
+            <objectFlowTargets>
+              <objectFlow
+                Id="a4e883a7-c495-4ab9-951c-a96817c93f2b"
+                isLeaf="false"
+                isMulticast="false"
+                isMultireceive="false">
+                <objectNodeMoniker
+                  Id="21949533-b7d4-475b-a19d-d16e0b1361cc"
+                  LastKnownName="creature Feature"
+                  LastKnownLocation="ModelingProject.uml" />
+              </objectFlow>
+              <objectFlow
+                Id="d32d82b9-cbd0-404a-ab88-3c41d125ee66"
+                isLeaf="false"
+                isMulticast="false"
+                isMultireceive="false">
+                <objectNodeMoniker
+                  Id="b98d8c6b-0f89-4bce-bd14-86f7d3672d50"
+                  LastKnownName="creature"
+                  LastKnownLocation="ModelingProject.uml" />
+              </objectFlow>
+            </objectFlowTargets>
+          </decisionNode>
+          <objectNode
+            Id="21949533-b7d4-475b-a19d-d16e0b1361cc"
+            name="creature Feature"
+            isLeaf="false"
+            ordering="Unordered"
+            isControlType="false">
+            <objectFlowTargets>
+              <objectFlow
+                Id="af68717a-5792-4303-b3b4-659ad493b4cb"
+                isLeaf="false"
+                isMulticast="false"
+                isMultireceive="false">
+                <decisionNodeMoniker
+                  Id="6b7a4630-c038-4403-849e-3fab7a615c55"
+                  LastKnownName="featureSpecifier"
+                  LastKnownLocation="ModelingProject.uml" />
+              </objectFlow>
+            </objectFlowTargets>
+            <upperBound>
+              <literalInteger
+                Id="4e4bc961-6070-4382-a4e7-74f3884cf49b"
+                name="2147483647"
+                value="2147483647" />
+            </upperBound>
+          </objectNode>
+          <objectNode
+            Id="b98d8c6b-0f89-4bce-bd14-86f7d3672d50"
+            name="creature"
+            isLeaf="false"
+            ordering="Unordered"
+            isControlType="false">
+            <objectFlowTargets>
+              <objectFlow
+                Id="26971ef9-a71c-493e-9c4d-6105973f1215"
+                isLeaf="false"
+                isMulticast="false"
+                isMultireceive="false">
+                <decisionNodeMoniker
+                  Id="7335d5d7-e839-4b19-bde0-e484d9611fd2"
+                  LastKnownName="creatureSpecifier"
+                  LastKnownLocation="ModelingProject.uml" />
+              </objectFlow>
+            </objectFlowTargets>
+            <upperBound>
+              <literalInteger
+                Id="ff4846e1-2351-44eb-8ffe-9a114303caf0"
+                name="2147483647"
+                value="2147483647" />
+            </upperBound>
+          </objectNode>
+          <objectNode
+            Id="7bf1984d-33ab-47b5-9298-6d46e5dd3d5b"
+            name="items"
+            isLeaf="false"
+            ordering="Unordered"
+            isControlType="false">
+            <objectFlowTargets>
+              <objectFlow
+                Id="24d12211-268b-4dcf-bdfd-fc9a0d9db43c"
+                isLeaf="false"
+                isMulticast="false"
+                isMultireceive="false">
+                <opaqueActionMoniker
+                  Id="5e9b41be-fc7f-44fa-8229-dda4d7ed3c4f"
+                  LastKnownName="Determine type of item"
+                  LastKnownLocation="ModelingProject.uml" />
+              </objectFlow>
+            </objectFlowTargets>
+            <upperBound>
+              <literalInteger
+                Id="a164c321-5a2d-45b2-8fb8-7db4a15fbaa1"
+                name="2147483647"
+                value="2147483647" />
+            </upperBound>
+          </objectNode>
+          <objectNode
+            Id="b9ee9069-d067-4551-99b8-fb916b00c294"
+            name="abilities"
+            isLeaf="false"
+            ordering="Unordered"
+            isControlType="false">
+            <objectFlowTargets>
+              <objectFlow
+                Id="79c56a4c-be48-42d4-b6fb-612a17200624"
+                isLeaf="false"
+                isMulticast="false"
+                isMultireceive="false">
+                <opaqueActionMoniker
+                  Id="20cfc342-69fd-47db-bbfa-4d4c326fd936"
+                  LastKnownName="determine type of ability"
+                  LastKnownLocation="ModelingProject.uml" />
+              </objectFlow>
+            </objectFlowTargets>
+            <upperBound>
+              <literalInteger
+                Id="8cb2845c-7a3c-45b8-84a9-e72c8890c5a1"
+                name="2147483647"
+                value="2147483647" />
+            </upperBound>
+          </objectNode>
+          <decisionNode
+            Id="6b7a4630-c038-4403-849e-3fab7a615c55"
+            name="featureSpecifier"
+            isLeaf="false">
+            <objectFlowTargets>
+              <objectFlow
+                Id="5e54b6f5-f6df-4947-babc-b9761d2733f5"
+                isLeaf="false"
+                isMulticast="false"
+                isMultireceive="false">
+                <objectNodeMoniker
+                  Id="7bf1984d-33ab-47b5-9298-6d46e5dd3d5b"
+                  LastKnownName="items"
+                  LastKnownLocation="ModelingProject.uml" />
+              </objectFlow>
+              <objectFlow
+                Id="a905d555-6ef6-4ea5-a8b3-d5287f9e7e01"
+                isLeaf="false"
+                isMulticast="false"
+                isMultireceive="false">
+                <objectNodeMoniker
+                  Id="b9ee9069-d067-4551-99b8-fb916b00c294"
+                  LastKnownName="abilities"
+                  LastKnownLocation="ModelingProject.uml" />
+              </objectFlow>
+            </objectFlowTargets>
+          </decisionNode>
+          <objectNode
+            Id="94f6b497-f96c-4b63-ad3d-f29546aac46f"
+            name="race"
+            isLeaf="false"
+            ordering="Unordered"
+            isControlType="false">
+            <objectFlowTargets>
+              <objectFlow
+                Id="82eb7487-3da9-49d8-8b34-936e88f3823e"
+                isLeaf="false"
+                isMulticast="false"
+                isMultireceive="false">
+                <opaqueActionMoniker
+                  Id="7e9615d2-9046-4e2a-9917-caa6981b48d3"
+                  LastKnownName="Provide a cosmetic description and name"
+                  LastKnownLocation="ModelingProject.uml" />
+              </objectFlow>
+            </objectFlowTargets>
+            <upperBound>
+              <literalInteger
+                Id="54b17853-6cd2-4a16-bf6a-43eebcc62fbc"
+                name="2147483647"
+                value="2147483647" />
+            </upperBound>
+          </objectNode>
+          <objectNode
+            Id="1b9dc191-2aef-4e74-af40-2fc8813b9ff9"
+            name="class"
+            isLeaf="false"
+            ordering="Unordered"
+            isControlType="false">
+            <objectFlowTargets>
+              <objectFlow
+                Id="d22a11a1-a0bd-4248-baa2-80613da62097"
+                isLeaf="false"
+                isMulticast="false"
+                isMultireceive="false">
+                <opaqueActionMoniker
+                  Id="9def891a-51db-4e55-b91a-c7b1101be3db"
+                  LastKnownName="Provide name and description"
+                  LastKnownLocation="ModelingProject.uml" />
+              </objectFlow>
+            </objectFlowTargets>
+            <upperBound>
+              <literalInteger
+                Id="e947a14d-da2f-4bf1-baa4-c5703376b179"
+                name="2147483647"
+                value="2147483647" />
+            </upperBound>
+          </objectNode>
+          <decisionNode
+            Id="7335d5d7-e839-4b19-bde0-e484d9611fd2"
+            name="creatureSpecifier"
+            isLeaf="false">
+            <objectFlowTargets>
+              <objectFlow
+                Id="00286f03-6b32-4c38-b6c9-d58dc2d46253"
+                isLeaf="false"
+                isMulticast="false"
+                isMultireceive="false">
+                <objectNodeMoniker
+                  Id="94f6b497-f96c-4b63-ad3d-f29546aac46f"
+                  LastKnownName="race"
+                  LastKnownLocation="ModelingProject.uml" />
+              </objectFlow>
+              <objectFlow
+                Id="a8efc5b1-7ab3-498d-b3a3-4dda4b264fc2"
+                isLeaf="false"
+                isMulticast="false"
+                isMultireceive="false">
+                <objectNodeMoniker
+                  Id="1b9dc191-2aef-4e74-af40-2fc8813b9ff9"
+                  LastKnownName="class"
+                  LastKnownLocation="ModelingProject.uml" />
+              </objectFlow>
+            </objectFlowTargets>
+          </decisionNode>
+          <opaqueAction
+            Id="5e9b41be-fc7f-44fa-8229-dda4d7ed3c4f"
+            name="Determine type of item"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="deb46c77-a4c6-476d-8e3a-5620b062b1ba"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="e2aa6a6e-acc1-4d58-b04b-c99f0cb9a2ab"
+                  LastKnownName="Assign valid attributes"
+                  LastKnownLocation="ModelingProject.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction
+            Id="e2aa6a6e-acc1-4d58-b04b-c99f0cb9a2ab"
+            name="Assign valid attributes"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="d24dc866-19ac-414b-aa61-fb388c52ff56"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="937b3022-76f4-4e35-9c49-1c73d0fcceb0"
+                  LastKnownName="Describe the effects of the item"
+                  LastKnownLocation="ModelingProject.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction
+            Id="937b3022-76f4-4e35-9c49-1c73d0fcceb0"
+            name="Describe the effects of the item"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="f42e3791-293b-4c00-bf09-ae4b1621bbe2"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="4b7e01f0-efde-4c1a-9b6c-b68790bb27e2"
+                  LastKnownName="Save the item"
+                  LastKnownLocation="ModelingProject.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction
+            Id="20cfc342-69fd-47db-bbfa-4d4c326fd936"
+            name="determine type of ability"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="6ea6a93e-8179-47ed-be45-2cba36b0315e"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="b5dc3a4c-2f8d-41e2-a120-85194afce310"
+                  LastKnownName="Assign prerequisites / attributes"
+                  LastKnownLocation="ModelingProject.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction
+            Id="b5dc3a4c-2f8d-41e2-a120-85194afce310"
+            name="Assign prerequisites / attributes"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="271ebeef-1d7b-44ac-b167-4ac59141586a"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="e509c1ba-21b2-4901-90fa-faceaf9a8d2f"
+                  LastKnownName="Describe ability Effects"
+                  LastKnownLocation="ModelingProject.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction
+            Id="e509c1ba-21b2-4901-90fa-faceaf9a8d2f"
+            name="Describe ability Effects"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="ca101254-efeb-43e5-9c64-518d548229a5"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="21082081-21ce-47b7-9b40-383ac097f0db"
+                  LastKnownName="Save the ability"
+                  LastKnownLocation="ModelingProject.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <mergeNode
+            Id="a949734f-288f-4e25-94d9-e59e8e3a2590"
+            name="save"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="4ce42d7c-b838-49bc-88b3-e49e5d83bce6"
+                isLeaf="false">
+                <activityFinalNodeMoniker
+                  Id="83148310-8f60-4b73-9e43-42bc9c2028e2"
+                  LastKnownName="ActivityFinal1"
+                  LastKnownLocation="ModelingProject.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </mergeNode>
+          <opaqueAction
+            Id="7e9615d2-9046-4e2a-9917-caa6981b48d3"
+            name="Provide a cosmetic description and name"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="a76e6f23-241b-4c6b-8baf-8e5cd64435bf"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="09858174-7df0-44f9-865d-6e9c1df62499"
+                  LastKnownName="Determine typing, Subtyping, and bonuses"
+                  LastKnownLocation="ModelingProject.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction
+            Id="09858174-7df0-44f9-865d-6e9c1df62499"
+            name="Determine typing, Subtyping, and bonuses"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="add15a3d-c9a2-41c6-ab37-863d2f46fb13"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="11c4f3d4-7dfd-414c-b198-3bdfd50f5886"
+                  LastKnownName="add a racial ability"
+                  LastKnownLocation="ModelingProject.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <decisionNode
+            Id="05b8ff22-e232-48ff-ad93-69627ac462c8"
+            name="new or existing ability"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="d7b05afe-448e-4ad1-a648-ae400d1aef58"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="fd29c997-8a14-4345-adf4-84f46ea16f73"
+                  LastKnownName="Use pre-existing abilities for race"
+                  LastKnownLocation="ModelingProject.uml" />
+              </controlFlow>
+              <controlFlow
+                Id="18f6962f-fa01-43bf-bb14-a9d277262e9f"
+                guard="Create a new ability"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="20cfc342-69fd-47db-bbfa-4d4c326fd936"
+                  LastKnownName="determine type of ability"
+                  LastKnownLocation="ModelingProject.uml" />
+              </controlFlow>
+              <controlFlow
+                Id="444413cd-40de-4d3a-a239-f1828c756f71"
+                guard="No more Abilities"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="6c734ba7-f173-4fc7-bff2-0c488d5d4917"
+                  LastKnownName="Save the race"
+                  LastKnownLocation="ModelingProject.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </decisionNode>
+          <opaqueAction
+            Id="fd29c997-8a14-4345-adf4-84f46ea16f73"
+            name="Use pre-existing abilities for race"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="38409402-b1a8-4261-98ad-9a6398175cb7"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="11c4f3d4-7dfd-414c-b198-3bdfd50f5886"
+                  LastKnownName="add a racial ability"
+                  LastKnownLocation="ModelingProject.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction
+            Id="11c4f3d4-7dfd-414c-b198-3bdfd50f5886"
+            name="add a racial ability"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="10daf413-9016-4ad9-ab1b-686d12133299"
+                isLeaf="false">
+                <decisionNodeMoniker
+                  Id="05b8ff22-e232-48ff-ad93-69627ac462c8"
+                  LastKnownName="new or existing ability"
+                  LastKnownLocation="ModelingProject.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction
+            Id="4b7e01f0-efde-4c1a-9b6c-b68790bb27e2"
+            name="Save the item"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="2dfae89f-15c6-4e41-b3d3-626cabc1c26f"
+                isLeaf="false">
+                <mergeNodeMoniker
+                  Id="a949734f-288f-4e25-94d9-e59e8e3a2590"
+                  LastKnownName="save"
+                  LastKnownLocation="ModelingProject.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction
+            Id="21082081-21ce-47b7-9b40-383ac097f0db"
+            name="Save the ability"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="010ee6e9-5442-41a2-808d-010873f97faa"
+                isLeaf="false">
+                <decisionNodeMoniker
+                  Id="815eb9c7-b9e1-454e-90a1-d4a8dc9ec842"
+                  LastKnownName="return to proper interface"
+                  LastKnownLocation="ModelingProject.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <decisionNode
+            Id="815eb9c7-b9e1-454e-90a1-d4a8dc9ec842"
+            name="return to proper interface"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="9a54a4c3-9794-433d-86db-8a6e5a618ff2"
+                guard="return to class"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="164fd9ea-2a4a-41be-b3b0-fb23fa24af97"
+                  LastKnownName="Add class Ability"
+                  LastKnownLocation="ModelingProject.uml" />
+              </controlFlow>
+              <controlFlow
+                Id="9ad8b529-b23c-496c-96fe-0ea473c3310f"
+                guard="return to race"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="11c4f3d4-7dfd-414c-b198-3bdfd50f5886"
+                  LastKnownName="add a racial ability"
+                  LastKnownLocation="ModelingProject.uml" />
+              </controlFlow>
+              <controlFlow
+                Id="8342fe96-1739-4fb0-815f-f6353799f042"
+                guard="stand-alone ability"
+                isLeaf="false">
+                <mergeNodeMoniker
+                  Id="a949734f-288f-4e25-94d9-e59e8e3a2590"
+                  LastKnownName="save"
+                  LastKnownLocation="ModelingProject.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </decisionNode>
+          <opaqueAction
+            Id="9def891a-51db-4e55-b91a-c7b1101be3db"
+            name="Provide name and description"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="2bcdfdf6-cb5a-4e29-8aa4-0526f76cbbf2"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="002cbaf3-893d-4df4-ad03-190a7dc99b62"
+                  LastKnownName="Determine Class skills, Hit die, saving throws, and Base attack bonus"
+                  LastKnownLocation="ModelingProject.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction
+            Id="002cbaf3-893d-4df4-ad03-190a7dc99b62"
+            name="Determine Class skills, Hit die, saving throws, and Base attack bonus"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="5bd8743c-b7ca-4fc9-95ca-ef504578f4a5"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="35004c6b-5432-4d82-a4c5-a477cf2f14f1"
+                  LastKnownName="add spellcasting information (spells known, spells per day, casting stat, etc.)"
+                  LastKnownLocation="ModelingProject.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction
+            Id="35004c6b-5432-4d82-a4c5-a477cf2f14f1"
+            name="add spellcasting information (spells known, spells per day, casting stat, etc.)"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="1835c21c-f54e-4455-94f1-094fdc5b21de"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="164fd9ea-2a4a-41be-b3b0-fb23fa24af97"
+                  LastKnownName="Add class Ability"
+                  LastKnownLocation="ModelingProject.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction
+            Id="6c734ba7-f173-4fc7-bff2-0c488d5d4917"
+            name="Save the race"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="e784508f-5c77-4b69-a901-038397641948"
+                isLeaf="false">
+                <mergeNodeMoniker
+                  Id="a949734f-288f-4e25-94d9-e59e8e3a2590"
+                  LastKnownName="save"
+                  LastKnownLocation="ModelingProject.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction
+            Id="164fd9ea-2a4a-41be-b3b0-fb23fa24af97"
+            name="Add class Ability"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="dfd8b86c-4888-4cce-aae5-ad28f77513df"
+                isLeaf="false">
+                <decisionNodeMoniker
+                  Id="579a4004-ad3b-44e8-8906-c088fe248d6a"
+                  LastKnownName="Decision1"
+                  LastKnownLocation="ModelingProject.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <decisionNode
+            Id="579a4004-ad3b-44e8-8906-c088fe248d6a"
+            name="Decision1"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="3f85103b-ffea-4446-b14a-acf0b73df6d2"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="8f9b2140-1d07-4aea-a867-d89face126a7"
+                  LastKnownName="Use pre-existing abilities for class"
+                  LastKnownLocation="ModelingProject.uml" />
+              </controlFlow>
+              <controlFlow
+                Id="2c1182c9-e4d5-4936-92c7-8e5ad37e3858"
+                guard="Create a new ability"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="20cfc342-69fd-47db-bbfa-4d4c326fd936"
+                  LastKnownName="determine type of ability"
+                  LastKnownLocation="ModelingProject.uml" />
+              </controlFlow>
+              <controlFlow
+                Id="7072ee42-4c25-46c9-a603-a05145b1be5b"
+                guard="no more abilities"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="4d01c33b-4451-419b-826e-0e3ab247440e"
+                  LastKnownName="save the Class"
+                  LastKnownLocation="ModelingProject.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </decisionNode>
+          <opaqueAction
+            Id="8f9b2140-1d07-4aea-a867-d89face126a7"
+            name="Use pre-existing abilities for class"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="78480e6d-b00a-4ddb-b3cd-c6037d8109a5"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="164fd9ea-2a4a-41be-b3b0-fb23fa24af97"
+                  LastKnownName="Add class Ability"
+                  LastKnownLocation="ModelingProject.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction
+            Id="4d01c33b-4451-419b-826e-0e3ab247440e"
+            name="save the Class"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="e8afd25f-b688-41f3-88dd-4588f0699727"
+                isLeaf="false">
+                <mergeNodeMoniker
+                  Id="a949734f-288f-4e25-94d9-e59e8e3a2590"
+                  LastKnownName="save"
+                  LastKnownLocation="ModelingProject.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <initialNode
+            Id="840118c7-4946-4291-ba0a-6485cce8c3a5"
+            name="Initial1"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="34aa7df4-ef70-4a09-ab0a-bef2e54b5cad"
+                isLeaf="false">
+                <decisionNodeMoniker
+                  Id="77e6bd4b-4848-4b42-a41e-b4abd36b3807"
+                  LastKnownName="typeOfAddition"
+                  LastKnownLocation="ModelingProject.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </initialNode>
         </nodes>
       </activity>
     </packageHasNamedElement>
