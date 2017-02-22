@@ -46,11 +46,14 @@
          **Summary:**  Expressed as "Total experience points gained," this keeps track of the character's total XP gain     
       5. **Name:**  Spells Known  **NEW**  
          **Type:**  Functional  
-         **Summary:**  A list of spells a creature knows, does not handle prepared spells or spells per day. this is the Flesh-and-blood player's responsibility.     
+         **Summary:**  A list of spells a creature knows, does not handle prepared spells or spells per day, this is the Flesh-and-blood player's responsibility.     
       6. **Name:**  Creature Rating  **NEW**  
          **Type:**  Functional  
          **Summary:**  The creature's Creature rating, with player characters having their ECL here instead.  
-         
+      7. **Name:**  Size  **NEW**  
+         **Type:**  Functional  
+         **Summary:**  The creature's size, which affects a number of combat specific things.            
+
 2. **Name:** Print Character Record  
     **Type:** functional.  
     **Summary:** Be able to print Character record sheet.
@@ -64,10 +67,13 @@
       2. **Name:**   Player Choices  **NEW**  
          **Type:**   Constraint  
          **Summary:**   Choices will only be presented when the system can verify that the character in question already fufills the prequisites.    
+      3. **Name:**   Item avaibility  **NEW**  
+         **Type:**   Constraint  
+         **Summary:**  Players will be able to add any items they desire to their character.  
 
 4. **Name:** Character Export  **NEW**  
     **Type:** functional.  
-    **Summary:** The character sheet will be exported though XML, allowing for the players to transfer it to the DM through a method fo their choosing.   
+    **Summary:** The character sheet will be digitally exportable, allowing for the players to transfer it to the DM through a method fo their choosing.   
     
 5. **Name:** Character Presentation  **NEW**  
     **Type:** functional.  
@@ -79,22 +85,25 @@
     **Summary:** A data entry form for homebrew data used by the Game Master.  
       1.  **Name:** Form for entering spell data.  
           **Type:** functional.  
-          **Summary:** A data entry form for the spell information used by the Game Master.
+          **Summary:** A data entry form for the spell information used by the Game Master.  
       2.  **Name:** Form for entering creature data.  
           **Type:** functional.    
-          **Summary:** A data entry form for the creature information used by the Game Master.
+          **Summary:** A data entry form for the creature information used by the Game Master.  
       3.  **Name:** Form for entering item data.  
           **Type:** functional.    
-          **Summary:** A data entry form for the item information used by the Game Master.
+          **Summary:** A data entry form for the item information used by the Game Master.  
       4.  **Name:** Form for entering class data.  
           **Type:** functional.    
-          **Summary:** A data entry form for the class information used by the Game Master.
+          **Summary:** A data entry form for the class information used by the Game Master.  
+      5.  **Name:** Form for entering race data.  **NEW**  
+          **Type:** functional.    
+          **Summary:** A data entry form for the racial information used by the Game Master.  
 
 5.  **Name:** System Accuracy  
     **Type:** Constraint.  
     **Summary:** The utility must adhere to both the system it was designed for (Dungeons and Dragons, 3.5th edition) and to the rules within, as such will need to preform mathmatical calculations accurately.  
 
-6.  **Name:** Entity Initialization.  **UPDATED**
+6.  **Name:** Entity Initialization.  **UPDATED**  
     **Type:** functional.  
     **Summary:** The utility will offer the ability to select anything stored in the utility and enable it, Creating an instance of that creature. To differentiate between clones, Duplicates, and the like, a numerical dientifier will also be provided.  
     1.  **Name:** Entity Searchibility  **NEW**  
@@ -120,9 +129,12 @@
     **Type:** Functional.  
     **Summary:** Will provide a dropdown of presently active entities, and will allow for the selection of multiple targeted beings.  
     
-11. **Name:** Results Button.  
+11. **Name:** Results Button.  **UPDATED**  
     **Type:** Functional.  
-    **Summary:** The main focus of this entire endevour, and encompasses the most complex parts of D&D. This takes the Activated Ability as used by the Selected entity and calculates the results against the targeted Entity(s), streamlining each calculation, and automatically preforming the prerequisite dice rolls. Results are posted in the log.  
+    **Summary:** The system will accept outside input for die rolls, and make the DM aware of whether the results neccessitate success or failure, and keep readily available spell and avaibility descriptions. Results are posted in the log.  
+      1. **Name:** Modfier Details **NEW**    
+         **Type:** Functional  
+         **Summary:** The system will provide, at DM request, a breakdown of the modifiers affecting a particular roll, to better facilitate the DM's ability to override them at any given time. 
 
 12. **Name:** Text based output and Log.  
     **Type:** functional.  
@@ -140,7 +152,20 @@
     **Type:** Constraint.  
     **Summary:** The system must operate faster than an experienced DM, Which means that initial setup should be within 10 minutes, Initializing an entity should take within 10 seconds, and the results button's functionality within two minutes. Ideally, Bootup will be within a minute, and Any other action will be instantanious to the user's preception.  
 
+16. **Name:** Temporary Effects Table  **NEW**  
+    **Type:** Functional.  
+    **Summary:** Will connect the Effects of temporary statuses to their respective characters, through DM modification, and will thus affect the numbers provided by the system.  
     
+17. **Name:** DM responsibility  **NEW**  
+    **Type:** Constraint    
+    **Summary:** It will be the DM's responsibility to handle a number of facets this sytem cannot reasonibly be expected to handle.    
+      1. **Name:** Cheat Prevention **NEW**    
+         **Type:** Constraint  
+         **Summary:** The system will provide the player's data in an easier to process manner, but will not attempt to validiate every last detail of a player's character.  
+      2. **Name:** Spell Descriptions **NEW**    
+         **Type:** Constraint  
+         **Summary:** The system will provide descriptions of a spell's effects. It will be up to the DM to interpret these and move forwards from there. The goal of this system is to not have the game play itself.   
+         
 # System Requirements
 1.  **Name:** Operating systems  
     **Type:** Constraint.  
@@ -160,5 +185,9 @@
    
 5. **Name:** Database  
    **Type:** Constraint.  
-   **Summary:** System will include an embedded database.
+   **Summary:** System will include an embedded database.  
+   
+6. **Name:** Content Restrictions    
+   **Type:** Constraint.  
+   **Summary:** For the sake of consiseness, the system will neglect to include the rules for psionics and epic level characters.  
 
