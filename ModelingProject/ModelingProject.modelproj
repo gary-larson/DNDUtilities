@@ -43,12 +43,47 @@
       <SubType>Content</SubType>
       <DependentUpon>UMLActivityDiagramDMResolveEncounter.activitydiagram</DependentUpon>
     </Content>
+    <Content Include="UMLSequenceDiagramAbilityAddition.sequencediagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="UMLSequenceDiagramAbilityAddition.sequencediagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>UMLSequenceDiagramAbilityAddition.sequencediagram</DependentUpon>
+    </Content>
     <Content Include="UMLSequenceDiagramCharacterGeneration.sequencediagram">
       <SubType>Content</SubType>
     </Content>
     <Content Include="UMLSequenceDiagramCharacterGeneration.sequencediagram.layout">
       <SubType>Content</SubType>
       <DependentUpon>UMLSequenceDiagramCharacterGeneration.sequencediagram</DependentUpon>
+    </Content>
+    <Content Include="UMLSequenceDiagramClassAddition.sequencediagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="UMLSequenceDiagramClassAddition.sequencediagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>UMLSequenceDiagramClassAddition.sequencediagram</DependentUpon>
+    </Content>
+    <Content Include="UMLSequenceDiagramHomebrewAddition.sequencediagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="UMLSequenceDiagramHomebrewAddition.sequencediagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>UMLSequenceDiagramHomebrewAddition.sequencediagram</DependentUpon>
+    </Content>
+    <Content Include="UMLSequenceDiagramItemAddition.sequencediagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="UMLSequenceDiagramItemAddition.sequencediagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>UMLSequenceDiagramItemAddition.sequencediagram</DependentUpon>
+    </Content>
+    <Content Include="UMLSequenceDiagramRaceAddition.sequencediagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="UMLSequenceDiagramRaceAddition.sequencediagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>UMLSequenceDiagramRaceAddition.sequencediagram</DependentUpon>
     </Content>
     <Content Include="UMLSequenceDiagramStandardCombat.sequencediagram">
       <SubType>Content</SubType>

@@ -1,0 +1,581 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<SequenceDesignerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/dsltools/LogicalClassDesigner" xmlns:dm10="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm11="http://schemas.microsoft.com/dsltools/UseCaseModel" xmlns:dm12="http://schemas.microsoft.com/VisualStudio/TeamArchitect/ActivityDesigner" dslVersion="1.0.0.0" Id="1c989ec7-15bc-4682-96a5-6a7ae6bb3e42" name="SequenceHomebrewAddition" linkedPackageId="142a5aa4-d438-4612-b84c-5e19fd239fce" xmlns="http://schemas.microsoft.com/VisualStudio/TeamArchitect/SequenceDesigner">
+  <profileInstances>
+    <packageHasProfileInstances Id="492b2509-6514-4f0d-a735-d68c35543f65">
+      <profileInstance Id="4f88cc4a-5be1-4332-af35-540ff23ff992" name="StandardProfileL2">
+        <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+      </profileInstance>
+      <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+    </packageHasProfileInstances>
+    <packageHasProfileInstances Id="00792a84-3525-4353-b001-6f2de39e66b1">
+      <profileInstance Id="efe15604-c95f-4c6c-ac51-64106b276bed" name="StandardProfileL3">
+        <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+      </profileInstance>
+      <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+    </packageHasProfileInstances>
+  </profileInstances>
+  <packagedElements>
+    <packageHasNamedElement>
+      <interaction Id="80dceef5-a368-48f3-82e9-ddddb394be50" name="SequenceHomebrewAddition" collapseFragmentsFlag="false" isActiveClass="false" isAbstract="false" isLeaf="false" isReentrant="false">
+        <elementDefinition Id="26f82b17-dda4-4d7c-bcf4-be1414bd3c62" />
+        <fragments>
+          <behaviorExecutionSpecification Id="234a0460-aa89-4699-8669-e8158f8d3cfb" name="BehaviorExecutionSpecification1">
+            <elementDefinition Id="07df5c3f-e25e-48cf-993c-ca701d170eee" />
+            <coveredLifelines>
+              <lifelineMoniker Id="5d5168ed-b36c-4e3c-bdb7-90315efb14dd" LastKnownName="Dungeon Master" />
+            </coveredLifelines>
+            <finish>
+              <executionOccurrenceSpecificationMoniker Id="1ee5d22a-1800-4ff0-b360-59d60c4c19f6" LastKnownName="ExecutionOccurrenceSpecification2" />
+            </finish>
+            <start>
+              <executionOccurrenceSpecificationMoniker Id="c198822a-6365-4473-a7db-63a7d68369f4" LastKnownName="ExecutionOccurrenceSpecification1" />
+            </start>
+            <nestedOccurrences>
+              <messageOccurrenceSpecificationMoniker Id="40e768e5-95ee-4fb6-ad5e-7de029ae2f2f" LastKnownName="MessageOccurrenceSpecification2" />
+              <messageOccurrenceSpecificationMoniker Id="55f8e2e4-1456-4d40-bc70-e493dc9438d7" LastKnownName="MessageOccurrenceSpecification3" />
+            </nestedOccurrences>
+          </behaviorExecutionSpecification>
+          <executionOccurrenceSpecification Id="c198822a-6365-4473-a7db-63a7d68369f4" name="ExecutionOccurrenceSpecification1">
+            <elementDefinition Id="fc106903-2039-4dff-ae6a-934d15fb34b4" />
+            <event>
+              <executionOccurrenceSpecificationReferencesEvent>
+                <executionEventMoniker Id="7f7b7f1c-8ac4-4879-96ab-dc0358875ed6" LastKnownName="ExecutionEvent" />
+              </executionOccurrenceSpecificationReferencesEvent>
+            </event>
+            <covered>
+              <lifelineMoniker Id="5d5168ed-b36c-4e3c-bdb7-90315efb14dd" LastKnownName="Dungeon Master" />
+            </covered>
+          </executionOccurrenceSpecification>
+          <messageOccurrenceSpecification Id="6a06514f-1806-4013-9b73-f1c5b7a54936" name="MessageOccurrenceSpecification1">
+            <elementDefinition Id="1e8924e9-65d0-456a-a07c-919e6802e7c6" />
+            <covered>
+              <lifelineMoniker Id="b589d416-318b-460b-aaac-c3c31c99584a" LastKnownName="User Interface" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification Id="40e768e5-95ee-4fb6-ad5e-7de029ae2f2f" name="MessageOccurrenceSpecification2">
+            <elementDefinition Id="031a1c5e-6dad-4595-8178-74ef79aa4cf0" />
+            <covered>
+              <lifelineMoniker Id="5d5168ed-b36c-4e3c-bdb7-90315efb14dd" LastKnownName="Dungeon Master" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification Id="55f8e2e4-1456-4d40-bc70-e493dc9438d7" name="MessageOccurrenceSpecification3">
+            <elementDefinition Id="d6343f59-1d0c-4d83-bfef-b6da7c9a91de" />
+            <covered>
+              <lifelineMoniker Id="5d5168ed-b36c-4e3c-bdb7-90315efb14dd" LastKnownName="Dungeon Master" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification Id="8b6e8e3b-2e83-4e7b-9044-305a4b6519cb" name="MessageOccurrenceSpecification4">
+            <elementDefinition Id="6ac400c3-d735-4f09-8c34-a6a34fc8fc07" />
+            <covered>
+              <lifelineMoniker Id="b589d416-318b-460b-aaac-c3c31c99584a" LastKnownName="User Interface" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <executionOccurrenceSpecification Id="1ee5d22a-1800-4ff0-b360-59d60c4c19f6" name="ExecutionOccurrenceSpecification2">
+            <elementDefinition Id="f096d474-5659-4efe-96d7-38bf76e2ea07" />
+            <event>
+              <executionOccurrenceSpecificationReferencesEvent>
+                <executionEventMoniker Id="e0a8bf2d-6935-4115-9c59-324f2bd2cd36" LastKnownName="ExecutionEvent" />
+              </executionOccurrenceSpecificationReferencesEvent>
+            </event>
+            <covered>
+              <lifelineMoniker Id="5d5168ed-b36c-4e3c-bdb7-90315efb14dd" LastKnownName="Dungeon Master" />
+            </covered>
+          </executionOccurrenceSpecification>
+          <combinedFragment Id="67bb3893-08f6-4a00-8a22-41097e0e2b30" name="CombinedFragment1" interactionOperator="Alt">
+            <elementDefinition Id="408d7163-4502-447b-b097-5a8da26c30c4" />
+            <coveredLifelines>
+              <lifelineMoniker Id="5d5168ed-b36c-4e3c-bdb7-90315efb14dd" LastKnownName="Dungeon Master" />
+              <lifelineMoniker Id="b589d416-318b-460b-aaac-c3c31c99584a" LastKnownName="User Interface" />
+            </coveredLifelines>
+            <operands>
+              <interactionOperand Id="083e35a3-a2c9-4cd3-9c7e-d07b82f30c7b" name="InteractionOperand1">
+                <elementDefinition Id="d6cbc543-5543-4f97-86de-03c10225f944" />
+                <coveredLifelines>
+                  <lifelineMoniker Id="5d5168ed-b36c-4e3c-bdb7-90315efb14dd" LastKnownName="Dungeon Master" />
+                  <lifelineMoniker Id="b589d416-318b-460b-aaac-c3c31c99584a" LastKnownName="User Interface" />
+                </coveredLifelines>
+                <guard>
+                  <interactionConstraint Id="a081e1d0-8e7a-4af4-a3be-34571ef817a9" guardText="newThing == Items">
+                    <elementDefinition Id="ae1033f9-5b0e-4a7c-b4fc-44ab9d98c4ea" />
+                  </interactionConstraint>
+                </guard>
+                <operandOccurrenceSpecifications>
+                  <operandOccurrenceSpecificationMoniker Id="8d3566fe-195b-438b-b47b-443b97d655ff" LastKnownName="OperandOccurrenceSpecification13" />
+                  <operandOccurrenceSpecificationMoniker Id="04d4b43b-1e21-4787-82dd-3dc38fcbf72c" LastKnownName="OperandOccurrenceSpecification14" />
+                  <operandOccurrenceSpecificationMoniker Id="cfaafe71-6410-433b-94a7-e7fafc88cbf3" LastKnownName="OperandOccurrenceSpecification15" />
+                  <operandOccurrenceSpecificationMoniker Id="a78e64a9-46c2-456b-b102-fd07cc43cd40" LastKnownName="OperandOccurrenceSpecification16" />
+                </operandOccurrenceSpecifications>
+              </interactionOperand>
+              <interactionOperand Id="48e58ba9-6e6d-4bdc-99c2-161689fb593b" name="InteractionOperand2">
+                <elementDefinition Id="9d21d448-2361-4566-abaf-33148fedbf45" />
+                <coveredLifelines>
+                  <lifelineMoniker Id="5d5168ed-b36c-4e3c-bdb7-90315efb14dd" LastKnownName="Dungeon Master" />
+                  <lifelineMoniker Id="b589d416-318b-460b-aaac-c3c31c99584a" LastKnownName="User Interface" />
+                </coveredLifelines>
+                <fragments>
+                  <combinedFragment Id="11c144ec-4100-424b-973c-ada3838a5eb4" name="CombinedFragment1" interactionOperator="Alt">
+                    <elementDefinition Id="99562586-98c4-4e37-a223-62a1fbeeadea" />
+                    <coveredLifelines>
+                      <lifelineMoniker Id="5d5168ed-b36c-4e3c-bdb7-90315efb14dd" LastKnownName="Dungeon Master" />
+                      <lifelineMoniker Id="b589d416-318b-460b-aaac-c3c31c99584a" LastKnownName="User Interface" />
+                    </coveredLifelines>
+                    <operands>
+                      <interactionOperand Id="47411440-f2e3-4f6f-bd01-d759bd937f33" name="InteractionOperand1">
+                        <elementDefinition Id="814489fb-96db-4f83-93ee-1578a4922a82" />
+                        <coveredLifelines>
+                          <lifelineMoniker Id="5d5168ed-b36c-4e3c-bdb7-90315efb14dd" LastKnownName="Dungeon Master" />
+                          <lifelineMoniker Id="b589d416-318b-460b-aaac-c3c31c99584a" LastKnownName="User Interface" />
+                        </coveredLifelines>
+                        <guard>
+                          <interactionConstraint Id="9e8b9f86-11e9-42d9-94a6-a925758deb06" guardText="newThing == Abilities">
+                            <elementDefinition Id="eeb56b4d-0506-4481-bae1-6c5f6fc5099c" />
+                          </interactionConstraint>
+                        </guard>
+                        <operandOccurrenceSpecifications>
+                          <operandOccurrenceSpecificationMoniker Id="2e3836ab-60df-4100-b004-b7899e8f38fa" LastKnownName="OperandOccurrenceSpecification21" />
+                          <operandOccurrenceSpecificationMoniker Id="f8288f2d-56dd-494a-aae5-5aa44f57d096" LastKnownName="OperandOccurrenceSpecification22" />
+                          <operandOccurrenceSpecificationMoniker Id="97abec19-4f4f-4546-a1e8-ddb6fe36abba" LastKnownName="OperandOccurrenceSpecification23" />
+                          <operandOccurrenceSpecificationMoniker Id="f40c296d-8d79-44aa-8feb-73143ff445bd" LastKnownName="OperandOccurrenceSpecification24" />
+                        </operandOccurrenceSpecifications>
+                      </interactionOperand>
+                      <interactionOperand Id="ab8a25be-1c07-42d0-b80a-18e0252cd9a1" name="InteractionOperand2">
+                        <elementDefinition Id="0deae27d-03c6-44ef-b0b3-89a7b5de40cf" />
+                        <coveredLifelines>
+                          <lifelineMoniker Id="5d5168ed-b36c-4e3c-bdb7-90315efb14dd" LastKnownName="Dungeon Master" />
+                          <lifelineMoniker Id="b589d416-318b-460b-aaac-c3c31c99584a" LastKnownName="User Interface" />
+                        </coveredLifelines>
+                        <fragments>
+                          <combinedFragment Id="fc4803a1-01b5-46e8-a594-3f5c7cd57004" name="CombinedFragment1" interactionOperator="Alt">
+                            <elementDefinition Id="6774426c-5aaf-458a-b902-560e17186d25" />
+                            <coveredLifelines>
+                              <lifelineMoniker Id="5d5168ed-b36c-4e3c-bdb7-90315efb14dd" LastKnownName="Dungeon Master" />
+                              <lifelineMoniker Id="b589d416-318b-460b-aaac-c3c31c99584a" LastKnownName="User Interface" />
+                            </coveredLifelines>
+                            <operands>
+                              <interactionOperand Id="f62b7640-aba6-49cc-b393-e9c93cf9a996" name="InteractionOperand1">
+                                <elementDefinition Id="66edebfb-fb38-4905-ab5e-ec4649a28c9b" />
+                                <coveredLifelines>
+                                  <lifelineMoniker Id="5d5168ed-b36c-4e3c-bdb7-90315efb14dd" LastKnownName="Dungeon Master" />
+                                  <lifelineMoniker Id="b589d416-318b-460b-aaac-c3c31c99584a" LastKnownName="User Interface" />
+                                </coveredLifelines>
+                                <guard>
+                                  <interactionConstraint Id="4c5e2670-9ce7-4f95-af00-170213775104" guardText="newThing == Race">
+                                    <elementDefinition Id="0181876a-1037-48b9-9911-7869d99affe9" />
+                                  </interactionConstraint>
+                                </guard>
+                                <operandOccurrenceSpecifications>
+                                  <operandOccurrenceSpecificationMoniker Id="98ab1c8d-6cca-4384-ac70-35b88bfbf8e4" LastKnownName="OperandOccurrenceSpecification29" />
+                                  <operandOccurrenceSpecificationMoniker Id="96be2b0d-3070-4d81-9f12-705a93ed8e1a" LastKnownName="OperandOccurrenceSpecification30" />
+                                  <operandOccurrenceSpecificationMoniker Id="a4d63bce-cc97-4cb3-ab1e-843fbce3f5ad" LastKnownName="OperandOccurrenceSpecification31" />
+                                  <operandOccurrenceSpecificationMoniker Id="6079e621-a91f-4673-b1ba-d3f57f829db4" LastKnownName="OperandOccurrenceSpecification32" />
+                                </operandOccurrenceSpecifications>
+                              </interactionOperand>
+                              <interactionOperand Id="582cab24-6fb6-44c1-9170-9442bb6b5457" name="InteractionOperand2">
+                                <elementDefinition Id="f6c470f6-1502-41ca-b24d-b7d7f78722b1" />
+                                <coveredLifelines>
+                                  <lifelineMoniker Id="5d5168ed-b36c-4e3c-bdb7-90315efb14dd" LastKnownName="Dungeon Master" />
+                                  <lifelineMoniker Id="b589d416-318b-460b-aaac-c3c31c99584a" LastKnownName="User Interface" />
+                                </coveredLifelines>
+                                <guard>
+                                  <interactionConstraint Id="dd81b77a-0dda-4906-b0e5-de672919e42d" guardText="newThing == Class">
+                                    <elementDefinition Id="75019016-4627-4aae-ba5d-ad173ece6702" />
+                                  </interactionConstraint>
+                                </guard>
+                                <operandOccurrenceSpecifications>
+                                  <operandOccurrenceSpecificationMoniker Id="5e93dfb3-55e2-4f09-8ffc-acc67d44acda" LastKnownName="OperandOccurrenceSpecification33" />
+                                  <operandOccurrenceSpecificationMoniker Id="3b389918-f937-4716-b982-d95efe3609d0" LastKnownName="OperandOccurrenceSpecification34" />
+                                  <operandOccurrenceSpecificationMoniker Id="6b3a7d22-8fca-4b3d-bedb-76521c6b5c2f" LastKnownName="OperandOccurrenceSpecification35" />
+                                  <operandOccurrenceSpecificationMoniker Id="94677805-264d-49ea-ab2b-ec7278f9f4d5" LastKnownName="OperandOccurrenceSpecification36" />
+                                </operandOccurrenceSpecifications>
+                              </interactionOperand>
+                            </operands>
+                          </combinedFragment>
+                        </fragments>
+                        <guard>
+                          <interactionConstraint Id="3363b58a-7981-46cd-ae41-c52f263b3c99">
+                            <elementDefinition Id="ad57cafd-9bc9-43f7-814b-d5eb36086f03" />
+                          </interactionConstraint>
+                        </guard>
+                        <operandOccurrenceSpecifications>
+                          <operandOccurrenceSpecificationMoniker Id="cece4161-3571-4244-996c-6bacfbeba5db" LastKnownName="OperandOccurrenceSpecification25" />
+                          <operandOccurrenceSpecificationMoniker Id="e230ca75-9b4f-4bc8-ab37-3ee65c36878e" LastKnownName="OperandOccurrenceSpecification26" />
+                          <operandOccurrenceSpecificationMoniker Id="6efe01d9-d8c2-4c27-8fbd-cde2228d0089" LastKnownName="OperandOccurrenceSpecification27" />
+                          <operandOccurrenceSpecificationMoniker Id="7e02ebe1-63af-4b3f-9643-b8b588f0ddfd" LastKnownName="OperandOccurrenceSpecification28" />
+                        </operandOccurrenceSpecifications>
+                      </interactionOperand>
+                    </operands>
+                  </combinedFragment>
+                </fragments>
+                <guard>
+                  <interactionConstraint Id="cbb851d2-19ed-4f5d-84e4-014e425a9fd3">
+                    <elementDefinition Id="9c07475d-252e-4e39-aec7-041efb52f3d2" />
+                  </interactionConstraint>
+                </guard>
+                <operandOccurrenceSpecifications>
+                  <operandOccurrenceSpecificationMoniker Id="efddf4db-8791-4738-9010-1f9da3a7d224" LastKnownName="OperandOccurrenceSpecification17" />
+                  <operandOccurrenceSpecificationMoniker Id="b8c56ca3-eb87-4140-b1bb-ad0262550031" LastKnownName="OperandOccurrenceSpecification18" />
+                  <operandOccurrenceSpecificationMoniker Id="6f5fd709-24ae-49ae-a472-502f576d6f26" LastKnownName="OperandOccurrenceSpecification19" />
+                  <operandOccurrenceSpecificationMoniker Id="95b3e7cb-be8d-4563-a43b-90814281f751" LastKnownName="OperandOccurrenceSpecification20" />
+                </operandOccurrenceSpecifications>
+              </interactionOperand>
+            </operands>
+          </combinedFragment>
+          <operandOccurrenceSpecification Id="8d3566fe-195b-438b-b47b-443b97d655ff" name="OperandOccurrenceSpecification13">
+            <elementDefinition Id="4257ebb7-5084-4e0a-a686-f05397f89e22" />
+            <covered>
+              <lifelineMoniker Id="5d5168ed-b36c-4e3c-bdb7-90315efb14dd" LastKnownName="Dungeon Master" />
+            </covered>
+          </operandOccurrenceSpecification>
+          <operandOccurrenceSpecification Id="cfaafe71-6410-433b-94a7-e7fafc88cbf3" name="OperandOccurrenceSpecification15">
+            <elementDefinition Id="2e325315-0145-48cb-a2ed-324f212db33a" />
+            <covered>
+              <lifelineMoniker Id="b589d416-318b-460b-aaac-c3c31c99584a" LastKnownName="User Interface" />
+            </covered>
+          </operandOccurrenceSpecification>
+          <interactionUse Id="e88c4418-50a8-4581-a420-9d0e11dc47bd" name="Item Creation" referredToFile="SequenceItemAddition">
+            <description>Item Creation UML diagram</description>
+            <referencesInternal>
+              <reference Id="090909fb-fc67-42b4-9ae8-d5e107c8d18e" handle="backplane://Backplane/Microsoft.VisualStudio.TeamArchitect.SequenceDesigner.ToolAdapter.SequenceServiceManager/110909a5-a793-4e5b-9d74-5d9e79593766\UMLSequenceDiagramItemAddition.sequencediagram" tag="Definition Reference">
+                <elementDefinition Id="1757fa1c-93f3-46a8-96b6-8e463ae09b02" />
+              </reference>
+            </referencesInternal>
+            <elementDefinition Id="e38fb692-1c2d-42b8-89fb-703e7ed1da49" />
+            <coveredLifelines>
+              <lifelineMoniker Id="5d5168ed-b36c-4e3c-bdb7-90315efb14dd" LastKnownName="Dungeon Master" />
+              <lifelineMoniker Id="b589d416-318b-460b-aaac-c3c31c99584a" LastKnownName="User Interface" />
+            </coveredLifelines>
+            <interactionUseOccurrenceSpecifications>
+              <interactionUseOccurrenceSpecificationMoniker Id="b233ba47-f428-4673-ba87-6fd345d51cb1" LastKnownName="InteractionUseOccurrenceSpecification7" />
+              <interactionUseOccurrenceSpecificationMoniker Id="92e9d085-20e4-488f-b1f7-fc2c281cfcb1" LastKnownName="InteractionUseOccurrenceSpecification8" />
+            </interactionUseOccurrenceSpecifications>
+          </interactionUse>
+          <interactionUseOccurrenceSpecification Id="92e9d085-20e4-488f-b1f7-fc2c281cfcb1" name="InteractionUseOccurrenceSpecification8">
+            <elementDefinition Id="8014be94-5e6c-4f63-bc9c-b042dfd371eb" />
+            <covered>
+              <lifelineMoniker Id="b589d416-318b-460b-aaac-c3c31c99584a" LastKnownName="User Interface" />
+            </covered>
+          </interactionUseOccurrenceSpecification>
+          <interactionUseOccurrenceSpecification Id="b233ba47-f428-4673-ba87-6fd345d51cb1" name="InteractionUseOccurrenceSpecification7">
+            <elementDefinition Id="26244fa4-fa01-41d5-b742-5bad282cda0d" />
+            <covered>
+              <lifelineMoniker Id="5d5168ed-b36c-4e3c-bdb7-90315efb14dd" LastKnownName="Dungeon Master" />
+            </covered>
+          </interactionUseOccurrenceSpecification>
+          <operandOccurrenceSpecification Id="04d4b43b-1e21-4787-82dd-3dc38fcbf72c" name="OperandOccurrenceSpecification14">
+            <elementDefinition Id="43213191-1c5f-42cb-91ed-82c63c28174e" />
+            <covered>
+              <lifelineMoniker Id="5d5168ed-b36c-4e3c-bdb7-90315efb14dd" LastKnownName="Dungeon Master" />
+            </covered>
+          </operandOccurrenceSpecification>
+          <operandOccurrenceSpecification Id="a78e64a9-46c2-456b-b102-fd07cc43cd40" name="OperandOccurrenceSpecification16">
+            <elementDefinition Id="6c96da15-7772-4bf4-b7d1-9b7d494a2961" />
+            <covered>
+              <lifelineMoniker Id="b589d416-318b-460b-aaac-c3c31c99584a" LastKnownName="User Interface" />
+            </covered>
+          </operandOccurrenceSpecification>
+          <operandOccurrenceSpecification Id="6f5fd709-24ae-49ae-a472-502f576d6f26" name="OperandOccurrenceSpecification19">
+            <elementDefinition Id="cdf9d532-9e69-4c15-a59a-470c6c976713" />
+            <covered>
+              <lifelineMoniker Id="b589d416-318b-460b-aaac-c3c31c99584a" LastKnownName="User Interface" />
+            </covered>
+          </operandOccurrenceSpecification>
+          <operandOccurrenceSpecification Id="efddf4db-8791-4738-9010-1f9da3a7d224" name="OperandOccurrenceSpecification17">
+            <elementDefinition Id="17a4f312-2e95-43ce-93c8-4e6f86cdaeef" />
+            <covered>
+              <lifelineMoniker Id="5d5168ed-b36c-4e3c-bdb7-90315efb14dd" LastKnownName="Dungeon Master" />
+            </covered>
+          </operandOccurrenceSpecification>
+          <operandOccurrenceSpecification Id="97abec19-4f4f-4546-a1e8-ddb6fe36abba" name="OperandOccurrenceSpecification23">
+            <elementDefinition Id="3107b19d-fb91-42ad-84f5-75994fbcf651" />
+            <covered>
+              <lifelineMoniker Id="b589d416-318b-460b-aaac-c3c31c99584a" LastKnownName="User Interface" />
+            </covered>
+          </operandOccurrenceSpecification>
+          <operandOccurrenceSpecification Id="2e3836ab-60df-4100-b004-b7899e8f38fa" name="OperandOccurrenceSpecification21">
+            <elementDefinition Id="1ce87624-9a06-4cdb-a958-82f10ff882ba" />
+            <covered>
+              <lifelineMoniker Id="5d5168ed-b36c-4e3c-bdb7-90315efb14dd" LastKnownName="Dungeon Master" />
+            </covered>
+          </operandOccurrenceSpecification>
+          <interactionUse Id="9d71dbe5-9f2a-4c08-b9d3-2f9c497c63c0" name="Ability Creation" referredToFile="SequenceAbilityAddition">
+            <referencesInternal>
+              <reference Id="d8fb18ad-0da1-400f-b918-2900891d841c" handle="backplane://Backplane/Microsoft.VisualStudio.TeamArchitect.SequenceDesigner.ToolAdapter.SequenceServiceManager/110909a5-a793-4e5b-9d74-5d9e79593766\UMLSequenceDiagramAbilityAddition.sequencediagram" tag="Definition Reference">
+                <elementDefinition Id="26d8cbb3-3ea4-438c-877a-17e87dfc1fc8" />
+              </reference>
+            </referencesInternal>
+            <elementDefinition Id="89feee8a-1085-4aa9-b59b-4d67225fc048" />
+            <coveredLifelines>
+              <lifelineMoniker Id="5d5168ed-b36c-4e3c-bdb7-90315efb14dd" LastKnownName="Dungeon Master" />
+              <lifelineMoniker Id="b589d416-318b-460b-aaac-c3c31c99584a" LastKnownName="User Interface" />
+            </coveredLifelines>
+            <interactionUseOccurrenceSpecifications>
+              <interactionUseOccurrenceSpecificationMoniker Id="5efc907e-7684-4138-bd93-a37e07cd2b86" LastKnownName="InteractionUseOccurrenceSpecification9" />
+              <interactionUseOccurrenceSpecificationMoniker Id="8dd00a07-549a-47b7-bb08-e280cc5c6fb0" LastKnownName="InteractionUseOccurrenceSpecification10" />
+            </interactionUseOccurrenceSpecifications>
+          </interactionUse>
+          <interactionUseOccurrenceSpecification Id="5efc907e-7684-4138-bd93-a37e07cd2b86" name="InteractionUseOccurrenceSpecification9">
+            <elementDefinition Id="a8a388ba-a530-4395-82f3-f2623018c3ca" />
+            <covered>
+              <lifelineMoniker Id="5d5168ed-b36c-4e3c-bdb7-90315efb14dd" LastKnownName="Dungeon Master" />
+            </covered>
+          </interactionUseOccurrenceSpecification>
+          <interactionUseOccurrenceSpecification Id="8dd00a07-549a-47b7-bb08-e280cc5c6fb0" name="InteractionUseOccurrenceSpecification10">
+            <elementDefinition Id="1ad586c7-0447-4540-86e2-078e0368e857" />
+            <covered>
+              <lifelineMoniker Id="b589d416-318b-460b-aaac-c3c31c99584a" LastKnownName="User Interface" />
+            </covered>
+          </interactionUseOccurrenceSpecification>
+          <operandOccurrenceSpecification Id="f8288f2d-56dd-494a-aae5-5aa44f57d096" name="OperandOccurrenceSpecification22">
+            <elementDefinition Id="c6672b5a-aede-4001-9551-313bbb90dd20" />
+            <covered>
+              <lifelineMoniker Id="5d5168ed-b36c-4e3c-bdb7-90315efb14dd" LastKnownName="Dungeon Master" />
+            </covered>
+          </operandOccurrenceSpecification>
+          <operandOccurrenceSpecification Id="f40c296d-8d79-44aa-8feb-73143ff445bd" name="OperandOccurrenceSpecification24">
+            <elementDefinition Id="ab88bc73-28bf-4200-8cd6-01e4b2fb1b3c" />
+            <covered>
+              <lifelineMoniker Id="b589d416-318b-460b-aaac-c3c31c99584a" LastKnownName="User Interface" />
+            </covered>
+          </operandOccurrenceSpecification>
+          <operandOccurrenceSpecification Id="6efe01d9-d8c2-4c27-8fbd-cde2228d0089" name="OperandOccurrenceSpecification27">
+            <elementDefinition Id="75056d96-dcd6-4d93-b159-2ffa3cdec3b8" />
+            <covered>
+              <lifelineMoniker Id="b589d416-318b-460b-aaac-c3c31c99584a" LastKnownName="User Interface" />
+            </covered>
+          </operandOccurrenceSpecification>
+          <operandOccurrenceSpecification Id="cece4161-3571-4244-996c-6bacfbeba5db" name="OperandOccurrenceSpecification25">
+            <elementDefinition Id="4345c90c-c2d7-40d8-81ff-7826b4543713" />
+            <covered>
+              <lifelineMoniker Id="5d5168ed-b36c-4e3c-bdb7-90315efb14dd" LastKnownName="Dungeon Master" />
+            </covered>
+          </operandOccurrenceSpecification>
+          <operandOccurrenceSpecification Id="98ab1c8d-6cca-4384-ac70-35b88bfbf8e4" name="OperandOccurrenceSpecification29">
+            <elementDefinition Id="724af469-7420-4972-a25e-3b0e5fc93ea2" />
+            <covered>
+              <lifelineMoniker Id="5d5168ed-b36c-4e3c-bdb7-90315efb14dd" LastKnownName="Dungeon Master" />
+            </covered>
+          </operandOccurrenceSpecification>
+          <operandOccurrenceSpecification Id="a4d63bce-cc97-4cb3-ab1e-843fbce3f5ad" name="OperandOccurrenceSpecification31">
+            <elementDefinition Id="c2297bb0-768b-4992-90f3-3c6b40cda73a" />
+            <covered>
+              <lifelineMoniker Id="b589d416-318b-460b-aaac-c3c31c99584a" LastKnownName="User Interface" />
+            </covered>
+          </operandOccurrenceSpecification>
+          <interactionUse Id="c9045c78-bbaf-46f0-a2fa-be27d55ebf0f" name="Race Creation" referredToFile="SequenceRaceAddition">
+            <referencesInternal>
+              <reference Id="1c496299-0adf-4e1c-ac05-c549501e7bd2" handle="backplane://Backplane/Microsoft.VisualStudio.TeamArchitect.SequenceDesigner.ToolAdapter.SequenceServiceManager/110909a5-a793-4e5b-9d74-5d9e79593766\UMLSequenceDiagramRaceAddition.sequencediagram" tag="Definition Reference">
+                <elementDefinition Id="5bd4e859-6d69-45c5-9434-6b23ad9648cb" />
+              </reference>
+            </referencesInternal>
+            <elementDefinition Id="cde04892-af24-4c6f-b504-89382889fbc5" />
+            <coveredLifelines>
+              <lifelineMoniker Id="5d5168ed-b36c-4e3c-bdb7-90315efb14dd" LastKnownName="Dungeon Master" />
+              <lifelineMoniker Id="b589d416-318b-460b-aaac-c3c31c99584a" LastKnownName="User Interface" />
+            </coveredLifelines>
+            <interactionUseOccurrenceSpecifications>
+              <interactionUseOccurrenceSpecificationMoniker Id="63678078-97d1-4efa-8550-428ea603cb94" LastKnownName="InteractionUseOccurrenceSpecification11" />
+              <interactionUseOccurrenceSpecificationMoniker Id="d52aaf9d-491c-4514-b812-d8f7232d934d" LastKnownName="InteractionUseOccurrenceSpecification12" />
+            </interactionUseOccurrenceSpecifications>
+          </interactionUse>
+          <interactionUseOccurrenceSpecification Id="63678078-97d1-4efa-8550-428ea603cb94" name="InteractionUseOccurrenceSpecification11">
+            <elementDefinition Id="c408e473-c3ec-40b3-8046-5db8acce5571" />
+            <covered>
+              <lifelineMoniker Id="5d5168ed-b36c-4e3c-bdb7-90315efb14dd" LastKnownName="Dungeon Master" />
+            </covered>
+          </interactionUseOccurrenceSpecification>
+          <interactionUseOccurrenceSpecification Id="d52aaf9d-491c-4514-b812-d8f7232d934d" name="InteractionUseOccurrenceSpecification12">
+            <elementDefinition Id="adf94e05-d62b-4c4c-ad84-524ec23db8c7" />
+            <covered>
+              <lifelineMoniker Id="b589d416-318b-460b-aaac-c3c31c99584a" LastKnownName="User Interface" />
+            </covered>
+          </interactionUseOccurrenceSpecification>
+          <operandOccurrenceSpecification Id="96be2b0d-3070-4d81-9f12-705a93ed8e1a" name="OperandOccurrenceSpecification30">
+            <elementDefinition Id="b23e5e18-1218-4e1c-a29c-ee0b7def3fef" />
+            <covered>
+              <lifelineMoniker Id="5d5168ed-b36c-4e3c-bdb7-90315efb14dd" LastKnownName="Dungeon Master" />
+            </covered>
+          </operandOccurrenceSpecification>
+          <operandOccurrenceSpecification Id="6079e621-a91f-4673-b1ba-d3f57f829db4" name="OperandOccurrenceSpecification32">
+            <elementDefinition Id="965a40e4-f6d3-48a9-b198-283aa3a7ad1a" />
+            <covered>
+              <lifelineMoniker Id="b589d416-318b-460b-aaac-c3c31c99584a" LastKnownName="User Interface" />
+            </covered>
+          </operandOccurrenceSpecification>
+          <operandOccurrenceSpecification Id="5e93dfb3-55e2-4f09-8ffc-acc67d44acda" name="OperandOccurrenceSpecification33">
+            <elementDefinition Id="287b9efc-bc65-4051-87c0-140b55de6952" />
+            <covered>
+              <lifelineMoniker Id="5d5168ed-b36c-4e3c-bdb7-90315efb14dd" LastKnownName="Dungeon Master" />
+            </covered>
+          </operandOccurrenceSpecification>
+          <operandOccurrenceSpecification Id="6b3a7d22-8fca-4b3d-bedb-76521c6b5c2f" name="OperandOccurrenceSpecification35">
+            <elementDefinition Id="960c7f00-5e21-4868-8135-9a8af3d68898" />
+            <covered>
+              <lifelineMoniker Id="b589d416-318b-460b-aaac-c3c31c99584a" LastKnownName="User Interface" />
+            </covered>
+          </operandOccurrenceSpecification>
+          <interactionUse Id="edb0482f-5d1a-4e5a-ab25-aacaf5c9d9d5" name="Class Creation" referredToFile="SequenceClassAddition">
+            <referencesInternal>
+              <reference Id="298381e1-2f84-467d-901d-a5901f2f54a0" handle="backplane://Backplane/Microsoft.VisualStudio.TeamArchitect.SequenceDesigner.ToolAdapter.SequenceServiceManager/110909a5-a793-4e5b-9d74-5d9e79593766\UMLSequenceDiagramClassAddition.sequencediagram" tag="Definition Reference">
+                <elementDefinition Id="1503e01d-d743-46d5-bd3b-6a2e7260e068" />
+              </reference>
+            </referencesInternal>
+            <elementDefinition Id="840a15c7-465c-473d-aa6e-a69c40991aad" />
+            <coveredLifelines>
+              <lifelineMoniker Id="5d5168ed-b36c-4e3c-bdb7-90315efb14dd" LastKnownName="Dungeon Master" />
+              <lifelineMoniker Id="b589d416-318b-460b-aaac-c3c31c99584a" LastKnownName="User Interface" />
+            </coveredLifelines>
+            <interactionUseOccurrenceSpecifications>
+              <interactionUseOccurrenceSpecificationMoniker Id="fcb10e44-a930-49ca-a396-5cad1a077064" LastKnownName="InteractionUseOccurrenceSpecification13" />
+              <interactionUseOccurrenceSpecificationMoniker Id="7ad350f8-8a05-4676-8655-cb737fd436d0" LastKnownName="InteractionUseOccurrenceSpecification14" />
+            </interactionUseOccurrenceSpecifications>
+          </interactionUse>
+          <interactionUseOccurrenceSpecification Id="fcb10e44-a930-49ca-a396-5cad1a077064" name="InteractionUseOccurrenceSpecification13">
+            <elementDefinition Id="0b271b48-dc9e-4d46-9fca-44c40f8ec3e3" />
+            <covered>
+              <lifelineMoniker Id="5d5168ed-b36c-4e3c-bdb7-90315efb14dd" LastKnownName="Dungeon Master" />
+            </covered>
+          </interactionUseOccurrenceSpecification>
+          <interactionUseOccurrenceSpecification Id="7ad350f8-8a05-4676-8655-cb737fd436d0" name="InteractionUseOccurrenceSpecification14">
+            <elementDefinition Id="a02b370c-9897-4a5f-9f34-f4e91da8360e" />
+            <covered>
+              <lifelineMoniker Id="b589d416-318b-460b-aaac-c3c31c99584a" LastKnownName="User Interface" />
+            </covered>
+          </interactionUseOccurrenceSpecification>
+          <operandOccurrenceSpecification Id="3b389918-f937-4716-b982-d95efe3609d0" name="OperandOccurrenceSpecification34">
+            <elementDefinition Id="531aaa45-ddb9-4ed9-a0ee-918124a3317e" />
+            <covered>
+              <lifelineMoniker Id="5d5168ed-b36c-4e3c-bdb7-90315efb14dd" LastKnownName="Dungeon Master" />
+            </covered>
+          </operandOccurrenceSpecification>
+          <operandOccurrenceSpecification Id="94677805-264d-49ea-ab2b-ec7278f9f4d5" name="OperandOccurrenceSpecification36">
+            <elementDefinition Id="ca50b40a-e1c2-4f43-bb38-ca62fdcd3377" />
+            <covered>
+              <lifelineMoniker Id="b589d416-318b-460b-aaac-c3c31c99584a" LastKnownName="User Interface" />
+            </covered>
+          </operandOccurrenceSpecification>
+          <operandOccurrenceSpecification Id="7e02ebe1-63af-4b3f-9643-b8b588f0ddfd" name="OperandOccurrenceSpecification28">
+            <elementDefinition Id="728a0c31-cfb8-4e79-932d-1f97eac36fe0" />
+            <covered>
+              <lifelineMoniker Id="b589d416-318b-460b-aaac-c3c31c99584a" LastKnownName="User Interface" />
+            </covered>
+          </operandOccurrenceSpecification>
+          <operandOccurrenceSpecification Id="e230ca75-9b4f-4bc8-ab37-3ee65c36878e" name="OperandOccurrenceSpecification26">
+            <elementDefinition Id="15170175-6c44-4e3e-90e6-61477c13c8f1" />
+            <covered>
+              <lifelineMoniker Id="5d5168ed-b36c-4e3c-bdb7-90315efb14dd" LastKnownName="Dungeon Master" />
+            </covered>
+          </operandOccurrenceSpecification>
+          <operandOccurrenceSpecification Id="95b3e7cb-be8d-4563-a43b-90814281f751" name="OperandOccurrenceSpecification20">
+            <elementDefinition Id="d26866df-09ed-4730-a9be-37802434d974" />
+            <covered>
+              <lifelineMoniker Id="b589d416-318b-460b-aaac-c3c31c99584a" LastKnownName="User Interface" />
+            </covered>
+          </operandOccurrenceSpecification>
+          <operandOccurrenceSpecification Id="b8c56ca3-eb87-4140-b1bb-ad0262550031" name="OperandOccurrenceSpecification18">
+            <elementDefinition Id="d3991e6f-67dc-4abc-a76c-3f45bc8c0e18" />
+            <covered>
+              <lifelineMoniker Id="5d5168ed-b36c-4e3c-bdb7-90315efb14dd" LastKnownName="Dungeon Master" />
+            </covered>
+          </operandOccurrenceSpecification>
+        </fragments>
+        <lifelines>
+          <lifeline Id="5d5168ed-b36c-4e3c-bdb7-90315efb14dd" name="Dungeon Master" isActor="true" lifelineDisplayName="Dungeon Master">
+            <elementDefinition Id="da4872e8-dca0-4246-8c04-88cbc53f7cda" />
+            <represents>
+              <propertyMoniker Id="d32e9aaf-3f67-4296-a613-3689928a5f6a" />
+            </represents>
+            <topLevelOccurrences>
+              <executionOccurrenceSpecificationMoniker Id="c198822a-6365-4473-a7db-63a7d68369f4" LastKnownName="ExecutionOccurrenceSpecification1" />
+              <executionOccurrenceSpecificationMoniker Id="1ee5d22a-1800-4ff0-b360-59d60c4c19f6" LastKnownName="ExecutionOccurrenceSpecification2" />
+              <operandOccurrenceSpecificationMoniker Id="8d3566fe-195b-438b-b47b-443b97d655ff" LastKnownName="OperandOccurrenceSpecification13" />
+              <interactionUseOccurrenceSpecificationMoniker Id="b233ba47-f428-4673-ba87-6fd345d51cb1" LastKnownName="InteractionUseOccurrenceSpecification7" />
+              <operandOccurrenceSpecificationMoniker Id="04d4b43b-1e21-4787-82dd-3dc38fcbf72c" LastKnownName="OperandOccurrenceSpecification14" />
+              <operandOccurrenceSpecificationMoniker Id="efddf4db-8791-4738-9010-1f9da3a7d224" LastKnownName="OperandOccurrenceSpecification17" />
+              <operandOccurrenceSpecificationMoniker Id="2e3836ab-60df-4100-b004-b7899e8f38fa" LastKnownName="OperandOccurrenceSpecification21" />
+              <interactionUseOccurrenceSpecificationMoniker Id="5efc907e-7684-4138-bd93-a37e07cd2b86" LastKnownName="InteractionUseOccurrenceSpecification9" />
+              <operandOccurrenceSpecificationMoniker Id="f8288f2d-56dd-494a-aae5-5aa44f57d096" LastKnownName="OperandOccurrenceSpecification22" />
+              <operandOccurrenceSpecificationMoniker Id="cece4161-3571-4244-996c-6bacfbeba5db" LastKnownName="OperandOccurrenceSpecification25" />
+              <operandOccurrenceSpecificationMoniker Id="98ab1c8d-6cca-4384-ac70-35b88bfbf8e4" LastKnownName="OperandOccurrenceSpecification29" />
+              <interactionUseOccurrenceSpecificationMoniker Id="63678078-97d1-4efa-8550-428ea603cb94" LastKnownName="InteractionUseOccurrenceSpecification11" />
+              <operandOccurrenceSpecificationMoniker Id="96be2b0d-3070-4d81-9f12-705a93ed8e1a" LastKnownName="OperandOccurrenceSpecification30" />
+              <operandOccurrenceSpecificationMoniker Id="5e93dfb3-55e2-4f09-8ffc-acc67d44acda" LastKnownName="OperandOccurrenceSpecification33" />
+              <interactionUseOccurrenceSpecificationMoniker Id="fcb10e44-a930-49ca-a396-5cad1a077064" LastKnownName="InteractionUseOccurrenceSpecification13" />
+              <operandOccurrenceSpecificationMoniker Id="3b389918-f937-4716-b982-d95efe3609d0" LastKnownName="OperandOccurrenceSpecification34" />
+              <operandOccurrenceSpecificationMoniker Id="e230ca75-9b4f-4bc8-ab37-3ee65c36878e" LastKnownName="OperandOccurrenceSpecification26" />
+              <operandOccurrenceSpecificationMoniker Id="b8c56ca3-eb87-4140-b1bb-ad0262550031" LastKnownName="OperandOccurrenceSpecification18" />
+            </topLevelOccurrences>
+          </lifeline>
+          <lifeline Id="b589d416-318b-460b-aaac-c3c31c99584a" name="User Interface" isActor="false" lifelineDisplayName="User Interface">
+            <elementDefinition Id="cead480e-fef4-448c-8e28-105bb5db922e" />
+            <topLevelOccurrences>
+              <messageOccurrenceSpecificationMoniker Id="6a06514f-1806-4013-9b73-f1c5b7a54936" LastKnownName="MessageOccurrenceSpecification1" />
+              <messageOccurrenceSpecificationMoniker Id="8b6e8e3b-2e83-4e7b-9044-305a4b6519cb" LastKnownName="MessageOccurrenceSpecification4" />
+              <operandOccurrenceSpecificationMoniker Id="cfaafe71-6410-433b-94a7-e7fafc88cbf3" LastKnownName="OperandOccurrenceSpecification15" />
+              <interactionUseOccurrenceSpecificationMoniker Id="92e9d085-20e4-488f-b1f7-fc2c281cfcb1" LastKnownName="InteractionUseOccurrenceSpecification8" />
+              <operandOccurrenceSpecificationMoniker Id="a78e64a9-46c2-456b-b102-fd07cc43cd40" LastKnownName="OperandOccurrenceSpecification16" />
+              <operandOccurrenceSpecificationMoniker Id="6f5fd709-24ae-49ae-a472-502f576d6f26" LastKnownName="OperandOccurrenceSpecification19" />
+              <operandOccurrenceSpecificationMoniker Id="97abec19-4f4f-4546-a1e8-ddb6fe36abba" LastKnownName="OperandOccurrenceSpecification23" />
+              <interactionUseOccurrenceSpecificationMoniker Id="8dd00a07-549a-47b7-bb08-e280cc5c6fb0" LastKnownName="InteractionUseOccurrenceSpecification10" />
+              <operandOccurrenceSpecificationMoniker Id="f40c296d-8d79-44aa-8feb-73143ff445bd" LastKnownName="OperandOccurrenceSpecification24" />
+              <operandOccurrenceSpecificationMoniker Id="6efe01d9-d8c2-4c27-8fbd-cde2228d0089" LastKnownName="OperandOccurrenceSpecification27" />
+              <operandOccurrenceSpecificationMoniker Id="a4d63bce-cc97-4cb3-ab1e-843fbce3f5ad" LastKnownName="OperandOccurrenceSpecification31" />
+              <interactionUseOccurrenceSpecificationMoniker Id="d52aaf9d-491c-4514-b812-d8f7232d934d" LastKnownName="InteractionUseOccurrenceSpecification12" />
+              <operandOccurrenceSpecificationMoniker Id="6079e621-a91f-4673-b1ba-d3f57f829db4" LastKnownName="OperandOccurrenceSpecification32" />
+              <operandOccurrenceSpecificationMoniker Id="6b3a7d22-8fca-4b3d-bedb-76521c6b5c2f" LastKnownName="OperandOccurrenceSpecification35" />
+              <interactionUseOccurrenceSpecificationMoniker Id="7ad350f8-8a05-4676-8655-cb737fd436d0" LastKnownName="InteractionUseOccurrenceSpecification14" />
+              <operandOccurrenceSpecificationMoniker Id="94677805-264d-49ea-ab2b-ec7278f9f4d5" LastKnownName="OperandOccurrenceSpecification36" />
+              <operandOccurrenceSpecificationMoniker Id="7e02ebe1-63af-4b3f-9643-b8b588f0ddfd" LastKnownName="OperandOccurrenceSpecification28" />
+              <operandOccurrenceSpecificationMoniker Id="95b3e7cb-be8d-4563-a43b-90814281f751" LastKnownName="OperandOccurrenceSpecification20" />
+            </topLevelOccurrences>
+          </lifeline>
+        </lifelines>
+        <messages>
+          <message Id="76caf47f-fab3-4de3-ab16-136ff268cee1" name="What to Make" messageKind="Complete" messageSort="SynchCall" createSelfMessage="false">
+            <elementDefinition Id="43b2cf47-c207-428e-ac16-7b26798ef78d" />
+            <sendEvent>
+              <messageOccurrenceSpecificationMoniker Id="6a06514f-1806-4013-9b73-f1c5b7a54936" LastKnownName="MessageOccurrenceSpecification1" />
+            </sendEvent>
+            <receiveEvent>
+              <messageOccurrenceSpecificationMoniker Id="40e768e5-95ee-4fb6-ad5e-7de029ae2f2f" LastKnownName="MessageOccurrenceSpecification2" />
+            </receiveEvent>
+          </message>
+          <message Id="00def5f9-ac2c-46b6-8c33-c1b88de1a5b1" name="newThing" messageKind="Complete" messageSort="Reply" createSelfMessage="false">
+            <elementDefinition Id="ef7fdd74-f3a3-4064-b89d-ab1472a94815" />
+            <sendEvent>
+              <messageOccurrenceSpecificationMoniker Id="55f8e2e4-1456-4d40-bc70-e493dc9438d7" LastKnownName="MessageOccurrenceSpecification3" />
+            </sendEvent>
+            <receiveEvent>
+              <messageOccurrenceSpecificationMoniker Id="8b6e8e3b-2e83-4e7b-9044-305a4b6519cb" LastKnownName="MessageOccurrenceSpecification4" />
+            </receiveEvent>
+          </message>
+        </messages>
+        <ownedAttributesInternal>
+          <property Id="d32e9aaf-3f67-4296-a613-3689928a5f6a" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="4d2d221a-eab8-4cad-a5f1-222848a5ba84" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="89e33b88-58b1-4ad0-b2fe-3e62d67d99b9" LastKnownName="Dungeon Master" />
+            </type_NamedElement>
+          </property>
+        </ownedAttributesInternal>
+      </interaction>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="89e33b88-58b1-4ad0-b2fe-3e62d67d99b9" name="Dungeon Master" isAbstract="false" isLeaf="false" cachedFullName="ModelingProject::Dungeon Master">
+        <elementDefinition Id="cc17298d-4d37-491c-ac02-841621fbb683" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <executionEvent Id="7f7b7f1c-8ac4-4879-96ab-dc0358875ed6" name="ExecutionEvent">
+        <elementDefinition Id="48208557-55e3-41e7-befc-bfb95c9a075a" />
+      </executionEvent>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <executionEvent Id="e0a8bf2d-6935-4115-9c59-324f2bd2cd36" name="ExecutionEvent">
+        <elementDefinition Id="5c6bd50a-9958-4aea-b560-05f8ca0fd42b" />
+      </executionEvent>
+    </packageHasNamedElement>
+  </packagedElements>
+  <package Id="142a5aa4-d438-4612-b84c-5e19fd239fce" name="ModelingProject">
+    <elementDefinition Id="e872a8f9-855e-425c-81a1-62f54c345891" />
+  </package>
+</SequenceDesignerModel>
