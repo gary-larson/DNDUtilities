@@ -1,14 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <activityRootModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/dsltools/LogicalClassDesigner" xmlns:dm10="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm11="http://schemas.microsoft.com/dsltools/UseCaseModel" xmlns:dm12="http://schemas.microsoft.com/VisualStudio/TeamArchitect/SequenceDesigner" dslVersion="1.0.0.0" Id="b44ffe42-8721-44ee-bab9-eb7906a930ae" name="ActivityCharacterCreation" linkedPackageId="86305f96-0a09-4966-9612-e29f6d6139f6" xmlns="http://schemas.microsoft.com/VisualStudio/TeamArchitect/ActivityDesigner">
-  <ownedCommentsInternal>
-    <comment Id="98158fa4-20e8-4374-9b0b-cf416101b984">
-      <elementDefinition Id="621c20b3-0af6-4284-9ed6-f8f40978ce0f" />
-      <body>Due to the complexities involved, and the issues of avaibility, Items will only be handled with direct DM oversight, in person. this system does not offer a mechanic for theirpurchase. </body>
-      <annotatedElements>
-        <opaqueActionMoniker Id="2f779ee3-0cb9-49b6-88ff-6cb165fa7b0b" LastKnownName="Choose/Determine Name, Gender, Age, Appearance, and Write Description for your (the player's) records" />
-      </annotatedElements>
-    </comment>
-  </ownedCommentsInternal>
   <packagedElements>
     <activityRootModelHasActivity>
       <activity Id="8bf971b8-c823-47fc-bb01-f0e0572091ea" name="ActivityCharacterCreation" isAbstract="false" isLeaf="false" isActiveClass="false" isReentrant="false" isReadOnly="false" isSingleExecution="false">
@@ -75,9 +66,9 @@
           <opaqueAction Id="03dae08a-158c-41bc-84b3-2fccac02152e" name="Choose A Starting Package" isLeaf="false">
             <elementDefinition Id="81dbc064-3c19-4d72-82ce-0b01507e84fd" />
             <flowNodeTargets>
-              <controlFlow Id="94ad3718-9e2f-4c9f-a8db-2da37fb344fa" isLeaf="false">
+              <controlFlow Id="da2c53c6-9400-4127-9a94-7344b4a706b2" isLeaf="false">
                 <opaqueActionMoniker Id="5a6a844e-c203-4fb7-942a-4305a0b1474e" LastKnownName="Choose Alignment" />
-                <elementDefinition Id="586a3afd-8297-4d59-8eb3-f78156b483d7" />
+                <elementDefinition Id="6eb65443-f1b7-43e2-b3b3-72e4cbfbb434" />
               </controlFlow>
             </flowNodeTargets>
           </opaqueAction>
@@ -93,27 +84,27 @@
           <opaqueAction Id="5b2045d0-eae3-4501-bf74-a7f6a22132c2" name="Select Skills" isLeaf="false">
             <elementDefinition Id="9a95311f-1ad9-4929-bb64-5cf92b4b49bf" />
             <flowNodeTargets>
-              <controlFlow Id="82261573-0433-4cc7-ad87-c80035972a1f" isLeaf="false">
+              <controlFlow Id="5ba5bdcf-309b-4f2d-9bca-1e6da30473f6" isLeaf="false">
                 <opaqueActionMoniker Id="d511ff16-da2d-497d-a2d9-d919e7354ca0" LastKnownName="Select a Feat" />
-                <elementDefinition Id="146ec9a8-32ba-4f02-ac47-439682602744" />
+                <elementDefinition Id="3ffae0cd-efbc-45da-b247-8db4e6e55462" />
               </controlFlow>
             </flowNodeTargets>
           </opaqueAction>
           <opaqueAction Id="d511ff16-da2d-497d-a2d9-d919e7354ca0" name="Select a Feat" isLeaf="false">
             <elementDefinition Id="6a8618ef-79a2-41b1-88c6-6ae0d822c81d" />
             <flowNodeTargets>
-              <controlFlow Id="f6c13e30-90a8-4174-a3c7-d66f85a2e470" isLeaf="false">
-                <opaqueActionMoniker Id="5a6a844e-c203-4fb7-942a-4305a0b1474e" LastKnownName="Choose Alignment" />
-                <elementDefinition Id="6b440671-7333-4f56-b985-badf446aca87" />
+              <controlFlow Id="4bcd5d67-3ca6-4a9c-a72b-7986705bd868" isLeaf="false">
+                <opaqueActionMoniker Id="7a96c94a-cda3-4c58-ba53-e02191fa975c" LastKnownName="Select Equipment" />
+                <elementDefinition Id="76e0a85f-82af-4cad-8f5a-b49bee4f61f4" />
               </controlFlow>
             </flowNodeTargets>
           </opaqueAction>
           <opaqueAction Id="5a6a844e-c203-4fb7-942a-4305a0b1474e" name="Choose Alignment" isLeaf="false">
             <elementDefinition Id="721a487f-b3f6-4256-9532-0a90d1271c94" />
             <flowNodeTargets>
-              <controlFlow Id="823be769-1f37-4739-a4a6-3a3474e2326a" isLeaf="false">
-                <opaqueActionMoniker Id="2f779ee3-0cb9-49b6-88ff-6cb165fa7b0b" LastKnownName="Choose/Determine Name, Gender, Age, Appearance, and Write Description for your (the player's) records" />
-                <elementDefinition Id="f1a38fe5-36f5-4372-9f5a-9248287ba696" />
+              <controlFlow Id="1ed98bd5-2607-45fb-b526-ebae7345ae1d" isLeaf="false">
+                <opaqueActionMoniker Id="f67e0be0-4c86-4007-9500-3b11fdeb1742" LastKnownName="Record Combat Numbers" />
+                <elementDefinition Id="40792d93-ac88-4045-be67-e791122f1329" />
               </controlFlow>
             </flowNodeTargets>
           </opaqueAction>
@@ -135,6 +126,24 @@
               <controlFlow Id="15ab7fbe-a366-42bd-a885-c69a46ae75c5" isLeaf="false">
                 <opaqueActionMoniker Id="5b2045d0-eae3-4501-bf74-a7f6a22132c2" LastKnownName="Select Skills" />
                 <elementDefinition Id="dfde292b-a82e-40ab-8030-54f16eeeb09b" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction Id="7a96c94a-cda3-4c58-ba53-e02191fa975c" name="Select Equipment" isLeaf="false">
+            <elementDefinition Id="681b2b83-a6a2-423b-9549-c30ef8fbafee" />
+            <flowNodeTargets>
+              <controlFlow Id="a56db8a9-170a-458a-81c9-86bea77ca6c2" isLeaf="false">
+                <opaqueActionMoniker Id="5a6a844e-c203-4fb7-942a-4305a0b1474e" LastKnownName="Choose Alignment" />
+                <elementDefinition Id="1dec7e84-6d3f-4dc6-ab66-7d0d08797b5c" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction Id="f67e0be0-4c86-4007-9500-3b11fdeb1742" name="Record Combat Numbers" isLeaf="false">
+            <elementDefinition Id="dfece8f5-ed7f-4af4-9cf4-aaa1b102b2d5" />
+            <flowNodeTargets>
+              <controlFlow Id="14db71a9-4c0d-4752-a9e1-5b13eac28d5d" isLeaf="false">
+                <opaqueActionMoniker Id="2f779ee3-0cb9-49b6-88ff-6cb165fa7b0b" LastKnownName="Choose/Determine Name, Gender, Age, Appearance, and Write Description for your (the player's) records" />
+                <elementDefinition Id="5c53caa8-b99c-4ac8-8c34-fdefb9f44c6e" />
               </controlFlow>
             </flowNodeTargets>
           </opaqueAction>
