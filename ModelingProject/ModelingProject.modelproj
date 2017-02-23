@@ -50,6 +50,13 @@
       <SubType>Content</SubType>
       <DependentUpon>UMLSequenceDiagramCharacterGeneration.sequencediagram</DependentUpon>
     </Content>
+    <Content Include="UMLSequenceDiagramStandardCombat.sequencediagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="UMLSequenceDiagramStandardCombat.sequencediagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>UMLSequenceDiagramStandardCombat.sequencediagram</DependentUpon>
+    </Content>
     <Content Include="UMLUseCaseDiagramDM.usecasediagram">
       <SubType>Content</SubType>
     </Content>
