@@ -229,16 +229,16 @@
               <lifelineMoniker Id="bea7bc34-8e1c-438e-b396-7c5b26c6ad09" LastKnownName="Database" />
             </covered>
           </executionOccurrenceSpecification>
-          <messageOccurrenceSpecification Id="529e371e-59c0-4af6-9400-b2eadf486c42" name="MessageOccurrenceSpecification12">
-            <elementDefinition Id="1f772981-4373-458a-be91-03607c6ef924" />
-            <covered>
-              <lifelineMoniker Id="abd2fe85-f5f6-40a5-a0e2-aa9f33ec3dd7" LastKnownName="Dungeon Master" />
-            </covered>
-          </messageOccurrenceSpecification>
           <messageOccurrenceSpecification Id="ef4b5b14-b4d3-411a-90fe-648d27242d78" name="MessageOccurrenceSpecification11">
             <elementDefinition Id="c7859656-8dd7-4af0-9fa0-13a6922eb338" />
             <covered>
               <lifelineMoniker Id="4f896102-b1bf-4599-9dbe-9bfbca622a8f" LastKnownName="User Interface" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification Id="529e371e-59c0-4af6-9400-b2eadf486c42" name="MessageOccurrenceSpecification12">
+            <elementDefinition Id="1f772981-4373-458a-be91-03607c6ef924" />
+            <covered>
+              <lifelineMoniker Id="abd2fe85-f5f6-40a5-a0e2-aa9f33ec3dd7" LastKnownName="Dungeon Master" />
             </covered>
           </messageOccurrenceSpecification>
           <executionOccurrenceSpecification Id="59cd6b7f-288b-4bc5-a92c-958ac1e42ca2" name="ExecutionOccurrenceSpecification6">
@@ -481,7 +481,7 @@
           </lifeline>
         </lifelines>
         <messages>
-          <message Id="f0cf589c-cad7-43a5-aa65-74c02e5174e4" name="Determine Ability Type" messageKind="Complete" messageSort="SynchCall" createSelfMessage="false">
+          <message Id="f0cf589c-cad7-43a5-aa65-74c02e5174e4" name="SelectAbilityType()" messageKind="Complete" messageSort="SynchCall" createSelfMessage="false">
             <elementDefinition Id="0972d4eb-eb0d-458c-adf4-462a30c63bd7" />
             <sendEvent>
               <messageOccurrenceSpecificationMoniker Id="60931505-d1d4-418d-983c-75054e6fc3e2" LastKnownName="MessageOccurrenceSpecification5" />
@@ -490,7 +490,7 @@
               <messageOccurrenceSpecificationMoniker Id="7bbfc88d-8f06-4f6a-b8c7-24b094084268" LastKnownName="MessageOccurrenceSpecification6" />
             </receiveEvent>
           </message>
-          <message Id="fda7e71e-b839-4d0f-8dc8-677d34290a0b" name="Ability Parameters" messageKind="Complete" messageSort="Reply" createSelfMessage="false">
+          <message Id="fda7e71e-b839-4d0f-8dc8-677d34290a0b" name="Parameters" messageKind="Complete" messageSort="Reply" createSelfMessage="false">
             <elementDefinition Id="7e15f49d-a2dd-4cfb-bac7-ad9e115a29a5" />
             <sendEvent>
               <messageOccurrenceSpecificationMoniker Id="66309b84-8f7e-44d0-80f9-8ccb742949ac" LastKnownName="MessageOccurrenceSpecification7" />
@@ -499,7 +499,7 @@
               <messageOccurrenceSpecificationMoniker Id="288c5d99-0cb2-4e0a-b5c3-dc56f5744048" LastKnownName="MessageOccurrenceSpecification8" />
             </receiveEvent>
           </message>
-          <message Id="273093a8-5321-4ad3-904a-7985e77d0dfb" name="Assign Ability Attributes and Prequisites" messageKind="Complete" messageSort="SynchCall" createSelfMessage="false">
+          <message Id="273093a8-5321-4ad3-904a-7985e77d0dfb" name="UpdateForm(attributes, prerequisites)" messageKind="Complete" messageSort="SynchCall" createSelfMessage="false">
             <elementDefinition Id="d22b7777-64c1-48e9-b0c8-0ea4d91f4255" />
             <sendEvent>
               <messageOccurrenceSpecificationMoniker Id="7e06a333-9b92-43df-ab44-f7a56ee9df50" LastKnownName="MessageOccurrenceSpecification9" />
@@ -508,7 +508,7 @@
               <messageOccurrenceSpecificationMoniker Id="bdb98910-f001-4bb3-8764-5ae0a9414efe" LastKnownName="MessageOccurrenceSpecification10" />
             </receiveEvent>
           </message>
-          <message Id="d0af8235-1566-4528-9889-f09cef2d2203" name="Get possible Prerequisites" messageKind="Complete" messageSort="SynchCall" createSelfMessage="false">
+          <message Id="d0af8235-1566-4528-9889-f09cef2d2203" name="Select(prequisites)" messageKind="Complete" messageSort="SynchCall" createSelfMessage="false">
             <elementDefinition Id="0370323b-cfcb-4ccd-ad2d-2fdb63d19761" />
             <sendEvent>
               <messageOccurrenceSpecificationMoniker Id="f243f602-9562-439a-af9d-fa175f42286d" LastKnownName="MessageOccurrenceSpecification17" />
@@ -535,7 +535,7 @@
               <messageOccurrenceSpecificationMoniker Id="529e371e-59c0-4af6-9400-b2eadf486c42" LastKnownName="MessageOccurrenceSpecification12" />
             </receiveEvent>
           </message>
-          <message Id="382a35a4-14f8-42a4-985d-9916b599d4e8" name="describe ability effects" messageKind="Complete" messageSort="AsynchCall" createSelfMessage="false">
+          <message Id="382a35a4-14f8-42a4-985d-9916b599d4e8" name="UpdateForm(effects)" messageKind="Complete" messageSort="AsynchCall" createSelfMessage="false">
             <elementDefinition Id="671d0d2a-3991-46b0-ac5f-d0fae1de12e4" />
             <sendEvent>
               <messageOccurrenceSpecificationMoniker Id="f7e1e037-6b6e-41ae-bf41-27ac160c32ca" LastKnownName="MessageOccurrenceSpecification21" />
@@ -544,7 +544,7 @@
               <messageOccurrenceSpecificationMoniker Id="9ff0016e-6148-4712-9cea-8fdb1219d4ca" LastKnownName="MessageOccurrenceSpecification22" />
             </receiveEvent>
           </message>
-          <message Id="e9f5373c-5e59-4c94-868d-61791e688ce7" name="Save Ability" messageKind="Complete" messageSort="AsynchCall" createSelfMessage="false">
+          <message Id="e9f5373c-5e59-4c94-868d-61791e688ce7" name="SaveAbility()" messageKind="Complete" messageSort="AsynchCall" createSelfMessage="false">
             <elementDefinition Id="709b85d8-5c10-453f-a1a8-3a31b273bd86" />
             <sendEvent>
               <messageOccurrenceSpecificationMoniker Id="1cbcd5d4-2828-4de7-aad1-9a9d7eaad6cc" LastKnownName="MessageOccurrenceSpecification23" />
@@ -553,7 +553,7 @@
               <messageOccurrenceSpecificationMoniker Id="0b7b3eb8-d7de-47b9-884f-e5894b6581ee" LastKnownName="MessageOccurrenceSpecification24" />
             </receiveEvent>
           </message>
-          <message Id="5fb8cd05-5922-40b6-a132-b693c6339bb7" name="Insert Ability" messageKind="Complete" messageSort="SynchCall" createSelfMessage="false">
+          <message Id="5fb8cd05-5922-40b6-a132-b693c6339bb7" name="Insert(Ability)" messageKind="Complete" messageSort="SynchCall" createSelfMessage="false">
             <elementDefinition Id="966ef5e4-075d-4144-a416-19400c139a94" />
             <sendEvent>
               <messageOccurrenceSpecificationMoniker Id="935339e2-0355-4796-9a4f-6495b8947a34" LastKnownName="MessageOccurrenceSpecification25" />
