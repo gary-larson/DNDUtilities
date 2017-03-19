@@ -14,25 +14,25 @@ namespace DNDUtilitiesLib
             set;
         }
 
-        private int alignment-id
-	{
-		get;
-		set;
-	}
+        private int alignment_id
+	    {
+		    get;
+		    set;
+	    }
 
-    public virtual Alignments Alignments
-    {
-        get;
-        set;
+        public virtual Alignments Alignments
+        {
+            get;
+            set;
+        }
+
+        public virtual Classes classes
+        {
+            get;
+            set;
+        }
+
     }
-
-    public virtual Classes classes
-    {
-        get;
-        set;
-    }
-
-}
 
 
 }

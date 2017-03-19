@@ -55,7 +55,7 @@
     <Compile Include="Items.cs" />
     <Compile Include="Monsters.cs" />
     <Compile Include="Monster_descriptor.cs" />
-    <Compile Include="monster_families.cs" />
+    <Compile Include="Monster_families.cs" />
     <Compile Include="Monster_sizes.cs" />
     <Compile Include="Monster_types.cs" />
     <Compile Include="Powers.cs" />

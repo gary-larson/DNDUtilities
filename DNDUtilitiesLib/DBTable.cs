@@ -8,10 +8,13 @@ namespace DNDUtilitiesLib
 {
     public class DBTable
     {
+        public DBTable ()
+        {
+            connection = "DNDDatabase\\bin\\Debug\\DNDDatabase.db3";
+        }
         private string connection
         {
             get;
-            set;
         }
 
         public virtual void Save()

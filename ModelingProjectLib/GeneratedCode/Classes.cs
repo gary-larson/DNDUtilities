@@ -125,7 +125,7 @@ public class Classes : DBTable
 		set;
 	}
 
-	public virtual string req-psionics
+	public virtual string req_psionics
 	{
 		get;
 		set;

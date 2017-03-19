@@ -17,7 +17,7 @@ public class Class_alignments : DBTable
 		set;
 	}
 
-	private int alignment-id
+	private int alignment_id
 	{
 		get;
 		set;
