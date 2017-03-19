@@ -43,6 +43,13 @@
       <SubType>Content</SubType>
       <DependentUpon>UMLActivityDiagramDMResolveEncounter.activitydiagram</DependentUpon>
     </Content>
+    <Content Include="UMLClassDiagramDNDDatabase.classdiagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="UMLClassDiagramDNDDatabase.classdiagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>UMLClassDiagramDNDDatabase.classdiagram</DependentUpon>
+    </Content>
     <Content Include="UMLSequenceDiagramAbilityAddition.sequencediagram">
       <SubType>Content</SubType>
     </Content>
