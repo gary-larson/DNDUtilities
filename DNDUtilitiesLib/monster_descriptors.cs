@@ -12,18 +12,18 @@ namespace DNDUtilitiesLib
     using System;
     using System.Collections.Generic;
     
-    public partial class spell_types
+    public partial class monster_descriptors
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public spell_types()
+        public monster_descriptors()
         {
-            this.classes = new HashSet<@class>();
+            this.monsters = new HashSet<monster>();
         }
     
-        public long type_id { get; set; }
-        public string type { get; set; }
+        public long descriptor_id { get; set; }
+        public string descriptor { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<@class> classes { get; set; }
+        public virtual ICollection<monster> monsters { get; set; }
     }
 }

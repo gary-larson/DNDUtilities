@@ -72,20 +72,6 @@
       </propertyInstances>
     </stereotypeInstance>
   </appliedStereotypesInternal>
-  <profileInstances>
-    <packageHasProfileInstances Id="5b8209f5-fc44-4883-b5b9-02bf8dbb76ac">
-      <profileInstance Id="fd6d5885-653b-4360-8ba4-b60ad43899e9" name="CSharpProfile">
-        <elementDefinition Id="bc3f273c-8c47-4f17-a5d4-36ca48be2ae6" />
-      </profileInstance>
-      <elementDefinition Id="7b7271cb-88a9-4a6a-b411-1ec2fed527df" />
-    </packageHasProfileInstances>
-    <packageHasProfileInstances Id="912e2175-3378-490a-b3e9-e52d6ee42d55">
-      <profileInstance Id="abbe1bf9-f77c-4f70-b02a-6520b97f3f6a" name="TextTemplateBindings">
-        <elementDefinition Id="b2a0c7de-133a-48e6-9d5a-5d0a4b69d66f" />
-      </profileInstance>
-      <elementDefinition Id="ca9f0945-009b-497b-98cf-b96f629e6e42" />
-    </packageHasProfileInstances>
-  </profileInstances>
   <packagedElements>
     <logicalClassDesignerModelHasTypes>
       <class Id="da6ef844-6a06-4dbd-b51a-9a2fe79d4162" name="DBTable" isAbstract="false" isLeaf="false" isActiveClass="false">
@@ -905,7 +891,7 @@
               <referencedTypeMoniker Id="aa117744-5944-4f80-b303-de80c881bf45" LastKnownName="Integer" />
             </type_NamedElement>
           </property>
-          <property Id="33e2f04d-2c8e-4011-a44c-e0fe016d6ffd" name="alignment-id" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+          <property Id="33e2f04d-2c8e-4011-a44c-e0fe016d6ffd" name="alignment_id" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
             <appliedStereotypesInternal>
               <stereotypeInstance Id="8859c30e-33ba-4d68-95c7-a0ebc4a6e2f0" name="property" profile="CSharpProfile">
                 <elementDefinition Id="19a0ce53-23d8-4d21-ae57-0054148bcbd7" />
@@ -4227,7 +4213,7 @@
               <referencedTypeMoniker Id="8a28e14a-5ffe-48ff-b6b8-e93f62d3213b" LastKnownName="String" />
             </type_NamedElement>
           </property>
-          <property Id="38bca14e-c5b8-450f-a84a-21eeb7b235ec" name="req-psionics" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+          <property Id="38bca14e-c5b8-450f-a84a-21eeb7b235ec" name="req_psionics" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
             <appliedStereotypesInternal>
               <stereotypeInstance Id="acb74609-ae67-4cf6-ba55-13d884b0b0f1" name="property" profile="CSharpProfile">
                 <elementDefinition Id="3cca0442-2806-49da-8330-a239e708da26" />
@@ -9313,7 +9299,7 @@
               <referencedTypeMoniker Id="91975056-4014-453e-a044-2441b53a3206" LastKnownName="Integer" />
             </type_NamedElement>
           </property>
-          <property Id="fe3ff536-f2f4-4282-9e50-7e7ff08773a2" name="monster_family-id" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+          <property Id="fe3ff536-f2f4-4282-9e50-7e7ff08773a2" name="monster_family_id" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
             <appliedStereotypesInternal>
               <stereotypeInstance Id="fe5e687f-271a-470a-a481-ffb2ea401345" name="property" profile="CSharpProfile">
                 <elementDefinition Id="a26e953b-a017-4a0c-8833-5c1a5b303dd8" />
@@ -10193,7 +10179,7 @@
               <referencedTypeMoniker Id="9d290264-20b7-4d91-a73e-bb3319cf620a" LastKnownName="String" />
             </type_NamedElement>
           </property>
-          <property Id="de288a08-046c-4a77-8d32-6dd13e5d078d" name="special-attacks" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+          <property Id="de288a08-046c-4a77-8d32-6dd13e5d078d" name="special_attacks" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
             <appliedStereotypesInternal>
               <stereotypeInstance Id="03a31678-65f6-403b-b47c-a636f829dddf" name="property" profile="CSharpProfile">
                 <elementDefinition Id="35665c12-eebc-433e-b39c-d563f6955455" />
@@ -10248,7 +10234,7 @@
               <referencedTypeMoniker Id="0b06368f-5d9f-475a-9ce5-5916493744ca" LastKnownName="String" />
             </type_NamedElement>
           </property>
-          <property Id="64d54961-17e5-476a-b83c-f5e53066b523" name="special-qualities" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+          <property Id="64d54961-17e5-476a-b83c-f5e53066b523" name="special_qualities" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
             <appliedStereotypesInternal>
               <stereotypeInstance Id="9e4797fa-cea8-4c65-89e2-a9a13b3e2e45" name="property" profile="CSharpProfile">
                 <elementDefinition Id="28631c82-0b7a-43d1-9439-f4bc0b0acdfe" />
@@ -11018,7 +11004,7 @@
               <referencedTypeMoniker Id="1b4b1c23-1607-4f42-bdc2-f30ad51477fd" LastKnownName="String" />
             </type_NamedElement>
           </property>
-          <property Id="2687b28f-1c94-49d7-ac38-72624140eacb" name="special-abilities" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+          <property Id="2687b28f-1c94-49d7-ac38-72624140eacb" name="special_abilities" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
             <appliedStereotypesInternal>
               <stereotypeInstance Id="88e49f88-3660-468f-a830-381509be99b0" name="property" profile="CSharpProfile">
                 <elementDefinition Id="4342e7ec-7a26-426a-b7f6-019042072034" />
@@ -12159,7 +12145,7 @@
               <referencedTypeMoniker Id="0b479891-bb91-4e65-921a-f45a6c10120e" LastKnownName="String" />
             </type_NamedElement>
           </property>
-          <property Id="343bb3d8-719e-46e2-a628-c6fd51a00e65" name="maifesting-time" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+          <property Id="343bb3d8-719e-46e2-a628-c6fd51a00e65" name="maifesting_time" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
             <appliedStereotypesInternal>
               <stereotypeInstance Id="10e75258-a0f4-4501-bc87-f971cd375887" name="property" profile="CSharpProfile">
                 <elementDefinition Id="f00e01d2-ca51-4dfa-a2a0-eb81619f42f7" />
@@ -12489,7 +12475,7 @@
               <referencedTypeMoniker Id="d62f998a-4950-4e1a-b77c-188f8fcab4fb" LastKnownName="String" />
             </type_NamedElement>
           </property>
-          <property Id="e4fcdc17-e26c-4fa0-a1d3-3392d0abd370" name="saving-throw" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+          <property Id="e4fcdc17-e26c-4fa0-a1d3-3392d0abd370" name="saving_throw" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
             <appliedStereotypesInternal>
               <stereotypeInstance Id="b10f0a5c-8805-422c-b23a-c689362ecef9" name="property" profile="CSharpProfile">
                 <elementDefinition Id="42b7ab50-17d0-4a9d-a106-b05953bde8c6" />
@@ -12654,7 +12640,7 @@
               <referencedTypeMoniker Id="fe46f857-08c0-477b-968f-ac02a140a9fb" LastKnownName="String" />
             </type_NamedElement>
           </property>
-          <property Id="969d4eb5-aa83-4acd-9060-ba25315cc2a8" name="short-description" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+          <property Id="969d4eb5-aa83-4acd-9060-ba25315cc2a8" name="short_description" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
             <appliedStereotypesInternal>
               <stereotypeInstance Id="47e42cce-25c9-453d-a838-2074add9c71b" name="property" profile="CSharpProfile">
                 <elementDefinition Id="87d9b9c0-0337-4592-8206-4ecab8aad295" />
@@ -17142,6 +17128,18 @@
           <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
         </profileInstance>
         <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+      </packageHasProfileInstances>
+      <packageHasProfileInstances Id="5b8209f5-fc44-4883-b5b9-02bf8dbb76ac">
+        <profileInstance Id="fd6d5885-653b-4360-8ba4-b60ad43899e9" name="CSharpProfile">
+          <elementDefinition Id="bc3f273c-8c47-4f17-a5d4-36ca48be2ae6" />
+        </profileInstance>
+        <elementDefinition Id="7b7271cb-88a9-4a6a-b411-1ec2fed527df" />
+      </packageHasProfileInstances>
+      <packageHasProfileInstances Id="912e2175-3378-490a-b3e9-e52d6ee42d55">
+        <profileInstance Id="abbe1bf9-f77c-4f70-b02a-6520b97f3f6a" name="TextTemplateBindings">
+          <elementDefinition Id="b2a0c7de-133a-48e6-9d5a-5d0a4b69d66f" />
+        </profileInstance>
+        <elementDefinition Id="ca9f0945-009b-497b-98cf-b96f629e6e42" />
       </packageHasProfileInstances>
     </profileInstances>
   </package>

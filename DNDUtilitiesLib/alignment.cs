@@ -12,16 +12,16 @@ namespace DNDUtilitiesLib
     using System;
     using System.Collections.Generic;
     
-    public partial class spell_types
+    public partial class alignment
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public spell_types()
+        public alignment()
         {
             this.classes = new HashSet<@class>();
         }
     
-        public long type_id { get; set; }
-        public string type { get; set; }
+        public long alignment_id { get; set; }
+        public string alignment1 { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<@class> classes { get; set; }

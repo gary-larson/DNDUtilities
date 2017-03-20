@@ -17,7 +17,7 @@ public class Monsters : DBTable
 		set;
 	}
 
-	private int monster_family-id
+	private int monster_family_id
 	{
 		get;
 		set;
@@ -113,13 +113,13 @@ public class Monsters : DBTable
 		set;
 	}
 
-	public virtual string special-attacks
+	public virtual string special_attacks
 	{
 		get;
 		set;
 	}
 
-	public virtual string special-qualities
+	public virtual string special_qualities
 	{
 		get;
 		set;
@@ -203,7 +203,7 @@ public class Monsters : DBTable
 		set;
 	}
 
-	public virtual string special-abilities
+	public virtual string special_abilities
 	{
 		get;
 		set;

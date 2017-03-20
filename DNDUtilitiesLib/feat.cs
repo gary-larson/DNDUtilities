@@ -12,18 +12,18 @@ namespace DNDUtilitiesLib
     using System;
     using System.Collections.Generic;
     
-    public partial class spell_types
+    public partial class feat
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public spell_types()
-        {
-            this.classes = new HashSet<@class>();
-        }
-    
-        public long type_id { get; set; }
+        public long feat_id { get; set; }
+        public string name { get; set; }
         public string type { get; set; }
-    
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<@class> classes { get; set; }
+        public string multiple { get; set; }
+        public string stack { get; set; }
+        public string choice { get; set; }
+        public string prerequisite { get; set; }
+        public string benefit { get; set; }
+        public string normal { get; set; }
+        public string special { get; set; }
+        public string full_text { get; set; }
     }
 }

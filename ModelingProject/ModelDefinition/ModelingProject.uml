@@ -20390,7 +20390,7 @@
           </property>
           <property
             Id="5cc47674-1c63-4e86-8e4d-1aab7f0bbacb"
-            name="alignment-id"
+            name="alignment_id"
             visibility="Private"
             isLeaf="false"
             isStatic="false"
@@ -24720,7 +24720,7 @@
           </property>
           <property
             Id="28d42fe5-7594-4334-b162-a009431cefc9"
-            name="req-psionics"
+            name="req_psionics"
             isLeaf="false"
             isStatic="false"
             isReadOnly="false"
@@ -31112,7 +31112,7 @@
           </property>
           <property
             Id="9ad79afc-334f-4d71-b0d2-11c23bd7f0ea"
-            name="monster_family-id"
+            name="monster_family_id"
             visibility="Private"
             isLeaf="false"
             isStatic="false"
@@ -32316,7 +32316,7 @@
           </property>
           <property
             Id="5d49a09a-60a1-4fe9-9793-93071b8c9755"
-            name="special-attacks"
+            name="special_attacks"
             isLeaf="false"
             isStatic="false"
             isReadOnly="false"
@@ -32391,7 +32391,7 @@
           </property>
           <property
             Id="3a7ba78c-0f46-4d83-9c9f-414bf2c10513"
-            name="special-qualities"
+            name="special_qualities"
             isLeaf="false"
             isStatic="false"
             isReadOnly="false"
@@ -33441,7 +33441,7 @@
           </property>
           <property
             Id="403a915f-5cb6-4fb8-97ce-98d59ce58526"
-            name="special-abilities"
+            name="special_abilities"
             isLeaf="false"
             isStatic="false"
             isReadOnly="false"
@@ -34783,7 +34783,7 @@
           </property>
           <property
             Id="c96b5982-33c8-449c-b716-fc7e0739deaa"
-            name="maifesting-time"
+            name="maifesting_time"
             isLeaf="false"
             isStatic="false"
             isReadOnly="false"
@@ -35233,7 +35233,7 @@
           </property>
           <property
             Id="560403f1-a9e9-48b4-9de9-1d983cab354d"
-            name="saving-throw"
+            name="saving_throw"
             isLeaf="false"
             isStatic="false"
             isReadOnly="false"
@@ -35458,7 +35458,7 @@
           </property>
           <property
             Id="112aa0c9-f668-41d1-a2f4-479046616e78"
-            name="short-description"
+            name="short_description"
             isLeaf="false"
             isStatic="false"
             isReadOnly="false"

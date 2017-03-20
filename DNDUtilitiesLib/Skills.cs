@@ -104,7 +104,7 @@ namespace DNDUtilitiesLib
             set;
         }
 
-        public virtual IEnumerable<Skill_subtypes> skill_subtypes
+        public virtual IEnumerable<skill_subtypes> skill_subtypes
         {
             get;
             set;

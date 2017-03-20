@@ -53,7 +53,7 @@ public class Powers : DBTable
 		set;
 	}
 
-	public virtual string maifesting-time
+	public virtual string maifesting_time
 	{
 		get;
 		set;
@@ -89,7 +89,7 @@ public class Powers : DBTable
 		set;
 	}
 
-	public virtual string saving-throw
+	public virtual string saving_throw
 	{
 		get;
 		set;
@@ -107,7 +107,7 @@ public class Powers : DBTable
 		set;
 	}
 
-	public virtual string short-description
+	public virtual string short_description
 	{
 		get;
 		set;

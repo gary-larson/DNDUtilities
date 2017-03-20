@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DNDUtilitiesLib;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -122,13 +123,13 @@ namespace DNDUtilitiesLib
             set;
         }
 
-        public virtual Equipment_subcategory equipment_subcategory
+        public virtual equipment_subcategory equipment_subcategory
         {
             get;
             set;
         }
 
-        public virtual Equipment_category equipment_category
+        public virtual equipment_category equipment_category
         {
             get;
             set;

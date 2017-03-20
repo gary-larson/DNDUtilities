@@ -122,59 +122,59 @@ namespace DNDUtilitiesLib
             set;
         }
 
-        public virtual string req-psionics
-	{
-		get;
-		set;
-	}
+        public virtual string req_psionics
+	    {
+		    get;
+		    set;
+	    }
 
-    public virtual string req_epic_feat
-    {
-        get;
-        set;
+        public virtual string req_epic_feat
+        {
+            get;
+            set;
+        }
+
+        public virtual string req_special
+        {
+            get;
+            set;
+        }
+
+        public virtual string spell_list_1
+        {
+            get;
+            set;
+        }
+
+        public virtual string spell_list_2
+        {
+            get;
+            set;
+        }
+
+        public virtual string spell_list_3
+        {
+            get;
+            set;
+        }
+
+        public virtual string spell_list_4
+        {
+            get;
+            set;
+        }
+
+        public virtual string spell_list_5
+        {
+            get;
+            set;
+        }
+
+        public virtual string full_text
+        {
+            get;
+            set;
+        }
+
     }
-
-    public virtual string req_special
-    {
-        get;
-        set;
-    }
-
-    public virtual string spell_list_1
-    {
-        get;
-        set;
-    }
-
-    public virtual string spell_list_2
-    {
-        get;
-        set;
-    }
-
-    public virtual string spell_list_3
-    {
-        get;
-        set;
-    }
-
-    public virtual string spell_list_4
-    {
-        get;
-        set;
-    }
-
-    public virtual string spell_list_5
-    {
-        get;
-        set;
-    }
-
-    public virtual string full_text
-    {
-        get;
-        set;
-    }
-
-}
 }
