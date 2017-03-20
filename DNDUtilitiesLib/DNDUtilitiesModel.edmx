@@ -1,0 +1,1822 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="DNDDatabaseModel.Store" Provider="System.Data.SQLite.EF6" ProviderManifestToken="data source=C:\Users\Gary\Source\Repos\DNDUtilities\DNDDatabase\bin\Debug\DNDDatabase.db3" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="abilities">
+          <Key>
+            <PropertyRef Name="ability_id" />
+          </Key>
+          <Property Name="ability_id" Type="integer" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ability" Type="char" MaxLength="12" Nullable="false" />
+          <Property Name="abbreviation" Type="char" MaxLength="3" Nullable="false" />
+        </EntityType>
+        <EntityType Name="alignments">
+          <Key>
+            <PropertyRef Name="alignment_id" />
+          </Key>
+          <Property Name="alignment_id" Type="integer" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="alignment" Type="varchar" MaxLength="20" Nullable="false" />
+        </EntityType>
+        <EntityType Name="class_alignments">
+          <Key>
+            <PropertyRef Name="alignment_class_Id" />
+            <PropertyRef Name="alignment_id" />
+          </Key>
+          <Property Name="alignment_class_Id" Type="integer" Nullable="false" />
+          <Property Name="alignment_id" Type="integer" Nullable="false" />
+        </EntityType>
+        <EntityType Name="class_skills">
+          <Key>
+            <PropertyRef Name="class_id" />
+            <PropertyRef Name="skill_id" />
+          </Key>
+          <Property Name="class_id" Type="integer" Nullable="false" />
+          <Property Name="skill_id" Type="integer" Nullable="false" />
+        </EntityType>
+        <EntityType Name="class_tables">
+          <Key>
+            <PropertyRef Name="class_table_id" />
+          </Key>
+          <Property Name="class_table_id" Type="integer" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="class_id" Type="integer" Nullable="false" />
+          <Property Name="level" Type="integer" Nullable="false" />
+          <Property Name="base_attack_bonus" Type="varchar" MaxLength="20" />
+          <Property Name="fort_save" Type="integer" />
+          <Property Name="ref_save" Type="integer" />
+          <Property Name="will_save" Type="integer" />
+          <Property Name="ac_bonus" Type="integer" />
+          <Property Name="flurry_of_blows" Type="integer" />
+          <Property Name="unarmored_speed_bonus" Type="integer" />
+          <Property Name="unarmed_damage" Type="char" MaxLength="5" />
+          <Property Name="special" Type="varchar" MaxLength="100" />
+          <Property Name="slots_0" Type="integer" />
+          <Property Name="slots_1" Type="integer" />
+          <Property Name="slots_3" Type="integer" />
+          <Property Name="slots_4" Type="integer" />
+          <Property Name="slots_5" Type="integer" />
+          <Property Name="slots_6" Type="integer" />
+          <Property Name="slots_7" Type="integer" />
+          <Property Name="slots_8" Type="integer" />
+          <Property Name="slots_9" Type="integer" />
+          <Property Name="spells_known_0" Type="integer" />
+          <Property Name="spells_known_1" Type="integer" />
+          <Property Name="spells_known_2" Type="integer" />
+          <Property Name="spells_known_3" Type="integer" />
+          <Property Name="spells_known_4" Type="integer" />
+          <Property Name="spells_known_5" Type="integer" />
+          <Property Name="spells_known_6" Type="integer" />
+          <Property Name="spells_known_7" Type="integer" />
+          <Property Name="spells_known_8" Type="integer" />
+          <Property Name="spells_known_9" Type="integer" />
+          <Property Name="slots_2" Type="integer" />
+        </EntityType>
+        <EntityType Name="classes">
+          <Key>
+            <PropertyRef Name="class_id" />
+          </Key>
+          <Property Name="class_id" Type="integer" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="name" Type="varchar" MaxLength="25" Nullable="false" />
+          <Property Name="type" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="hit_die" Type="integer" Nullable="false" />
+          <Property Name="skill_points" Type="integer" Nullable="false" />
+          <Property Name="ability_id" Type="integer" />
+          <Property Name="type_id" Type="integer" />
+          <Property Name="proficiencies" Type="varchar" MaxLength="900" />
+          <Property Name="epic_feat_base_level" Type="integer" />
+          <Property Name="epic_feat_interval" Type="integer" />
+          <Property Name="epic_feat_list" Type="varchar" MaxLength="850" />
+          <Property Name="epic_full_text" Type="nvarchar" MaxLength="2147483647" />
+          <Property Name="req_race" Type="varchar" MaxLength="50" />
+          <Property Name="req_weapon_proficiency" Type="varchar" MaxLength="50" />
+          <Property Name="req_base_attack_bonus" Type="integer" />
+          <Property Name="req_skill" Type="varchar" MaxLength="100" />
+          <Property Name="req_feat" Type="varchar" MaxLength="110" />
+          <Property Name="req_spells" Type="varchar" MaxLength="110" />
+          <Property Name="req_languages" Type="varchar" MaxLength="20" />
+          <Property Name="req_psionics" Type="varchar" MaxLength="60" />
+          <Property Name="req_epic_feat" Type="varchar" MaxLength="40" />
+          <Property Name="req_special" Type="varchar" MaxLength="200" />
+          <Property Name="spell_list_1" Type="varchar" MaxLength="300" />
+          <Property Name="spell_list_2" Type="varchar" MaxLength="200" />
+          <Property Name="spell_list_3" Type="varchar" MaxLength="200" />
+          <Property Name="spell_list_4" Type="varchar" MaxLength="150" />
+          <Property Name="spell_list_5" Type="varchar" MaxLength="125" />
+          <Property Name="full_text" Type="nvarchar" MaxLength="2147483647" Nullable="false" />
+        </EntityType>
+        <EntityType Name="domains">
+          <Key>
+            <PropertyRef Name="domain_id" />
+          </Key>
+          <Property Name="domain_id" Type="integer" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="name" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="granted_powers" Type="nvarchar" MaxLength="2147483647" Nullable="false" />
+          <Property Name="spell_1" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="spell_2" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="spell_3" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="spell_4" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="spell_5" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="spell_6" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="spell_7" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="spell_8" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="spell_9" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="full_text" Type="nvarchar" MaxLength="2147483647" Nullable="false" />
+        </EntityType>
+        <EntityType Name="equipment_category">
+          <Key>
+            <PropertyRef Name="category_id" />
+          </Key>
+          <Property Name="category_id" Type="integer" Nullable="false" />
+          <Property Name="category" Type="varchar" MaxLength="20" Nullable="false" />
+        </EntityType>
+        <EntityType Name="equipment_subcategory">
+          <Key>
+            <PropertyRef Name="subcategory_id" />
+          </Key>
+          <Property Name="subcategory_id" Type="integer" Nullable="false" />
+          <Property Name="subcategory" Type="varchar" MaxLength="30" Nullable="false" />
+        </EntityType>
+        <EntityType Name="equipments">
+          <Key>
+            <PropertyRef Name="equipment_id" />
+          </Key>
+          <Property Name="equipment_id" Type="integer" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="name" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="family" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="cost" Type="varchar" MaxLength="25" Nullable="false" />
+          <Property Name="dmg_s" Type="varchar" MaxLength="10" />
+          <Property Name="weight" Type="varchar" MaxLength="15" />
+          <Property Name="critical" Type="varchar" MaxLength="15" />
+          <Property Name="armor_shield_bonus" Type="integer" />
+          <Property Name="dmg_m" Type="varchar" MaxLength="15" />
+          <Property Name="maximum_dex_bonus" Type="integer" />
+          <Property Name="armor_check_penalty" Type="integer" />
+          <Property Name="arcane_spell_failure_chance" Type="integer" />
+          <Property Name="range_increment" Type="integer" />
+          <Property Name="speed_30" Type="integer" />
+          <Property Name="type" Type="varchar" MaxLength="30" />
+          <Property Name="speed_20" Type="integer" />
+          <Property Name="full_text" Type="nvarchar" MaxLength="2147483647" />
+          <Property Name="category_id" Type="integer" Nullable="false" />
+          <Property Name="subcategory_id" Type="integer" />
+        </EntityType>
+        <EntityType Name="feats">
+          <Key>
+            <PropertyRef Name="feat_id" />
+          </Key>
+          <Property Name="feat_id" Type="integer" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="name" Type="varchar" MaxLength="40" Nullable="false" />
+          <Property Name="type" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="multiple" Type="char" MaxLength="3" Nullable="false" />
+          <Property Name="stack" Type="char" MaxLength="3" Nullable="false" />
+          <Property Name="choice" Type="varchar" MaxLength="150" />
+          <Property Name="prerequisite" Type="varchar" MaxLength="300" />
+          <Property Name="benefit" Type="nvarchar" MaxLength="2147483647" Nullable="false" />
+          <Property Name="normal" Type="varchar" MaxLength="400" />
+          <Property Name="special" Type="varchar" MaxLength="650" />
+          <Property Name="full_text" Type="nvarchar" MaxLength="2147483647" Nullable="false" />
+        </EntityType>
+        <EntityType Name="items">
+          <Key>
+            <PropertyRef Name="item_id" />
+          </Key>
+          <Property Name="item_id" Type="integer" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="name" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="category" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="subcategory" Type="varchar" MaxLength="20" />
+          <Property Name="special_ability" Type="char" MaxLength="3" Nullable="false" />
+          <Property Name="aura" Type="varchar" MaxLength="70" />
+          <Property Name="caster_level" Type="integer" />
+          <Property Name="price" Type="varchar" MaxLength="80" />
+          <Property Name="manifester_level" Type="integer" />
+          <Property Name="prerequisite" Type="varchar" MaxLength="250" />
+          <Property Name="cost" Type="varchar" MaxLength="35" />
+          <Property Name="weight" Type="varchar" MaxLength="20" />
+          <Property Name="full_text" Type="nvarchar" MaxLength="2147483647" Nullable="false" />
+        </EntityType>
+        <EntityType Name="monster_descriptors">
+          <Key>
+            <PropertyRef Name="descriptor_id" />
+          </Key>
+          <Property Name="descriptor_id" Type="integer" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="descriptor" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="monster_families">
+          <Key>
+            <PropertyRef Name="family_id" />
+          </Key>
+          <Property Name="family_id" Type="integer" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="family" Type="varchar" MaxLength="30" Nullable="false" />
+        </EntityType>
+        <EntityType Name="monster_sizes">
+          <Key>
+            <PropertyRef Name="size_id" />
+          </Key>
+          <Property Name="size_id" Type="integer" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="size" Type="varchar" MaxLength="20" Nullable="false" />
+        </EntityType>
+        <EntityType Name="monster_types">
+          <Key>
+            <PropertyRef Name="type_id" />
+          </Key>
+          <Property Name="type_id" Type="integer" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="type" Type="varchar" MaxLength="20" Nullable="false" />
+        </EntityType>
+        <EntityType Name="monsters">
+          <Key>
+            <PropertyRef Name="monster_id" />
+          </Key>
+          <Property Name="monster_id" Type="integer" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="monster_family_Id" Type="integer" Nullable="false" />
+          <Property Name="name" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="altname" Type="varchar" MaxLength="20" />
+          <Property Name="size_id" Type="integer" Nullable="false" />
+          <Property Name="type_id" Type="integer" Nullable="false" />
+          <Property Name="descriptor_id" Type="integer" />
+          <Property Name="hit_dice" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="initiative" Type="varchar" MaxLength="40" Nullable="false" />
+          <Property Name="speed" Type="varchar" MaxLength="150" Nullable="false" />
+          <Property Name="armor_class" Type="varchar" MaxLength="125" Nullable="false" />
+          <Property Name="base_attack" Type="integer" />
+          <Property Name="grapple" Type="integer" />
+          <Property Name="attack" Type="varchar" MaxLength="150" />
+          <Property Name="full_attack" Type="varchar" MaxLength="250" />
+          <Property Name="space" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="reach" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="special_attacks" Type="varchar" MaxLength="170" />
+          <Property Name="special_qualities" Type="varchar" MaxLength="350" />
+          <Property Name="saves" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="abilities" Type="varchar" MaxLength="120" Nullable="false" />
+          <Property Name="skills" Type="varchar" MaxLength="450" />
+          <Property Name="bonus_feats" Type="varchar" MaxLength="70" />
+          <Property Name="feats" Type="varchar" MaxLength="400" />
+          <Property Name="epic_feats" Type="varchar" MaxLength="300" />
+          <Property Name="environment" Type="varchar" MaxLength="175" Nullable="false" />
+          <Property Name="organization" Type="varchar" MaxLength="475" Nullable="false" />
+          <Property Name="challenge_rating" Type="varchar" MaxLength="40" Nullable="false" />
+          <Property Name="treasure" Type="varchar" MaxLength="100" />
+          <Property Name="alignment" Type="varchar" MaxLength="75" />
+          <Property Name="advancement" Type="varchar" MaxLength="125" Nullable="false" />
+          <Property Name="level_adjustment" Type="varchar" MaxLength="40" />
+          <Property Name="special_abilities" Type="varchar" MaxLength="325" />
+          <Property Name="stat_block" Type="varchar" MaxLength="1800" Nullable="false" />
+          <Property Name="full_text" Type="nvarchar" MaxLength="2147483647" Nullable="false" />
+        </EntityType>
+        <EntityType Name="power_disciplines">
+          <Key>
+            <PropertyRef Name="discipline_id" />
+          </Key>
+          <Property Name="discipline_id" Type="integer" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="discipline" Type="varchar" MaxLength="2147483647" Nullable="false" />
+        </EntityType>
+        <EntityType Name="power_subdisciplines">
+          <Key>
+            <PropertyRef Name="subdiscipline_id" />
+          </Key>
+          <Property Name="subdiscipline_id" Type="integer" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="subdiscipline" Type="varchar" MaxLength="2147483647" Nullable="false" />
+        </EntityType>
+        <EntityType Name="powers">
+          <Key>
+            <PropertyRef Name="power_id" />
+          </Key>
+          <Property Name="power_id" Type="integer" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="name" Type="varchar" MaxLength="40" Nullable="false" />
+          <Property Name="power_discipline_id" Type="integer" Nullable="false" />
+          <Property Name="power_subdiscipline_Id" Type="integer" />
+          <Property Name="descriptor" Type="varchar" MaxLength="40" />
+          <Property Name="level" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="display" Type="varchar" MaxLength="50" />
+          <Property Name="manifesting_time" Type="varchar" MaxLength="60" />
+          <Property Name="range" Type="varchar" MaxLength="60" />
+          <Property Name="target" Type="varchar" MaxLength="150" />
+          <Property Name="area" Type="varchar" MaxLength="110" />
+          <Property Name="effect" Type="varchar" MaxLength="125" />
+          <Property Name="duration" Type="varchar" MaxLength="75" />
+          <Property Name="saving_throw" Type="varchar" MaxLength="60" />
+          <Property Name="power_points" Type="varchar" MaxLength="40" Nullable="false" />
+          <Property Name="power_resistance" Type="varchar" MaxLength="40" />
+          <Property Name="short_description" Type="varchar" MaxLength="325" />
+          <Property Name="xp_cost" Type="varchar" MaxLength="300" />
+          <Property Name="description" Type="nvarchar" MaxLength="2147483647" Nullable="false" />
+          <Property Name="augment" Type="nvarchar" MaxLength="2147483647" />
+          <Property Name="full_text" Type="nvarchar" MaxLength="2147483647" Nullable="false" />
+        </EntityType>
+        <EntityType Name="skill_subtypes">
+          <Key>
+            <PropertyRef Name="subtype_id" />
+          </Key>
+          <Property Name="subtype_id" Type="integer" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="subtype" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="skill_id" Type="integer" Nullable="false" />
+        </EntityType>
+        <EntityType Name="skills">
+          <Key>
+            <PropertyRef Name="skill_id" />
+          </Key>
+          <Property Name="skill_id" Type="integer" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="name" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="subtype" Type="char" MaxLength="3" Nullable="false" />
+          <Property Name="key_ability_id" Type="integer" />
+          <Property Name="trained" Type="char" MaxLength="3" Nullable="false" />
+          <Property Name="armor_checked" Type="char" MaxLength="3" Nullable="false" />
+          <Property Name="description" Type="nvarchar" MaxLength="2147483647" />
+          <Property Name="spell_check" Type="nvarchar" MaxLength="2147483647" />
+          <Property Name="action" Type="nvarchar" MaxLength="2147483647" Nullable="false" />
+          <Property Name="try_again" Type="varchar" MaxLength="550" />
+          <Property Name="special" Type="varchar" MaxLength="1100" />
+          <Property Name="restriction" Type="varchar" MaxLength="500" />
+          <Property Name="synergy" Type="varchar" MaxLength="1600" />
+          <Property Name="epic_use" Type="nvarchar" MaxLength="2147483647" />
+          <Property Name="untrained" Type="varchar" MaxLength="350" />
+          <Property Name="full_text" Type="nvarchar" MaxLength="2147483647" Nullable="false" />
+          <Property Name="psionic" Type="char" MaxLength="3" Nullable="false" />
+        </EntityType>
+        <EntityType Name="spell_schools">
+          <Key>
+            <PropertyRef Name="school_id" />
+          </Key>
+          <Property Name="school_id" Type="integer" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="school" Type="varchar" MaxLength="40" Nullable="false" />
+        </EntityType>
+        <EntityType Name="spell_subschools">
+          <Key>
+            <PropertyRef Name="subschool_id" />
+          </Key>
+          <Property Name="subschool_id" Type="integer" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="subschool" Type="varchar" MaxLength="30" Nullable="false" />
+        </EntityType>
+        <EntityType Name="spell_types">
+          <Key>
+            <PropertyRef Name="type_id" />
+          </Key>
+          <Property Name="type_id" Type="integer" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="type" Type="char" MaxLength="10" Nullable="false" />
+        </EntityType>
+        <EntityType Name="spells">
+          <Key>
+            <PropertyRef Name="spell_id" />
+          </Key>
+          <Property Name="spell_id" Type="integer" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="name" Type="varchar" MaxLength="40" Nullable="false" />
+          <Property Name="altname" Type="varchar" MaxLength="40" Nullable="false" />
+          <Property Name="school_id" Type="integer" Nullable="false" />
+          <Property Name="subschool_id" Type="integer" />
+          <Property Name="descriptor" Type="varchar" MaxLength="50" />
+          <Property Name="spellcraft_dc" Type="varchar" MaxLength="20" />
+          <Property Name="level" Type="varchar" MaxLength="70" />
+          <Property Name="components" Type="nvarchar" MaxLength="2147483647" Nullable="false" />
+          <Property Name="casting_time" Type="varchar" MaxLength="40" Nullable="false" />
+          <Property Name="range" Type="varchar" MaxLength="60" />
+          <Property Name="target" Type="varchar" MaxLength="200" />
+          <Property Name="area" Type="varchar" MaxLength="200" />
+          <Property Name="effect" Type="varchar" MaxLength="175" />
+          <Property Name="duration" Type="varchar" MaxLength="90" Nullable="false" />
+          <Property Name="saving_throw" Type="varchar" MaxLength="80" />
+          <Property Name="spell_resistance" Type="varchar" MaxLength="50" />
+          <Property Name="short_description" Type="varchar" MaxLength="125" />
+          <Property Name="to_develop" Type="varchar" MaxLength="700" />
+          <Property Name="material_components" Type="varchar" MaxLength="450" />
+          <Property Name="arcane_material_components" Type="varchar" MaxLength="175" />
+          <Property Name="focus" Type="varchar" MaxLength="425" />
+          <Property Name="description" Type="nvarchar" MaxLength="2147483647" Nullable="false" />
+          <Property Name="xp_cost" Type="varchar" MaxLength="325" />
+          <Property Name="arcane_focus" Type="varchar" MaxLength="125" />
+          <Property Name="wizard_focus" Type="varchar" MaxLength="150" />
+          <Property Name="verbal_components" Type="varchar" MaxLength="150" />
+          <Property Name="sorcerer_focus" Type="varchar" MaxLength="150" />
+          <Property Name="bard_focus" Type="varchar" MaxLength="150" />
+          <Property Name="druid_focus" Type="varchar" MaxLength="30" />
+          <Property Name="full_text" Type="nvarchar" MaxLength="2147483647" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_class_alignments_0_0">
+          <End Role="alignments" Type="Self.alignments" Multiplicity="1" />
+          <End Role="class_alignments" Type="Self.class_alignments" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="alignments">
+              <PropertyRef Name="alignment_id" />
+            </Principal>
+            <Dependent Role="class_alignments">
+              <PropertyRef Name="alignment_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_class_alignments_1_0">
+          <End Role="classes" Type="Self.classes" Multiplicity="1" />
+          <End Role="class_alignments" Type="Self.class_alignments" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="classes">
+              <PropertyRef Name="class_id" />
+            </Principal>
+            <Dependent Role="class_alignments">
+              <PropertyRef Name="alignment_class_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_class_skills_0_0">
+          <End Role="skills" Type="Self.skills" Multiplicity="1" />
+          <End Role="class_skills" Type="Self.class_skills" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="skills">
+              <PropertyRef Name="skill_id" />
+            </Principal>
+            <Dependent Role="class_skills">
+              <PropertyRef Name="skill_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_class_skills_1_0">
+          <End Role="classes" Type="Self.classes" Multiplicity="1" />
+          <End Role="class_skills" Type="Self.class_skills" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="classes">
+              <PropertyRef Name="class_id" />
+            </Principal>
+            <Dependent Role="class_skills">
+              <PropertyRef Name="class_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_class_tables_0_0">
+          <End Role="classes" Type="Self.classes" Multiplicity="1" />
+          <End Role="class_tables" Type="Self.class_tables" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="classes">
+              <PropertyRef Name="class_id" />
+            </Principal>
+            <Dependent Role="class_tables">
+              <PropertyRef Name="class_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_classes_0_0">
+          <End Role="spell_types" Type="Self.spell_types" Multiplicity="0..1" />
+          <End Role="classes" Type="Self.classes" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="spell_types">
+              <PropertyRef Name="type_id" />
+            </Principal>
+            <Dependent Role="classes">
+              <PropertyRef Name="type_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_classes_1_0">
+          <End Role="abilities" Type="Self.abilities" Multiplicity="0..1" />
+          <End Role="classes" Type="Self.classes" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="abilities">
+              <PropertyRef Name="ability_id" />
+            </Principal>
+            <Dependent Role="classes">
+              <PropertyRef Name="ability_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_equipments_0_0">
+          <End Role="equipment_category" Type="Self.equipment_category" Multiplicity="1" />
+          <End Role="equipments" Type="Self.equipments" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="equipment_category">
+              <PropertyRef Name="category_id" />
+            </Principal>
+            <Dependent Role="equipments">
+              <PropertyRef Name="category_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_monsters_0_0">
+          <End Role="monster_descriptors" Type="Self.monster_descriptors" Multiplicity="0..1" />
+          <End Role="monsters" Type="Self.monsters" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="monster_descriptors">
+              <PropertyRef Name="descriptor_id" />
+            </Principal>
+            <Dependent Role="monsters">
+              <PropertyRef Name="descriptor_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_monsters_1_0">
+          <End Role="monster_types" Type="Self.monster_types" Multiplicity="1" />
+          <End Role="monsters" Type="Self.monsters" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="monster_types">
+              <PropertyRef Name="type_id" />
+            </Principal>
+            <Dependent Role="monsters">
+              <PropertyRef Name="type_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_monsters_2_0">
+          <End Role="monster_sizes" Type="Self.monster_sizes" Multiplicity="1" />
+          <End Role="monsters" Type="Self.monsters" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="monster_sizes">
+              <PropertyRef Name="size_id" />
+            </Principal>
+            <Dependent Role="monsters">
+              <PropertyRef Name="size_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_monsters_3_0">
+          <End Role="monster_families" Type="Self.monster_families" Multiplicity="1" />
+          <End Role="monsters" Type="Self.monsters" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="monster_families">
+              <PropertyRef Name="family_id" />
+            </Principal>
+            <Dependent Role="monsters">
+              <PropertyRef Name="monster_family_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_powers_0_0">
+          <End Role="power_subdisciplines" Type="Self.power_subdisciplines" Multiplicity="0..1" />
+          <End Role="powers" Type="Self.powers" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="power_subdisciplines">
+              <PropertyRef Name="subdiscipline_id" />
+            </Principal>
+            <Dependent Role="powers">
+              <PropertyRef Name="power_subdiscipline_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_powers_1_0">
+          <End Role="power_disciplines" Type="Self.power_disciplines" Multiplicity="1" />
+          <End Role="powers" Type="Self.powers" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="power_disciplines">
+              <PropertyRef Name="discipline_id" />
+            </Principal>
+            <Dependent Role="powers">
+              <PropertyRef Name="power_discipline_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_skill_subtypes_0_0">
+          <End Role="skills" Type="Self.skills" Multiplicity="1" />
+          <End Role="skill_subtypes" Type="Self.skill_subtypes" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="skills">
+              <PropertyRef Name="skill_id" />
+            </Principal>
+            <Dependent Role="skill_subtypes">
+              <PropertyRef Name="skill_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_skills_0_0">
+          <End Role="abilities" Type="Self.abilities" Multiplicity="0..1" />
+          <End Role="skills" Type="Self.skills" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="abilities">
+              <PropertyRef Name="ability_id" />
+            </Principal>
+            <Dependent Role="skills">
+              <PropertyRef Name="key_ability_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_spells_0_0">
+          <End Role="spell_subschools" Type="Self.spell_subschools" Multiplicity="0..1" />
+          <End Role="spells" Type="Self.spells" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="spell_subschools">
+              <PropertyRef Name="subschool_id" />
+            </Principal>
+            <Dependent Role="spells">
+              <PropertyRef Name="subschool_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_spells_1_0">
+          <End Role="spell_schools" Type="Self.spell_schools" Multiplicity="1" />
+          <End Role="spells" Type="Self.spells" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="spell_schools">
+              <PropertyRef Name="school_id" />
+            </Principal>
+            <Dependent Role="spells">
+              <PropertyRef Name="school_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="DNDDatabaseModelStoreContainer">
+          <EntitySet Name="abilities" EntityType="Self.abilities" store:Type="Tables" />
+          <EntitySet Name="alignments" EntityType="Self.alignments" store:Type="Tables" />
+          <EntitySet Name="class_alignments" EntityType="Self.class_alignments" store:Type="Tables" />
+          <EntitySet Name="class_skills" EntityType="Self.class_skills" store:Type="Tables" />
+          <EntitySet Name="class_tables" EntityType="Self.class_tables" store:Type="Tables" />
+          <EntitySet Name="classes" EntityType="Self.classes" store:Type="Tables" />
+          <EntitySet Name="domains" EntityType="Self.domains" store:Type="Tables" />
+          <EntitySet Name="equipment_category" EntityType="Self.equipment_category" store:Type="Tables" />
+          <EntitySet Name="equipment_subcategory" EntityType="Self.equipment_subcategory" store:Type="Tables" />
+          <EntitySet Name="equipments" EntityType="Self.equipments" store:Type="Tables" />
+          <EntitySet Name="feats" EntityType="Self.feats" store:Type="Tables" />
+          <EntitySet Name="items" EntityType="Self.items" store:Type="Tables" />
+          <EntitySet Name="monster_descriptors" EntityType="Self.monster_descriptors" store:Type="Tables" />
+          <EntitySet Name="monster_families" EntityType="Self.monster_families" store:Type="Tables" />
+          <EntitySet Name="monster_sizes" EntityType="Self.monster_sizes" store:Type="Tables" />
+          <EntitySet Name="monster_types" EntityType="Self.monster_types" store:Type="Tables" />
+          <EntitySet Name="monsters" EntityType="Self.monsters" store:Type="Tables" />
+          <EntitySet Name="power_disciplines" EntityType="Self.power_disciplines" store:Type="Tables" />
+          <EntitySet Name="power_subdisciplines" EntityType="Self.power_subdisciplines" store:Type="Tables" />
+          <EntitySet Name="powers" EntityType="Self.powers" store:Type="Tables" />
+          <EntitySet Name="skill_subtypes" EntityType="Self.skill_subtypes" store:Type="Tables" />
+          <EntitySet Name="skills" EntityType="Self.skills" store:Type="Tables" />
+          <EntitySet Name="spell_schools" EntityType="Self.spell_schools" store:Type="Tables" />
+          <EntitySet Name="spell_subschools" EntityType="Self.spell_subschools" store:Type="Tables" />
+          <EntitySet Name="spell_types" EntityType="Self.spell_types" store:Type="Tables" />
+          <EntitySet Name="spells" EntityType="Self.spells" store:Type="Tables" />
+          <AssociationSet Name="FK_class_alignments_0_0" Association="Self.FK_class_alignments_0_0">
+            <End Role="alignments" EntitySet="alignments" />
+            <End Role="class_alignments" EntitySet="class_alignments" />
+          </AssociationSet>
+          <AssociationSet Name="FK_class_alignments_1_0" Association="Self.FK_class_alignments_1_0">
+            <End Role="classes" EntitySet="classes" />
+            <End Role="class_alignments" EntitySet="class_alignments" />
+          </AssociationSet>
+          <AssociationSet Name="FK_class_skills_0_0" Association="Self.FK_class_skills_0_0">
+            <End Role="skills" EntitySet="skills" />
+            <End Role="class_skills" EntitySet="class_skills" />
+          </AssociationSet>
+          <AssociationSet Name="FK_class_skills_1_0" Association="Self.FK_class_skills_1_0">
+            <End Role="classes" EntitySet="classes" />
+            <End Role="class_skills" EntitySet="class_skills" />
+          </AssociationSet>
+          <AssociationSet Name="FK_class_tables_0_0" Association="Self.FK_class_tables_0_0">
+            <End Role="classes" EntitySet="classes" />
+            <End Role="class_tables" EntitySet="class_tables" />
+          </AssociationSet>
+          <AssociationSet Name="FK_classes_0_0" Association="Self.FK_classes_0_0">
+            <End Role="spell_types" EntitySet="spell_types" />
+            <End Role="classes" EntitySet="classes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_classes_1_0" Association="Self.FK_classes_1_0">
+            <End Role="abilities" EntitySet="abilities" />
+            <End Role="classes" EntitySet="classes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_equipments_0_0" Association="Self.FK_equipments_0_0">
+            <End Role="equipment_category" EntitySet="equipment_category" />
+            <End Role="equipments" EntitySet="equipments" />
+          </AssociationSet>
+          <AssociationSet Name="FK_monsters_0_0" Association="Self.FK_monsters_0_0">
+            <End Role="monster_descriptors" EntitySet="monster_descriptors" />
+            <End Role="monsters" EntitySet="monsters" />
+          </AssociationSet>
+          <AssociationSet Name="FK_monsters_1_0" Association="Self.FK_monsters_1_0">
+            <End Role="monster_types" EntitySet="monster_types" />
+            <End Role="monsters" EntitySet="monsters" />
+          </AssociationSet>
+          <AssociationSet Name="FK_monsters_2_0" Association="Self.FK_monsters_2_0">
+            <End Role="monster_sizes" EntitySet="monster_sizes" />
+            <End Role="monsters" EntitySet="monsters" />
+          </AssociationSet>
+          <AssociationSet Name="FK_monsters_3_0" Association="Self.FK_monsters_3_0">
+            <End Role="monster_families" EntitySet="monster_families" />
+            <End Role="monsters" EntitySet="monsters" />
+          </AssociationSet>
+          <AssociationSet Name="FK_powers_0_0" Association="Self.FK_powers_0_0">
+            <End Role="power_subdisciplines" EntitySet="power_subdisciplines" />
+            <End Role="powers" EntitySet="powers" />
+          </AssociationSet>
+          <AssociationSet Name="FK_powers_1_0" Association="Self.FK_powers_1_0">
+            <End Role="power_disciplines" EntitySet="power_disciplines" />
+            <End Role="powers" EntitySet="powers" />
+          </AssociationSet>
+          <AssociationSet Name="FK_skill_subtypes_0_0" Association="Self.FK_skill_subtypes_0_0">
+            <End Role="skills" EntitySet="skills" />
+            <End Role="skill_subtypes" EntitySet="skill_subtypes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_skills_0_0" Association="Self.FK_skills_0_0">
+            <End Role="abilities" EntitySet="abilities" />
+            <End Role="skills" EntitySet="skills" />
+          </AssociationSet>
+          <AssociationSet Name="FK_spells_0_0" Association="Self.FK_spells_0_0">
+            <End Role="spell_subschools" EntitySet="spell_subschools" />
+            <End Role="spells" EntitySet="spells" />
+          </AssociationSet>
+          <AssociationSet Name="FK_spells_1_0" Association="Self.FK_spells_1_0">
+            <End Role="spell_schools" EntitySet="spell_schools" />
+            <End Role="spells" EntitySet="spells" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="DNDDatabaseModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="ability">
+          <Key>
+            <PropertyRef Name="ability_id" />
+          </Key>
+          <Property Name="ability_id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ability1" Type="String" MaxLength="12" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="abbreviation" Type="String" MaxLength="3" FixedLength="true" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="classes" Relationship="Self.FK_classes_1_0" FromRole="abilities" ToRole="classes" />
+          <NavigationProperty Name="skills" Relationship="Self.FK_skills_0_0" FromRole="abilities" ToRole="skills" />
+        </EntityType>
+        <EntityType Name="alignment">
+          <Key>
+            <PropertyRef Name="alignment_id" />
+          </Key>
+          <Property Name="alignment_id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="alignment1" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="classes" Relationship="Self.class_alignments" FromRole="alignments" ToRole="classes" />
+        </EntityType>
+        <EntityType Name="class_tables">
+          <Key>
+            <PropertyRef Name="class_table_id" />
+          </Key>
+          <Property Name="class_table_id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="class_id" Type="Int64" Nullable="false" />
+          <Property Name="level" Type="Int64" Nullable="false" />
+          <Property Name="base_attack_bonus" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="fort_save" Type="Int64" />
+          <Property Name="ref_save" Type="Int64" />
+          <Property Name="will_save" Type="Int64" />
+          <Property Name="ac_bonus" Type="Int64" />
+          <Property Name="flurry_of_blows" Type="Int64" />
+          <Property Name="unarmored_speed_bonus" Type="Int64" />
+          <Property Name="unarmed_damage" Type="String" MaxLength="5" FixedLength="true" Unicode="false" />
+          <Property Name="special" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="slots_0" Type="Int64" />
+          <Property Name="slots_1" Type="Int64" />
+          <Property Name="slots_3" Type="Int64" />
+          <Property Name="slots_4" Type="Int64" />
+          <Property Name="slots_5" Type="Int64" />
+          <Property Name="slots_6" Type="Int64" />
+          <Property Name="slots_7" Type="Int64" />
+          <Property Name="slots_8" Type="Int64" />
+          <Property Name="slots_9" Type="Int64" />
+          <Property Name="spells_known_0" Type="Int64" />
+          <Property Name="spells_known_1" Type="Int64" />
+          <Property Name="spells_known_2" Type="Int64" />
+          <Property Name="spells_known_3" Type="Int64" />
+          <Property Name="spells_known_4" Type="Int64" />
+          <Property Name="spells_known_5" Type="Int64" />
+          <Property Name="spells_known_6" Type="Int64" />
+          <Property Name="spells_known_7" Type="Int64" />
+          <Property Name="spells_known_8" Type="Int64" />
+          <Property Name="spells_known_9" Type="Int64" />
+          <Property Name="slots_2" Type="Int64" />
+          <NavigationProperty Name="class" Relationship="Self.FK_class_tables_0_0" FromRole="class_tables" ToRole="classes" />
+        </EntityType>
+        <EntityType Name="class">
+          <Key>
+            <PropertyRef Name="class_id" />
+          </Key>
+          <Property Name="class_id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="String" MaxLength="25" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="type" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="hit_die" Type="Int64" Nullable="false" />
+          <Property Name="skill_points" Type="Int64" Nullable="false" />
+          <Property Name="ability_id" Type="Int64" />
+          <Property Name="type_id" Type="Int64" />
+          <Property Name="proficiencies" Type="String" MaxLength="900" FixedLength="false" Unicode="false" />
+          <Property Name="epic_feat_base_level" Type="Int64" />
+          <Property Name="epic_feat_interval" Type="Int64" />
+          <Property Name="epic_feat_list" Type="String" MaxLength="850" FixedLength="false" Unicode="false" />
+          <Property Name="epic_full_text" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+          <Property Name="req_race" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="req_weapon_proficiency" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="req_base_attack_bonus" Type="Int64" />
+          <Property Name="req_skill" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="req_feat" Type="String" MaxLength="110" FixedLength="false" Unicode="false" />
+          <Property Name="req_spells" Type="String" MaxLength="110" FixedLength="false" Unicode="false" />
+          <Property Name="req_languages" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="req_psionics" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+          <Property Name="req_epic_feat" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+          <Property Name="req_special" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="spell_list_1" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+          <Property Name="spell_list_2" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="spell_list_3" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="spell_list_4" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="spell_list_5" Type="String" MaxLength="125" FixedLength="false" Unicode="false" />
+          <Property Name="full_text" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="ability" Relationship="Self.FK_classes_1_0" FromRole="classes" ToRole="abilities" />
+          <NavigationProperty Name="class_tables" Relationship="Self.FK_class_tables_0_0" FromRole="classes" ToRole="class_tables" />
+          <NavigationProperty Name="spell_types" Relationship="Self.FK_classes_0_0" FromRole="classes" ToRole="spell_types" />
+          <NavigationProperty Name="alignments" Relationship="Self.class_alignments" FromRole="classes" ToRole="alignments" />
+          <NavigationProperty Name="skills" Relationship="Self.class_skills" FromRole="classes" ToRole="skills" />
+        </EntityType>
+        <EntityType Name="domain">
+          <Key>
+            <PropertyRef Name="domain_id" />
+          </Key>
+          <Property Name="domain_id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="granted_powers" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="spell_1" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="spell_2" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="spell_3" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="spell_4" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="spell_5" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="spell_6" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="spell_7" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="spell_8" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="spell_9" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="full_text" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" Nullable="false" />
+        </EntityType>
+        <EntityType Name="equipment_category">
+          <Key>
+            <PropertyRef Name="category_id" />
+          </Key>
+          <Property Name="category_id" Type="Int64" Nullable="false" />
+          <Property Name="category" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="equipments" Relationship="Self.FK_equipments_0_0" FromRole="equipment_category" ToRole="equipments" />
+        </EntityType>
+        <EntityType Name="equipment_subcategory">
+          <Key>
+            <PropertyRef Name="subcategory_id" />
+          </Key>
+          <Property Name="subcategory_id" Type="Int64" Nullable="false" />
+          <Property Name="subcategory" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityType Name="equipment">
+          <Key>
+            <PropertyRef Name="equipment_id" />
+          </Key>
+          <Property Name="equipment_id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="family" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="cost" Type="String" MaxLength="25" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="dmg_s" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="weight" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="critical" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="armor_shield_bonus" Type="Int64" />
+          <Property Name="dmg_m" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="maximum_dex_bonus" Type="Int64" />
+          <Property Name="armor_check_penalty" Type="Int64" />
+          <Property Name="arcane_spell_failure_chance" Type="Int64" />
+          <Property Name="range_increment" Type="Int64" />
+          <Property Name="speed_30" Type="Int64" />
+          <Property Name="type" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="speed_20" Type="Int64" />
+          <Property Name="full_text" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+          <Property Name="category_id" Type="Int64" Nullable="false" />
+          <Property Name="subcategory_id" Type="Int64" />
+          <NavigationProperty Name="equipment_category" Relationship="Self.FK_equipments_0_0" FromRole="equipments" ToRole="equipment_category" />
+        </EntityType>
+        <EntityType Name="feat">
+          <Key>
+            <PropertyRef Name="feat_id" />
+          </Key>
+          <Property Name="feat_id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="String" MaxLength="40" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="type" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="multiple" Type="String" MaxLength="3" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="stack" Type="String" MaxLength="3" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="choice" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="prerequisite" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+          <Property Name="benefit" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="normal" Type="String" MaxLength="400" FixedLength="false" Unicode="false" />
+          <Property Name="special" Type="String" MaxLength="650" FixedLength="false" Unicode="false" />
+          <Property Name="full_text" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" Nullable="false" />
+        </EntityType>
+        <EntityType Name="item">
+          <Key>
+            <PropertyRef Name="item_id" />
+          </Key>
+          <Property Name="item_id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="category" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="subcategory" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="special_ability" Type="String" MaxLength="3" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="aura" Type="String" MaxLength="70" FixedLength="false" Unicode="false" />
+          <Property Name="caster_level" Type="Int64" />
+          <Property Name="price" Type="String" MaxLength="80" FixedLength="false" Unicode="false" />
+          <Property Name="manifester_level" Type="Int64" />
+          <Property Name="prerequisite" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="cost" Type="String" MaxLength="35" FixedLength="false" Unicode="false" />
+          <Property Name="weight" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="full_text" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" Nullable="false" />
+        </EntityType>
+        <EntityType Name="monster_descriptors">
+          <Key>
+            <PropertyRef Name="descriptor_id" />
+          </Key>
+          <Property Name="descriptor_id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="descriptor" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="monsters" Relationship="Self.FK_monsters_0_0" FromRole="monster_descriptors" ToRole="monsters" />
+        </EntityType>
+        <EntityType Name="monster_families">
+          <Key>
+            <PropertyRef Name="family_id" />
+          </Key>
+          <Property Name="family_id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="family" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="monsters" Relationship="Self.FK_monsters_3_0" FromRole="monster_families" ToRole="monsters" />
+        </EntityType>
+        <EntityType Name="monster_sizes">
+          <Key>
+            <PropertyRef Name="size_id" />
+          </Key>
+          <Property Name="size_id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="size" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="monsters" Relationship="Self.FK_monsters_2_0" FromRole="monster_sizes" ToRole="monsters" />
+        </EntityType>
+        <EntityType Name="monster_types">
+          <Key>
+            <PropertyRef Name="type_id" />
+          </Key>
+          <Property Name="type_id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="type" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="monsters" Relationship="Self.FK_monsters_1_0" FromRole="monster_types" ToRole="monsters" />
+        </EntityType>
+        <EntityType Name="monster">
+          <Key>
+            <PropertyRef Name="monster_id" />
+          </Key>
+          <Property Name="monster_id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="monster_family_Id" Type="Int64" Nullable="false" />
+          <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="altname" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="size_id" Type="Int64" Nullable="false" />
+          <Property Name="type_id" Type="Int64" Nullable="false" />
+          <Property Name="descriptor_id" Type="Int64" />
+          <Property Name="hit_dice" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="initiative" Type="String" MaxLength="40" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="speed" Type="String" MaxLength="150" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="armor_class" Type="String" MaxLength="125" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="base_attack" Type="Int64" />
+          <Property Name="grapple" Type="Int64" />
+          <Property Name="attack" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="full_attack" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="space" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="reach" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="special_attacks" Type="String" MaxLength="170" FixedLength="false" Unicode="false" />
+          <Property Name="special_qualities" Type="String" MaxLength="350" FixedLength="false" Unicode="false" />
+          <Property Name="saves" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="abilities" Type="String" MaxLength="120" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="skills" Type="String" MaxLength="450" FixedLength="false" Unicode="false" />
+          <Property Name="bonus_feats" Type="String" MaxLength="70" FixedLength="false" Unicode="false" />
+          <Property Name="feats" Type="String" MaxLength="400" FixedLength="false" Unicode="false" />
+          <Property Name="epic_feats" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+          <Property Name="environment" Type="String" MaxLength="175" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="organization" Type="String" MaxLength="475" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="challenge_rating" Type="String" MaxLength="40" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="treasure" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="alignment" Type="String" MaxLength="75" FixedLength="false" Unicode="false" />
+          <Property Name="advancement" Type="String" MaxLength="125" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="level_adjustment" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+          <Property Name="special_abilities" Type="String" MaxLength="325" FixedLength="false" Unicode="false" />
+          <Property Name="stat_block" Type="String" MaxLength="1800" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="full_text" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="monster_descriptors" Relationship="Self.FK_monsters_0_0" FromRole="monsters" ToRole="monster_descriptors" />
+          <NavigationProperty Name="monster_families" Relationship="Self.FK_monsters_3_0" FromRole="monsters" ToRole="monster_families" />
+          <NavigationProperty Name="monster_sizes" Relationship="Self.FK_monsters_2_0" FromRole="monsters" ToRole="monster_sizes" />
+          <NavigationProperty Name="monster_types" Relationship="Self.FK_monsters_1_0" FromRole="monsters" ToRole="monster_types" />
+        </EntityType>
+        <EntityType Name="power_disciplines">
+          <Key>
+            <PropertyRef Name="discipline_id" />
+          </Key>
+          <Property Name="discipline_id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="discipline" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="powers" Relationship="Self.FK_powers_1_0" FromRole="power_disciplines" ToRole="powers" />
+        </EntityType>
+        <EntityType Name="power_subdisciplines">
+          <Key>
+            <PropertyRef Name="subdiscipline_id" />
+          </Key>
+          <Property Name="subdiscipline_id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="subdiscipline" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="powers" Relationship="Self.FK_powers_0_0" FromRole="power_subdisciplines" ToRole="powers" />
+        </EntityType>
+        <EntityType Name="power">
+          <Key>
+            <PropertyRef Name="power_id" />
+          </Key>
+          <Property Name="power_id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="String" MaxLength="40" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="power_discipline_id" Type="Int64" Nullable="false" />
+          <Property Name="power_subdiscipline_Id" Type="Int64" />
+          <Property Name="descriptor" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+          <Property Name="level" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="display" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="manifesting_time" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+          <Property Name="range" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+          <Property Name="target" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="area" Type="String" MaxLength="110" FixedLength="false" Unicode="false" />
+          <Property Name="effect" Type="String" MaxLength="125" FixedLength="false" Unicode="false" />
+          <Property Name="duration" Type="String" MaxLength="75" FixedLength="false" Unicode="false" />
+          <Property Name="saving_throw" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+          <Property Name="power_points" Type="String" MaxLength="40" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="power_resistance" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+          <Property Name="short_description" Type="String" MaxLength="325" FixedLength="false" Unicode="false" />
+          <Property Name="xp_cost" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+          <Property Name="description" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="augment" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+          <Property Name="full_text" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="power_disciplines" Relationship="Self.FK_powers_1_0" FromRole="powers" ToRole="power_disciplines" />
+          <NavigationProperty Name="power_subdisciplines" Relationship="Self.FK_powers_0_0" FromRole="powers" ToRole="power_subdisciplines" />
+        </EntityType>
+        <EntityType Name="skill_subtypes">
+          <Key>
+            <PropertyRef Name="subtype_id" />
+          </Key>
+          <Property Name="subtype_id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="subtype" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="skill_id" Type="Int64" Nullable="false" />
+          <NavigationProperty Name="skill" Relationship="Self.FK_skill_subtypes_0_0" FromRole="skill_subtypes" ToRole="skills" />
+        </EntityType>
+        <EntityType Name="skill">
+          <Key>
+            <PropertyRef Name="skill_id" />
+          </Key>
+          <Property Name="skill_id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="subtype" Type="String" MaxLength="3" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="key_ability_id" Type="Int64" />
+          <Property Name="trained" Type="String" MaxLength="3" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="armor_checked" Type="String" MaxLength="3" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="description" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+          <Property Name="spell_check" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+          <Property Name="action" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="try_again" Type="String" MaxLength="550" FixedLength="false" Unicode="false" />
+          <Property Name="special" Type="String" MaxLength="1100" FixedLength="false" Unicode="false" />
+          <Property Name="restriction" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="synergy" Type="String" MaxLength="1600" FixedLength="false" Unicode="false" />
+          <Property Name="epic_use" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+          <Property Name="untrained" Type="String" MaxLength="350" FixedLength="false" Unicode="false" />
+          <Property Name="full_text" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="psionic" Type="String" MaxLength="3" FixedLength="true" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="ability" Relationship="Self.FK_skills_0_0" FromRole="skills" ToRole="abilities" />
+          <NavigationProperty Name="skill_subtypes" Relationship="Self.FK_skill_subtypes_0_0" FromRole="skills" ToRole="skill_subtypes" />
+          <NavigationProperty Name="classes" Relationship="Self.class_skills" FromRole="skills" ToRole="classes" />
+        </EntityType>
+        <EntityType Name="spell_schools">
+          <Key>
+            <PropertyRef Name="school_id" />
+          </Key>
+          <Property Name="school_id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="school" Type="String" MaxLength="40" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="spells" Relationship="Self.FK_spells_1_0" FromRole="spell_schools" ToRole="spells" />
+        </EntityType>
+        <EntityType Name="spell_subschools">
+          <Key>
+            <PropertyRef Name="subschool_id" />
+          </Key>
+          <Property Name="subschool_id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="subschool" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="spells" Relationship="Self.FK_spells_0_0" FromRole="spell_subschools" ToRole="spells" />
+        </EntityType>
+        <EntityType Name="spell_types">
+          <Key>
+            <PropertyRef Name="type_id" />
+          </Key>
+          <Property Name="type_id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="type" Type="String" MaxLength="10" FixedLength="true" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="classes" Relationship="Self.FK_classes_0_0" FromRole="spell_types" ToRole="classes" />
+        </EntityType>
+        <EntityType Name="spell">
+          <Key>
+            <PropertyRef Name="spell_id" />
+          </Key>
+          <Property Name="spell_id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="String" MaxLength="40" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="altname" Type="String" MaxLength="40" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="school_id" Type="Int64" Nullable="false" />
+          <Property Name="subschool_id" Type="Int64" />
+          <Property Name="descriptor" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="spellcraft_dc" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="level" Type="String" MaxLength="70" FixedLength="false" Unicode="false" />
+          <Property Name="components" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="casting_time" Type="String" MaxLength="40" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="range" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+          <Property Name="target" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="area" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="effect" Type="String" MaxLength="175" FixedLength="false" Unicode="false" />
+          <Property Name="duration" Type="String" MaxLength="90" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="saving_throw" Type="String" MaxLength="80" FixedLength="false" Unicode="false" />
+          <Property Name="spell_resistance" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="short_description" Type="String" MaxLength="125" FixedLength="false" Unicode="false" />
+          <Property Name="to_develop" Type="String" MaxLength="700" FixedLength="false" Unicode="false" />
+          <Property Name="material_components" Type="String" MaxLength="450" FixedLength="false" Unicode="false" />
+          <Property Name="arcane_material_components" Type="String" MaxLength="175" FixedLength="false" Unicode="false" />
+          <Property Name="focus" Type="String" MaxLength="425" FixedLength="false" Unicode="false" />
+          <Property Name="description" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="xp_cost" Type="String" MaxLength="325" FixedLength="false" Unicode="false" />
+          <Property Name="arcane_focus" Type="String" MaxLength="125" FixedLength="false" Unicode="false" />
+          <Property Name="wizard_focus" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="verbal_components" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="sorcerer_focus" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="bard_focus" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="druid_focus" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="full_text" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="spell_schools" Relationship="Self.FK_spells_1_0" FromRole="spells" ToRole="spell_schools" />
+          <NavigationProperty Name="spell_subschools" Relationship="Self.FK_spells_0_0" FromRole="spells" ToRole="spell_subschools" />
+        </EntityType>
+        <Association Name="FK_classes_1_0">
+          <End Role="abilities" Type="Self.ability" Multiplicity="0..1" />
+          <End Role="classes" Type="Self.class" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="abilities">
+              <PropertyRef Name="ability_id" />
+            </Principal>
+            <Dependent Role="classes">
+              <PropertyRef Name="ability_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_skills_0_0">
+          <End Role="abilities" Type="Self.ability" Multiplicity="0..1" />
+          <End Role="skills" Type="Self.skill" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="abilities">
+              <PropertyRef Name="ability_id" />
+            </Principal>
+            <Dependent Role="skills">
+              <PropertyRef Name="key_ability_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_class_tables_0_0">
+          <End Role="classes" Type="Self.class" Multiplicity="1" />
+          <End Role="class_tables" Type="Self.class_tables" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="classes">
+              <PropertyRef Name="class_id" />
+            </Principal>
+            <Dependent Role="class_tables">
+              <PropertyRef Name="class_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_classes_0_0">
+          <End Role="spell_types" Type="Self.spell_types" Multiplicity="0..1" />
+          <End Role="classes" Type="Self.class" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="spell_types">
+              <PropertyRef Name="type_id" />
+            </Principal>
+            <Dependent Role="classes">
+              <PropertyRef Name="type_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_equipments_0_0">
+          <End Role="equipment_category" Type="Self.equipment_category" Multiplicity="1" />
+          <End Role="equipments" Type="Self.equipment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="equipment_category">
+              <PropertyRef Name="category_id" />
+            </Principal>
+            <Dependent Role="equipments">
+              <PropertyRef Name="category_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_monsters_0_0">
+          <End Role="monster_descriptors" Type="Self.monster_descriptors" Multiplicity="0..1" />
+          <End Role="monsters" Type="Self.monster" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="monster_descriptors">
+              <PropertyRef Name="descriptor_id" />
+            </Principal>
+            <Dependent Role="monsters">
+              <PropertyRef Name="descriptor_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_monsters_3_0">
+          <End Role="monster_families" Type="Self.monster_families" Multiplicity="1" />
+          <End Role="monsters" Type="Self.monster" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="monster_families">
+              <PropertyRef Name="family_id" />
+            </Principal>
+            <Dependent Role="monsters">
+              <PropertyRef Name="monster_family_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_monsters_2_0">
+          <End Role="monster_sizes" Type="Self.monster_sizes" Multiplicity="1" />
+          <End Role="monsters" Type="Self.monster" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="monster_sizes">
+              <PropertyRef Name="size_id" />
+            </Principal>
+            <Dependent Role="monsters">
+              <PropertyRef Name="size_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_monsters_1_0">
+          <End Role="monster_types" Type="Self.monster_types" Multiplicity="1" />
+          <End Role="monsters" Type="Self.monster" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="monster_types">
+              <PropertyRef Name="type_id" />
+            </Principal>
+            <Dependent Role="monsters">
+              <PropertyRef Name="type_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_powers_1_0">
+          <End Role="power_disciplines" Type="Self.power_disciplines" Multiplicity="1" />
+          <End Role="powers" Type="Self.power" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="power_disciplines">
+              <PropertyRef Name="discipline_id" />
+            </Principal>
+            <Dependent Role="powers">
+              <PropertyRef Name="power_discipline_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_powers_0_0">
+          <End Role="power_subdisciplines" Type="Self.power_subdisciplines" Multiplicity="0..1" />
+          <End Role="powers" Type="Self.power" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="power_subdisciplines">
+              <PropertyRef Name="subdiscipline_id" />
+            </Principal>
+            <Dependent Role="powers">
+              <PropertyRef Name="power_subdiscipline_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_skill_subtypes_0_0">
+          <End Role="skills" Type="Self.skill" Multiplicity="1" />
+          <End Role="skill_subtypes" Type="Self.skill_subtypes" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="skills">
+              <PropertyRef Name="skill_id" />
+            </Principal>
+            <Dependent Role="skill_subtypes">
+              <PropertyRef Name="skill_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_spells_1_0">
+          <End Role="spell_schools" Type="Self.spell_schools" Multiplicity="1" />
+          <End Role="spells" Type="Self.spell" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="spell_schools">
+              <PropertyRef Name="school_id" />
+            </Principal>
+            <Dependent Role="spells">
+              <PropertyRef Name="school_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_spells_0_0">
+          <End Role="spell_subschools" Type="Self.spell_subschools" Multiplicity="0..1" />
+          <End Role="spells" Type="Self.spell" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="spell_subschools">
+              <PropertyRef Name="subschool_id" />
+            </Principal>
+            <Dependent Role="spells">
+              <PropertyRef Name="subschool_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="class_alignments">
+          <End Role="alignments" Type="Self.alignment" Multiplicity="*" />
+          <End Role="classes" Type="Self.class" Multiplicity="*" />
+        </Association>
+        <Association Name="class_skills">
+          <End Role="skills" Type="Self.skill" Multiplicity="*" />
+          <End Role="classes" Type="Self.class" Multiplicity="*" />
+        </Association>
+        <EntityContainer Name="DNDDatabaseEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="abilities" EntityType="Self.ability" />
+          <EntitySet Name="alignments" EntityType="Self.alignment" />
+          <EntitySet Name="class_tables" EntityType="Self.class_tables" />
+          <EntitySet Name="classes" EntityType="Self.class" />
+          <EntitySet Name="domains" EntityType="Self.domain" />
+          <EntitySet Name="equipment_category" EntityType="Self.equipment_category" />
+          <EntitySet Name="equipment_subcategory" EntityType="Self.equipment_subcategory" />
+          <EntitySet Name="equipments" EntityType="Self.equipment" />
+          <EntitySet Name="feats" EntityType="Self.feat" />
+          <EntitySet Name="items" EntityType="Self.item" />
+          <EntitySet Name="monster_descriptors" EntityType="Self.monster_descriptors" />
+          <EntitySet Name="monster_families" EntityType="Self.monster_families" />
+          <EntitySet Name="monster_sizes" EntityType="Self.monster_sizes" />
+          <EntitySet Name="monster_types" EntityType="Self.monster_types" />
+          <EntitySet Name="monsters" EntityType="Self.monster" />
+          <EntitySet Name="power_disciplines" EntityType="Self.power_disciplines" />
+          <EntitySet Name="power_subdisciplines" EntityType="Self.power_subdisciplines" />
+          <EntitySet Name="powers" EntityType="Self.power" />
+          <EntitySet Name="skill_subtypes" EntityType="Self.skill_subtypes" />
+          <EntitySet Name="skills" EntityType="Self.skill" />
+          <EntitySet Name="spell_schools" EntityType="Self.spell_schools" />
+          <EntitySet Name="spell_subschools" EntityType="Self.spell_subschools" />
+          <EntitySet Name="spell_types" EntityType="Self.spell_types" />
+          <EntitySet Name="spells" EntityType="Self.spell" />
+          <AssociationSet Name="FK_classes_1_0" Association="Self.FK_classes_1_0">
+            <End Role="abilities" EntitySet="abilities" />
+            <End Role="classes" EntitySet="classes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_skills_0_0" Association="Self.FK_skills_0_0">
+            <End Role="abilities" EntitySet="abilities" />
+            <End Role="skills" EntitySet="skills" />
+          </AssociationSet>
+          <AssociationSet Name="FK_class_tables_0_0" Association="Self.FK_class_tables_0_0">
+            <End Role="classes" EntitySet="classes" />
+            <End Role="class_tables" EntitySet="class_tables" />
+          </AssociationSet>
+          <AssociationSet Name="FK_classes_0_0" Association="Self.FK_classes_0_0">
+            <End Role="spell_types" EntitySet="spell_types" />
+            <End Role="classes" EntitySet="classes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_equipments_0_0" Association="Self.FK_equipments_0_0">
+            <End Role="equipment_category" EntitySet="equipment_category" />
+            <End Role="equipments" EntitySet="equipments" />
+          </AssociationSet>
+          <AssociationSet Name="FK_monsters_0_0" Association="Self.FK_monsters_0_0">
+            <End Role="monster_descriptors" EntitySet="monster_descriptors" />
+            <End Role="monsters" EntitySet="monsters" />
+          </AssociationSet>
+          <AssociationSet Name="FK_monsters_3_0" Association="Self.FK_monsters_3_0">
+            <End Role="monster_families" EntitySet="monster_families" />
+            <End Role="monsters" EntitySet="monsters" />
+          </AssociationSet>
+          <AssociationSet Name="FK_monsters_2_0" Association="Self.FK_monsters_2_0">
+            <End Role="monster_sizes" EntitySet="monster_sizes" />
+            <End Role="monsters" EntitySet="monsters" />
+          </AssociationSet>
+          <AssociationSet Name="FK_monsters_1_0" Association="Self.FK_monsters_1_0">
+            <End Role="monster_types" EntitySet="monster_types" />
+            <End Role="monsters" EntitySet="monsters" />
+          </AssociationSet>
+          <AssociationSet Name="FK_powers_1_0" Association="Self.FK_powers_1_0">
+            <End Role="power_disciplines" EntitySet="power_disciplines" />
+            <End Role="powers" EntitySet="powers" />
+          </AssociationSet>
+          <AssociationSet Name="FK_powers_0_0" Association="Self.FK_powers_0_0">
+            <End Role="power_subdisciplines" EntitySet="power_subdisciplines" />
+            <End Role="powers" EntitySet="powers" />
+          </AssociationSet>
+          <AssociationSet Name="FK_skill_subtypes_0_0" Association="Self.FK_skill_subtypes_0_0">
+            <End Role="skills" EntitySet="skills" />
+            <End Role="skill_subtypes" EntitySet="skill_subtypes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_spells_1_0" Association="Self.FK_spells_1_0">
+            <End Role="spell_schools" EntitySet="spell_schools" />
+            <End Role="spells" EntitySet="spells" />
+          </AssociationSet>
+          <AssociationSet Name="FK_spells_0_0" Association="Self.FK_spells_0_0">
+            <End Role="spell_subschools" EntitySet="spell_subschools" />
+            <End Role="spells" EntitySet="spells" />
+          </AssociationSet>
+          <AssociationSet Name="class_alignments" Association="Self.class_alignments">
+            <End Role="alignments" EntitySet="alignments" />
+            <End Role="classes" EntitySet="classes" />
+          </AssociationSet>
+          <AssociationSet Name="class_skills" Association="Self.class_skills">
+            <End Role="skills" EntitySet="skills" />
+            <End Role="classes" EntitySet="classes" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="DNDDatabaseModelStoreContainer" CdmEntityContainer="DNDDatabaseEntities">
+          <EntitySetMapping Name="abilities">
+            <EntityTypeMapping TypeName="DNDDatabaseModel.ability">
+              <MappingFragment StoreEntitySet="abilities">
+                <ScalarProperty Name="ability_id" ColumnName="ability_id" />
+                <ScalarProperty Name="ability1" ColumnName="ability" />
+                <ScalarProperty Name="abbreviation" ColumnName="abbreviation" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="alignments">
+            <EntityTypeMapping TypeName="DNDDatabaseModel.alignment">
+              <MappingFragment StoreEntitySet="alignments">
+                <ScalarProperty Name="alignment_id" ColumnName="alignment_id" />
+                <ScalarProperty Name="alignment1" ColumnName="alignment" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="class_tables">
+            <EntityTypeMapping TypeName="DNDDatabaseModel.class_tables">
+              <MappingFragment StoreEntitySet="class_tables">
+                <ScalarProperty Name="class_table_id" ColumnName="class_table_id" />
+                <ScalarProperty Name="class_id" ColumnName="class_id" />
+                <ScalarProperty Name="level" ColumnName="level" />
+                <ScalarProperty Name="base_attack_bonus" ColumnName="base_attack_bonus" />
+                <ScalarProperty Name="fort_save" ColumnName="fort_save" />
+                <ScalarProperty Name="ref_save" ColumnName="ref_save" />
+                <ScalarProperty Name="will_save" ColumnName="will_save" />
+                <ScalarProperty Name="ac_bonus" ColumnName="ac_bonus" />
+                <ScalarProperty Name="flurry_of_blows" ColumnName="flurry_of_blows" />
+                <ScalarProperty Name="unarmored_speed_bonus" ColumnName="unarmored_speed_bonus" />
+                <ScalarProperty Name="unarmed_damage" ColumnName="unarmed_damage" />
+                <ScalarProperty Name="special" ColumnName="special" />
+                <ScalarProperty Name="slots_0" ColumnName="slots_0" />
+                <ScalarProperty Name="slots_1" ColumnName="slots_1" />
+                <ScalarProperty Name="slots_3" ColumnName="slots_3" />
+                <ScalarProperty Name="slots_4" ColumnName="slots_4" />
+                <ScalarProperty Name="slots_5" ColumnName="slots_5" />
+                <ScalarProperty Name="slots_6" ColumnName="slots_6" />
+                <ScalarProperty Name="slots_7" ColumnName="slots_7" />
+                <ScalarProperty Name="slots_8" ColumnName="slots_8" />
+                <ScalarProperty Name="slots_9" ColumnName="slots_9" />
+                <ScalarProperty Name="spells_known_0" ColumnName="spells_known_0" />
+                <ScalarProperty Name="spells_known_1" ColumnName="spells_known_1" />
+                <ScalarProperty Name="spells_known_2" ColumnName="spells_known_2" />
+                <ScalarProperty Name="spells_known_3" ColumnName="spells_known_3" />
+                <ScalarProperty Name="spells_known_4" ColumnName="spells_known_4" />
+                <ScalarProperty Name="spells_known_5" ColumnName="spells_known_5" />
+                <ScalarProperty Name="spells_known_6" ColumnName="spells_known_6" />
+                <ScalarProperty Name="spells_known_7" ColumnName="spells_known_7" />
+                <ScalarProperty Name="spells_known_8" ColumnName="spells_known_8" />
+                <ScalarProperty Name="spells_known_9" ColumnName="spells_known_9" />
+                <ScalarProperty Name="slots_2" ColumnName="slots_2" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="classes">
+            <EntityTypeMapping TypeName="DNDDatabaseModel.class">
+              <MappingFragment StoreEntitySet="classes">
+                <ScalarProperty Name="class_id" ColumnName="class_id" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="type" ColumnName="type" />
+                <ScalarProperty Name="hit_die" ColumnName="hit_die" />
+                <ScalarProperty Name="skill_points" ColumnName="skill_points" />
+                <ScalarProperty Name="ability_id" ColumnName="ability_id" />
+                <ScalarProperty Name="type_id" ColumnName="type_id" />
+                <ScalarProperty Name="proficiencies" ColumnName="proficiencies" />
+                <ScalarProperty Name="epic_feat_base_level" ColumnName="epic_feat_base_level" />
+                <ScalarProperty Name="epic_feat_interval" ColumnName="epic_feat_interval" />
+                <ScalarProperty Name="epic_feat_list" ColumnName="epic_feat_list" />
+                <ScalarProperty Name="epic_full_text" ColumnName="epic_full_text" />
+                <ScalarProperty Name="req_race" ColumnName="req_race" />
+                <ScalarProperty Name="req_weapon_proficiency" ColumnName="req_weapon_proficiency" />
+                <ScalarProperty Name="req_base_attack_bonus" ColumnName="req_base_attack_bonus" />
+                <ScalarProperty Name="req_skill" ColumnName="req_skill" />
+                <ScalarProperty Name="req_feat" ColumnName="req_feat" />
+                <ScalarProperty Name="req_spells" ColumnName="req_spells" />
+                <ScalarProperty Name="req_languages" ColumnName="req_languages" />
+                <ScalarProperty Name="req_psionics" ColumnName="req_psionics" />
+                <ScalarProperty Name="req_epic_feat" ColumnName="req_epic_feat" />
+                <ScalarProperty Name="req_special" ColumnName="req_special" />
+                <ScalarProperty Name="spell_list_1" ColumnName="spell_list_1" />
+                <ScalarProperty Name="spell_list_2" ColumnName="spell_list_2" />
+                <ScalarProperty Name="spell_list_3" ColumnName="spell_list_3" />
+                <ScalarProperty Name="spell_list_4" ColumnName="spell_list_4" />
+                <ScalarProperty Name="spell_list_5" ColumnName="spell_list_5" />
+                <ScalarProperty Name="full_text" ColumnName="full_text" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="domains">
+            <EntityTypeMapping TypeName="DNDDatabaseModel.domain">
+              <MappingFragment StoreEntitySet="domains">
+                <ScalarProperty Name="domain_id" ColumnName="domain_id" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="granted_powers" ColumnName="granted_powers" />
+                <ScalarProperty Name="spell_1" ColumnName="spell_1" />
+                <ScalarProperty Name="spell_2" ColumnName="spell_2" />
+                <ScalarProperty Name="spell_3" ColumnName="spell_3" />
+                <ScalarProperty Name="spell_4" ColumnName="spell_4" />
+                <ScalarProperty Name="spell_5" ColumnName="spell_5" />
+                <ScalarProperty Name="spell_6" ColumnName="spell_6" />
+                <ScalarProperty Name="spell_7" ColumnName="spell_7" />
+                <ScalarProperty Name="spell_8" ColumnName="spell_8" />
+                <ScalarProperty Name="spell_9" ColumnName="spell_9" />
+                <ScalarProperty Name="full_text" ColumnName="full_text" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="equipment_category">
+            <EntityTypeMapping TypeName="DNDDatabaseModel.equipment_category">
+              <MappingFragment StoreEntitySet="equipment_category">
+                <ScalarProperty Name="category_id" ColumnName="category_id" />
+                <ScalarProperty Name="category" ColumnName="category" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="equipment_subcategory">
+            <EntityTypeMapping TypeName="DNDDatabaseModel.equipment_subcategory">
+              <MappingFragment StoreEntitySet="equipment_subcategory">
+                <ScalarProperty Name="subcategory_id" ColumnName="subcategory_id" />
+                <ScalarProperty Name="subcategory" ColumnName="subcategory" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="equipments">
+            <EntityTypeMapping TypeName="DNDDatabaseModel.equipment">
+              <MappingFragment StoreEntitySet="equipments">
+                <ScalarProperty Name="equipment_id" ColumnName="equipment_id" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="family" ColumnName="family" />
+                <ScalarProperty Name="cost" ColumnName="cost" />
+                <ScalarProperty Name="dmg_s" ColumnName="dmg_s" />
+                <ScalarProperty Name="weight" ColumnName="weight" />
+                <ScalarProperty Name="critical" ColumnName="critical" />
+                <ScalarProperty Name="armor_shield_bonus" ColumnName="armor_shield_bonus" />
+                <ScalarProperty Name="dmg_m" ColumnName="dmg_m" />
+                <ScalarProperty Name="maximum_dex_bonus" ColumnName="maximum_dex_bonus" />
+                <ScalarProperty Name="armor_check_penalty" ColumnName="armor_check_penalty" />
+                <ScalarProperty Name="arcane_spell_failure_chance" ColumnName="arcane_spell_failure_chance" />
+                <ScalarProperty Name="range_increment" ColumnName="range_increment" />
+                <ScalarProperty Name="speed_30" ColumnName="speed_30" />
+                <ScalarProperty Name="type" ColumnName="type" />
+                <ScalarProperty Name="speed_20" ColumnName="speed_20" />
+                <ScalarProperty Name="full_text" ColumnName="full_text" />
+                <ScalarProperty Name="category_id" ColumnName="category_id" />
+                <ScalarProperty Name="subcategory_id" ColumnName="subcategory_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="feats">
+            <EntityTypeMapping TypeName="DNDDatabaseModel.feat">
+              <MappingFragment StoreEntitySet="feats">
+                <ScalarProperty Name="feat_id" ColumnName="feat_id" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="type" ColumnName="type" />
+                <ScalarProperty Name="multiple" ColumnName="multiple" />
+                <ScalarProperty Name="stack" ColumnName="stack" />
+                <ScalarProperty Name="choice" ColumnName="choice" />
+                <ScalarProperty Name="prerequisite" ColumnName="prerequisite" />
+                <ScalarProperty Name="benefit" ColumnName="benefit" />
+                <ScalarProperty Name="normal" ColumnName="normal" />
+                <ScalarProperty Name="special" ColumnName="special" />
+                <ScalarProperty Name="full_text" ColumnName="full_text" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="items">
+            <EntityTypeMapping TypeName="DNDDatabaseModel.item">
+              <MappingFragment StoreEntitySet="items">
+                <ScalarProperty Name="item_id" ColumnName="item_id" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="category" ColumnName="category" />
+                <ScalarProperty Name="subcategory" ColumnName="subcategory" />
+                <ScalarProperty Name="special_ability" ColumnName="special_ability" />
+                <ScalarProperty Name="aura" ColumnName="aura" />
+                <ScalarProperty Name="caster_level" ColumnName="caster_level" />
+                <ScalarProperty Name="price" ColumnName="price" />
+                <ScalarProperty Name="manifester_level" ColumnName="manifester_level" />
+                <ScalarProperty Name="prerequisite" ColumnName="prerequisite" />
+                <ScalarProperty Name="cost" ColumnName="cost" />
+                <ScalarProperty Name="weight" ColumnName="weight" />
+                <ScalarProperty Name="full_text" ColumnName="full_text" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="monster_descriptors">
+            <EntityTypeMapping TypeName="DNDDatabaseModel.monster_descriptors">
+              <MappingFragment StoreEntitySet="monster_descriptors">
+                <ScalarProperty Name="descriptor_id" ColumnName="descriptor_id" />
+                <ScalarProperty Name="descriptor" ColumnName="descriptor" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="monster_families">
+            <EntityTypeMapping TypeName="DNDDatabaseModel.monster_families">
+              <MappingFragment StoreEntitySet="monster_families">
+                <ScalarProperty Name="family_id" ColumnName="family_id" />
+                <ScalarProperty Name="family" ColumnName="family" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="monster_sizes">
+            <EntityTypeMapping TypeName="DNDDatabaseModel.monster_sizes">
+              <MappingFragment StoreEntitySet="monster_sizes">
+                <ScalarProperty Name="size_id" ColumnName="size_id" />
+                <ScalarProperty Name="size" ColumnName="size" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="monster_types">
+            <EntityTypeMapping TypeName="DNDDatabaseModel.monster_types">
+              <MappingFragment StoreEntitySet="monster_types">
+                <ScalarProperty Name="type_id" ColumnName="type_id" />
+                <ScalarProperty Name="type" ColumnName="type" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="monsters">
+            <EntityTypeMapping TypeName="DNDDatabaseModel.monster">
+              <MappingFragment StoreEntitySet="monsters">
+                <ScalarProperty Name="monster_id" ColumnName="monster_id" />
+                <ScalarProperty Name="monster_family_Id" ColumnName="monster_family_Id" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="altname" ColumnName="altname" />
+                <ScalarProperty Name="size_id" ColumnName="size_id" />
+                <ScalarProperty Name="type_id" ColumnName="type_id" />
+                <ScalarProperty Name="descriptor_id" ColumnName="descriptor_id" />
+                <ScalarProperty Name="hit_dice" ColumnName="hit_dice" />
+                <ScalarProperty Name="initiative" ColumnName="initiative" />
+                <ScalarProperty Name="speed" ColumnName="speed" />
+                <ScalarProperty Name="armor_class" ColumnName="armor_class" />
+                <ScalarProperty Name="base_attack" ColumnName="base_attack" />
+                <ScalarProperty Name="grapple" ColumnName="grapple" />
+                <ScalarProperty Name="attack" ColumnName="attack" />
+                <ScalarProperty Name="full_attack" ColumnName="full_attack" />
+                <ScalarProperty Name="space" ColumnName="space" />
+                <ScalarProperty Name="reach" ColumnName="reach" />
+                <ScalarProperty Name="special_attacks" ColumnName="special_attacks" />
+                <ScalarProperty Name="special_qualities" ColumnName="special_qualities" />
+                <ScalarProperty Name="saves" ColumnName="saves" />
+                <ScalarProperty Name="abilities" ColumnName="abilities" />
+                <ScalarProperty Name="skills" ColumnName="skills" />
+                <ScalarProperty Name="bonus_feats" ColumnName="bonus_feats" />
+                <ScalarProperty Name="feats" ColumnName="feats" />
+                <ScalarProperty Name="epic_feats" ColumnName="epic_feats" />
+                <ScalarProperty Name="environment" ColumnName="environment" />
+                <ScalarProperty Name="organization" ColumnName="organization" />
+                <ScalarProperty Name="challenge_rating" ColumnName="challenge_rating" />
+                <ScalarProperty Name="treasure" ColumnName="treasure" />
+                <ScalarProperty Name="alignment" ColumnName="alignment" />
+                <ScalarProperty Name="advancement" ColumnName="advancement" />
+                <ScalarProperty Name="level_adjustment" ColumnName="level_adjustment" />
+                <ScalarProperty Name="special_abilities" ColumnName="special_abilities" />
+                <ScalarProperty Name="stat_block" ColumnName="stat_block" />
+                <ScalarProperty Name="full_text" ColumnName="full_text" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="power_disciplines">
+            <EntityTypeMapping TypeName="DNDDatabaseModel.power_disciplines">
+              <MappingFragment StoreEntitySet="power_disciplines">
+                <ScalarProperty Name="discipline_id" ColumnName="discipline_id" />
+                <ScalarProperty Name="discipline" ColumnName="discipline" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="power_subdisciplines">
+            <EntityTypeMapping TypeName="DNDDatabaseModel.power_subdisciplines">
+              <MappingFragment StoreEntitySet="power_subdisciplines">
+                <ScalarProperty Name="subdiscipline_id" ColumnName="subdiscipline_id" />
+                <ScalarProperty Name="subdiscipline" ColumnName="subdiscipline" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="powers">
+            <EntityTypeMapping TypeName="DNDDatabaseModel.power">
+              <MappingFragment StoreEntitySet="powers">
+                <ScalarProperty Name="power_id" ColumnName="power_id" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="power_discipline_id" ColumnName="power_discipline_id" />
+                <ScalarProperty Name="power_subdiscipline_Id" ColumnName="power_subdiscipline_Id" />
+                <ScalarProperty Name="descriptor" ColumnName="descriptor" />
+                <ScalarProperty Name="level" ColumnName="level" />
+                <ScalarProperty Name="display" ColumnName="display" />
+                <ScalarProperty Name="manifesting_time" ColumnName="manifesting_time" />
+                <ScalarProperty Name="range" ColumnName="range" />
+                <ScalarProperty Name="target" ColumnName="target" />
+                <ScalarProperty Name="area" ColumnName="area" />
+                <ScalarProperty Name="effect" ColumnName="effect" />
+                <ScalarProperty Name="duration" ColumnName="duration" />
+                <ScalarProperty Name="saving_throw" ColumnName="saving_throw" />
+                <ScalarProperty Name="power_points" ColumnName="power_points" />
+                <ScalarProperty Name="power_resistance" ColumnName="power_resistance" />
+                <ScalarProperty Name="short_description" ColumnName="short_description" />
+                <ScalarProperty Name="xp_cost" ColumnName="xp_cost" />
+                <ScalarProperty Name="description" ColumnName="description" />
+                <ScalarProperty Name="augment" ColumnName="augment" />
+                <ScalarProperty Name="full_text" ColumnName="full_text" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="skill_subtypes">
+            <EntityTypeMapping TypeName="DNDDatabaseModel.skill_subtypes">
+              <MappingFragment StoreEntitySet="skill_subtypes">
+                <ScalarProperty Name="subtype_id" ColumnName="subtype_id" />
+                <ScalarProperty Name="subtype" ColumnName="subtype" />
+                <ScalarProperty Name="skill_id" ColumnName="skill_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="skills">
+            <EntityTypeMapping TypeName="DNDDatabaseModel.skill">
+              <MappingFragment StoreEntitySet="skills">
+                <ScalarProperty Name="skill_id" ColumnName="skill_id" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="subtype" ColumnName="subtype" />
+                <ScalarProperty Name="key_ability_id" ColumnName="key_ability_id" />
+                <ScalarProperty Name="trained" ColumnName="trained" />
+                <ScalarProperty Name="armor_checked" ColumnName="armor_checked" />
+                <ScalarProperty Name="description" ColumnName="description" />
+                <ScalarProperty Name="spell_check" ColumnName="spell_check" />
+                <ScalarProperty Name="action" ColumnName="action" />
+                <ScalarProperty Name="try_again" ColumnName="try_again" />
+                <ScalarProperty Name="special" ColumnName="special" />
+                <ScalarProperty Name="restriction" ColumnName="restriction" />
+                <ScalarProperty Name="synergy" ColumnName="synergy" />
+                <ScalarProperty Name="epic_use" ColumnName="epic_use" />
+                <ScalarProperty Name="untrained" ColumnName="untrained" />
+                <ScalarProperty Name="full_text" ColumnName="full_text" />
+                <ScalarProperty Name="psionic" ColumnName="psionic" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="spell_schools">
+            <EntityTypeMapping TypeName="DNDDatabaseModel.spell_schools">
+              <MappingFragment StoreEntitySet="spell_schools">
+                <ScalarProperty Name="school_id" ColumnName="school_id" />
+                <ScalarProperty Name="school" ColumnName="school" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="spell_subschools">
+            <EntityTypeMapping TypeName="DNDDatabaseModel.spell_subschools">
+              <MappingFragment StoreEntitySet="spell_subschools">
+                <ScalarProperty Name="subschool_id" ColumnName="subschool_id" />
+                <ScalarProperty Name="subschool" ColumnName="subschool" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="spell_types">
+            <EntityTypeMapping TypeName="DNDDatabaseModel.spell_types">
+              <MappingFragment StoreEntitySet="spell_types">
+                <ScalarProperty Name="type_id" ColumnName="type_id" />
+                <ScalarProperty Name="type" ColumnName="type" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="spells">
+            <EntityTypeMapping TypeName="DNDDatabaseModel.spell">
+              <MappingFragment StoreEntitySet="spells">
+                <ScalarProperty Name="spell_id" ColumnName="spell_id" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="altname" ColumnName="altname" />
+                <ScalarProperty Name="school_id" ColumnName="school_id" />
+                <ScalarProperty Name="subschool_id" ColumnName="subschool_id" />
+                <ScalarProperty Name="descriptor" ColumnName="descriptor" />
+                <ScalarProperty Name="spellcraft_dc" ColumnName="spellcraft_dc" />
+                <ScalarProperty Name="level" ColumnName="level" />
+                <ScalarProperty Name="components" ColumnName="components" />
+                <ScalarProperty Name="casting_time" ColumnName="casting_time" />
+                <ScalarProperty Name="range" ColumnName="range" />
+                <ScalarProperty Name="target" ColumnName="target" />
+                <ScalarProperty Name="area" ColumnName="area" />
+                <ScalarProperty Name="effect" ColumnName="effect" />
+                <ScalarProperty Name="duration" ColumnName="duration" />
+                <ScalarProperty Name="saving_throw" ColumnName="saving_throw" />
+                <ScalarProperty Name="spell_resistance" ColumnName="spell_resistance" />
+                <ScalarProperty Name="short_description" ColumnName="short_description" />
+                <ScalarProperty Name="to_develop" ColumnName="to_develop" />
+                <ScalarProperty Name="material_components" ColumnName="material_components" />
+                <ScalarProperty Name="arcane_material_components" ColumnName="arcane_material_components" />
+                <ScalarProperty Name="focus" ColumnName="focus" />
+                <ScalarProperty Name="description" ColumnName="description" />
+                <ScalarProperty Name="xp_cost" ColumnName="xp_cost" />
+                <ScalarProperty Name="arcane_focus" ColumnName="arcane_focus" />
+                <ScalarProperty Name="wizard_focus" ColumnName="wizard_focus" />
+                <ScalarProperty Name="verbal_components" ColumnName="verbal_components" />
+                <ScalarProperty Name="sorcerer_focus" ColumnName="sorcerer_focus" />
+                <ScalarProperty Name="bard_focus" ColumnName="bard_focus" />
+                <ScalarProperty Name="druid_focus" ColumnName="druid_focus" />
+                <ScalarProperty Name="full_text" ColumnName="full_text" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <AssociationSetMapping Name="class_alignments" TypeName="DNDDatabaseModel.class_alignments" StoreEntitySet="class_alignments">
+            <EndProperty Name="alignments">
+              <ScalarProperty Name="alignment_id" ColumnName="alignment_id" />
+            </EndProperty>
+            <EndProperty Name="classes">
+              <ScalarProperty Name="class_id" ColumnName="alignment_class_Id" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="class_skills" TypeName="DNDDatabaseModel.class_skills" StoreEntitySet="class_skills">
+            <EndProperty Name="skills">
+              <ScalarProperty Name="skill_id" ColumnName="skill_id" />
+            </EndProperty>
+            <EndProperty Name="classes">
+              <ScalarProperty Name="class_id" ColumnName="class_id" />
+            </EndProperty>
+          </AssociationSetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

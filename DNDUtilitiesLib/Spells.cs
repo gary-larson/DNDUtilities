@@ -194,13 +194,13 @@ namespace DNDUtilitiesLib
             set;
         }
 
-        public virtual Spell_schools spell_schools
+        public virtual spell_schools spell_schools
         {
             get;
             set;
         }
 
-        public virtual Spell_subschools spell_subschools
+        public virtual spell_subschools spell_subschools
         {
             get;
             set;

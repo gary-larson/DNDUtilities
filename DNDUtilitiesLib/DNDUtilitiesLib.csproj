@@ -9,8 +9,11 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>DNDUtilitiesLib</RootNamespace>
     <AssemblyName>DNDUtilitiesLib</AssemblyName>
-    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -29,9 +32,35 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.0.0\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.0.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Data.SQLite, Version=1.0.104.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Data.SQLite.Core.1.0.104.0\lib\net46\System.Data.SQLite.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Data.SQLite.EF6, Version=1.0.104.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Data.SQLite.EF6.1.0.104.0\lib\net46\System.Data.SQLite.EF6.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Data.SQLite.Linq, Version=1.0.104.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Data.SQLite.Linq.1.0.104.0\lib\net46\System.Data.SQLite.Linq.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -41,35 +70,143 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Abilities.cs" />
+    <Compile Include="ability.cs">
+      <DependentUpon>DNDUtilitiesModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="alignment.cs">
+      <DependentUpon>DNDUtilitiesModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Alignments.cs" />
+    <Compile Include="class.cs">
+      <DependentUpon>DNDUtilitiesModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Classes.cs" />
     <Compile Include="Class_alignments.cs" />
     <Compile Include="Class_skills.cs" />
-    <Compile Include="Class_tables.cs" />
+    <Compile Include="Class_tables.cs">
+      <DependentUpon>DNDUtilitiesModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="DBTable.cs" />
+    <Compile Include="DNDUtilitiesModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DNDUtilitiesModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DNDUtilitiesModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DNDUtilitiesModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DNDUtilitiesModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DNDUtilitiesModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="domain.cs">
+      <DependentUpon>DNDUtilitiesModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Domains.cs" />
+    <Compile Include="equipment.cs">
+      <DependentUpon>DNDUtilitiesModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Equipments.cs" />
-    <Compile Include="Equipment_category.cs" />
-    <Compile Include="Equipment_subcategory.cs" />
+    <Compile Include="Equipment_category.cs">
+      <DependentUpon>DNDUtilitiesModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Equipment_subcategory.cs">
+      <DependentUpon>DNDUtilitiesModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="feat.cs">
+      <DependentUpon>DNDUtilitiesModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Feats.cs" />
+    <Compile Include="item.cs">
+      <DependentUpon>DNDUtilitiesModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Items.cs" />
+    <Compile Include="monster.cs">
+      <DependentUpon>DNDUtilitiesModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Monsters.cs" />
     <Compile Include="Monster_descriptor.cs" />
-    <Compile Include="Monster_families.cs" />
-    <Compile Include="Monster_sizes.cs" />
-    <Compile Include="Monster_types.cs" />
+    <Compile Include="monster_descriptors.cs">
+      <DependentUpon>DNDUtilitiesModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Monster_families.cs">
+      <DependentUpon>DNDUtilitiesModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Monster_sizes.cs">
+      <DependentUpon>DNDUtilitiesModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Monster_types.cs">
+      <DependentUpon>DNDUtilitiesModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="power.cs">
+      <DependentUpon>DNDUtilitiesModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Powers.cs" />
-    <Compile Include="Power_disciplines.cs" />
-    <Compile Include="Power_subdisciplines.cs" />
+    <Compile Include="Power_disciplines.cs">
+      <DependentUpon>DNDUtilitiesModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Power_subdisciplines.cs">
+      <DependentUpon>DNDUtilitiesModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="skill.cs">
+      <DependentUpon>DNDUtilitiesModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Skills.cs" />
-    <Compile Include="Skill_subtypes.cs" />
+    <Compile Include="Skill_subtypes.cs">
+      <DependentUpon>DNDUtilitiesModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="spell.cs">
+      <DependentUpon>DNDUtilitiesModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Spells.cs" />
-    <Compile Include="Spell_schools.cs" />
-    <Compile Include="Spell_subschools.cs" />
-    <Compile Include="Spell_types.cs" />
+    <Compile Include="Spell_schools.cs">
+      <DependentUpon>DNDUtilitiesModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Spell_subschools.cs">
+      <DependentUpon>DNDUtilitiesModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Spell_types.cs">
+      <DependentUpon>DNDUtilitiesModel.tt</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <EntityDeploy Include="DNDUtilitiesModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>DNDUtilitiesModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="DNDUtilitiesModel.edmx.diagram">
+      <DependentUpon>DNDUtilitiesModel.edmx</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="DNDUtilitiesModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>DNDUtilitiesModel.edmx</DependentUpon>
+      <LastGenOutput>DNDUtilitiesModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="DNDUtilitiesModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>DNDUtilitiesModel.edmx</DependentUpon>
+      <LastGenOutput>DNDUtilitiesModel.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="..\packages\System.Data.SQLite.Core.1.0.104.0\build\net46\System.Data.SQLite.Core.targets" Condition="Exists('..\packages\System.Data.SQLite.Core.1.0.104.0\build\net46\System.Data.SQLite.Core.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\System.Data.SQLite.Core.1.0.104.0\build\net46\System.Data.SQLite.Core.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\System.Data.SQLite.Core.1.0.104.0\build\net46\System.Data.SQLite.Core.targets'))" />
+  </Target>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">
