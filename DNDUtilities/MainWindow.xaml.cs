@@ -30,8 +30,8 @@ namespace DNDUtilities
         {
             using (SQLiteConnection conn = new SQLiteConnection())
             {
-                //conn.ConnectionString = "data source=DNDDatabase\\bin\\Debug\\DNDDatabase.db3";
-                conn.ConnectionString = "data source=C:\\Users\\Gary\\Source\\Repos\\DNDUtilities\\DNDDatabase\\bin\\Debug\\DNDDatabase.db3";
+                conn.ConnectionString = "data source=DNDDatabase.db3";
+                //conn.ConnectionString = "data source=C:\\Users\\Gary\\Source\\Repos\\DNDUtilities\\DNDUtilities\\DNDDatabase.db3";
                 conn.Open();
 
                 int abilityId = 1;
