@@ -23,10 +23,48 @@ public class Power_disiplines : DBTable
 		set;
 	}
 
+	internal virtual const String FIELD
+	{
+		get;
+		set;
+	}
+
+	internal virtual const String FIELD_LIST
+	{
+		get;
+		set;
+	}
+
+	internal virtual const String TABLE
+	{
+		get;
+		set;
+	}
+
 	public virtual Powers powers
 	{
 		get;
 		set;
+	}
+
+	public virtual void delete(int Key)
+	{
+		throw new System.NotImplementedException();
+	}
+
+	public virtual Power_disiplines retrieve(int Key)
+	{
+		throw new System.NotImplementedException();
+	}
+
+	public virtual void save(int Key)
+	{
+		throw new System.NotImplementedException();
+	}
+
+	public override string ToString()
+	{
+		throw new System.NotImplementedException();
 	}
 
 }

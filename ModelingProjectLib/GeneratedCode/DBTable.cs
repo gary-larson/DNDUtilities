@@ -17,17 +17,17 @@ public class DBTable
 		set;
 	}
 
-	public virtual void Save()
+	public virtual void Save(string Table, object Key, List<String> FieldList)
 	{
 		throw new System.NotImplementedException();
 	}
 
-	public virtual void get()
+	public virtual void delete(string Table, int Key)
 	{
 		throw new System.NotImplementedException();
 	}
 
-	public virtual void delete()
+	public virtual string ToString()
 	{
 		throw new System.NotImplementedException();
 	}

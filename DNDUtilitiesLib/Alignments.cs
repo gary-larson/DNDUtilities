@@ -20,6 +20,32 @@ namespace DNDUtilitiesLib
             set;
         }
 
+        private List<String> fieldList
+        {
+            get;
+            set;
+        }
+
+        public virtual void delete(int Key)
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public virtual Alignments retrieve(int Key)
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public virtual void save(int Key)
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public override string ToString()
+        {
+            throw new System.NotImplementedException();
+        }
+
     }
 
 }

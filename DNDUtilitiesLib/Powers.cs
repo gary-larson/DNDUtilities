@@ -105,12 +105,12 @@ namespace DNDUtilitiesLib
         }
 
         public virtual string short_description
-	        {
-		        get;
-		        set;
-	        }
+	    {
+		    get;
+		    set;
+	    }
 
-	        public virtual string xp_cost
+	    public virtual string xp_cost
         {
             get;
             set;
@@ -132,6 +132,32 @@ namespace DNDUtilitiesLib
         {
             get;
             set;
+        }
+
+        private List<String> fieldList
+        {
+            get;
+            set;
+        }
+
+        public virtual void delete(int Key)
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public virtual Powers retrieve(int Key)
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public virtual void save(int Key)
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public override string ToString()
+        {
+            throw new System.NotImplementedException();
         }
 
     }

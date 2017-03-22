@@ -10,56 +10,26 @@ namespace DNDUtilitiesLib
 {
     public class DBTable
     {
-        public DBTable ()
-        {
-            connection = "DNDDatabase\\bin\\Debug\\DNDDatabase.db3";
-        }
-        private string connection
-        {
-            get;
-        }
+        public const String CONNECTION_STR = "data source=DNDDatabase.db3";
+        
 
-        public virtual void Save()
+        public virtual void Save(string Table, object Key, List<String> FieldList)
         {
             throw new System.NotImplementedException();
         }
 
-        public void get()
+     //   public virtual SQLiteDataReader retrieve(string table, int key, String fieldList, String field)
+     //   {
+            
+                    
+     //   }
+
+        public virtual void delete(string Table, int Key)
         {
-
-       /*     using (SQLiteConnection conn = new SQLiteConnection())
-            {
-                conn.ConnectionString = connection;
-                conn.Open();
-
-                String sql;
-                sql = "select sbility_id, ability, abbreviation from abilities where ability_id = @id";
-                SQLiteCommand command = new SQLiteCommand(sql, conn);
-                command.Parameters.AddWithValue("id", abilityId);
-
-                using (SQLiteDataReader read = command.ExecuteReader())
-                {
-                    if (read.HasRows)
-                    {
-                        read.Read();
-                        Abilities a = new Abilities(
-                            read.GetInt32(0),
-                            read.GetString(1),
-                            read.GetString(2)
-                        );
-                        return a;
-                    }
-                    else
-                    {
-                        return null;
-                    }
-                }
-
-            } */
-                
+            throw new System.NotImplementedException();
         }
 
-        public virtual void delete()
+        public override string ToString()
         {
             throw new System.NotImplementedException();
         }
