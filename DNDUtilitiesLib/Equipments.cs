@@ -123,16 +123,30 @@ namespace DNDUtilitiesLib
             set;
         }
 
-        public virtual equipment_subcategory equipment_subcategory
+        private List<String> fieldList
         {
             get;
             set;
         }
 
-        public virtual equipment_category equipment_category
+        public virtual void delete(int Key)
         {
-            get;
-            set;
+            throw new System.NotImplementedException();
+        }
+
+        public virtual Equipments retrieve(int Key)
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public virtual void save(int Key)
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public override string ToString()
+        {
+            throw new System.NotImplementedException();
         }
 
     }

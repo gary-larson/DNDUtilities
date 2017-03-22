@@ -23,5 +23,43 @@ public class Equipment_subcategory
 		set;
 	}
 
+	internal virtual const String FIELD
+	{
+		get;
+		set;
+	}
+
+	internal virtual const String FIELD_LIST
+	{
+		get;
+		set;
+	}
+
+	internal virtual const String TABLE
+	{
+		get;
+		set;
+	}
+
+	public virtual void delete(int Key)
+	{
+		throw new System.NotImplementedException();
+	}
+
+	public virtual Equipment_subcategory retrieve(int Key)
+	{
+		throw new System.NotImplementedException();
+	}
+
+	public virtual void save(int Key)
+	{
+		throw new System.NotImplementedException();
+	}
+
+	public virtual string ToString()
+	{
+		throw new System.NotImplementedException();
+	}
+
 }
 

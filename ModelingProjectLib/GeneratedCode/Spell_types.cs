@@ -23,10 +23,48 @@ public class Spell_types : DBTable
 		set;
 	}
 
+	internal virtual const String FIELD
+	{
+		get;
+		set;
+	}
+
+	internal virtual const String FIELD_LIST
+	{
+		get;
+		set;
+	}
+
+	internal virtual const String TABLE
+	{
+		get;
+		set;
+	}
+
 	public virtual Classes classes
 	{
 		get;
 		set;
+	}
+
+	public virtual void delete(int Key)
+	{
+		throw new System.NotImplementedException();
+	}
+
+	public virtual Spell_types retrieve(int Key)
+	{
+		throw new System.NotImplementedException();
+	}
+
+	public virtual void save(int Key)
+	{
+		throw new System.NotImplementedException();
+	}
+
+	public override string ToString()
+	{
+		throw new System.NotImplementedException();
 	}
 
 }

@@ -107,10 +107,48 @@ public class Skills : DBTable
 		set;
 	}
 
+	internal virtual const String FIELD
+	{
+		get;
+		set;
+	}
+
+	internal virtual const String FIELD_LIST
+	{
+		get;
+		set;
+	}
+
+	internal virtual const String TABLE
+	{
+		get;
+		set;
+	}
+
 	public virtual IEnumerable<Skill_subtypes> skill_subtypes
 	{
 		get;
 		set;
+	}
+
+	public virtual void delete(int Key)
+	{
+		throw new System.NotImplementedException();
+	}
+
+	public virtual Skills retrieve(int Key)
+	{
+		throw new System.NotImplementedException();
+	}
+
+	public virtual void save(int Key)
+	{
+		throw new System.NotImplementedException();
+	}
+
+	public override string ToString()
+	{
+		throw new System.NotImplementedException();
 	}
 
 }

@@ -22,6 +22,129 @@
   </PropertyGroup>
   <Import Project="$(VSToolsPath)\ArchitectureTools\Microsoft.VisualStudio.TeamArchitect.ModelingProject.targets" Condition="'$(VSToolsPath)' != ''" />
   <ItemGroup>
+    <Content Include="ability.cs">
+      <SubType>Content</SubType>
+      <DependentUpon>DNDUtilitiesModel.tt</DependentUpon>
+    </Content>
+    <Content Include="alignment.cs">
+      <SubType>Content</SubType>
+      <DependentUpon>DNDUtilitiesModel.tt</DependentUpon>
+    </Content>
+    <Content Include="class.cs">
+      <SubType>Content</SubType>
+      <DependentUpon>DNDUtilitiesModel.tt</DependentUpon>
+    </Content>
+    <Content Include="Class_tables.cs">
+      <SubType>Content</SubType>
+      <DependentUpon>DNDUtilitiesModel.tt</DependentUpon>
+    </Content>
+    <Content Include="DNDUtilitiesModel.Context.cs">
+      <SubType>Content</SubType>
+      <DependentUpon>DNDUtilitiesModel.Context.tt</DependentUpon>
+    </Content>
+    <Content Include="DNDUtilitiesModel.Context.tt">
+      <SubType>Content</SubType>
+      <DependentUpon>DNDUtilitiesModel.edmx</DependentUpon>
+    </Content>
+    <Content Include="DNDUtilitiesModel.cs">
+      <SubType>Content</SubType>
+      <DependentUpon>DNDUtilitiesModel.tt</DependentUpon>
+    </Content>
+    <Content Include="DNDUtilitiesModel.Designer.cs">
+      <SubType>Content</SubType>
+      <DependentUpon>DNDUtilitiesModel.edmx</DependentUpon>
+    </Content>
+    <Content Include="DNDUtilitiesModel.edmx">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="DNDUtilitiesModel.edmx.diagram">
+      <SubType>Content</SubType>
+      <DependentUpon>DNDUtilitiesModel.edmx</DependentUpon>
+    </Content>
+    <Content Include="DNDUtilitiesModel.tt">
+      <SubType>Content</SubType>
+      <DependentUpon>DNDUtilitiesModel.edmx</DependentUpon>
+    </Content>
+    <Content Include="domain.cs">
+      <SubType>Content</SubType>
+      <DependentUpon>DNDUtilitiesModel.tt</DependentUpon>
+    </Content>
+    <Content Include="equipment.cs">
+      <SubType>Content</SubType>
+      <DependentUpon>DNDUtilitiesModel.tt</DependentUpon>
+    </Content>
+    <Content Include="Equipment_category.cs">
+      <SubType>Content</SubType>
+      <DependentUpon>DNDUtilitiesModel.tt</DependentUpon>
+    </Content>
+    <Content Include="Equipment_subcategory.cs">
+      <SubType>Content</SubType>
+      <DependentUpon>DNDUtilitiesModel.tt</DependentUpon>
+    </Content>
+    <Content Include="feat.cs">
+      <SubType>Content</SubType>
+      <DependentUpon>DNDUtilitiesModel.tt</DependentUpon>
+    </Content>
+    <Content Include="item.cs">
+      <SubType>Content</SubType>
+      <DependentUpon>DNDUtilitiesModel.tt</DependentUpon>
+    </Content>
+    <Content Include="monster.cs">
+      <SubType>Content</SubType>
+      <DependentUpon>DNDUtilitiesModel.tt</DependentUpon>
+    </Content>
+    <Content Include="monster_descriptors.cs">
+      <SubType>Content</SubType>
+      <DependentUpon>DNDUtilitiesModel.tt</DependentUpon>
+    </Content>
+    <Content Include="Monster_families.cs">
+      <SubType>Content</SubType>
+      <DependentUpon>DNDUtilitiesModel.tt</DependentUpon>
+    </Content>
+    <Content Include="Monster_sizes.cs">
+      <SubType>Content</SubType>
+      <DependentUpon>DNDUtilitiesModel.tt</DependentUpon>
+    </Content>
+    <Content Include="Monster_types.cs">
+      <SubType>Content</SubType>
+      <DependentUpon>DNDUtilitiesModel.tt</DependentUpon>
+    </Content>
+    <Content Include="power.cs">
+      <SubType>Content</SubType>
+      <DependentUpon>DNDUtilitiesModel.tt</DependentUpon>
+    </Content>
+    <Content Include="Power_disciplines.cs">
+      <SubType>Content</SubType>
+      <DependentUpon>DNDUtilitiesModel.tt</DependentUpon>
+    </Content>
+    <Content Include="Power_subdisciplines.cs">
+      <SubType>Content</SubType>
+      <DependentUpon>DNDUtilitiesModel.tt</DependentUpon>
+    </Content>
+    <Content Include="skill.cs">
+      <SubType>Content</SubType>
+      <DependentUpon>DNDUtilitiesModel.tt</DependentUpon>
+    </Content>
+    <Content Include="Skill_subtypes.cs">
+      <SubType>Content</SubType>
+      <DependentUpon>DNDUtilitiesModel.tt</DependentUpon>
+    </Content>
+    <Content Include="spell.cs">
+      <SubType>Content</SubType>
+      <DependentUpon>DNDUtilitiesModel.tt</DependentUpon>
+    </Content>
+    <Content Include="Spell_schools.cs">
+      <SubType>Content</SubType>
+      <DependentUpon>DNDUtilitiesModel.tt</DependentUpon>
+    </Content>
+    <Content Include="Spell_subschools.cs">
+      <SubType>Content</SubType>
+      <DependentUpon>DNDUtilitiesModel.tt</DependentUpon>
+    </Content>
+    <Content Include="Spell_types.cs">
+      <SubType>Content</SubType>
+      <DependentUpon>DNDUtilitiesModel.tt</DependentUpon>
+    </Content>
     <Content Include="UMLActivityDiagramCustomTHINGAddition.activitydiagram">
       <SubType>Content</SubType>
     </Content>

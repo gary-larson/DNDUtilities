@@ -29,10 +29,48 @@ public class Abilities : DBTable
 		set;
 	}
 
+	internal virtual const String FIELD_LIST
+	{
+		get;
+		set;
+	}
+
+	internal virtual const String TABLE
+	{
+		get;
+		set;
+	}
+
+	internal virtual const String FIELD
+	{
+		get;
+		set;
+	}
+
 	public virtual Classes classes
 	{
 		get;
 		set;
+	}
+
+	public virtual void delete(int Key)
+	{
+		throw new System.NotImplementedException();
+	}
+
+	public virtual Abilities retrieve(int Key)
+	{
+		throw new System.NotImplementedException();
+	}
+
+	public virtual void save(int Key)
+	{
+		throw new System.NotImplementedException();
+	}
+
+	public override string ToString()
+	{
+		throw new System.NotImplementedException();
 	}
 
 }

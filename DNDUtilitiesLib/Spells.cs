@@ -194,16 +194,42 @@ namespace DNDUtilitiesLib
             set;
         }
 
-        public virtual spell_schools spell_schools
+        public virtual Spell_schools spell_schools
         {
             get;
             set;
         }
 
-        public virtual spell_subschools spell_subschools
+        public virtual Spell_subschools spell_subschools
         {
             get;
             set;
+        }
+
+        private List<String> fieldList
+        {
+            get;
+            set;
+        }
+
+        public virtual void delete(int Key)
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public virtual Spells retrieve(int Key)
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public virtual void save(int Key)
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public override string ToString()
+        {
+            throw new System.NotImplementedException();
         }
 
     }

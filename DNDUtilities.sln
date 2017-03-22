@@ -8,9 +8,6 @@ EndProject
 Project("{F088123C-0E9E-452A-89E6-6BA2F21D5CAC}") = "ModelingProject", "ModelingProject\ModelingProject.modelproj", "{110909A5-A793-4E5B-9D74-5D9E79593766}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{A84CCB9E-2883-4433-9709-FA206830C170}"
-	ProjectSection(SolutionItems) = preProject
-		DNDDatabase\bin\Debug\DNDDatabase.db3 = DNDDatabase\bin\Debug\DNDDatabase.db3
-	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ModelingProjectLib", "ModelingProjectLib\ModelingProjectLib.csproj", "{1BA6D80B-C013-41EC-AE17-B15494F4CA6E}"
 EndProject
