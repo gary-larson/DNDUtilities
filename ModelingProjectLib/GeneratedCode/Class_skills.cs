@@ -9,7 +9,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-public class Class_skills : DBTable
+public class Class_skills : DBTable_bridge
 {
 	private int class_id
 	{
@@ -23,19 +23,19 @@ public class Class_skills : DBTable
 		set;
 	}
 
-	internal virtual const String FIELD
+	internal virtual string FIELD
 	{
 		get;
 		set;
 	}
 
-	internal virtual const String FIELD_LIST
+	internal virtual string FIELD_LIST
 	{
 		get;
 		set;
 	}
 
-	internal virtual const String TABLE
+	internal virtual string TABLE
 	{
 		get;
 		set;
@@ -68,7 +68,7 @@ public class Class_skills : DBTable
 		throw new System.NotImplementedException();
 	}
 
-	public override string ToString()
+	public virtual string ToString()
 	{
 		throw new System.NotImplementedException();
 	}

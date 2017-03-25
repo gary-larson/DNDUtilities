@@ -65,18 +65,26 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="GeneratedCode\Abilities.cs" />
+    <Compile Include="GeneratedCode\ability_check_adjustments.cs" />
     <Compile Include="GeneratedCode\Alignments.cs" />
+    <Compile Include="GeneratedCode\characters.cs" />
+    <Compile Include="GeneratedCode\character_classes.cs" />
     <Compile Include="GeneratedCode\Classes.cs" />
     <Compile Include="GeneratedCode\Class_alignments.cs" />
     <Compile Include="GeneratedCode\Class_skills.cs" />
     <Compile Include="GeneratedCode\Class_tables.cs" />
+    <Compile Include="GeneratedCode\combat_statistics.cs" />
+    <Compile Include="GeneratedCode\combat_statistics_adjustments.cs" />
     <Compile Include="GeneratedCode\DBTable.cs" />
+    <Compile Include="GeneratedCode\DBTable_bridge.cs" />
+    <Compile Include="GeneratedCode\DBTable_lookup.cs" />
     <Compile Include="GeneratedCode\Domains.cs" />
     <Compile Include="GeneratedCode\Equipments.cs" />
     <Compile Include="GeneratedCode\Equipment_category.cs" />
     <Compile Include="GeneratedCode\Equipment_subcategory.cs" />
     <Compile Include="GeneratedCode\Feats.cs" />
     <Compile Include="GeneratedCode\Items.cs" />
+    <Compile Include="GeneratedCode\languages.cs" />
     <Compile Include="GeneratedCode\Monsters.cs" />
     <Compile Include="GeneratedCode\Monster_descriptor.cs" />
     <Compile Include="GeneratedCode\Monster_families.cs" />
@@ -85,12 +93,22 @@
     <Compile Include="GeneratedCode\Powers.cs" />
     <Compile Include="GeneratedCode\Power_disiplines.cs" />
     <Compile Include="GeneratedCode\Power_subdisciplines.cs" />
+    <Compile Include="GeneratedCode\races.cs" />
+    <Compile Include="GeneratedCode\racial_ability_adjustment.cs" />
+    <Compile Include="GeneratedCode\racial_favored_classes.cs" />
+    <Compile Include="GeneratedCode\racial_languages.cs" />
+    <Compile Include="GeneratedCode\racial_spell_like_abilities.cs" />
+    <Compile Include="GeneratedCode\saving_throws.cs" />
+    <Compile Include="GeneratedCode\saving_throw_adjustments.cs" />
     <Compile Include="GeneratedCode\Skills.cs" />
+    <Compile Include="GeneratedCode\skill_adjustments.cs" />
     <Compile Include="GeneratedCode\Skill_subtypes.cs" />
     <Compile Include="GeneratedCode\Spells.cs" />
+    <Compile Include="GeneratedCode\spell_like_abilities.cs" />
     <Compile Include="GeneratedCode\Spell_schools.cs" />
     <Compile Include="GeneratedCode\Spell_subschools.cs" />
     <Compile Include="GeneratedCode\Spell_types.cs" />
+    <Compile Include="GeneratedCode\weapon_proficiencies.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -6,27 +6,45 @@ using System.Threading.Tasks;
 
 namespace DNDUtilitiesLib
 {
-    public class Monster_sizes : DBTable
+    public class Racial_favored_classes : DBTable_bridge
     {
-        private int size_id
+        private int race_id
         {
             get;
             set;
         }
 
-        public virtual string size
+        private int class_id
         {
             get;
             set;
         }
 
-        private List<String> fieldList
+        internal virtual string FIELD
         {
             get;
             set;
         }
 
-        public virtual Monsters monsters
+        internal virtual string FIELD_LIST
+        {
+            get;
+            set;
+        }
+
+        internal virtual string TABLE
+        {
+            get;
+            set;
+        }
+
+        public virtual Races races
+        {
+            get;
+            set;
+        }
+
+        public virtual Classes Classes
         {
             get;
             set;
@@ -37,7 +55,7 @@ namespace DNDUtilitiesLib
             throw new System.NotImplementedException();
         }
 
-        public virtual Monster_sizes retrieve(int Key)
+        public virtual Domains retrieve(int Key)
         {
             throw new System.NotImplementedException();
         }
@@ -47,7 +65,7 @@ namespace DNDUtilitiesLib
             throw new System.NotImplementedException();
         }
 
-        public override string ToString()
+        public virtual string ToString()
         {
             throw new System.NotImplementedException();
         }
