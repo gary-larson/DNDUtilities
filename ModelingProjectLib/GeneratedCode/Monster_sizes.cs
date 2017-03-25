@@ -9,7 +9,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-public class Monster_sizes : DBTable
+public class Monster_sizes : DBTable_lookup
 {
 	private int size_id
 	{
@@ -29,19 +29,19 @@ public class Monster_sizes : DBTable
 		set;
 	}
 
-	internal virtual const String FIELD
+	internal virtual string FIELD
 	{
 		get;
 		set;
 	}
 
-	internal virtual const String FIELD_LIST
+	internal virtual string FIELD_LIST
 	{
 		get;
 		set;
 	}
 
-	internal virtual const String TABLE
+	internal virtual string TABLE
 	{
 		get;
 		set;
@@ -68,7 +68,7 @@ public class Monster_sizes : DBTable
 		throw new System.NotImplementedException();
 	}
 
-	public override string ToString()
+	public virtual string ToString()
 	{
 		throw new System.NotImplementedException();
 	}

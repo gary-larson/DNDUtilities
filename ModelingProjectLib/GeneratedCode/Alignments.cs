@@ -23,19 +23,19 @@ public class Alignments : DBTable
 		set;
 	}
 
-	internal virtual const String FIELD
+	internal virtual string FIELD
 	{
 		get;
 		set;
 	}
 
-	internal virtual const String FIELD_LIST
+	internal virtual string FIELD_LIST
 	{
 		get;
 		set;
 	}
 
-	internal virtual const String TABLE
+	internal virtual string TABLE
 	{
 		get;
 		set;
