@@ -9,15 +9,21 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-public class Alignments : DBTable
+public class Racial_ability_adjustments : DBTable_bridge
 {
-	private int alignment_id
+	private int race_id
 	{
 		get;
 		set;
 	}
 
-	public virtual string name
+	private int ability_id
+	{
+		get;
+		set;
+	}
+
+	public virtual int adjustment
 	{
 		get;
 		set;
@@ -41,12 +47,24 @@ public class Alignments : DBTable
 		set;
 	}
 
+	public virtual Races races
+	{
+		get;
+		set;
+	}
+
+	public virtual Abilities Abilities
+	{
+		get;
+		set;
+	}
+
 	public virtual void delete(int Key)
 	{
 		throw new System.NotImplementedException();
 	}
 
-	public virtual Alignments retrieve(int Key)
+	public virtual Domains retrieve(int Key)
 	{
 		throw new System.NotImplementedException();
 	}
@@ -56,7 +74,7 @@ public class Alignments : DBTable
 		throw new System.NotImplementedException();
 	}
 
-	public override string ToString()
+	public virtual string ToString()
 	{
 		throw new System.NotImplementedException();
 	}

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DNDUtilitiesLib
 {
-    class Equipment_category
+    class Equipment_category : DBTable_lookup
     {
 
         private int category_id
@@ -15,7 +15,7 @@ namespace DNDUtilitiesLib
             set;
         }
 
-        public virtual string category
+        public virtual string name
         {
             get;
             set;

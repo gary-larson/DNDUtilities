@@ -17,7 +17,7 @@ public class Monster_types : DBTable_lookup
 		set;
 	}
 
-	public virtual string type
+	public virtual string name
 	{
 		get;
 		set;

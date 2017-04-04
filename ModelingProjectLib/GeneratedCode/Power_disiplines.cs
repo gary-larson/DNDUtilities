@@ -17,7 +17,7 @@ public class Power_disiplines : DBTable_lookup
 		set;
 	}
 
-	public virtual string discipline
+	public virtual string name
 	{
 		get;
 		set;

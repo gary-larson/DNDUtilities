@@ -70,7 +70,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Abilities.cs" />
-    <Compile Include="Ability_check_adjustments.cs" />
     <Compile Include="Alignments.cs" />
     <Compile Include="Characters.cs" />
     <Compile Include="Character_classes.cs" />
@@ -97,7 +96,6 @@
     <Compile Include="Racial_ability_adjustments.cs" />
     <Compile Include="Racial_favored_classes.cs" />
     <Compile Include="Racial_languages.cs" />
-    <Compile Include="Racial_spell_like_abilities.cs" />
     <Compile Include="Saving_throws.cs" />
     <Compile Include="Saving_throws_adjustments.cs" />
     <Compile Include="Sizes.cs" />
@@ -110,7 +108,6 @@
     <Compile Include="Skill_adjustments.cs" />
     <Compile Include="Skill_subtypes.cs" />
     <Compile Include="Spells.cs" />
-    <Compile Include="Spell_like_abilities.cs" />
     <Compile Include="Spell_schools.cs" />
     <Compile Include="Spell_subschools.cs" />
     <Compile Include="Spell_types.cs" />

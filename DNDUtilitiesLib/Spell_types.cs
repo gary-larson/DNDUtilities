@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DNDUtilitiesLib
 {
-    public class Spell_types : DBTable
+    public class Spell_types : DBTable_lookup
     {
         private int type_id
         {
@@ -14,7 +14,7 @@ namespace DNDUtilitiesLib
             set;
         }
 
-        public virtual string type
+        public virtual string name
         {
             get;
             set;

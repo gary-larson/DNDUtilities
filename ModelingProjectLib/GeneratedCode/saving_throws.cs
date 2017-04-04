@@ -17,13 +17,13 @@ public class Saving_throws : DBTable_lookup
 		set;
 	}
 
-	public virtual int saving_throw
+	public virtual string name
 	{
 		get;
 		set;
 	}
 
-	public virtual string condition
+	public virtual string decription
 	{
 		get;
 		set;

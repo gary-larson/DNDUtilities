@@ -17,7 +17,7 @@ public class Power_subdisciplines
 		set;
 	}
 
-	public virtual string subdiscipline
+	public virtual string name
 	{
 		get;
 		set;

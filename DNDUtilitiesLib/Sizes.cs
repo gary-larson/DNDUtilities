@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DNDUtilitiesLib
 {
-    public class Sizes : DBTable
+    public class Sizes : DBTable_lookup
     {
         private int size_id
         {
@@ -14,7 +14,7 @@ namespace DNDUtilitiesLib
             set;
         }
 
-        public virtual string size
+        public virtual string name
         {
             get;
             set;

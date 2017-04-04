@@ -17,7 +17,7 @@ public class Weapon_proficiencies : DBTable_bridge
 		set;
 	}
 
-	private int weapon_id
+	public virtual string name
 	{
 		get;
 		set;
@@ -48,6 +48,12 @@ public class Weapon_proficiencies : DBTable_bridge
 	}
 
 	internal virtual string TABLE
+	{
+		get;
+		set;
+	}
+
+	public virtual string description
 	{
 		get;
 		set;

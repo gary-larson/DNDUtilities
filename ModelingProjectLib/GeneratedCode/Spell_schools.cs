@@ -17,7 +17,7 @@ public class Spell_schools : DBTable_lookup
 		set;
 	}
 
-	public virtual string school
+	public virtual string name
 	{
 		get;
 		set;

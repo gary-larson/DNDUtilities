@@ -17,7 +17,7 @@ public class Equipment_category : DBTable_lookup
 		set;
 	}
 
-	public virtual string category
+	public virtual string name
 	{
 		get;
 		set;
