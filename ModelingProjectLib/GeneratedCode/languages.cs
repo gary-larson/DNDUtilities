@@ -17,7 +17,7 @@ public class Languages : DBTable_lookup
 		set;
 	}
 
-	public virtual string language
+	public virtual string name
 	{
 		get;
 		set;

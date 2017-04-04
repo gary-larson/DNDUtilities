@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DNDUtilitiesLib
 {
-    class Monster_families : DBTable
+    class Monster_families : DBTable_lookup
     {
 
         private int family_id
@@ -15,7 +15,7 @@ namespace DNDUtilitiesLib
             set;
         }
 
-        public virtual string family
+        public virtual string name
         {
             get;
             set;

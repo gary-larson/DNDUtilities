@@ -17,7 +17,7 @@ public class Skill_subtypes : DBTable_lookup
 		set;
 	}
 
-	public virtual string subtype
+	public virtual string name
 	{
 		get;
 		set;

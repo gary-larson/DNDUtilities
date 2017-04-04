@@ -95,11 +95,13 @@
     <Compile Include="GeneratedCode\Power_subdisciplines.cs" />
     <Compile Include="GeneratedCode\races.cs" />
     <Compile Include="GeneratedCode\racial_ability_adjustment.cs" />
+    <Compile Include="GeneratedCode\Racial_ability_adjustments.cs" />
     <Compile Include="GeneratedCode\racial_favored_classes.cs" />
     <Compile Include="GeneratedCode\racial_languages.cs" />
     <Compile Include="GeneratedCode\racial_spell_like_abilities.cs" />
     <Compile Include="GeneratedCode\saving_throws.cs" />
     <Compile Include="GeneratedCode\saving_throw_adjustments.cs" />
+    <Compile Include="GeneratedCode\Sizes.cs" />
     <Compile Include="GeneratedCode\Skills.cs" />
     <Compile Include="GeneratedCode\skill_adjustments.cs" />
     <Compile Include="GeneratedCode\Skill_subtypes.cs" />

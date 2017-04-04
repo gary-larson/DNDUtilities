@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DNDUtilitiesLib
 {
-    public class Skill_subtypes : DBTable
+    public class Skill_subtypes : DBTable_lookup
     {
         private int subtype_id
         {
@@ -14,7 +14,7 @@ namespace DNDUtilitiesLib
             set;
         }
 
-        public virtual string subtype
+        public virtual string name
         {
             get;
             set;

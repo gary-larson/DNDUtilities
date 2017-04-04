@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DNDUtilitiesLib
 {
-    public class Power_disiplines : DBTable
+    public class Power_disiplines : DBTable_lookup
     {
         private int discipline_id
         {
@@ -14,7 +14,7 @@ namespace DNDUtilitiesLib
             set;
         }
 
-        public virtual string discipline
+        public virtual string name
         {
             get;
             set;

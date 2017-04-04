@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DNDUtilitiesLib
 {
-    public class Class_alignments : DBTable
+    public class Class_alignments : DBTable_bridge
     {
         private int alignment_class_id
         {

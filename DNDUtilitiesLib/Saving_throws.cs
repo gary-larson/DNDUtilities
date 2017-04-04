@@ -14,13 +14,13 @@ namespace DNDUtilitiesLib
             set;
         }
 
-        public virtual int saving_throw
+        public virtual int name
         {
             get;
             set;
         }
 
-        public virtual string condition
+        public virtual string description
         {
             get;
             set;

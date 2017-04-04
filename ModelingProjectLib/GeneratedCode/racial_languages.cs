@@ -41,6 +41,12 @@ public class Racial_languages : DBTable_bridge
 		set;
 	}
 
+	public virtual string type
+	{
+		get;
+		set;
+	}
+
 	public virtual Races races
 	{
 		get;

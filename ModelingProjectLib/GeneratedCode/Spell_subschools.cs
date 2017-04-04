@@ -17,7 +17,7 @@ public class Spell_subschools : DBTable_lookup
 		set;
 	}
 
-	public virtual string subschool
+	public virtual string name
 	{
 		get;
 		set;

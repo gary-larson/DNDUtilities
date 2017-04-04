@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DNDUtilitiesLib
 {
-    public class Monster_descriptor : DBTable
+    public class Monster_descriptor : DBTable_lookup
     {
         private int descriptor_id
         {
@@ -14,7 +14,7 @@ namespace DNDUtilitiesLib
             set;
         }
 
-        public virtual string descriptor
+        public virtual string name
         {
             get;
             set;

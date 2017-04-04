@@ -14,6 +14,12 @@ namespace DNDUtilitiesLib
             set;
         }
 
+       private String name
+        {
+            get;
+            set;
+        }
+
         private int weapon_id
         {
             get;
@@ -27,6 +33,12 @@ namespace DNDUtilitiesLib
         }
 
         private int class_id
+        {
+            get;
+            set;
+        }
+
+        private String description
         {
             get;
             set;

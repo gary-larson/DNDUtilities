@@ -20,7 +20,7 @@ namespace DNDUtilitiesLib
             set;
         }
 
-        public virtual string condition
+        public virtual int adjustment
         {
             get;
             set;

@@ -17,7 +17,7 @@ public class Monster_families : DBTable_lookup
 		set;
 	}
 
-	public virtual string family
+	public virtual string name
 	{
 		get;
 		set;

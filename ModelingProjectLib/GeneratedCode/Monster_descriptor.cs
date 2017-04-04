@@ -17,7 +17,7 @@ public class Monster_descriptor : DBTable_lookup
 		set;
 	}
 
-	public virtual string descriptor
+	public virtual string name
 	{
 		get;
 		set;

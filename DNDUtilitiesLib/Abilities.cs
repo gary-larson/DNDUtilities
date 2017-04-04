@@ -7,10 +7,10 @@ using System.Threading.Tasks;
 
 namespace DNDUtilitiesLib
 {
-    public class Abilities : DBTable
+    public class Abilities : DBTable_lookup
     {
         const String TABLE = "abilities";
-        const String FIELD_LIST = "ability_id, ability, abbreviation";
+        const String FIELD_LIST = "ability_id, name, abbreviation";
         const String FIELD = "ability_id";
         private int ability_id
         {
@@ -18,7 +18,7 @@ namespace DNDUtilitiesLib
             set;
         }
 
-        public virtual string ability
+        public virtual string name
         {
             get;
             set;
@@ -39,14 +39,14 @@ namespace DNDUtilitiesLib
         public Abilities ()
         {
             ability_id = -1;
-            ability = "";
+            name = "";
             abbreviation = "";
         }
 
         public Abilities (int AbilityId, string Ability, string Abbreviation)
         {
             this.ability_id = AbilityId;
-            this.ability = Ability;
+            this.name = Ability;
             this.abbreviation = Abbreviation;
         }
 
@@ -77,7 +77,7 @@ namespace DNDUtilitiesLib
                     while (read.Read())
                     {
                         ability_id = read.GetInt32(0);
-                        ability = read.GetString(1);
+                        name = read.GetString(1);
                         abbreviation = read.GetString(2);
                     }
                     return this;
@@ -92,7 +92,7 @@ namespace DNDUtilitiesLib
 
         public override string ToString()
         {
-            return "AbilityId: " + ability_id + " Ability: " + ability + " Abbreviation: " + abbreviation;
+            return "AbilityId: " + ability_id + " Ability: " + name + " Abbreviation: " + abbreviation;
 
         }
 

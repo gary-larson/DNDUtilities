@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DNDUtilitiesLib
 {
-    public class Class_skills : DBTable
+    public class Class_skills : DBTable_bridge
     {
         private int class_id
         {

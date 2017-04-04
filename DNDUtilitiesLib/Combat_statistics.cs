@@ -14,7 +14,7 @@ namespace DNDUtilitiesLib
             set;
         }
 
-        public virtual string statistic
+        public virtual string name
         {
             get;
             set;

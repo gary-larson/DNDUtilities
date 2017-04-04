@@ -14,7 +14,7 @@ namespace DNDUtilitiesLib
             set;
         }
 
-        public virtual string language
+        public virtual string name
         {
             get;
             set;

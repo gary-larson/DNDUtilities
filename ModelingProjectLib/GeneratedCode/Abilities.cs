@@ -17,7 +17,7 @@ public class Abilities : DBTable_lookup
 		set;
 	}
 
-	public virtual string ability
+	public virtual string name
 	{
 		get;
 		set;

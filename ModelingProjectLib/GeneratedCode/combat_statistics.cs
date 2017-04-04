@@ -17,7 +17,7 @@ public class Combat_statistics : DBTable_lookup
 		set;
 	}
 
-	public virtual string statistic
+	public virtual string name
 	{
 		get;
 		set;

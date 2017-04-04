@@ -9,7 +9,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-public class Saving_throw_adjustments
+public class Saving_throw_adjustments : DBTable_bridge
 {
 	private int saving_throw_adjustment_id
 	{
@@ -18,12 +18,6 @@ public class Saving_throw_adjustments
 	}
 
 	private int saving_throw_id
-	{
-		get;
-		set;
-	}
-
-	public virtual string condition
 	{
 		get;
 		set;

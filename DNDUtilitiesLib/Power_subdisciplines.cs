@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DNDUtilitiesLib
 {
-    public class Power_subdisciplines : DBTable
+    public class Power_subdisciplines : DBTable_lookup
     {
         private int subdiscipline_id
         {
@@ -14,7 +14,7 @@ namespace DNDUtilitiesLib
             set;
         }
 
-        public virtual string subdiscipline
+        public virtual string name
         {
             get;
             set;
