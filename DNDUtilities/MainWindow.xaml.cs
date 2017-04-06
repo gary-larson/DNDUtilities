@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DNDUtilitiesLib;
+using System;
 using System.Collections.Generic;
 using System.Data.SQLite;
 using System.Linq;
@@ -28,9 +29,14 @@ namespace DNDUtilities
 
         private void button_Click(object sender, RoutedEventArgs e)
         {
-            DNDUtilitiesLib.Abilities ability = new DNDUtilitiesLib.Abilities();
-            ability.retrieve(1);
-            label.Content = ability.ToString();
+            String s = "";
+            Alignments a = new Alignments();
+            List<NameKey> nk = a.retrieveAll();
+            foreach (NameKey n in nk)
+            {
+                s += n.ToString();
+            }
+            label.Content = s;
 
         }
     }

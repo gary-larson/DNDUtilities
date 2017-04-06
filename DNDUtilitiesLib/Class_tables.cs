@@ -11,7 +11,6 @@ namespace DNDUtilitiesLib
         private int class_table_id
         {
             get;
-            set;
         }
 
         private int class_id

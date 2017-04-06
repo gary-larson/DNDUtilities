@@ -1,49 +1,62 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.SQLite;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace DNDUtilitiesLib
 {
-    public class Alignments : DBTable
+    public class Alignments : DBTable_lookup
     {
+        const string TABLE = "alignments";
+        const string FIELD = "alignment_id";
         private int alignment_id
         {
             get;
             set;
         }
 
-        public virtual string name
+        private string name
         {
             get;
             set;
         }
 
-        private List<String> fieldList
+        public List<NameKey> retrieveAll()
         {
-            get;
-            set;
+            return retrieveAll(TABLE, FIELD);
         }
 
-        public virtual void delete(int Key)
+        public Alignments retrieveRecord(int Key)
         {
-            throw new System.NotImplementedException();
-        }
 
-        public virtual Alignments retrieve(int Key)
-        {
-            throw new System.NotImplementedException();
-        }
+            using (SQLiteConnection conn = new SQLiteConnection())
+            {
+                conn.ConnectionString = CONNECTION_STR;
+                conn.Open();
 
-        public virtual void save(int Key)
-        {
-            throw new System.NotImplementedException();
+                String sql = "select alignment_id, name from alignments where alignment_id = @id";
+                SQLiteCommand command = conn.CreateCommand();
+                command.CommandText = sql;
+                command.CommandType = System.Data.CommandType.Text;
+                command.Parameters.Add(new SQLiteParameter("@id", Key.ToString()));
+
+                using (SQLiteDataReader read = command.ExecuteReader())
+                {
+                    while (read.Read())
+                    {
+                        alignment_id = read.GetInt32(0);
+                        name = read.GetString(1);
+                    }
+                    return this;
+                }
+            }
         }
 
         public override string ToString()
         {
-            throw new System.NotImplementedException();
+            return "Alignment " + name + " alignment_id: " + alignment_id;
         }
 
     }
