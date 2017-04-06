@@ -74,6 +74,7 @@
     <Compile Include="Characters.cs" />
     <Compile Include="Character_classes.cs" />
     <Compile Include="Classes.cs" />
+    <Compile Include="NameKey.cs" />
     <Compile Include="Class_alignments.cs" />
     <Compile Include="Class_skills.cs" />
     <Compile Include="Class_tables.cs" />

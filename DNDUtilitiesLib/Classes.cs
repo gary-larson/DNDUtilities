@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.SQLite;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -8,169 +9,170 @@ namespace DNDUtilitiesLib
 {
     public class Classes : DBTable
     {
+        
         private int class_id
         {
             get;
             set;
         }
 
-        public virtual string name
+        public string name
         {
             get;
             set;
         }
 
-        public virtual string type
+        public string type
         {
             get;
             set;
         }
 
-        public virtual int hit_die
+        public int hit_die
         {
             get;
             set;
         }
 
-        public virtual int skill_points
+        public int skill_points
         {
             get;
             set;
         }
 
-        private int ability_id
+        private string ability
         {
             get;
             set;
         }
 
-        private int type_id
+        private string spell_type
         {
             get;
             set;
         }
 
-        public virtual string proficiencies
+        public string proficiencies
         {
             get;
             set;
         }
 
-        public virtual int epic_feat_base_level
+        public int epic_feat_base_level
         {
             get;
             set;
         }
 
-        public virtual int epic_feat_interval
+        public int epic_feat_interval
         {
             get;
             set;
         }
 
-        public virtual string epic_feat_list
+        public string epic_feat_list
         {
             get;
             set;
         }
 
-        public virtual string epic_full_text
+        public string epic_full_text
         {
             get;
             set;
         }
 
-        public virtual string req_race
+        public string req_race
         {
             get;
             set;
         }
 
-        public virtual string req_weapon_proficiency
+        public string req_weapon_proficiency
         {
             get;
             set;
         }
 
-        public virtual int req_base_attack_bonus
+        public int req_base_attack_bonus
         {
             get;
             set;
         }
 
-        public virtual string req_skill
+        public string req_skill
         {
             get;
             set;
         }
 
-        public virtual string req_feat
+        public string req_feat
         {
             get;
             set;
         }
 
-        public virtual string req_spells
+        public string req_spells
         {
             get;
             set;
         }
 
-        public virtual string req_languages
+        public string req_languages
         {
             get;
             set;
         }
 
-        public virtual string req_psionics
+        public string req_psionics
 	    {
 		    get;
 		    set;
 	    }
 
-        public virtual string req_epic_feat
+        public string req_epic_feat
         {
             get;
             set;
         }
 
-        public virtual string req_special
+        public string req_special
         {
             get;
             set;
         }
 
-        public virtual string spell_list_1
+        public string spell_list_1
         {
             get;
             set;
         }
 
-        public virtual string spell_list_2
+        public string spell_list_2
         {
             get;
             set;
         }
 
-        public virtual string spell_list_3
+        public string spell_list_3
         {
             get;
             set;
         }
 
-        public virtual string spell_list_4
+        public string spell_list_4
         {
             get;
             set;
         }
 
-        public virtual string spell_list_5
+        public string spell_list_5
         {
             get;
             set;
         }
 
-        public virtual string full_text
+        public string full_text
         {
             get;
             set;
@@ -182,14 +184,64 @@ namespace DNDUtilitiesLib
             set;
         }
 
-        public virtual void delete(int Key)
+        public Classes retrieveRecord(int key)
         {
-            throw new System.NotImplementedException();
+            using (SQLiteConnection conn = new SQLiteConnection())
+            {
+                conn.ConnectionString = CONNECTION_STR;
+                conn.Open();
+
+                String sql = "SELECT class_id, name, hit_die, skill_points, " + 
+                    "(SELECT name from abilities where abilities.ability_id = classes.ability_id), " + 
+                    "(SELECT name from spell_types WHERE spell_types.type_id = classes.type_id) " +
+                    "FROM classes where class_id = @id";
+                SQLiteCommand command = conn.CreateCommand();
+                command.CommandText = sql;
+                command.CommandType = System.Data.CommandType.Text;
+                command.Parameters.Add(new SQLiteParameter("@id", key.ToString()));
+
+                using (SQLiteDataReader read = command.ExecuteReader())
+                {
+                    while (read.Read())
+                    {
+                        class_id = read.GetInt32(0);
+                        name = read.GetString(1);
+                        hit_die = read.GetInt32(2);
+                        skill_points = read.GetInt32(3);
+                        ability = read[4].ToString();
+                        spell_type = read[5].ToString();
+                    }
+                    return this;
+                }
+            }
         }
 
-        public virtual Classes retrieve(int Key)
+        public List<NameKey> retrieveAllNames()
         {
-            throw new System.NotImplementedException();
+            using (SQLiteConnection conn = new SQLiteConnection())
+            {
+                conn.ConnectionString = CONNECTION_STR;
+                conn.Open();
+
+                String sql = "SELECT class_id, name " +
+                    "FROM classes where type = 'base'";
+                SQLiteCommand command = conn.CreateCommand();
+                command.CommandText = sql;
+                command.CommandType = System.Data.CommandType.Text;
+
+                List<NameKey> ls = new List<NameKey>();
+                using (SQLiteDataReader read = command.ExecuteReader())
+                {
+                    while (read.Read())
+                    {
+                        class_id = read.GetInt32(0);
+                        name = read.GetString(1);
+                        NameKey cn = new NameKey(class_id, name);
+                        ls.Add(cn);
+                    }
+                    return ls;
+                }
+            }
         }
 
         public virtual void save(int Key)
@@ -199,7 +251,9 @@ namespace DNDUtilitiesLib
 
         public override string ToString()
         {
-            throw new System.NotImplementedException();
+            return "name: " + name + "hit_die: " + hit_die + "skill_points: " +
+                skill_points + " ability: " + ability + " spell_type: " +
+                spell_type;
         }
 
     }

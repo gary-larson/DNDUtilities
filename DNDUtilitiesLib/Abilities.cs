@@ -9,28 +9,27 @@ namespace DNDUtilitiesLib
 {
     public class Abilities : DBTable_lookup
     {
-        const String TABLE = "abilities";
-        const String FIELD_LIST = "ability_id, name, abbreviation";
-        const String FIELD = "ability_id";
+        const string TABLE = "abilities";
+        const string FIELD = "ability_id";
         private int ability_id
         {
             get;
             set;
         }
 
-        public virtual string name
+        public string name
         {
             get;
             set;
         }
 
-        public virtual string abbreviation
+        public string abbreviation
         {
             get;
             set;
         }
 
-        public virtual Classes classes
+        public Classes classes
         {
             get;
             set;
@@ -50,27 +49,19 @@ namespace DNDUtilitiesLib
             this.abbreviation = Abbreviation;
         }
 
-        public virtual void delete(int Key)
+        public Abilities retrieveRecord(int Key)
         {
-            throw new System.NotImplementedException();
-        }
 
-        public Abilities retrieve(int Key)
-        {
- 
             using (SQLiteConnection conn = new SQLiteConnection())
             {
                 conn.ConnectionString = CONNECTION_STR;
-                //conn.ConnectionString = "data source=C:\\Users\\Gary\\Source\\Repos\\DNDUtilities\\DNDUtilities\\DNDDatabase.db3";
                 conn.Open();
 
-                String sql = "select " + FIELD_LIST + " from " + TABLE + " where " + FIELD + " = @id";
+                String sql = "select ability_id, name, abbreviation from abilities where ability_id = @id";
                 SQLiteCommand command = conn.CreateCommand();
                 command.CommandText = sql;
                 command.CommandType = System.Data.CommandType.Text;
                 command.Parameters.Add(new SQLiteParameter("@id", Key.ToString()));
-                //  using (SQLiteCommand command = new SQLiteCommand(sql, conn))
-                //  {
 
                 using (SQLiteDataReader read = command.ExecuteReader())
                 {
@@ -85,9 +76,9 @@ namespace DNDUtilitiesLib
             }
         }
 
-        public virtual void save(int Key)
+        public List<NameKey> retrieveAll()
         {
-            throw new System.NotImplementedException();
+            return retrieveAll(TABLE, FIELD);
         }
 
         public override string ToString()
