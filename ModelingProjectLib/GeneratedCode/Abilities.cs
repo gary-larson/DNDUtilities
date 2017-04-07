@@ -29,19 +29,13 @@ public class Abilities : DBTable_lookup
 		set;
 	}
 
-	internal virtual string FIELD
+	internal virtual const string TABLE
 	{
 		get;
 		set;
 	}
 
-	internal virtual string FIELD_LIST
-	{
-		get;
-		set;
-	}
-
-	internal virtual string TABLE
+	internal virtual const string FIELD1
 	{
 		get;
 		set;
@@ -53,22 +47,17 @@ public class Abilities : DBTable_lookup
 		set;
 	}
 
-	public virtual void delete(int Key)
+	public virtual Abilities retrieveRecord(int Key)
 	{
 		throw new System.NotImplementedException();
 	}
 
-	public virtual Abilities retrieve(int Key)
+	public virtual List<NameKey> retrieveAll()
 	{
 		throw new System.NotImplementedException();
 	}
 
-	public virtual void save(int Key)
-	{
-		throw new System.NotImplementedException();
-	}
-
-	public virtual string ToString()
+	public virtual string ToString()()
 	{
 		throw new System.NotImplementedException();
 	}

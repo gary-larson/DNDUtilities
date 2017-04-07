@@ -11,5 +11,10 @@ using System.Text;
 
 public class DBTable_bridge : DBTable
 {
+	public override void Delete(string table, string field1, string field2, int key1, int key2)
+	{
+		throw new System.NotImplementedException();
+	}
+
 }
 

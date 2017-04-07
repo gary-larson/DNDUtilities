@@ -11,5 +11,10 @@ using System.Text;
 
 public class DBTable_lookup : DBTable
 {
+	public override List<NameKey> RetrieveAll()()
+	{
+		throw new System.NotImplementedException();
+	}
+
 }
 

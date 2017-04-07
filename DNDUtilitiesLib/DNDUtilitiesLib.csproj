@@ -72,7 +72,15 @@
     <Compile Include="Abilities.cs" />
     <Compile Include="Alignments.cs" />
     <Compile Include="Characters.cs" />
+    <Compile Include="Character_abilities.cs" />
     <Compile Include="Character_classes.cs" />
+    <Compile Include="Character_feats.cs" />
+    <Compile Include="Character_hit_points.cs" />
+    <Compile Include="Character_possesions.cs" />
+    <Compile Include="Character_skills.cs" />
+    <Compile Include="Character_spells.cs" />
+    <Compile Include="Character_stats.cs" />
+    <Compile Include="Character_wounds.cs" />
     <Compile Include="Classes.cs" />
     <Compile Include="NameKey.cs" />
     <Compile Include="Class_alignments.cs" />

@@ -203,22 +203,12 @@ public class Classes : DBTable
 		set;
 	}
 
-	public virtual void delete(int Key)
-	{
-		throw new System.NotImplementedException();
-	}
-
-	public virtual Classes retrieve(int Key)
+	public virtual Classes retrieveRecord()(int Key)
 	{
 		throw new System.NotImplementedException();
 	}
 
 	public virtual void save(int Key)
-	{
-		throw new System.NotImplementedException();
-	}
-
-	public override string ToString()
 	{
 		throw new System.NotImplementedException();
 	}

@@ -170,7 +170,7 @@ public class Equipments : DBTable
 		throw new System.NotImplementedException();
 	}
 
-	public override string ToString()
+	public virtual string ToString()
 	{
 		throw new System.NotImplementedException();
 	}

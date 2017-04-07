@@ -62,10 +62,5 @@ public class Monster_descriptor : DBTable_lookup
 		throw new System.NotImplementedException();
 	}
 
-	public virtual string ToString()
-	{
-		throw new System.NotImplementedException();
-	}
-
 }
 

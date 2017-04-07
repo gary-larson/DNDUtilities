@@ -53,22 +53,12 @@ public class Class_alignments : DBTable_bridge
 		set;
 	}
 
-	public virtual void delete(int Key)
-	{
-		throw new System.NotImplementedException();
-	}
-
-	public virtual Class_alignments retrieve(int Key)
+	public virtual Class_alignments retrieveRecord(int Key)
 	{
 		throw new System.NotImplementedException();
 	}
 
 	public virtual void save(int Key)
-	{
-		throw new System.NotImplementedException();
-	}
-
-	public virtual string ToString()
 	{
 		throw new System.NotImplementedException();
 	}

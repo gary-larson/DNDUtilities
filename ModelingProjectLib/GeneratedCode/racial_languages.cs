@@ -74,10 +74,5 @@ public class Racial_languages : DBTable_bridge
 		throw new System.NotImplementedException();
 	}
 
-	public virtual string ToString()
-	{
-		throw new System.NotImplementedException();
-	}
-
 }
 

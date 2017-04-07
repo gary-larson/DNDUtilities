@@ -254,10 +254,5 @@ public class Monsters : DBTable
 		throw new System.NotImplementedException();
 	}
 
-	public override string ToString()
-	{
-		throw new System.NotImplementedException();
-	}
-
 }
 
