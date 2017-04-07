@@ -76,6 +76,7 @@
     <Compile Include="Character_classes.cs" />
     <Compile Include="Character_feats.cs" />
     <Compile Include="Character_hit_points.cs" />
+    <Compile Include="Character_languages.cs" />
     <Compile Include="Character_possesions.cs" />
     <Compile Include="Character_skills.cs" />
     <Compile Include="Character_spells.cs" />
@@ -120,7 +121,7 @@
     <Compile Include="Spell_schools.cs" />
     <Compile Include="Spell_subschools.cs" />
     <Compile Include="Spell_types.cs" />
-    <Compile Include="Weapon_proficiencies.cs" />
+    <Compile Include="Proficiencies.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
