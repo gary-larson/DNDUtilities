@@ -74,10 +74,5 @@ public class Sizes : DBTable_lookup
 		throw new System.NotImplementedException();
 	}
 
-	public virtual string ToString()
-	{
-		throw new System.NotImplementedException();
-	}
-
 }
 

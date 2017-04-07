@@ -68,10 +68,5 @@ public class Class_skills : DBTable_bridge
 		throw new System.NotImplementedException();
 	}
 
-	public virtual string ToString()
-	{
-		throw new System.NotImplementedException();
-	}
-
 }
 

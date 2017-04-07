@@ -137,22 +137,22 @@ public class Characters : DBTable
 		set;
 	}
 
-	public virtual void delete(int Key)
+	public virtual void delete()
 	{
 		throw new System.NotImplementedException();
 	}
 
-	public virtual Domains retrieve(int Key)
+	public virtual Domains retrieveRecord(int Key)
 	{
 		throw new System.NotImplementedException();
 	}
 
-	public virtual void save(int Key)
+	public virtual void save()
 	{
 		throw new System.NotImplementedException();
 	}
 
-	public override string ToString()
+	public virtual void runSqlite(string Sql, string s1, string s2, int i1, int i2, int i3, string s3, int i4, string s4, int i5, int i6, string s5, string s6, string s7, string s8, int i7)
 	{
 		throw new System.NotImplementedException();
 	}

@@ -68,7 +68,15 @@
     <Compile Include="GeneratedCode\ability_check_adjustments.cs" />
     <Compile Include="GeneratedCode\Alignments.cs" />
     <Compile Include="GeneratedCode\characters.cs" />
+    <Compile Include="GeneratedCode\Character_abilities.cs" />
     <Compile Include="GeneratedCode\character_classes.cs" />
+    <Compile Include="GeneratedCode\Character_feats.cs" />
+    <Compile Include="GeneratedCode\Character_hit_points.cs" />
+    <Compile Include="GeneratedCode\Character_possesions.cs" />
+    <Compile Include="GeneratedCode\Character_skills.cs" />
+    <Compile Include="GeneratedCode\Character_spells.cs" />
+    <Compile Include="GeneratedCode\Character_stats.cs" />
+    <Compile Include="GeneratedCode\Character_wounds.cs" />
     <Compile Include="GeneratedCode\Classes.cs" />
     <Compile Include="GeneratedCode\Class_alignments.cs" />
     <Compile Include="GeneratedCode\Class_skills.cs" />
@@ -90,9 +98,11 @@
     <Compile Include="GeneratedCode\Monster_families.cs" />
     <Compile Include="GeneratedCode\Monster_sizes.cs" />
     <Compile Include="GeneratedCode\Monster_types.cs" />
+    <Compile Include="GeneratedCode\NameKey.cs" />
     <Compile Include="GeneratedCode\Powers.cs" />
     <Compile Include="GeneratedCode\Power_disiplines.cs" />
     <Compile Include="GeneratedCode\Power_subdisciplines.cs" />
+    <Compile Include="GeneratedCode\Proficiencies.cs" />
     <Compile Include="GeneratedCode\races.cs" />
     <Compile Include="GeneratedCode\racial_ability_adjustment.cs" />
     <Compile Include="GeneratedCode\Racial_ability_adjustments.cs" />

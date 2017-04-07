@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 
 namespace DNDUtilitiesLib
 {
+    
     public class DBTable_lookup : DBTable
     {
         public List<NameKey> retrieveAll(string table, string field)

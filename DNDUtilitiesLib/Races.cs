@@ -8,13 +8,15 @@ namespace DNDUtilitiesLib
 {
     public class Races : DBTable
     {
+        const string TABLE = "races";
+        const string FIELD = "race_id";
         private int race_id
         {
             get;
             set;
         }
 
-        public virtual string name
+        public string name
         {
             get;
             set;
@@ -26,79 +28,52 @@ namespace DNDUtilitiesLib
             set;
         }
 
-        public virtual int speed
+        public int speed
         {
             get;
             set;
         }
 
-        public virtual int extra_feat
+        public int extra_feat
         {
             get;
             set;
         }
 
-        public virtual int extra_skill_points
+        public int extra_skill_points
         {
             get;
             set;
         }
 
-        public virtual string speed_condition
+        public string speed_condition
         {
             get;
             set;
         }
 
-        public virtual bool dark_vision
+        public bool dark_vision
         {
             get;
             set;
         }
 
-        public virtual bool low_light_vision
+        public bool low_light_vision
         {
             get;
             set;
         }
 
-        public virtual bool stone_cunning
+        public bool stone_cunning
         {
             get;
             set;
         }
 
-        internal virtual string FIELD
+        
+        public List<NameKey> retrieveAll()
         {
-            get;
-            set;
-        }
-
-        internal virtual string FIELD_LIST
-        {
-            get;
-            set;
-        }
-
-        internal virtual string TABLE
-        {
-            get;
-            set;
-        }
-
-        public virtual void delete(int Key)
-        {
-            throw new System.NotImplementedException();
-        }
-
-        public virtual Domains retrieve(int Key)
-        {
-            throw new System.NotImplementedException();
-        }
-
-        public virtual void save(int Key)
-        {
-            throw new System.NotImplementedException();
+            return retrieveAll(TABLE, FIELD);
         }
 
         public override string ToString()

@@ -170,10 +170,5 @@ public class Powers : DBTable
 		throw new System.NotImplementedException();
 	}
 
-	public override string ToString()
-	{
-		throw new System.NotImplementedException();
-	}
-
 }
 

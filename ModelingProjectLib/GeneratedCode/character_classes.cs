@@ -35,19 +35,25 @@ public class Character_classes : DBTable_bridge
 		set;
 	}
 
-	internal virtual string FIELD
+	internal virtual const String FIELD1
 	{
 		get;
 		set;
 	}
 
-	internal virtual string FIELD_LIST
+	internal virtual const String FIELD2
 	{
 		get;
 		set;
 	}
 
-	internal virtual string TABLE
+	internal virtual const String TABLE
+	{
+		get;
+		set;
+	}
+
+	private int deleted
 	{
 		get;
 		set;
@@ -65,22 +71,17 @@ public class Character_classes : DBTable_bridge
 		set;
 	}
 
-	public virtual void delete(int Key)
+	public virtual void delete(int characterKey, int classKey)
 	{
 		throw new System.NotImplementedException();
 	}
 
-	public virtual Domains retrieve(int Key)
+	public virtual Domains retrieveRecord(int characterKey, int classKey)
 	{
 		throw new System.NotImplementedException();
 	}
 
-	public virtual void save(int Key)
-	{
-		throw new System.NotImplementedException();
-	}
-
-	public virtual string ToString()
+	public virtual void save()
 	{
 		throw new System.NotImplementedException();
 	}

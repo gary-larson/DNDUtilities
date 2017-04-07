@@ -17,46 +17,35 @@ public class Alignments : DBTable
 		set;
 	}
 
-	public virtual string name
+	private string name
 	{
 		get;
 		set;
 	}
 
-	internal virtual string FIELD
+	internal virtual const string TABLE
 	{
 		get;
 		set;
 	}
 
-	internal virtual string FIELD_LIST
+	internal virtual const string FIELD
 	{
 		get;
 		set;
 	}
 
-	internal virtual string TABLE
-	{
-		get;
-		set;
-	}
-
-	public virtual void delete(int Key)
+	public virtual Alignments retrieveRecord(int Key)
 	{
 		throw new System.NotImplementedException();
 	}
 
-	public virtual Alignments retrieve(int Key)
+	public virtual List<NameKey> retrieveAll()
 	{
 		throw new System.NotImplementedException();
 	}
 
-	public virtual void save(int Key)
-	{
-		throw new System.NotImplementedException();
-	}
-
-	public override string ToString()
+	public virtual string ToString()
 	{
 		throw new System.NotImplementedException();
 	}

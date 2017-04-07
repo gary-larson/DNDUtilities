@@ -9,7 +9,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-public class Power_subdisciplines
+public class Power_subdisciplines : DBTable_lookup
 {
 	private int subdiscipline_id
 	{
@@ -58,11 +58,6 @@ public class Power_subdisciplines
 	}
 
 	public virtual void save(int Key)
-	{
-		throw new System.NotImplementedException();
-	}
-
-	public virtual string ToString()
 	{
 		throw new System.NotImplementedException();
 	}
