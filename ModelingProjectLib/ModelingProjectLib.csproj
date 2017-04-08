@@ -72,6 +72,7 @@
     <Compile Include="GeneratedCode\character_classes.cs" />
     <Compile Include="GeneratedCode\Character_feats.cs" />
     <Compile Include="GeneratedCode\Character_hit_points.cs" />
+    <Compile Include="GeneratedCode\character_languages.cs" />
     <Compile Include="GeneratedCode\Character_possesions.cs" />
     <Compile Include="GeneratedCode\Character_skills.cs" />
     <Compile Include="GeneratedCode\Character_spells.cs" />

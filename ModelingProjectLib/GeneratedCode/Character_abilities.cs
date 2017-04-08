@@ -53,5 +53,11 @@ public class Character_abilities : DBTable_bridge
 		set;
 	}
 
+	public virtual Languages Languages
+	{
+		get;
+		set;
+	}
+
 }
 

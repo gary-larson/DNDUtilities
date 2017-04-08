@@ -125,6 +125,18 @@ public class Characters : DBTable
 		set;
 	}
 
+	public virtual int experience_points
+	{
+		get;
+		set;
+	}
+
+	public virtual int money
+	{
+		get;
+		set;
+	}
+
 	public virtual Alignments Alignments
 	{
 		get;
