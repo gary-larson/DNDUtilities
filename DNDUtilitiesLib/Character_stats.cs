@@ -6,267 +6,269 @@ using System.Threading.Tasks;
 
 namespace DNDUtilitiesLib
 {
+    /// <summary>
+    /// Class that represents a record of the database table character_stats
+    /// </summary>
     public class Character_stats : DBTable
     {
+        //Declare constants
+        const string TABLE = "character_stats";
+        const string FIELD = "character_id";
+
+        // Setup fields with properties
         private int character_id
         {
             get;
             set;
         }
 
-        public virtual int total
+        public int total
         {
             get;
             set;
         }
 
-        public virtual int armor_bonus
+        public int armor_bonus
         {
             get;
             set;
         }
 
-        public virtual int shield_bonus
+        public int shield_bonus
         {
             get;
             set;
         }
 
-        public virtual int dex_modifier
+        public int dex_modifier
         {
             get;
             set;
         }
 
-        public virtual int size_modifier
+        public int size_modifier
         {
             get;
             set;
         }
 
-        public virtual int natural_armor
+        public int natural_armor
         {
             get;
             set;
         }
 
-        public virtual int deflection_modifier
+        public int deflection_modifier
         {
             get;
             set;
         }
 
-        public virtual int misc_modifier
+        public int misc_modifier
         {
             get;
             set;
         }
 
-        public virtual int damage_reduction
+        public int damage_reduction
         {
             get;
             set;
         }
 
-        public virtual int touch
+        public int touch
         {
             get;
             set;
         }
 
-        public virtual int flat_footed
+        public int flat_footed
         {
             get;
             set;
         }
 
-        public virtual int initiative_total
+        public int initiative_total
         {
             get;
             set;
         }
 
-        public virtual int initiative_dex_modifier
+        public int initiative_dex_modifier
 	    {
 		    get;
 		    set;
 	    }
 
-        public virtual int initiative_misc_modifier
+        public int initiative_misc_modifier
 	    {
 		    get;
 		    set;
 	    }
 
-        public virtual int fortitude
+        public int fortitude
         {
             get;
             set;
         }
 
-        public virtual object fortitude_base_save
+        public object fortitude_base_save
         {
             get;
             set;
         }
 
-        public virtual int fortitude_ability_modifier
+        public int fortitude_ability_modifier
         {
             get;
             set;
         }
 
-        public virtual int fortitude_magic_modifier
+        public int fortitude_magic_modifier
         {
             get;
             set;
         }
 
-        public virtual int fortitude_misc_modifier
+        public int fortitude_misc_modifier
         {
             get;
             set;
         }
 
-        public virtual int fortitude_temp_modifier
+        public int fortitude_temp_modifier
         {
             get;
             set;
         }
 
-        public virtual string fortitude_conditions
+        public string fortitude_conditions
         {
             get;
             set;
         }
 
-        public virtual int reflex
+        public int reflex
         {
             get;
             set;
         }
 
-        public virtual int reflex_base_save
+        public int reflex_base_save
         {
             get;
             set;
         }
 
-        public virtual int reflex_ability_modifier
+        public int reflex_ability_modifier
         {
             get;
             set;
         }
 
-        public virtual int reflex_magic_modifier
+        public int reflex_magic_modifier
         {
             get;
             set;
         }
 
-        public virtual int reflex_misc_modifier
+        public int reflex_misc_modifier
         {
             get;
             set;
         }
 
-        public virtual int reflex_temp_modifier
+        public int reflex_temp_modifier
         {
             get;
             set;
         }
 
-        public virtual int reflex_conditions
+        public int reflex_conditions
         {
             get;
             set;
         }
 
-        public virtual int will
+        public int will
         {
             get;
             set;
         }
 
-        public virtual int will_base_save
+        public int will_base_save
         {
             get;
             set;
         }
 
-        public virtual int will_ability_modifier
+        public int will_ability_modifier
         {
             get;
             set;
         }
 
-        public virtual int will_magic_modifier
+        public int will_magic_modifier
         {
             get;
             set;
         }
 
-        public virtual int will_misc_modifier
+        public int will_misc_modifier
         {
             get;
             set;
         }
 
-        public virtual int will_temp_modifier
+        public int will_temp_modifier
         {
             get;
             set;
         }
 
-        public virtual string will_conditions
+        public string will_conditions
         {
             get;
             set;
         }
 
-        public virtual int base_attack_bonus
+        public int base_attack_bonus
         {
             get;
             set;
         }
 
-        public virtual int spell_resistance
+        public int spell_resistance
         {
             get;
             set;
         }
 
-        public virtual int grapple
+        public int grapple
         {
             get;
             set;
         }
 
-        public virtual int grapple_base_attack_bonus
+        public int grapple_base_attack_bonus
         {
             get;
             set;
         }
 
-        public virtual int grapple_str_modifier
+        public int grapple_str_modifier
         {
             get;
             set;
         }
 
-        public virtual int grapple_size_modifier
+        public int grapple_size_modifier
         {
             get;
             set;
         }
 
-        public virtual int grapple_misc_modifier
-        {
-            get;
-            set;
-        }
-
-        public virtual Characters Characters
+        public int grapple_misc_modifier
         {
             get;
             set;

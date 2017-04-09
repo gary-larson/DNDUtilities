@@ -6,8 +6,16 @@ using System.Threading.Tasks;
 
 namespace DNDUtilitiesLib
 {
+    /// <summary>
+    /// Class that represents a record of the database table character_wounds
+    /// </summary>
     public class Character_wounds : DBTable_lookup
     {
+        // Declare constants
+        const string TABLE = "character_wounds";
+        const string FIELD = " character_id";
+
+        // Setup fields with properties
         private int character_id
         {
             get;
@@ -20,25 +28,19 @@ namespace DNDUtilitiesLib
             set;
         }
 
-        public virtual int amount
+        public int amount
         {
             get;
             set;
         }
 
-        public virtual bool lethal
+        public bool lethal
         {
             get;
             set;
         }
 
-        public virtual bool deleted
-        {
-            get;
-            set;
-        }
-
-        public virtual Characters Characters
+        public bool deleted
         {
             get;
             set;

@@ -7,10 +7,16 @@ using System.Threading.Tasks;
 
 namespace DNDUtilitiesLib
 {
+    /// <summary>
+    /// Class that represents a record of the database table abilities
+    /// </summary>
     public class Abilities : DBTable_lookup
     {
+        // Declare constants
         const string TABLE = "abilities";
         const string FIELD = "ability_id";
+
+        // Declare fields with properties
         private int ability_id
         {
             get;
@@ -35,6 +41,7 @@ namespace DNDUtilitiesLib
             set;
         }
 
+        // Declare constructors
         public Abilities ()
         {
             ability_id = -1;
@@ -44,11 +51,16 @@ namespace DNDUtilitiesLib
 
         public Abilities (int AbilityId, string Ability, string Abbreviation)
         {
-            this.ability_id = AbilityId;
-            this.name = Ability;
-            this.abbreviation = Abbreviation;
+            ability_id = AbilityId;
+            name = Ability;
+            abbreviation = Abbreviation;
         }
 
+        /// <summary>
+        /// Gets this object to the record determined by character_id
+        /// </summary>
+        /// <param name="Key"></param>
+        /// <returns> this object </returns>
         public Abilities retrieveRecord(int Key)
         {
 
@@ -76,11 +88,21 @@ namespace DNDUtilitiesLib
             }
         }
 
-        public List<NameKey> retrieveAll()
+
+
+        /// <summary>
+        /// gets all records 
+        /// </summary>
+        /// <returns>returns a List with name and ability_id</returns>
+        public static List<NameKey> retrieveAll()
         {
             return retrieveAll(TABLE, FIELD);
         }
 
+        /// <summary>
+        /// outputs object as a string
+        /// </summary>
+        /// <returns>String representing object</returns>
         public override string ToString()
         {
             return "AbilityId: " + ability_id + " Ability: " + name + " Abbreviation: " + abbreviation;

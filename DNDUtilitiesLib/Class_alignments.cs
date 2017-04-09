@@ -6,9 +6,19 @@ using System.Threading.Tasks;
 
 namespace DNDUtilitiesLib
 {
+    /// <summary>
+    /// Class that represents a record of the database table class_alignments
+    /// </summary>
     public class Class_alignments : DBTable_bridge
     {
-        private int alignment_class_id
+        // Declare constants
+        const string TABLE = "class_alignments";
+        const string LIST_TABLE = "alignments";
+        const string SELECT_FIELD = "class_id";
+        const string LIST_FIELD = "alignment_id";
+
+        // Setup fields with properties
+        private int class_id
         {
             get;
             set;
@@ -20,42 +30,23 @@ namespace DNDUtilitiesLib
 		    set;
 	    }
 
-        public virtual Alignments Alignments
+        /// <summary>
+        /// Gets all the alignments associated with a class
+        /// </summary>
+        /// <param name="classKey">Class to retrieve alignments for</param>
+        /// <returns>List of name and keys</returns>
+        public List<NameKey> retrieveAllAlignments(int classKey)
         {
-            get;
-            set;
+            return retrieveAll(TABLE, LIST_TABLE, LIST_FIELD, SELECT_FIELD, classKey);
         }
 
-        public virtual Classes classes
-        {
-            get;
-            set;
-        }
-
-        private List<String> fieldList
-        {
-            get;
-            set;
-        }
-
-        public virtual void delete(int Key)
-        {
-            throw new System.NotImplementedException();
-        }
-
-        public virtual Class_alignments retrieve(int Key)
-        {
-            throw new System.NotImplementedException();
-        }
-
-        public virtual void save(int Key)
-        {
-            throw new System.NotImplementedException();
-        }
-
+        /// <summary>
+        /// Represents object as a string
+        /// </summary>
+        /// <returns>string representation of object</returns>
         public override string ToString()
         {
-            throw new System.NotImplementedException();
+            return "class_id: " + class_id + "allignment_id: " + alignment_id;
         }
 
     }
