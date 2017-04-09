@@ -38,6 +38,7 @@ namespace UICharacterCreation
                 else if (selection == "Edit Character")
             {
                 // Call form for Character editing!
+                MessageBox.Show("Coming soon!");
             }
         }
     }
