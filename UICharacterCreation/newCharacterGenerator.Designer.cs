@@ -43,17 +43,18 @@
             this.genderLabel = new System.Windows.Forms.Label();
             this.genderTextBox = new System.Windows.Forms.TextBox();
             this.heightLabel = new System.Windows.Forms.Label();
-            this.heightTextbox = new System.Windows.Forms.TextBox();
             this.weightLabel = new System.Windows.Forms.Label();
-            this.weightTextBox = new System.Windows.Forms.TextBox();
             this.ageLabel = new System.Windows.Forms.Label();
-            this.ageTextBox = new System.Windows.Forms.TextBox();
             this.eyesLabel = new System.Windows.Forms.Label();
             this.eyesTextBox = new System.Windows.Forms.TextBox();
             this.hairLabel = new System.Windows.Forms.Label();
             this.hairTextBox = new System.Windows.Forms.TextBox();
             this.skinLabel = new System.Windows.Forms.Label();
             this.skinTextBox = new System.Windows.Forms.TextBox();
+            this.subitGeneralInfo = new System.Windows.Forms.Button();
+            this.ageTextBox = new System.Windows.Forms.TextBox();
+            this.weightTextBox = new System.Windows.Forms.TextBox();
+            this.heightTextBox = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // classComboBox
@@ -187,14 +188,6 @@
             this.heightLabel.TabIndex = 14;
             this.heightLabel.Text = "Height (inches):";
             // 
-            // heightTextbox
-            // 
-            this.heightTextbox.Location = new System.Drawing.Point(356, 79);
-            this.heightTextbox.MaxLength = 4;
-            this.heightTextbox.Name = "heightTextbox";
-            this.heightTextbox.Size = new System.Drawing.Size(100, 20);
-            this.heightTextbox.TabIndex = 15;
-            // 
             // weightLabel
             // 
             this.weightLabel.AutoSize = true;
@@ -204,14 +197,6 @@
             this.weightLabel.TabIndex = 16;
             this.weightLabel.Text = "Weight (pounds):";
             // 
-            // weightTextBox
-            // 
-            this.weightTextBox.Location = new System.Drawing.Point(356, 143);
-            this.weightTextBox.MaxLength = 4;
-            this.weightTextBox.Name = "weightTextBox";
-            this.weightTextBox.Size = new System.Drawing.Size(100, 20);
-            this.weightTextBox.TabIndex = 17;
-            // 
             // ageLabel
             // 
             this.ageLabel.AutoSize = true;
@@ -220,14 +205,6 @@
             this.ageLabel.Size = new System.Drawing.Size(63, 13);
             this.ageLabel.TabIndex = 18;
             this.ageLabel.Text = "Age (years):";
-            // 
-            // ageTextBox
-            // 
-            this.ageTextBox.Location = new System.Drawing.Point(356, 187);
-            this.ageTextBox.MaxLength = 4;
-            this.ageTextBox.Name = "ageTextBox";
-            this.ageTextBox.Size = new System.Drawing.Size(100, 20);
-            this.ageTextBox.TabIndex = 19;
             // 
             // eyesLabel
             // 
@@ -240,7 +217,7 @@
             // 
             // eyesTextBox
             // 
-            this.eyesTextBox.Location = new System.Drawing.Point(356, 231);
+            this.eyesTextBox.Location = new System.Drawing.Point(359, 231);
             this.eyesTextBox.MaxLength = 50;
             this.eyesTextBox.Name = "eyesTextBox";
             this.eyesTextBox.Size = new System.Drawing.Size(100, 20);
@@ -257,7 +234,7 @@
             // 
             // hairTextBox
             // 
-            this.hairTextBox.Location = new System.Drawing.Point(353, 271);
+            this.hairTextBox.Location = new System.Drawing.Point(359, 270);
             this.hairTextBox.MaxLength = 50;
             this.hairTextBox.Name = "hairTextBox";
             this.hairTextBox.Size = new System.Drawing.Size(100, 20);
@@ -274,28 +251,63 @@
             // 
             // skinTextBox
             // 
-            this.skinTextBox.Location = new System.Drawing.Point(353, 315);
+            this.skinTextBox.Location = new System.Drawing.Point(359, 314);
             this.skinTextBox.MaxLength = 50;
             this.skinTextBox.Name = "skinTextBox";
             this.skinTextBox.Size = new System.Drawing.Size(100, 20);
             this.skinTextBox.TabIndex = 25;
+            // 
+            // subitGeneralInfo
+            // 
+            this.subitGeneralInfo.Location = new System.Drawing.Point(43, 375);
+            this.subitGeneralInfo.Name = "subitGeneralInfo";
+            this.subitGeneralInfo.Size = new System.Drawing.Size(75, 23);
+            this.subitGeneralInfo.TabIndex = 26;
+            this.subitGeneralInfo.Text = "Submit";
+            this.subitGeneralInfo.UseVisualStyleBackColor = true;
+            this.subitGeneralInfo.Click += new System.EventHandler(this.subitGeneralInfo_Click);
+            // 
+            // ageTextBox
+            // 
+            this.ageTextBox.Location = new System.Drawing.Point(359, 185);
+            this.ageTextBox.MaxLength = 4;
+            this.ageTextBox.Name = "ageTextBox";
+            this.ageTextBox.Size = new System.Drawing.Size(100, 20);
+            this.ageTextBox.TabIndex = 30;
+            // 
+            // weightTextBox
+            // 
+            this.weightTextBox.Location = new System.Drawing.Point(359, 143);
+            this.weightTextBox.MaxLength = 4;
+            this.weightTextBox.Name = "weightTextBox";
+            this.weightTextBox.Size = new System.Drawing.Size(100, 20);
+            this.weightTextBox.TabIndex = 31;
+            // 
+            // heightTextBox
+            // 
+            this.heightTextBox.Location = new System.Drawing.Point(359, 79);
+            this.heightTextBox.MaxLength = 4;
+            this.heightTextBox.Name = "heightTextBox";
+            this.heightTextBox.Size = new System.Drawing.Size(100, 20);
+            this.heightTextBox.TabIndex = 32;
             // 
             // newCharacterGenerator
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(567, 442);
+            this.Controls.Add(this.heightTextBox);
+            this.Controls.Add(this.weightTextBox);
+            this.Controls.Add(this.ageTextBox);
+            this.Controls.Add(this.subitGeneralInfo);
             this.Controls.Add(this.skinTextBox);
             this.Controls.Add(this.skinLabel);
             this.Controls.Add(this.hairTextBox);
             this.Controls.Add(this.hairLabel);
             this.Controls.Add(this.eyesTextBox);
             this.Controls.Add(this.eyesLabel);
-            this.Controls.Add(this.ageTextBox);
             this.Controls.Add(this.ageLabel);
-            this.Controls.Add(this.weightTextBox);
             this.Controls.Add(this.weightLabel);
-            this.Controls.Add(this.heightTextbox);
             this.Controls.Add(this.heightLabel);
             this.Controls.Add(this.genderTextBox);
             this.Controls.Add(this.genderLabel);
@@ -335,16 +347,17 @@
         private System.Windows.Forms.Label genderLabel;
         private System.Windows.Forms.TextBox genderTextBox;
         private System.Windows.Forms.Label heightLabel;
-        private System.Windows.Forms.TextBox heightTextbox;
         private System.Windows.Forms.Label weightLabel;
-        private System.Windows.Forms.TextBox weightTextBox;
         private System.Windows.Forms.Label ageLabel;
-        private System.Windows.Forms.TextBox ageTextBox;
         private System.Windows.Forms.Label eyesLabel;
         private System.Windows.Forms.TextBox eyesTextBox;
         private System.Windows.Forms.Label hairLabel;
         private System.Windows.Forms.TextBox hairTextBox;
         private System.Windows.Forms.Label skinLabel;
         private System.Windows.Forms.TextBox skinTextBox;
+        private System.Windows.Forms.Button subitGeneralInfo;
+        private System.Windows.Forms.TextBox ageTextBox;
+        private System.Windows.Forms.TextBox weightTextBox;
+        private System.Windows.Forms.TextBox heightTextBox;
     }
 }

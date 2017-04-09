@@ -34,7 +34,7 @@ namespace UICharacterCreation
         public Character_classes classLevels;
         public Character_feats charFeats;
         public Character_hit_points HP;
-        public character_languages languages;
+        public Character_languages languages;
         public Character_possesions possessions;
         public Character_skills skills;
         public Character_spells spells;
@@ -48,7 +48,7 @@ namespace UICharacterCreation
             classLevels = new Character_classes();
             charFeats = new Character_feats();
             HP = new Character_hit_points();
-            languages = new character_languages();
+            languages = new Character_languages();
             possessions = new Character_possesions();
             skills = new Character_skills();
             spells = new Character_spells();
