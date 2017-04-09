@@ -7,10 +7,16 @@ using System.Threading.Tasks;
 
 namespace DNDUtilitiesLib
 {
+    /// <summary>
+    /// Class that represents a record of the database table alignments
+    /// </summary>
     public class Alignments : DBTable_lookup
     {
+        // Declare constants
         const string TABLE = "alignments";
         const string FIELD = "alignment_id";
+
+        // Setup fields with properties
         private int alignment_id
         {
             get;
@@ -23,11 +29,20 @@ namespace DNDUtilitiesLib
             set;
         }
 
-        public List<NameKey> retrieveAll()
+        /// <summary>
+        /// Gets all records
+        /// </summary>
+        /// <returns>list of name and ability_id</returns>
+        public static List<NameKey> retrieveAll()
         {
             return retrieveAll(TABLE, FIELD);
         }
 
+        /// <summary>
+        /// Gets record based on ability_id
+        /// </summary>
+        /// <param name="Key"></param>
+        /// <returns>the record requested</returns>
         public Alignments retrieveRecord(int Key)
         {
 
@@ -53,7 +68,10 @@ namespace DNDUtilitiesLib
                 }
             }
         }
-
+        /// <summary>
+        /// represents this object as a string
+        /// </summary>
+        /// <returns></returns>
         public override string ToString()
         {
             return "Alignment " + name + " alignment_id: " + alignment_id;

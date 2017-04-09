@@ -6,8 +6,17 @@ using System.Threading.Tasks;
 
 namespace DNDUtilitiesLib
 {
+    /// <summary>
+    /// Class that represents a record of the database table character_skills
+    /// </summary>
     public class Character_skills : DBTable_bridge
     {
+        // Declare constants
+        const string TABLE = "character_skills";
+        const string FIELD1 = "character_id";
+        const string FIELD2 = "skill_id";
+
+        // Setup fields with properties
         private int character_id
         {
             get;
@@ -20,37 +29,25 @@ namespace DNDUtilitiesLib
             set;
         }
 
-        public virtual int skill_rank
+        public int skill_rank
         {
             get;
             set;
         }
 
-        public virtual int skill_modifier
+        public int skill_modifier
         {
             get;
             set;
         }
 
-        public virtual int ability_modifier
+        public int ability_modifier
         {
             get;
             set;
         }
 
-        public virtual int misc_modifier
-        {
-            get;
-            set;
-        }
-
-        public virtual Skills Skills
-        {
-            get;
-            set;
-        }
-
-        public virtual Characters Characters
+        public int misc_modifier
         {
             get;
             set;

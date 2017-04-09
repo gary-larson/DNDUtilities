@@ -7,20 +7,34 @@ using System.Threading.Tasks;
 
 namespace DNDUtilitiesLib
 {
+    /// <summary>
+    /// Class that represents a record of the database table character_classes
+    /// </summary>
     public class Character_classes : DBTable_bridge
     {
+        // Declares constants
         private const string TABLE = "character_classes";
         private const string FIELD1 = "character_id";
         private const string FIELD2 = "class_id";
         
+        /// <summary>
+        /// Constructor to initialize fileds
+        /// </summary>
         public Character_classes ()
         {
-            this.character_id = -1;
-            this.class_id = -1;
-            this.level = 0;
-            this.caster_level = 0;
+            character_id = -1;
+            class_id = -1;
+            level = 0;
+            caster_level = 0;
         }
 
+        /// <summary>
+        /// Constructor to populate all fields
+        /// </summary>
+        /// <param name="character_id">primary key</param>
+        /// <param name="class_id">primary key</param>
+        /// <param name="level"> level of class</param>
+        /// <param name="caster_level">spell caster level</param>
         public Character_classes(int character_id, int class_id, int level, int caster_level)
         {
             this.character_id = character_id;
@@ -28,6 +42,8 @@ namespace DNDUtilitiesLib
             this.level = level;
             this.caster_level = caster_level;
         }
+
+        // setup fields with properties
         private int character_id
         {
             get;
@@ -54,24 +70,22 @@ namespace DNDUtilitiesLib
 
         private int deleted;
         
-
-        public Characters characters
-        {
-            get;
-            set;
-        }
-
-        public Classes Classes
-        {
-            get;
-            set;
-        }
-
+        /// <summary>
+        /// Deletes record indicated by primary key
+        /// </summary>
+        /// <param name="characterKey">part of primary key</param>
+        /// <param name="classKey">part of primary key</param>
         public void delete(int characterKey, int classKey)
         {
             delete(TABLE, FIELD1, FIELD2, characterKey, classKey);
         }
 
+        /// <summary>
+        /// Gets record indicated by primary key
+        /// </summary>
+        /// <param name="characterKey">part of primary key</param>
+        /// <param name="classKey">part of primary key</param>
+        /// <returns>Object with record</returns>
         public Character_classes retrieveRecord(int characterKey, int classKey)
         {
 
@@ -85,25 +99,25 @@ namespace DNDUtilitiesLib
                 SQLiteCommand command = conn.CreateCommand();
                 command.CommandText = sql;
                 command.CommandType = System.Data.CommandType.Text;
-                command.Parameters.Add(new SQLiteParameter("@id1", characterKey.ToString()));
-                command.Parameters.Add(new SQLiteParameter("@id2", classKey.ToString()));
+                command.Parameters.Add(new SQLiteParameter("id1", characterKey.ToString()));
+                command.Parameters.Add(new SQLiteParameter("id2", classKey.ToString()));
 
                 using (SQLiteDataReader read = command.ExecuteReader())
                 {
                     if (read.Read())
                     {
-                        this.character_id = read.GetInt32(0);
-                        this.class_id = read.GetInt32(1);
-                        this.level = read.GetInt32(2);
-                        this.caster_level = read.GetInt32(3);
-                        this.deleted = read.GetInt32(4);
+                        character_id = read.GetInt32(0);
+                        class_id = read.GetInt32(1);
+                        level = read.GetInt32(2);
+                        caster_level = read.GetInt32(3);
+                        deleted = read.GetInt32(4);
                     } else
                     {
-                        this.character_id = -1;
-                        this.class_id = -1;
-                        this.level = 0;
-                        this.caster_level = 0;
-                        this.deleted = 0;
+                        character_id = -1;
+                        class_id = -1;
+                        level = 0;
+                        caster_level = 0;
+                        deleted = 0;
                     }
                 }
                 conn.Close();
@@ -111,34 +125,33 @@ namespace DNDUtilitiesLib
             }
         }
 
+        /// <summary>
+        /// Inserts record if primary key does not exists otherwise updates record
+        /// </summary>
         public void save()
         {
             String sql;
-            int i1 = this.character_id, i2 = this.class_id, i3 = this.level, i4 = this.caster_level;
-            using (SQLiteConnection conn = new SQLiteConnection())
+            
+            
+            if (!keyExists(TABLE, FIELD1, FIELD2, character_id, class_id))
             {
-                
-
-                retrieveRecord(character_id, class_id);
-                
-                if (this.character_id == -1 || this.class_id == -1)
-                {
-                    sql = "INSERT INTO character_classes (character_id, class_id, level, caster_level, deleted)" +
-                        " VALUES (@id1, @id2, @id3, @id4, 0)";
-                } else
-                {
-                    sql = "UPDATE character_classes SET level = @id3, caster_level = @id4" +
-                        " WHERE character_id = @id1 AND class_id = @id2";
-                }
-                int i = runSqlite(sql, i1, i2, i3, i4);
-                if (i > 0)
-                {
-                    retrieveRecord(i1, i2);
-                }
+                sql = "INSERT INTO character_classes (character_id, class_id, level, caster_level, deleted)" +
+                    " VALUES (@id1, @id2, @id3, @id4, 0)";
+            } else
+            {
+                sql = "UPDATE character_classes SET level = @id3, caster_level = @id4" +
+                    " WHERE character_id = @id1 AND class_id = @id2";
             }
-        }
+            int i = runSqlite(sql);
+            
+       }
 
-        private int runSqlite (String sql, int i1, int i2, int i3, int i4)
+        /// <summary>
+        /// Helper method to process Sql command
+        /// </summary>
+        /// <param name="sql">Sql command to process</param>
+        /// <returns>number of records affected</returns>
+        private int runSqlite(String sql)
         {
             int i;
             using (SQLiteConnection conn = new SQLiteConnection())
@@ -149,10 +162,10 @@ namespace DNDUtilitiesLib
                 command.CommandText = sql;
                 command.CommandType = System.Data.CommandType.Text;
 
-                command.Parameters.AddWithValue("id1", i1);
-                command.Parameters.AddWithValue("id2", i2);
-                command.Parameters.AddWithValue("id3", i3);
-                command.Parameters.AddWithValue("id4", i4);
+                command.Parameters.AddWithValue("id1", character_id);
+                command.Parameters.AddWithValue("id2", class_id);
+                command.Parameters.AddWithValue("id3", level);
+                command.Parameters.AddWithValue("id4", caster_level);
 
                 i = command.ExecuteNonQuery();
                 conn.Close();
@@ -160,6 +173,10 @@ namespace DNDUtilitiesLib
             return i;
         }
 
+        /// <summary>
+        /// String representation of the record in this object
+        /// </summary>
+        /// <returns></returns>
         public override string ToString()
         {
             return "Character Key: " + character_id + " Class Key: " + class_id +

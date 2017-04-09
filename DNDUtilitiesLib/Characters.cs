@@ -7,11 +7,16 @@ using System.Threading.Tasks;
 
 namespace DNDUtilitiesLib
 {
+    /// <summary>
+    /// Class that represents a record of the database table characters
+    /// </summary>
     public class Characters : DBTable
     {
+        //declare constants
         const string TABLE = "characters";
         const string FIELD = "character_id";
 
+        //Setup fields with properties
         private int character_id
         {
             get;
@@ -120,6 +125,9 @@ namespace DNDUtilitiesLib
             set;
         }
 
+        /// <summary>
+        /// Constructor to initialize member variables
+        /// </summary>
         public Characters()
         {
             this.character_id = -1;
@@ -142,6 +150,11 @@ namespace DNDUtilitiesLib
             this.deleted = 0;
         }
 
+        /// <summary>
+        /// Retrieve record from database
+        /// </summary>
+        /// <param name="characterKey">To determine record to get</param>
+        /// <returns>this object populated from database if record exists</returns>
         public Characters retrieveRecord(int characterKey)
         {
 
@@ -210,49 +223,57 @@ namespace DNDUtilitiesLib
             }
         }
 
-        public void save()
+        /// <summary>
+        /// Get all character names
+        /// </summary>
+        /// <returns>list of all names</returns>
+        public List<NameKey> retrieveAll()
         {
+            return retrieveAll(TABLE, FIELD);
+        }
+
+        /// <summary>
+        /// Save record in database if does not exist Update existing record otherwise
+        /// </summary>
+        /// <returns>true if saved false otherwise</returns>
+        public bool save()
+        {
+            int i;
             String sql;
-            int i1 = this.character_id, i2 = this.number_of_classes, 
-                i3 = this.race_id, i4 = this.alignment_id, i5 = this.age, i7 = this.weight, 
-                i6 = this.height, i8 = this.deleted;
-            string s1 = this.name, s2 = this.player_name, s3 = this.race, s4 = this.alignment,
-                s5 = this.deity, s6 = this.gender, s7 = this.eyes, s8 = this.hair, s9 = this.skin,
-                s10 = this.description;
+            
             using (SQLiteConnection conn = new SQLiteConnection())
             {
-
-
-                retrieveRecord(character_id);
-                int i;  // Changed position this was declared so that the iffstatement below stopped returning an error
-                        // Val, 08-apr-2017
-                if (this.character_id == -1)
+                // tests if record exists
+                if (!keyExists(TABLE, FIELD, character_id))
                 {
                     sql = "INSERT INTO characters (name, player_name, number_of_classes, " +
                     "race_id, alignment_id, deity, age, gender, height, weight, eyes, hair, skin, description, deleted)" +
                         " VALUES (@id1, @id2, @id3, @id4, @id5, @id6, @id7, @id8, @id9, @id10, @id11, @id12, @id13, @id14, @id15)";
-                    i = runSqlite(sql, s1, s2, i2, i3, i4, s5, i5, s6, i6, i7, s7, s8, s9, s10, 0);
+                    i = runSqlite(sql, true);
                 }
                 else
                 {
-                    sql = "UPDATE characters SET name = @1d1, player_name = @1d2, " + 
-                        "number_of_classes= @ id3, race_id = @id4, alignment_id = @id5, " +
+                    sql = "UPDATE characters SET name = @id1, player_name = @id2, " + 
+                        "number_of_classes = @id3, race_id = @id4, alignment_id = @id5, " +
                         "deity = @id6, age = @id7, gender = @id8, height = @id9, " + 
-                        "weight = @id10, eyes = @1d11, hair = @id12, skin = @id13, " +
+                        "weight = @id10, eyes = @id11, hair = @id12, skin = @id13, " +
                         "description = @id14 WHERE character_id = @id15";
-                    i = runSqlite(sql, s1, s2, i2, i3, i4, s5, i5, s6, i6, i7, s7, s8, s9, s10, i1);
-                }
-                
+                    i = runSqlite(sql, false);
+          }
+
                 if (i > 0)
-                {
-                    retrieveRecord(i1);
-                }
+                    return true;
+                else
+                    return false;
             }
         }
 
-        private int runSqlite(String sql, string s1, string s2, int i2, int i3, int i4, 
-            string s5, int i5, string s6, int i6, int i7, string s7, string s8, string s9,
-            string s10, int i8)
+        /// <summary>
+        /// Helper function to establish connection to database and run a non query
+        /// </summary>
+        /// <param name="sql">String with SQL statement</param>
+        /// <returns>number of records affected</returns>
+        private int runSqlite(String sql, bool isInsert)
         {
             int i;
             using (SQLiteConnection conn = new SQLiteConnection())
@@ -263,21 +284,29 @@ namespace DNDUtilitiesLib
                 command.CommandText = sql;
                 command.CommandType = System.Data.CommandType.Text;
 
-                command.Parameters.AddWithValue("id1", s1);
-                command.Parameters.AddWithValue("id2", s2);
-                command.Parameters.AddWithValue("id3", i2);
-                command.Parameters.AddWithValue("id4", i3);
-                command.Parameters.AddWithValue("id5", i4);
-                command.Parameters.AddWithValue("id6", s5);
-                command.Parameters.AddWithValue("id7", i5);
-                command.Parameters.AddWithValue("id8", s6);
-                command.Parameters.AddWithValue("id9", i6);
-                command.Parameters.AddWithValue("id10", i7);
-                command.Parameters.AddWithValue("id11", s7);
-                command.Parameters.AddWithValue("id12", s8);
-                command.Parameters.AddWithValue("id13", s9);
-                command.Parameters.AddWithValue("id14", s10);
-                command.Parameters.AddWithValue("id15", i8);
+                command.Parameters.AddWithValue("id1", this.name);
+                command.Parameters.AddWithValue("id2", this.player_name);
+                command.Parameters.AddWithValue("id3", this.number_of_classes);
+
+                command.Parameters.AddWithValue("id4", this.race_id);
+                command.Parameters.AddWithValue("id5", this.alignment_id);
+                command.Parameters.AddWithValue("id6", this.deity);
+                command.Parameters.AddWithValue("id7", this.age);
+                command.Parameters.AddWithValue("id8", this.gender);
+                command.Parameters.AddWithValue("id9", this.height);
+                command.Parameters.AddWithValue("id10", this.weight);
+                command.Parameters.AddWithValue("id11", this.eyes);
+                command.Parameters.AddWithValue("id12", this.hair);
+                command.Parameters.AddWithValue("id13", this.skin);
+                command.Parameters.AddWithValue("id14", this.description);
+                if (isInsert)
+                {
+                    command.Parameters.AddWithValue("id15", this.deleted);
+                }
+                else
+                {
+                    command.Parameters.AddWithValue("id15", this.character_id);
+                }
 
 
                 i = command.ExecuteNonQuery();
@@ -286,11 +315,16 @@ namespace DNDUtilitiesLib
             return i;
         }
 
+        /// <summary>
+        /// Deletes the record represented by character_id
+        /// </summary>
         public void delete()
         {
             delete(TABLE, FIELD, character_id);
         }
 
+
+        // Gives string representation of this object
         public override string ToString()
         {
             return "name: " + name + " Player: " + player_name;
