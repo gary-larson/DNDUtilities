@@ -224,13 +224,14 @@ namespace DNDUtilitiesLib
 
 
                 retrieveRecord(character_id);
-
+                int i;  // Changed position this was declared so that the iffstatement below stopped returning an error
+                        // Val, 08-apr-2017
                 if (this.character_id == -1)
                 {
                     sql = "INSERT INTO characters (name, player_name, number_of_classes, " +
                     "race_id, alignment_id, deity, age, gender, height, weight, eyes, hair, skin, description, deleted)" +
                         " VALUES (@id1, @id2, @id3, @id4, @id5, @id6, @id7, @id8, @id9, @id10, @id11, @id12, @id13, @id14, @id15)";
-                    int i = runSqlite(sql, s1, s2, i2, i3, i4, s5, i5, s6, i6, i7, s7, s8, s9, s10, 0);
+                    i = runSqlite(sql, s1, s2, i2, i3, i4, s5, i5, s6, i6, i7, s7, s8, s9, s10, 0);
                 }
                 else
                 {
@@ -239,7 +240,7 @@ namespace DNDUtilitiesLib
                         "deity = @id6, age = @id7, gender = @id8, height = @id9, " + 
                         "weight = @id10, eyes = @1d11, hair = @id12, skin = @id13, " +
                         "description = @id14 WHERE character_id = @id15";
-                    int i = runSqlite(sql, s1, s2, i2, i3, i4, s5, i5, s6, i6, i7, s7, s8, s9, s10, i1);
+                    i = runSqlite(sql, s1, s2, i2, i3, i4, s5, i5, s6, i6, i7, s7, s8, s9, s10, i1);
                 }
                 
                 if (i > 0)
