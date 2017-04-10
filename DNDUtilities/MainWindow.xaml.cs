@@ -30,7 +30,10 @@ namespace DNDUtilities
         private void button_Click(object sender, RoutedEventArgs e)
         {
             String s = "";
-            Character_hit_points a = new Character_hit_points();
+            Characters c = new Characters();
+            c.retrieveRecord(1);
+            
+            //Character_hit_points a = new Character_hit_points();
             //bool b = Character_hit_points.delete(2, 6);
             //int result = Character_hit_points.GetTotalHitPoints(1);
             //          a.modifier = 1;
@@ -38,11 +41,11 @@ namespace DNDUtilities
             //          a.temp_modifier = 3;
             //          a.save();
           //  bool b = a.delete(1, 1);
-            List<NameKey> nk = Abilities.retrieveAll();
-               foreach (NameKey n in nk)
-              {
-                s += n.ToString();
-              }
+          //  List<NameKey> nk = Abilities.retrieveAll();
+           //    foreach (NameKey n in nk)
+           //   {
+         //       s += n.ToString();
+          //    }
             // a.player_name = "Keith";
             // a.save();
             //s = result.ToString();
