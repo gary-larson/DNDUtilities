@@ -17,10 +17,11 @@ namespace DNDUtilitiesLib
         const string FIELD = "character_id";
 
         //Setup fields with properties
-        private int character_id
+
+        public int character_id
         {
-            get;
-            set;
+            get;    // Edited to be Public, with a private Set, to allow for Character_ID to be pulled to construct other neccessary classes.
+            private set;
         }
 
         public string name

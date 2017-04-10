@@ -8,10 +8,12 @@ namespace DNDUtilitiesLib
 {
     public class NameKey
     {
-        private int key
+        public int key
         {
+            // class altered to make key accessibel for reading, not accessible for writing. this prevents corruption, 
+            // security is not our perogative
             get;
-            set;
+            private set;
         }
 
         private string name
