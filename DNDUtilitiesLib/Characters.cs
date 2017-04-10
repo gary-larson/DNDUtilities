@@ -235,10 +235,11 @@ namespace DNDUtilitiesLib
         /// <summary>
         /// Save record in database if does not exist Update existing record otherwise
         /// </summary>
-        /// <returns>true if saved false otherwise</returns>
-        public bool save()
+        /// <returns>character_id is successful -1 otherwise</returns>
+        public int save()
         {
             int i;
+            int id;
             String sql;
             
             using (SQLiteConnection conn = new SQLiteConnection())
@@ -250,6 +251,41 @@ namespace DNDUtilitiesLib
                     "race_id, alignment_id, deity, age, gender, height, weight, eyes, hair, skin, description, deleted)" +
                         " VALUES (@id1, @id2, @id3, @id4, @id5, @id6, @id7, @id8, @id9, @id10, @id11, @id12, @id13, @id14, @id15)";
                     i = runSqlite(sql, true);
+                    if (i > 0)
+                    {
+                        sql = "SELECT character_id FROM characters where name = @id1 AND player_name = @id2 AND number_of_classes = @id3 AND race_id = @id4 AND " +
+                            "alignment_id = @id5 AND deity = @id6 AND age = @id7 AND gender = @id8 AND height = @id9 AND weight = @id10 AND eyes = @id11 AND " +
+                            "hair = @id12 AND skin = @id13 AND description = @id14 AND deleted = @id15";
+                        SQLiteCommand command = conn.CreateCommand();
+                        command.CommandText = sql;
+                        command.CommandType = System.Data.CommandType.Text;
+                        command.Parameters.AddWithValue("id1", this.name);
+                        command.Parameters.AddWithValue("id2", this.player_name);
+                        command.Parameters.AddWithValue("id3", this.number_of_classes);
+
+                        command.Parameters.AddWithValue("id4", this.race_id);
+                        command.Parameters.AddWithValue("id5", this.alignment_id);
+                        command.Parameters.AddWithValue("id6", this.deity);
+                        command.Parameters.AddWithValue("id7", this.age);
+                        command.Parameters.AddWithValue("id8", this.gender);
+                        command.Parameters.AddWithValue("id9", this.height);
+                        command.Parameters.AddWithValue("id10", this.weight);
+                        command.Parameters.AddWithValue("id11", this.eyes);
+                        command.Parameters.AddWithValue("id12", this.hair);
+                        command.Parameters.AddWithValue("id13", this.skin);
+                        command.Parameters.AddWithValue("id14", this.description);
+                        command.Parameters.AddWithValue("id15", this.deleted);
+
+                        using (SQLiteDataReader read = command.ExecuteReader())
+                        {
+                            if (read.Read())
+                            {
+                                id = read.GetInt32(0);
+                            }
+                            else id = -1;
+                        }
+                    }
+
                 }
                 else
                 {
@@ -259,12 +295,13 @@ namespace DNDUtilitiesLib
                         "weight = @id10, eyes = @id11, hair = @id12, skin = @id13, " +
                         "description = @id14 WHERE character_id = @id15";
                     i = runSqlite(sql, false);
+                            if (i > 0)
+                                id = character_id;
+                            else
+                                id = -1;
                 }
 
-                if (i > 0)
-                    return true;
-                else
-                    return false;
+                return -1;
             }
         }
 
