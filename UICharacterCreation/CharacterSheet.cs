@@ -22,7 +22,7 @@ namespace UICharacterCreation
         // Character Classes is a Collection of All classes a particular Character has, adhering to the [Name]X [Name2]Y format
         // Character_feats is a collection of all feats a character has, classified by Character ID
         // Character_hit_points is the Total HP at each level, requireing careful calculations when Con modifers change
-        // Character_Languages is jsut a collection of a character's languages
+        // Character_Languages is just a collection of a character's languages
         // Character Possessions is a collection of a character's equipment, with space for equip position and quantity
         // Character Skills Stores how many _full_ ranks are allocated in each skill. Partial ranks are not supported. 
         // Character Spells is a listing of all Spells Known by a Character
@@ -40,6 +40,14 @@ namespace UICharacterCreation
         public Character_spells spells;
         public Character_stats stats;
         public Character_wounds wounds;
+
+        public int ID
+        {
+            get
+            {
+                return charInfo.character_id;
+            }
+        }
 
         public CharacterSheet()
         {

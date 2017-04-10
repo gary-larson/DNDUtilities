@@ -51,11 +51,12 @@
             this.hairTextBox = new System.Windows.Forms.TextBox();
             this.skinLabel = new System.Windows.Forms.Label();
             this.skinTextBox = new System.Windows.Forms.TextBox();
-            this.subitGeneralInfo = new System.Windows.Forms.Button();
+            this.submitGeneralInfo = new System.Windows.Forms.Button();
             this.ageTextBox = new System.Windows.Forms.TextBox();
             this.weightTextBox = new System.Windows.Forms.TextBox();
             this.heightTextBox = new System.Windows.Forms.TextBox();
             this.AbilityScoreGroupBox = new System.Windows.Forms.GroupBox();
+            this.disclaimerLabel = new System.Windows.Forms.Label();
             this.rollDiceButton = new System.Windows.Forms.Button();
             this.reRollOneBox = new System.Windows.Forms.CheckBox();
             this.swapBox6 = new System.Windows.Forms.CheckBox();
@@ -88,7 +89,7 @@
             this.AbilityNameLabel = new System.Windows.Forms.Label();
             this.abilityGenerationSelector = new System.Windows.Forms.ComboBox();
             this.methodLabel = new System.Windows.Forms.Label();
-            this.disclaimerLabel = new System.Windows.Forms.Label();
+            this.addBackstoryButton = new System.Windows.Forms.Button();
             this.AbilityScoreGroupBox.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -292,15 +293,15 @@
             this.skinTextBox.Size = new System.Drawing.Size(100, 20);
             this.skinTextBox.TabIndex = 25;
             // 
-            // subitGeneralInfo
+            // submitGeneralInfo
             // 
-            this.subitGeneralInfo.Location = new System.Drawing.Point(435, 394);
-            this.subitGeneralInfo.Name = "subitGeneralInfo";
-            this.subitGeneralInfo.Size = new System.Drawing.Size(75, 23);
-            this.subitGeneralInfo.TabIndex = 26;
-            this.subitGeneralInfo.Text = "Submit";
-            this.subitGeneralInfo.UseVisualStyleBackColor = true;
-            this.subitGeneralInfo.Click += new System.EventHandler(this.subitGeneralInfo_Click);
+            this.submitGeneralInfo.Location = new System.Drawing.Point(410, 394);
+            this.submitGeneralInfo.Name = "submitGeneralInfo";
+            this.submitGeneralInfo.Size = new System.Drawing.Size(100, 23);
+            this.submitGeneralInfo.TabIndex = 26;
+            this.submitGeneralInfo.Text = "Submit";
+            this.submitGeneralInfo.UseVisualStyleBackColor = true;
+            this.submitGeneralInfo.Click += new System.EventHandler(this.submitGeneralInfo_Click);
             // 
             // ageTextBox
             // 
@@ -368,6 +369,15 @@
             this.AbilityScoreGroupBox.TabStop = false;
             this.AbilityScoreGroupBox.Text = "Ability Scores";
             // 
+            // disclaimerLabel
+            // 
+            this.disclaimerLabel.AutoSize = true;
+            this.disclaimerLabel.Location = new System.Drawing.Point(132, 254);
+            this.disclaimerLabel.Name = "disclaimerLabel";
+            this.disclaimerLabel.Size = new System.Drawing.Size(217, 13);
+            this.disclaimerLabel.TabIndex = 31;
+            this.disclaimerLabel.Text = "*These are your stats before Racial modifiers";
+            // 
             // rollDiceButton
             // 
             this.rollDiceButton.Location = new System.Drawing.Point(165, 34);
@@ -397,6 +407,7 @@
             this.swapBox6.TabIndex = 28;
             this.swapBox6.Text = "swapBox6";
             this.swapBox6.UseVisualStyleBackColor = true;
+            this.swapBox6.CheckedChanged += new System.EventHandler(this.swapBox_CheckedChanged);
             // 
             // swapBox5
             // 
@@ -407,6 +418,7 @@
             this.swapBox5.TabIndex = 27;
             this.swapBox5.Text = "swapBox5";
             this.swapBox5.UseVisualStyleBackColor = true;
+            this.swapBox5.CheckedChanged += new System.EventHandler(this.swapBox_CheckedChanged);
             // 
             // swapBox4
             // 
@@ -417,6 +429,7 @@
             this.swapBox4.TabIndex = 26;
             this.swapBox4.Text = "swapBox4";
             this.swapBox4.UseVisualStyleBackColor = true;
+            this.swapBox4.CheckedChanged += new System.EventHandler(this.swapBox_CheckedChanged);
             // 
             // swapBox3
             // 
@@ -427,6 +440,7 @@
             this.swapBox3.TabIndex = 25;
             this.swapBox3.Text = "swapBox3";
             this.swapBox3.UseVisualStyleBackColor = true;
+            this.swapBox3.CheckedChanged += new System.EventHandler(this.swapBox_CheckedChanged);
             // 
             // swapBox2
             // 
@@ -437,6 +451,7 @@
             this.swapBox2.TabIndex = 24;
             this.swapBox2.Text = "swapBox2";
             this.swapBox2.UseVisualStyleBackColor = true;
+            this.swapBox2.CheckedChanged += new System.EventHandler(this.swapBox_CheckedChanged);
             // 
             // swapBox1
             // 
@@ -447,6 +462,7 @@
             this.swapBox1.TabIndex = 23;
             this.swapBox1.Text = "swapBox1";
             this.swapBox1.UseVisualStyleBackColor = true;
+            this.swapBox1.CheckedChanged += new System.EventHandler(this.swapBox_CheckedChanged);
             // 
             // abilitySwapLabel
             // 
@@ -528,6 +544,7 @@
             this.abilityTextBox6.Name = "abilityTextBox6";
             this.abilityTextBox6.Size = new System.Drawing.Size(42, 20);
             this.abilityTextBox6.TabIndex = 14;
+            this.abilityTextBox6.TextChanged += new System.EventHandler(this.abilityTextBox_TextChanged);
             // 
             // abilityTextBox5
             // 
@@ -537,6 +554,7 @@
             this.abilityTextBox5.Name = "abilityTextBox5";
             this.abilityTextBox5.Size = new System.Drawing.Size(42, 20);
             this.abilityTextBox5.TabIndex = 13;
+            this.abilityTextBox5.TextChanged += new System.EventHandler(this.abilityTextBox_TextChanged);
             // 
             // abilityTextBox4
             // 
@@ -546,6 +564,7 @@
             this.abilityTextBox4.Name = "abilityTextBox4";
             this.abilityTextBox4.Size = new System.Drawing.Size(42, 20);
             this.abilityTextBox4.TabIndex = 12;
+            this.abilityTextBox4.TextChanged += new System.EventHandler(this.abilityTextBox_TextChanged);
             // 
             // abilityTextBox3
             // 
@@ -555,6 +574,7 @@
             this.abilityTextBox3.Name = "abilityTextBox3";
             this.abilityTextBox3.Size = new System.Drawing.Size(42, 20);
             this.abilityTextBox3.TabIndex = 11;
+            this.abilityTextBox3.TextChanged += new System.EventHandler(this.abilityTextBox_TextChanged);
             // 
             // abilityTextBox2
             // 
@@ -564,6 +584,7 @@
             this.abilityTextBox2.Name = "abilityTextBox2";
             this.abilityTextBox2.Size = new System.Drawing.Size(42, 20);
             this.abilityTextBox2.TabIndex = 10;
+            this.abilityTextBox2.TextChanged += new System.EventHandler(this.abilityTextBox_TextChanged);
             // 
             // abilityTextBox1
             // 
@@ -573,6 +594,7 @@
             this.abilityTextBox1.Name = "abilityTextBox1";
             this.abilityTextBox1.Size = new System.Drawing.Size(42, 20);
             this.abilityTextBox1.TabIndex = 9;
+            this.abilityTextBox1.TextChanged += new System.EventHandler(this.abilityTextBox_TextChanged);
             // 
             // abilityScoreValue
             // 
@@ -668,25 +690,27 @@
             this.methodLabel.TabIndex = 0;
             this.methodLabel.Text = "Ability Score Method";
             // 
-            // disclaimerLabel
+            // addBackstoryButton
             // 
-            this.disclaimerLabel.AutoSize = true;
-            this.disclaimerLabel.Location = new System.Drawing.Point(132, 254);
-            this.disclaimerLabel.Name = "disclaimerLabel";
-            this.disclaimerLabel.Size = new System.Drawing.Size(217, 13);
-            this.disclaimerLabel.TabIndex = 31;
-            this.disclaimerLabel.Text = "*These are your stats before Racial modifiers";
+            this.addBackstoryButton.Location = new System.Drawing.Point(410, 365);
+            this.addBackstoryButton.Name = "addBackstoryButton";
+            this.addBackstoryButton.Size = new System.Drawing.Size(100, 23);
+            this.addBackstoryButton.TabIndex = 34;
+            this.addBackstoryButton.Text = "Add Backstory";
+            this.addBackstoryButton.UseVisualStyleBackColor = true;
+            this.addBackstoryButton.Click += new System.EventHandler(this.addBackstoryButton_Click);
             // 
             // newCharacterGenerator
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(567, 442);
+            this.Controls.Add(this.addBackstoryButton);
             this.Controls.Add(this.AbilityScoreGroupBox);
             this.Controls.Add(this.heightTextBox);
             this.Controls.Add(this.weightTextBox);
             this.Controls.Add(this.ageTextBox);
-            this.Controls.Add(this.subitGeneralInfo);
+            this.Controls.Add(this.submitGeneralInfo);
             this.Controls.Add(this.skinTextBox);
             this.Controls.Add(this.skinLabel);
             this.Controls.Add(this.hairTextBox);
@@ -744,7 +768,7 @@
         private System.Windows.Forms.TextBox hairTextBox;
         private System.Windows.Forms.Label skinLabel;
         private System.Windows.Forms.TextBox skinTextBox;
-        private System.Windows.Forms.Button subitGeneralInfo;
+        private System.Windows.Forms.Button submitGeneralInfo;
         private System.Windows.Forms.TextBox ageTextBox;
         private System.Windows.Forms.TextBox weightTextBox;
         private System.Windows.Forms.TextBox heightTextBox;
@@ -782,5 +806,6 @@
         private System.Windows.Forms.Button rollDiceButton;
         private System.Windows.Forms.CheckBox reRollOneBox;
         private System.Windows.Forms.Label disclaimerLabel;
+        private System.Windows.Forms.Button addBackstoryButton;
     }
 }

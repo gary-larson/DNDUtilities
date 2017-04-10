@@ -17,10 +17,11 @@ namespace DNDUtilitiesLib
         const string FIELD = "character_id";
 
         //Setup fields with properties
-        private int character_id
+
+        public int character_id
         {
-            get;
-            set;
+            get;    // Edited to be Public, with a private Set, to allow for Character_ID to be pulled to construct other neccessary classes.
+            private set;
         }
 
         public string name
@@ -259,7 +260,7 @@ namespace DNDUtilitiesLib
                         "weight = @id10, eyes = @id11, hair = @id12, skin = @id13, " +
                         "description = @id14 WHERE character_id = @id15";
                     i = runSqlite(sql, false);
-          }
+                }
 
                 if (i > 0)
                     return true;

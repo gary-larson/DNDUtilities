@@ -58,6 +58,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CharacterSheet.cs" />
+    <Compile Include="backstory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="backstory.Designer.cs">
+      <DependentUpon>backstory.cs</DependentUpon>
+    </Compile>
     <Compile Include="newCharacterGenerator.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -72,6 +78,9 @@
     </Compile>
     <Compile Include="UISelection.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="backstory.resx">
+      <DependentUpon>backstory.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="newCharacterGenerator.resx">
       <DependentUpon>newCharacterGenerator.cs</DependentUpon>
     </EmbeddedResource>
