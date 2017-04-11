@@ -31,8 +31,30 @@ namespace DNDUtilities
         {
             String s = "";
             Characters c = new Characters();
-            c.retrieveRecord(1);
-            
+            c.name = "Thalic";
+            c.player_name = "Dude";
+            c.number_of_classes = 1;
+            c.career_level = 1;
+            c.race = "Gnome";
+            c.alignment = "Neutral good";
+            c.deity = null;
+            c.size = "Medium";
+            c.age = 102;
+            c.gender = "Male";
+            c.height = 32;
+            c.weight = 80;
+            c.eyes = "Brown";
+            c.hair = "Brown";
+            c.skin = "Ruddy Brown";
+            c.description = "Short happy go lucky halfling";
+            c.speed = 20;
+            c.experience_points = 105;
+            c.money = 1500;
+            c.deleted = 0;
+            int id = c.save();
+            c.player_name = "Dudette";
+            id = c.save();
+            s = id.ToString();
             //Character_hit_points a = new Character_hit_points();
             //bool b = Character_hit_points.delete(2, 6);
             //int result = Character_hit_points.GetTotalHitPoints(1);
@@ -40,12 +62,12 @@ namespace DNDUtilities
             //          a.temp = 2;
             //          a.temp_modifier = 3;
             //          a.save();
-          //  bool b = a.delete(1, 1);
-          //  List<NameKey> nk = Abilities.retrieveAll();
-           //    foreach (NameKey n in nk)
-           //   {
-         //       s += n.ToString();
-          //    }
+            //  bool b = a.delete(1, 1);
+            //  List<NameKey> nk = Abilities.retrieveAll();
+            //    foreach (NameKey n in nk)
+            //   {
+            //       s += n.ToString();
+            //    }
             // a.player_name = "Keith";
             // a.save();
             //s = result.ToString();
