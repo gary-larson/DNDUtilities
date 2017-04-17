@@ -81,20 +81,28 @@ namespace DNDUtilitiesLib
         /// </summary>
         /// <param name="key">the character key</param>
         /// <returns>List of name and keys for the languages</returns>
-        public static List<NameKey> retrieveAlllanguages(int key)
+        public static List<NameKey> retrieveAllLanguages(int key)
         {
             return retrieveAll(TABLE, LIST_TABLE, FIELD2, FIELD1, key);
         }
 
         /// <summary>
-        /// Inserts record if primary key does not exists otherwise returns false
+        /// Inserts record if primary key does not exists otherwise updates record
         /// </summary>
-        /// <returns>True if record is added false otherwise</returns>
-        public bool save()
+        /// <param name="characterKey">character key if included it is used else uses character_id</param>
+        /// <param name=languageKey">language key if included it is used else uses language_id</param>
+        public bool save(int characterKey = -1, int languageKey = -1)
         {
             String sql;
 
-
+            if (characterKey > 0)
+            {
+                character_id = characterKey;
+            }
+            if (languageKey > 0)
+            {
+                language_id = languageKey;
+            }
             if (!keyExists(TABLE, FIELD1, FIELD2, character_id, language_id))
             {
                 sql = "INSERT INTO character_languages (character_id, language_id)" +

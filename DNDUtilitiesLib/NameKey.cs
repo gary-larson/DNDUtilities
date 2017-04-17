@@ -16,7 +16,7 @@ namespace DNDUtilitiesLib
             private set;
         }
 
-        private string name
+        public string name
         {
             get;
             set;

@@ -100,6 +100,48 @@ namespace DNDUtilitiesLib
         }
 
         /// <summary>
+        /// Gets record indicated by primary key
+        /// </summary>
+        /// <param name="characterKey">part of primary key</param>
+        /// <param name="level">part of primary key</param>
+        /// <returns>Object with record</returns>
+        public Character_hit_points retrieveRecord(int characterKey, int level)
+        {
+
+            using (SQLiteConnection conn = new SQLiteConnection())
+            {
+                conn.ConnectionString = CONNECTION_STR;
+                conn.Open();
+
+                String sql = "SELECT character_id, level, amount FROM character_hit_points " +
+                    "WHERE character_id = @id1 AND level = @id2";
+                SQLiteCommand command = conn.CreateCommand();
+                command.CommandText = sql;
+                command.CommandType = System.Data.CommandType.Text;
+                command.Parameters.Add(new SQLiteParameter("id1", characterKey.ToString()));
+                command.Parameters.Add(new SQLiteParameter("id2", level.ToString()));
+
+                using (SQLiteDataReader read = command.ExecuteReader())
+                {
+                    if (read.Read())
+                    {
+                        character_id = read.GetInt32(0);
+                        this.level = read.GetInt32(1);
+                        amount = read.GetInt32(2);
+                    }
+                    else
+                    {
+                        character_id = -1;
+                        level = -1;
+                        amount = 0;
+                    }
+                }
+                conn.Close();
+                return this;
+            }
+        }
+
+        /// <summary>
         /// Deletes a record from character_hit_points
         /// </summary>
         public static bool delete(int characterKey, int levelKey)

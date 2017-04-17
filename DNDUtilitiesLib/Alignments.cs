@@ -33,7 +33,7 @@ namespace DNDUtilitiesLib
         /// Gets all records
         /// </summary>
         /// <returns>list of name and ability_id</returns>
-        public static List<NameKey> retrieveAll()
+        public static List<NameKey> retrieveAllAlignments()
         {
             return retrieveAll(TABLE, FIELD);
         }
