@@ -10,10 +10,11 @@ namespace DNDUtilitiesLib
     /// <summary>
     /// Class that represents a record of the database table character_possesions
     /// </summary>
-    public class Character_possesions : DBTable_bridge
+    public class Character_possessions : DBTable_bridge
     {
         //Declare constants
-        const string TABLE = "character_possesions";
+        const string TABLE = "character_possessions";
+        const string LIST_TABLE = "equipments";
         const string FIELD1 = "character_id";
         const string FIELD2 = "equipment_id";
 
@@ -63,7 +64,7 @@ namespace DNDUtilitiesLib
         /// <summary>
         /// Default constructor
         /// </summary>
-        public Character_possesions()
+        public Character_possessions()
         {
             character_id = -1;
             equipment_id = -1;
@@ -83,7 +84,7 @@ namespace DNDUtilitiesLib
         /// <param name="location">location</param>
         /// <param name="magic_value">magic value</param>
         /// /// <param name="special_properties">special propertiese</param>
-        public Character_possesions(int character_id, int equipment_id, int quantity, string location, int magic_value, string special_properties)
+        public Character_possessions(int character_id, int equipment_id, int quantity, string location, int magic_value, string special_properties)
         {
             this.character_id = character_id;
             this.equipment_id = equipment_id;
@@ -100,14 +101,15 @@ namespace DNDUtilitiesLib
         /// <param name="characterKey">character key</param>
         /// <param name="equipmentkey">equipment key</param>
         /// <returns></returns>
-        public Character_possesions retrieveRecord(int characterKey, int equipmentKey)
+        public Character_possessions retrieveRecord(int characterKey, int equipmentKey)
         {
             using (SQLiteConnection conn = new SQLiteConnection())
             {
                 conn.ConnectionString = CONNECTION_STR;
                 conn.Open();
 
-                String sql = "SELECT (SELECT name FROM possesions WHERE ability_id = @id1), modifier, temp, temp_modifier FROM possesions, character_possesions where character_id = @id2";
+                String sql = "SELECT character_id, equipment_id, (SELECT name FROM equipments WHERE equipment_id = @id1), quantity, location, magic_value, special_properties " +
+                    "FROM character_possessions where character_id = @id2 AND equipment_id = @id1";
                 SQLiteCommand command = conn.CreateCommand();
                 command.CommandText = sql;
                 command.CommandType = System.Data.CommandType.Text;
@@ -118,11 +120,13 @@ namespace DNDUtilitiesLib
                 {
                     if (read.Read())
                     {
-                        equipmentName = read.GetString(0);
-                        quantity = read.GetInt32(1);
-                        location = read[2].ToString();
-                        magic_value = read.GetInt32(3);
-                        special_properties = read[4].ToString();
+                        character_id = read.GetInt32(0);
+                        equipment_id = read.GetInt32(1);
+                        equipmentName = read.GetString(2);
+                        quantity = read.GetInt32(3);
+                        location = read[4].ToString();
+                        magic_value = read.GetInt32(5);
+                        special_properties = read[6].ToString();
                     }
                     return this;
                 }
@@ -130,13 +134,33 @@ namespace DNDUtilitiesLib
         }
 
         /// <summary>
+        /// Gets all possesions for the character (returns only the name)
+        /// use retrieveRecord to get more information
+        /// </summary>
+        /// <param name="key">the character key</param>
+        /// <returns>List of name and keys for the possesions</returns>
+        public static List<NameKey> retrieveAllPossesions(int key)
+        {
+            return retrieveAll(TABLE, LIST_TABLE, FIELD2, FIELD1, key);
+        }
+
+        /// <summary>
         /// Inserts record if primary key does not exists otherwise updates record
         /// </summary>
-        public void save()
+        /// <param name="characterKey">character key if included it is used else uses character_id</param>
+        /// <param name=possessionKey">possession key if included it is used else uses possession_id</param>
+        public void save(int characterKey = -1, int possessionKey = -1)
         {
             String sql;
 
-
+            if (characterKey > 0)
+            {
+                character_id = characterKey;
+            }
+            if (possessionKey > 0)
+            {
+                equipment_id = possessionKey;
+            }
             if (!keyExists(TABLE, FIELD1, FIELD2, character_id, equipment_id))
             {
                 sql = "INSERT INTO character_possesions (character_id, equipment_id, quantity, location, magic_value, special_properties)" +

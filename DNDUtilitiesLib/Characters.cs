@@ -15,7 +15,7 @@ namespace DNDUtilitiesLib
         //declare constants
         const string TABLE = "characters";
         const string FIELD = "character_id";
-
+        
         //Setup fields with properties
 
         public int character_id
@@ -265,7 +265,7 @@ namespace DNDUtilitiesLib
         /// Get all character names
         /// </summary>
         /// <returns>list of all names</returns>
-        public List<NameKey> retrieveAll()
+        public static List<NameKey> retrieveAll()
         {
             return retrieveAll(TABLE, FIELD);
         }
@@ -295,7 +295,7 @@ namespace DNDUtilitiesLib
                         "(SELECT size_id FROM sizes WHERE name = @id8), " +
                         "@id9, @id10, @id11, @id12, @id13, @id14, @id15, @id16, @id17, @id18, @id19, 0);" + 
                         "SELECT character_id FROM characters WHERE name = @id1 AND player_name = @id2 AND deleted = 0";
-                   
+                  
                     conn.ConnectionString = CONNECTION_STR;
                     conn.Open();
                     SQLiteCommand command = conn.CreateCommand();

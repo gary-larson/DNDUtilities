@@ -17,10 +17,10 @@ namespace DNDUtilitiesLib
         const string FIELD = "ability_id";
 
         // Declare fields with properties
-        private int ability_id
+        public int ability_id
         {
             get;
-            set;
+            private set;
         }
 
         public string name
@@ -94,7 +94,7 @@ namespace DNDUtilitiesLib
         /// gets all records 
         /// </summary>
         /// <returns>returns a List with name and ability_id</returns>
-        public static List<NameKey> retrieveAll()
+        public static List<NameKey> retrieveAllAbilities()
         {
             return retrieveAll(TABLE, FIELD);
         }

@@ -55,7 +55,7 @@ namespace DNDUtilitiesLib
         /// Removes a record from table
         /// </summary>
         /// <param name="character_id">part of primary key</param>
-        /// <param name="feat_id">oart of primary key</param>
+        /// <param name="feat_id">part of primary key</param>
         /// <returns>True if record is deleted False otherwise</returns>
         public static bool delete(int character_id, int feat_id)
         {
@@ -87,14 +87,22 @@ namespace DNDUtilitiesLib
         }
 
         /// <summary>
-        /// Inserts record if primary key does not exists otherwise returns false
+        /// Inserts record if primary key does not exists otherwise updates record
         /// </summary>
-        /// <returns>True if record is added false otherwise</returns>
-        public bool save()
+        /// <param name="characterKey">character key if included it is used else uses character_id</param>
+        /// <param name=featKey">feat key if included it is used else uses feat_id</param>
+        public bool save(int characterKey = -1, int featKey = -1)
         {
             String sql;
 
-            
+            if (characterKey > 0)
+            {
+                character_id = characterKey;
+            }
+            if (featKey > 0)
+            {
+                feat_id = featKey;
+            }
             if (!keyExists(TABLE, FIELD1, FIELD2, character_id, feat_id))
             {
                 sql = "INSERT INTO character_feats (character_id, feat_id)" +

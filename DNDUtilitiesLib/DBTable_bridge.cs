@@ -91,11 +91,13 @@ namespace DNDUtilitiesLib
                 conn.ConnectionString = CONNECTION_STR;
                 conn.Open();
 
-                String sql = "SELECT " + listTable + "." + listField + ", name FROM " + table + ", " + listTable + " WHERE " + selectField + " = @id1";
+                String sql = "SELECT " + listTable + "." + listField + ", name FROM " + table + ", " + listTable + 
+                    " WHERE " + selectField + " = @id1 AND " + listTable + "." + listField + " = " + table + "." + listField;
                 SQLiteCommand command = conn.CreateCommand();
                 command.CommandText = sql;
                 command.CommandType = System.Data.CommandType.Text;
                 command.Parameters.Add(new SQLiteParameter("id1", fieldKey.ToString()));
+                command.Parameters.Add(new SQLiteParameter("id2", selectField.ToString()));
 
                 using (SQLiteDataReader read = command.ExecuteReader())
                 {

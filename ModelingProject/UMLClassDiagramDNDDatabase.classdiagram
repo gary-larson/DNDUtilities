@@ -38659,7 +38659,7 @@
       </class>
     </logicalClassDesignerModelHasTypes>
     <logicalClassDesignerModelHasTypes>
-      <class Id="21372afb-45a8-43aa-ba35-c7d25471780a" name="Character_possesions" isAbstract="false" isLeaf="false" isActiveClass="false">
+      <class Id="21372afb-45a8-43aa-ba35-c7d25471780a" name="Character_possessions" isAbstract="false" isLeaf="false" isActiveClass="false">
         <appliedStereotypesInternal>
           <stereotypeInstance Id="2734d60c-e444-47a8-9e5a-b714a35e9eb1" name="class" profile="CSharpProfile">
             <elementDefinition Id="b41099d7-9b44-413f-81ab-f68d0af7f214" />

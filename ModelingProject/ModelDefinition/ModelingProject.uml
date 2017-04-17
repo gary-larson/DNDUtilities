@@ -71597,7 +71597,7 @@
     <packageHasNamedElement>
       <class
         Id="2fd59754-0af1-4db4-8cf9-de351ba09629"
-        name="Character_possesions"
+        name="Character_possessions"
         isAbstract="false"
         isLeaf="false"
         isActiveClass="false">

@@ -98,7 +98,9 @@ namespace DNDUtilitiesLib
                 conn.ConnectionString = CONNECTION_STR;
                 conn.Open();
 
-                String sql = "SELECT (SELECT name FROM abilities WHERE ability_id = @id1), modifier, temp, temp_modifier FROM abilities, character_abilities where character_id = @id2";
+                String sql = "SELECT character_id, ability_id, (SELECT name FROM abilities WHERE ability_id = @id1), modifier, temp, temp_modifier " +
+                    "FROM character_abilities " +
+                    "WHERE character_id = @id2 AND ability_id = @id1";
                 SQLiteCommand command = conn.CreateCommand();
                 command.CommandText = sql;
                 command.CommandType = System.Data.CommandType.Text;
@@ -109,10 +111,13 @@ namespace DNDUtilitiesLib
                 {
                     if (read.Read())
                     {
-                        abilityName = read.GetString(0);
-                        modifier = read.GetInt32(1);
-                        temp = read.GetInt32(2);
-                        temp_modifier = read.GetInt32(3);
+                        character_id = read.GetInt32(0);
+                        ability_id = read.GetInt32(1);
+                        abilityName = read.GetString(2);
+                        modifier = read.GetInt32(3);
+                        temp = read.GetInt32(4);
+                        temp_modifier = read.GetInt32(5);
+                        
                     }
                     return this;
                 }
@@ -122,11 +127,20 @@ namespace DNDUtilitiesLib
         /// <summary>
         /// Inserts record if primary key does not exists otherwise updates record
         /// </summary>
-        public void save()
+        /// <param name="characterKey">character key if included it is used else uses character_id</param>
+        /// <param name=abilityKey">ability key if included it is used else uses ability_id</param>
+        public void save(int characterKey = -1, int abilityKey = -1)
         {
             String sql;
 
-            
+            if (characterKey > 0)
+            {
+                character_id = characterKey;
+            } 
+            if (abilityKey > 0)
+            {
+                ability_id = abilityKey;
+            }
             if (!keyExists(TABLE, FIELD1, FIELD2, character_id, ability_id))
             {
                 sql = "INSERT INTO character_abilities (character_id, ability_id, modifier, temp, temp_modifier)" +

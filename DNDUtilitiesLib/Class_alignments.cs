@@ -35,7 +35,7 @@ namespace DNDUtilitiesLib
         /// </summary>
         /// <param name="classKey">Class to retrieve alignments for</param>
         /// <returns>List of name and keys</returns>
-        public List<NameKey> retrieveAllAlignments(int classKey)
+        public static List<NameKey> retrieveAllAlignments(int classKey)
         {
             return retrieveAll(TABLE, LIST_TABLE, LIST_FIELD, SELECT_FIELD, classKey);
         }

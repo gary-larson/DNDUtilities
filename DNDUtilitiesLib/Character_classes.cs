@@ -56,13 +56,19 @@ namespace DNDUtilitiesLib
             set;
         }
 
-        private int level
+        public string className
         {
             get;
             set;
         }
 
-        private int caster_level
+        public int level
+        {
+            get;
+            set;
+        }
+
+        public int caster_level
         {
             get;
             set;
@@ -94,7 +100,8 @@ namespace DNDUtilitiesLib
                 conn.ConnectionString = CONNECTION_STR;
                 conn.Open();
 
-                String sql = "SELECT character_id, class_id, level, caster_level, deleted FROM character_classes " + 
+                String sql = "SELECT character_id, class_id, (SELECT name FROM classes WHERE class_id = @id2), level, caster_level, deleted " +
+                    "FROM character_classes " +
                     "WHERE character_id = @id1 AND class_id = @id2 AND deleted = 0";
                 SQLiteCommand command = conn.CreateCommand();
                 command.CommandText = sql;
@@ -108,13 +115,15 @@ namespace DNDUtilitiesLib
                     {
                         character_id = read.GetInt32(0);
                         class_id = read.GetInt32(1);
-                        level = read.GetInt32(2);
-                        caster_level = read.GetInt32(3);
-                        deleted = read.GetInt32(4);
+                        className = read.GetString(2);
+                        level = read.GetInt32(3);
+                        caster_level = read.GetInt32(4);
+                        deleted = read.GetInt32(5);
                     } else
                     {
                         character_id = -1;
                         class_id = -1;
+                        className = null;
                         level = 0;
                         caster_level = 0;
                         deleted = 0;
@@ -128,11 +137,20 @@ namespace DNDUtilitiesLib
         /// <summary>
         /// Inserts record if primary key does not exists otherwise updates record
         /// </summary>
-        public void save()
+        /// <param name="characterKey">character key if included it is used else uses character_id</param>
+        /// <param name=classKey">class key if included it is used else uses class_id</param>
+        public void save(int characterKey = -1, int classKey = -1)
         {
             String sql;
-            
-            
+
+            if (characterKey > 0)
+            {
+                character_id = characterKey;
+            }
+            if (classKey > 0)
+            {
+                class_id = classKey;
+            }
             if (!keyExists(TABLE, FIELD1, FIELD2, character_id, class_id))
             {
                 sql = "INSERT INTO character_classes (character_id, class_id, level, caster_level, deleted)" +
@@ -179,7 +197,7 @@ namespace DNDUtilitiesLib
         /// <returns></returns>
         public override string ToString()
         {
-            return "Character Key: " + character_id + " Class Key: " + class_id +
+            return "Character Key: " + character_id + " Class Name: " + className +
                 " Level: " + level + " Caster Level: " + caster_level + " deleted: " +
                 deleted;
         }
