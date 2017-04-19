@@ -8,15 +8,16 @@ namespace DNDUtilitiesLib
 {
     public class Class_tables : DBTable
     {
-        private int class_table_id
+        public int class_table_id
         {
             get;
+            private set;
         }
 
-        private int class_id
+        public int class_id
         {
             get;
-            set;
+            private set;
         }
 
         public virtual int level

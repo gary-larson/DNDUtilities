@@ -8,16 +8,16 @@ namespace DNDUtilitiesLib
 {
     public class Monsters : DBTable
     {
-        private int monster_id
+        public int monster_id
         {
             get;
-            set;
+            private set;
         }
 
-        private int monster_family_id
+        public int monster_family_id
 	    {
 		    get;
-		    set;
+		    private set;
 	    }
 
         public virtual string name
@@ -32,22 +32,22 @@ namespace DNDUtilitiesLib
             set;
         }
 
-        private int size_id
+        public int size_id
         {
             get;
-            set;
+            private set;
         }
 
-        private int type_id
+        public int type_id
         {
             get;
-            set;
+            private set;
         }
 
-        private int descriptor_id
+        public int descriptor_id
         {
             get;
-            set;
+            private set;
         }
 
         public virtual string hit_dice

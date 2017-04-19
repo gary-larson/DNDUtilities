@@ -11,10 +11,10 @@ namespace DNDUtilitiesLib
     {
         public const string TABLE = "equipments";
         public const string FIELD = "equipment_id";
-        private int equipment_id
+        public int equipment_id
         {
             get;
-            set;
+            private set;
         }
 
         public virtual string name
@@ -29,16 +29,16 @@ namespace DNDUtilitiesLib
             set;
         }
 
-        private int category_id
+        public int category_id
         {
             get;
-            set;
+            private set;
         }
 
-        private int subcategory_id
+        public int subcategory_id
         {
             get;
-            set;
+            private set;
         }
 
         public string cost

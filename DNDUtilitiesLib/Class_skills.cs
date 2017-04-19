@@ -8,16 +8,16 @@ namespace DNDUtilitiesLib
 {
     public class Class_skills : DBTable_bridge
     {
-        private int class_id
+        public int class_id
         {
             get;
-            set;
+            private set;
         }
 
-        private int skill_id
+        public int skill_id
         {
             get;
-            set;
+            private set;
         }
 
         public virtual Classes classes

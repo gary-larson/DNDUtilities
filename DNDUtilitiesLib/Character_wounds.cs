@@ -17,16 +17,16 @@ namespace DNDUtilitiesLib
         const string FIELD = "wound_id";
 
         // Setup fields with properties
-        private int character_id
+        public int character_id
         {
             get;
-            set;
+            private set;
         }
 
-        private int wound_id
+        public int wound_id
         {
             get;
-            set;
+            private set;
         }
 
         public int amount

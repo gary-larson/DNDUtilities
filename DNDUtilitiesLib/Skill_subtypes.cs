@@ -8,10 +8,10 @@ namespace DNDUtilitiesLib
 {
     public class Skill_subtypes : DBTable_lookup
     {
-        private int subtype_id
+        public int subtype_id
         {
             get;
-            set;
+            private set;
         }
 
         public virtual string name
@@ -20,10 +20,10 @@ namespace DNDUtilitiesLib
             set;
         }
 
-        private int skill_id
+        public int skill_id
         {
             get;
-            set;
+            private set;
         }
 
         private List<String> fieldList

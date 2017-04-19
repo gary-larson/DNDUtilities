@@ -9,10 +9,10 @@ namespace DNDUtilitiesLib
     class Equipment_subcategory : DBTable_lookup
     {
 
-        private int subcategory_id
+        public int subcategory_id
         {
             get;
-            set;
+            private set;
         }
 
         public virtual string name

@@ -9,10 +9,10 @@ namespace DNDUtilitiesLib
     class Monster_families : DBTable_lookup
     {
 
-        private int family_id
+        public int family_id
         {
             get;
-            set;
+            privateset;
         }
 
         public virtual string name

@@ -10,10 +10,10 @@ namespace DNDUtilitiesLib
     {
         public const string TABLE = "spells";
         public const string FIELD = "spell_id";
-        private int spell_id
+        public int spell_id
         {
             get;
-            set;
+            private set;
         }
 
         public string name
@@ -28,16 +28,16 @@ namespace DNDUtilitiesLib
             set;
         }
 
-        private int school_id
+        public int school_id
         {
             get;
-            set;
+            private set;
         }
 
-        private int subschool_id
+        public int subschool_id
         {
             get;
-            set;
+            private set;
         }
 
         public string descriptor

@@ -8,10 +8,10 @@ namespace DNDUtilitiesLib
 {
     public class Domains : DBTable
     {
-        private int domain_id
+        public int domain_id
         {
             get;
-            set;
+            private set;
         }
 
         public virtual string name

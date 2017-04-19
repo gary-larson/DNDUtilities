@@ -8,10 +8,10 @@ namespace DNDUtilitiesLib
 {
     public class Monster_descriptor : DBTable_lookup
     {
-        private int descriptor_id
+        public int descriptor_id
         {
             get;
-            set;
+            private set;
         }
 
         public virtual string name

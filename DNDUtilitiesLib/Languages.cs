@@ -11,10 +11,10 @@ namespace DNDUtilitiesLib
         public const string TABLE = "languages";
         public const string FIELD = "language_id";
 
-        private int language_id
+        public int language_id
         {
             get;
-            set;
+            private set;
         }
 
         public string name

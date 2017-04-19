@@ -18,10 +18,10 @@ namespace DNDUtilitiesLib
         const string FIELD2 = "ability_id";
 
         // Set up fields with properties
-        private int character_id
+        public int character_id
         {
             get;
-            set;
+            private set;
         }
 
         public string abilityName
@@ -30,10 +30,10 @@ namespace DNDUtilitiesLib
             set;
         }
 
-        private int ability_id
+        public int ability_id
         {
             get;
-            set;
+            private set;
         }
 
         public int modifier

@@ -8,10 +8,10 @@ namespace DNDUtilitiesLib
 {
     public class Spell_schools : DBTable_lookup
     {
-        private int school_id
+        public int school_id
         {
             get;
-            set;
+            private set;
         }
 
         public virtual string name

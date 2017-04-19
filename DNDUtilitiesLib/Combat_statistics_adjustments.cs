@@ -8,10 +8,10 @@ namespace DNDUtilitiesLib
 {
     public class Combat_statistics_adjustments : DBTable_bridge
     {
-        private int combat_statistic_adjustment_id
+        public int combat_statistic_adjustment_id
         {
             get;
-            set;
+            private set;
         }
 
         public virtual int adjustment
@@ -26,16 +26,16 @@ namespace DNDUtilitiesLib
             set;
         }
 
-        private int race_id
+        public int race_id
         {
             get;
-            set;
+            private set;
         }
 
-        private int class_id
+        public int class_id
         {
             get;
-            set;
+            private set;
         }
 
         internal virtual string FIELD

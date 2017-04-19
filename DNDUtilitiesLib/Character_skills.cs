@@ -19,16 +19,16 @@ namespace DNDUtilitiesLib
         const string FIELD2 = "skill_id";
 
         // Setup fields with properties
-        private int character_id
+        public int character_id
         {
             get;
-            set;
+            private set;
         }
 
-        private int skill_id
+        public int skill_id
         {
             get;
-            set;
+            private set;
         }
 
         public string skillName

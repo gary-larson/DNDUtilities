@@ -18,16 +18,16 @@ namespace DNDUtilitiesLib
         const string LIST_FIELD = "alignment_id";
 
         // Setup fields with properties
-        private int class_id
+        public int class_id
         {
             get;
-            set;
+            private set;
         }
 
-        private int alignment_id
+        public int alignment_id
 	    {
 		    get;
-		    set;
+		    private set;
 	    }
 
         /// <summary>

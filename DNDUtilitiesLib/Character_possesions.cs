@@ -19,10 +19,10 @@ namespace DNDUtilitiesLib
         const string FIELD2 = "equipment_id";
 
         // Setup fields with properties
-        private int character_id
+        public int character_id
         {
             get;
-            set;
+            private set;
         }
 
         public string equipmentName
@@ -31,10 +31,10 @@ namespace DNDUtilitiesLib
             set;
         }
 
-        private int equipment_id
+        public int equipment_id
         {
             get;
-            set;
+            private set;
         }
 
         public int quantity

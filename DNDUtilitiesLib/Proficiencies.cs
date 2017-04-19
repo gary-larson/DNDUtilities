@@ -11,37 +11,37 @@ namespace DNDUtilitiesLib
     {
         public const string TABLE = "proficiencies";
         public const string FIELD = "weapon_proficiency_id";
-        private int weapon_proficiency_id
+        public int weapon_proficiency_id
         {
             get;
-            set;
+            private set;
         }
 
-       private int equipment_id
+       public int equipment_id
         {
             get;
-            set;
+            private set;
         }
 
-        private int category_id
+        public int category_id
         {
             get;
-            set;
+            private set;
         }
 
-        private int subcategory_id
+        public int subcategory_id
         {
             get;
-            set;
+            private set;
         }
 
-        private int class_id
+        public int class_id
         {
             get;
-            set;
+            private set;
         }
 
-        private String description
+        public String description
         {
             get;
             set;

@@ -44,16 +44,16 @@ namespace DNDUtilitiesLib
         }
 
         // setup fields with properties
-        private int character_id
+        public int character_id
         {
             get;
-            set;
+            private set;
         }
 
-        private int class_id
+        public int class_id
         {
             get;
-            set;
+            private set;
         }
 
         public string className

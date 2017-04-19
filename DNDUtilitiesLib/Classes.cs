@@ -10,10 +10,10 @@ namespace DNDUtilitiesLib
     public class Classes : DBTable
     {
         
-        private int class_id
+        public int class_id
         {
             get;
-            set;
+            private set;
         }
 
         public string name

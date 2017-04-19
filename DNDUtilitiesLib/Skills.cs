@@ -10,10 +10,10 @@ namespace DNDUtilitiesLib
     {
         public const string TABLE = "skills";
         public const string FIELD = "skill_id";
-        private int skill_id
+        public int skill_id
         {
             get;
-            set;
+            private set;
         }
 
         public string name
@@ -22,10 +22,10 @@ namespace DNDUtilitiesLib
             set;
         }
 
-        private int key_ability_id
+        public int key_ability_id
         {
             get;
-            set;
+            private set;
         }
 
         public string trained

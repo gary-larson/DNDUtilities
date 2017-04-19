@@ -8,10 +8,10 @@ namespace DNDUtilitiesLib
 {
     public class Combat_statistics : DBTable_lookup
     {
-        private int combat_statistic_id
+        public int combat_statistic_id
         {
             get;
-            set;
+            private set;
         }
 
         public virtual string name

@@ -10,10 +10,10 @@ namespace DNDUtilitiesLib
     {
         public const string TABLE = "feats";
         public const string FIELD = "feat_id";
-        private int feat_id
+        public int feat_id
         {
             get;
-            set;
+            private set;
         }
 
         public string name

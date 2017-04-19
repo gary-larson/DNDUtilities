@@ -54,10 +54,10 @@ namespace DNDUtilitiesLib
             set;
         }
 
-        private int race_id
+        public int race_id
         {
             get;
-            set;
+            private set;
         }
 
         public string alignment
@@ -66,10 +66,10 @@ namespace DNDUtilitiesLib
             set;
         }
 
-        private int alignment_id
+        public int alignment_id
         {
             get;
-            set;
+            private set;
         }
 
         public string deity
@@ -85,10 +85,10 @@ namespace DNDUtilitiesLib
         }
 
 
-        private int size_id
+        public int size_id
         {
             get;
-            set;
+            private set;
         }
 
         public int age
@@ -157,7 +157,7 @@ namespace DNDUtilitiesLib
             set;
         }
 
-        public int deleted
+        private int deleted
         {
             get;
             set;
