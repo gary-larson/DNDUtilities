@@ -8,89 +8,94 @@ namespace DNDUtilitiesLib
 {
     public class Feats : DBTable
     {
+        public const string TABLE = "feats";
+        public const string FIELD = "feat_id";
         private int feat_id
         {
             get;
             set;
         }
 
-        public virtual string name
+        public string name
         {
             get;
             set;
         }
 
-        public virtual string type
+        public string type
         {
             get;
             set;
         }
 
-        public virtual string multiple
+        public string multiple
         {
             get;
             set;
         }
 
-        public virtual string stack
+        public string stack
         {
             get;
             set;
         }
 
-        public virtual string choice
+        public string choice
         {
             get;
             set;
         }
 
-        public virtual string prerequisite
+        public string prerequisite
         {
             get;
             set;
         }
 
-        public virtual string benefit
+        public string benefit
         {
             get;
             set;
         }
 
-        public virtual string normal
+        public string normal
         {
             get;
             set;
         }
 
-        public virtual string special
+        public string special
         {
             get;
             set;
         }
 
-        public virtual string full_text
+        public string full_text
         {
             get;
             set;
         }
 
-        private List<String> fieldList
-        {
-            get;
-            set;
-        }
-
-        public virtual void delete(int Key)
+        public void delete(int Key)
         {
             throw new System.NotImplementedException();
         }
 
-        public virtual Feats retrieve(int Key)
+        public Feats retrieve(int Key)
         {
             throw new System.NotImplementedException();
         }
 
-        public virtual void save(int Key)
+        /// <summary>
+        /// Get all Feat names
+        /// </summary>
+        /// <returns>list of all feats</returns>
+        public static List<NameKey> retrieveAllFeats()
+        {
+            return retrieveAll(TABLE, FIELD);
+        }
+
+        public void save(int Key)
         {
             throw new System.NotImplementedException();
         }

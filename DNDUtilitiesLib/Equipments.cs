@@ -9,6 +9,8 @@ namespace DNDUtilitiesLib
 {
     public class Equipments : DBTable
     {
+        public const string TABLE = "equipments";
+        public const string FIELD = "equipment_id";
         private int equipment_id
         {
             get;
@@ -21,7 +23,7 @@ namespace DNDUtilitiesLib
             set;
         }
 
-        public virtual string family
+        public string family
         {
             get;
             set;
@@ -39,67 +41,67 @@ namespace DNDUtilitiesLib
             set;
         }
 
-        public virtual string cost
+        public string cost
         {
             get;
             set;
         }
 
-        public virtual string dmg_s
+        public string dmg_s
         {
             get;
             set;
         }
 
-        public virtual string weight
+        public string weight
         {
             get;
             set;
         }
 
-        public virtual string critical
+        public string critical
         {
             get;
             set;
         }
 
-        public virtual int armor_shield_bonus
+        public int armor_shield_bonus
         {
             get;
             set;
         }
 
-        public virtual string dmg_m
+        public string dmg_m
         {
             get;
             set;
         }
 
-        public virtual int maximum_dex_bonus
+        public int maximum_dex_bonus
         {
             get;
             set;
         }
 
-        public virtual int armor_check_penalty
+        public int armor_check_penalty
         {
             get;
             set;
         }
 
-        public virtual int arcane_spell_failure_chance
+        public int arcane_spell_failure_chance
         {
             get;
             set;
         }
 
-        public virtual int range_increment
+        public int range_increment
         {
             get;
             set;
         }
 
-        public virtual int speed_30
+        public int speed_30
         {
             get;
             set;
@@ -111,30 +113,33 @@ namespace DNDUtilitiesLib
             set;
         }
 
-        public virtual int speed_20
+        public int speed_20
         {
             get;
             set;
         }
 
-        public virtual string full_text
+        public string full_text
         {
             get;
             set;
         }
 
-        private List<String> fieldList
+        /// <summary>
+        /// Get all equipment names
+        /// </summary>
+        /// <returns>list of all equipment names</returns>
+        public static List<NameKey> retrieveAllEquipment()
         {
-            get;
-            set;
+            return retrieveAll(TABLE, FIELD);
         }
 
-        public virtual void delete(int Key)
+        public void delete(int Key)
         {
             throw new System.NotImplementedException();
         }
 
-        public virtual Equipments retrieve(int Key)
+        public Equipments retrieve(int Key)
         {
             throw new System.NotImplementedException();
         }

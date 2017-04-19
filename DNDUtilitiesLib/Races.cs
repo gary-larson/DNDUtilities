@@ -71,7 +71,7 @@ namespace DNDUtilitiesLib
         }
 
         
-        public static List<NameKey> retrieveAll()
+        public static List<NameKey> retrieveAllRaces()
         {
             return retrieveAll(TABLE, FIELD);
         }
