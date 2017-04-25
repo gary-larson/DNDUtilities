@@ -107,15 +107,17 @@ namespace DNDUtilities
             //      c.save(1, 16);
             //     List<NameKey> nk = Character_spells.retrieveAllSpells(1);
             //Character_spells.delete(1,5);
-            Character_wounds cw = new Character_wounds(-1,1,100,true);
-            cw.save();
+            //Character_wounds cw = new Character_wounds(-1,1,100,true);
+            //cw.save();
             // int result = Character_wounds.GetTotalWounds(1);
             //Character_wounds.deleteAllRecords();
-            s = cw.ToString();
-         //s = cw.ToString();
-        // s = id.ToString(); 
-        // Character_skills a = new Character_skills();
-        //Character_spells.retrieveRecord(1, 167);
+            //s = cw.ToString();
+            //s = cw.ToString();
+            // s = id.ToString(); 
+            // Character_skills a = new Character_skills();
+            Proficiencies p = new Proficiencies();
+            p.retrieveRecord(1);
+            s = p.ToString();
             //bool b = Character_hit_points.delete(2, 6);
             //int result = Character_hit_points.GetTotalHitPoints(1);
             //          a.modifier = 1;
@@ -123,11 +125,11 @@ namespace DNDUtilities
             //          a.temp_modifier = 3;
             //          a.save();
             //  bool b = a.delete(1, 1);
-            //    List<NameKey> nk = Character_skills.retrieveAllSkills(1);
-     //       foreach (Character_wounds n in l)
-     //        {
-     //              s += n.ToString();
-      //         }
+   /*             List<NameKey> nk = Spells.retrieveAllSpells();
+            foreach (NameKey n in nk)
+             {
+                   s += n.ToString();
+             } */
             // a.player_name = "Keith";
             // a.save();
             //s = result.ToString();

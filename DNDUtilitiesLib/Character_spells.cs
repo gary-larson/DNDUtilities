@@ -21,16 +21,16 @@ namespace DNDUtilitiesLib
         const string FIELD2 = "spell_id";
 
         // Setup fields with properties
-        private int character_id
+        public int character_id
         {
             get;
-            set;
+            private set;
         }
 
-        private int spell_id
+        public int spell_id
         {
             get;
-            set;
+            private set;
         }
 
         public Character_spells()

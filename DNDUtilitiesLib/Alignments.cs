@@ -17,13 +17,13 @@ namespace DNDUtilitiesLib
         const string FIELD = "alignment_id";
 
         // Setup fields with properties
-        private int alignment_id
+        public int alignment_id
         {
             get;
-            set;
+            private set;
         }
 
-        private string name
+        public string name
         {
             get;
             set;

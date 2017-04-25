@@ -8,16 +8,16 @@ namespace DNDUtilitiesLib
 {
     public class Racial_ability_adjustment : DBTable_bridge
     {
-        private int race_id
+        public int race_id
         {
             get;
-            set;
+            private set;
         }
 
-        private int ability_id
+        public int ability_id
         {
             get;
-            set;
+            private set;
         }
 
         public virtual int adjustment

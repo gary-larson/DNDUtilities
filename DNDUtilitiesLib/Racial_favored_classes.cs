@@ -8,16 +8,16 @@ namespace DNDUtilitiesLib
 {
     public class Racial_favored_classes : DBTable_bridge
     {
-        private int race_id
+        public int race_id
         {
             get;
-            set;
+            private set;
         }
 
-        private int class_id
+        public int class_id
         {
             get;
-            set;
+            private set;
         }
 
         internal virtual string FIELD

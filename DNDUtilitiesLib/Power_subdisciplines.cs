@@ -8,10 +8,10 @@ namespace DNDUtilitiesLib
 {
     public class Power_subdisciplines : DBTable_lookup
     {
-        private int subdiscipline_id
+        public int subdiscipline_id
         {
             get;
-            set;
+            private set;
         }
 
         public virtual string name

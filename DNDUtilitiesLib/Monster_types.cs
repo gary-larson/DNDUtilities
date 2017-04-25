@@ -8,10 +8,10 @@ namespace DNDUtilitiesLib
 {
     public class Monster_types : DBTable_lookup
     {
-        private int type_id
+        public int type_id
         {
             get;
-            set;
+            private set;
         }
 
         public virtual string name

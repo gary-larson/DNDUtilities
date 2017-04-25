@@ -18,10 +18,10 @@ namespace DNDUtilitiesLib
         bool isInsert = false;
 
         // Setup fields with properties
-        private int character_id
+        public int character_id
         {
             get;
-            set;
+            private set;
         }
 
         public int total

@@ -8,10 +8,10 @@ namespace DNDUtilitiesLib
 {
     public class Saving_throws : DBTable_lookup
     {
-        private int saving_throw_id
+        public int saving_throw_id
         {
             get;
-            set;
+            private set;
         }
 
         public virtual int name

@@ -8,85 +8,87 @@ namespace DNDUtilitiesLib
 {
     public class Skills : DBTable
     {
-        private int skill_id
+        public const string TABLE = "skills";
+        public const string FIELD = "skill_id";
+        public int skill_id
+        {
+            get;
+            private set;
+        }
+
+        public string name
         {
             get;
             set;
         }
 
-        public virtual string name
+        public int key_ability_id
+        {
+            get;
+            private set;
+        }
+
+        public string trained
         {
             get;
             set;
         }
 
-        private int key_ability_id
+        public string armor_checked
         {
             get;
             set;
         }
 
-        public virtual string trained
+        public string description
         {
             get;
             set;
         }
 
-        public virtual string armor_checked
+        public string spell_check
         {
             get;
             set;
         }
 
-        public virtual string description
+        public string action
         {
             get;
             set;
         }
 
-        public virtual string spell_check
+        public string try_again
         {
             get;
             set;
         }
 
-        public virtual string action
+        public string special
         {
             get;
             set;
         }
 
-        public virtual string try_again
+        public string retriction
         {
             get;
             set;
         }
 
-        public virtual string special
+        public string synergy
         {
             get;
             set;
         }
 
-        public virtual string retriction
+        public string epic_use
         {
             get;
             set;
         }
 
-        public virtual string synergy
-        {
-            get;
-            set;
-        }
-
-        public virtual string epic_use
-        {
-            get;
-            set;
-        }
-
-        public virtual string untrained
+        public string untrained
         {
             get;
             set;
@@ -110,23 +112,26 @@ namespace DNDUtilitiesLib
             set;
         }
 
-        private List<String> fieldList
-        {
-            get;
-            set;
-        }
-
-        public virtual void delete(int Key)
+        public void delete(int Key)
         {
             throw new System.NotImplementedException();
         }
 
-        public virtual Skills retrieve(int Key)
+        public Skills retrieve(int Key)
         {
             throw new System.NotImplementedException();
         }
 
-        public virtual void save(int Key)
+        /// <summary>
+        /// Get all skills names
+        /// </summary>
+        /// <returns>list of all skills names</returns>
+        public static List<NameKey> retrieveAllSkills()
+        {
+            return retrieveAll(TABLE, FIELD);
+        }
+
+        public void save(int Key)
         {
             throw new System.NotImplementedException();
         }

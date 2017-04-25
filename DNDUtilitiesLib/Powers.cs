@@ -8,10 +8,10 @@ namespace DNDUtilitiesLib
 {
     public class Powers : DBTable
     {
-        private int power_id
+        public int power_id
         {
             get;
-            set;
+            private set;
         }
 
         public virtual string name
@@ -20,16 +20,16 @@ namespace DNDUtilitiesLib
             set;
         }
 
-        private int power_discipline_id
+        public int power_discipline_id
         {
             get;
-            set;
+            private set;
         }
 
-        private int power_subdiscipline_id
+        public int power_subdiscipline_id
         {
             get;
-            set;
+            private set;
         }
 
         public virtual string descriptor

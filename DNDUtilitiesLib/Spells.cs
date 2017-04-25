@@ -8,205 +8,189 @@ namespace DNDUtilitiesLib
 {
     public class Spells : DBTable
     {
-        private int spell_id
+        public const string TABLE = "spells";
+        public const string FIELD = "spell_id";
+        public int spell_id
+        {
+            get;
+            private set;
+        }
+
+        public string name
         {
             get;
             set;
         }
 
-        public virtual string name
+        public string altname
         {
             get;
             set;
         }
 
-        public virtual string altname
+        public int school_id
+        {
+            get;
+            private set;
+        }
+
+        public int subschool_id
+        {
+            get;
+            private set;
+        }
+
+        public string descriptor
         {
             get;
             set;
         }
 
-        private int school_id
+        public string spellcraft_dc
         {
             get;
             set;
         }
 
-        private int subschool_id
+        public string level
         {
             get;
             set;
         }
 
-        public virtual string descriptor
+        public string components
         {
             get;
             set;
         }
 
-        public virtual string spellcraft_dc
+        public string casting_time
         {
             get;
             set;
         }
 
-        public virtual string level
+        public string range
         {
             get;
             set;
         }
 
-        public virtual string components
+        public string target
         {
             get;
             set;
         }
 
-        public virtual string casting_time
+        public string area
         {
             get;
             set;
         }
 
-        public virtual string range
+        public string effect
         {
             get;
             set;
         }
 
-        public virtual string target
+        public string duration
         {
             get;
             set;
         }
 
-        public virtual string area
+        public string saving_throw
         {
             get;
             set;
         }
 
-        public virtual string effect
+        public string spell_resistance
         {
             get;
             set;
         }
 
-        public virtual string duration
+        public string short_description
         {
             get;
             set;
         }
 
-        public virtual string saving_throw
+        public string to_develop
         {
             get;
             set;
         }
 
-        public virtual string spell_resistance
+        public string material_components
         {
             get;
             set;
         }
 
-        public virtual string short_description
+        public string arcane_material_components
         {
             get;
             set;
         }
 
-        public virtual string to_develop
+        public string focus
         {
             get;
             set;
         }
 
-        public virtual object material_components
+        public string description
         {
             get;
             set;
         }
 
-        public virtual string arcane_material_components
+        public string xp_cost
         {
             get;
             set;
         }
 
-        public virtual string focus
+        public string arcane_focus
         {
             get;
             set;
         }
 
-        public virtual string description
+        public string wizard_focus
         {
             get;
             set;
         }
 
-        public virtual string xp_cost
+        public string verbal_components
         {
             get;
             set;
         }
 
-        public virtual string arcane_focus
+        public string sorcerer_focus
         {
             get;
             set;
         }
 
-        public virtual string wizard_focus
+        public string bard_focus
         {
             get;
             set;
         }
 
-        public virtual string verbal_components
+        public string druid_focus
         {
             get;
             set;
         }
 
-        public virtual string sorcerer_focus
-        {
-            get;
-            set;
-        }
-
-        public virtual string bard_focus
-        {
-            get;
-            set;
-        }
-
-        public virtual string druid_focus
-        {
-            get;
-            set;
-        }
-
-        public virtual string full_text
-        {
-            get;
-            set;
-        }
-
-        public virtual Spell_schools spell_schools
-        {
-            get;
-            set;
-        }
-
-        public virtual Spell_subschools spell_subschools
-        {
-            get;
-            set;
-        }
-
-        private List<String> fieldList
+        public string full_text
         {
             get;
             set;
@@ -217,12 +201,21 @@ namespace DNDUtilitiesLib
             throw new System.NotImplementedException();
         }
 
-        public virtual Spells retrieve(int Key)
+        public Spells retrieve(int Key)
         {
             throw new System.NotImplementedException();
         }
 
-        public virtual void save(int Key)
+        /// <summary>
+        /// Get all spells names
+        /// </summary>
+        /// <returns>list of all spells names</returns>
+        public static List<NameKey> retrieveAllSpells()
+        {
+            return retrieveAll(TABLE, FIELD);
+        }
+
+        public void save(int Key)
         {
             throw new System.NotImplementedException();
         }

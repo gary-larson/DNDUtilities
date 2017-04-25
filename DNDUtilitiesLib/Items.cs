@@ -8,10 +8,10 @@ namespace DNDUtilitiesLib
 {
     public class Items : DBTable
     {
-        private int item_id
+        public int item_id
         {
             get;
-            set;
+            private set;
         }
 
         public virtual string name

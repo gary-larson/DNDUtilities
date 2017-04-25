@@ -8,38 +8,37 @@ namespace DNDUtilitiesLib
 {
     public class Sizes : DBTable_lookup
     {
-        private int size_id
+        public const string TABLE = "sizes";
+        public const string FIELD = "size_id";
+        public int size_id
+        {
+            get;
+            private set;
+        }
+
+        public string name
         {
             get;
             set;
         }
 
-        public virtual string name
-        {
-            get;
-            set;
-        }
-
-        private List<String> fieldList
-        {
-            get;
-            set;
-        }
-
-        public virtual Monsters monsters
-        {
-            get;
-            set;
-        }
-
-        public virtual void delete(int Key)
+        public void delete(int Key)
         {
             throw new System.NotImplementedException();
         }
 
-        public virtual Sizes retrieve(int Key)
+        public Sizes retrieve(int Key)
         {
             throw new System.NotImplementedException();
+        }
+
+        /// <summary>
+        /// Get all sizes names
+        /// </summary>
+        /// <returns>list of all sizes names</returns>
+        public static List<NameKey> retrieveAllSizes()
+        {
+            return retrieveAll(TABLE, FIELD);
         }
 
         public virtual void save(int Key)

@@ -10,10 +10,10 @@ namespace DNDUtilitiesLib
     {
         const string TABLE = "races";
         const string FIELD = "race_id";
-        private int race_id
+        public int race_id
         {
             get;
-            set;
+            private set;
         }
 
         public string name
@@ -22,10 +22,10 @@ namespace DNDUtilitiesLib
             set;
         }
 
-        private int size_id
+        public int size_id
         {
             get;
-            set;
+            private set;
         }
 
         public int speed
@@ -71,7 +71,7 @@ namespace DNDUtilitiesLib
         }
 
         
-        public static List<NameKey> retrieveAll()
+        public static List<NameKey> retrieveAllRaces()
         {
             return retrieveAll(TABLE, FIELD);
         }

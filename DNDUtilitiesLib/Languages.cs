@@ -8,52 +8,48 @@ namespace DNDUtilitiesLib
 {
     public class Languages : DBTable_lookup
     {
-        private int language_id
+        public const string TABLE = "languages";
+        public const string FIELD = "language_id";
+
+        public int language_id
+        {
+            get;
+            private set;
+        }
+
+        public string name
         {
             get;
             set;
         }
 
-        public virtual string name
-        {
-            get;
-            set;
-        }
+        
 
-        internal virtual string FIELD
-        {
-            get;
-            set;
-        }
-
-        internal virtual string FIELD_LIST
-        {
-            get;
-            set;
-        }
-
-        internal virtual string TABLE
-        {
-            get;
-            set;
-        }
-
-        public virtual void delete(int Key)
+        public void delete(int Key)
         {
             throw new System.NotImplementedException();
         }
 
-        public virtual Domains retrieve(int Key)
+        public Domains retrieve(int Key)
         {
             throw new System.NotImplementedException();
         }
 
-        public virtual void save(int Key)
+        /// <summary>
+        /// Get all language names
+        /// </summary>
+        /// <returns>list of all languages names</returns>
+        public static List<NameKey> retrieveAllLanguages()
+        {
+            return retrieveAll(TABLE, FIELD);
+        }
+
+        public void save(int Key)
         {
             throw new System.NotImplementedException();
         }
 
-        public virtual string ToString()
+        public override string ToString()
         {
             throw new System.NotImplementedException();
         }

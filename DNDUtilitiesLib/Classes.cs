@@ -10,10 +10,10 @@ namespace DNDUtilitiesLib
     public class Classes : DBTable
     {
         
-        private int class_id
+        public int class_id
         {
             get;
-            set;
+            private set;
         }
 
         public string name
@@ -216,7 +216,7 @@ namespace DNDUtilitiesLib
             }
         }
 
-        public List<NameKey> retrieveAllNames()
+        public static List<NameKey> retrieveAllClasses()
         {
             using (SQLiteConnection conn = new SQLiteConnection())
             {
@@ -234,9 +234,9 @@ namespace DNDUtilitiesLib
                 {
                     while (read.Read())
                     {
-                        class_id = read.GetInt32(0);
-                        name = read.GetString(1);
-                        NameKey cn = new NameKey(class_id, name);
+                        int id = read.GetInt32(0);
+                        string name = read.GetString(1);
+                        NameKey cn = new NameKey(id, name);
                         ls.Add(cn);
                     }
                     return ls;
