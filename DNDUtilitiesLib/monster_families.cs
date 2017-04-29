@@ -12,7 +12,7 @@ namespace DNDUtilitiesLib
         public int family_id
         {
             get;
-            privateset;
+            private set;
         }
 
         public virtual string name
