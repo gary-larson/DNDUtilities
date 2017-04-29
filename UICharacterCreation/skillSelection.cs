@@ -33,7 +33,9 @@ namespace UICharacterCreation
             // if Subtyping == "NO" then only print the skill once
             // if Subtyping == "Yes" then print the skill 4 times, with a dropdown for subSkills
             //      if Skill = "Speak language" give it a special interface cause it's fucking dumb. 
-            // 52 total entry blips
+            // 52 total entry blips :c
+
+
         }
     }
 }

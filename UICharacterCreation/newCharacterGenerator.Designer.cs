@@ -90,6 +90,7 @@
             this.abilityGenerationSelector = new System.Windows.Forms.ComboBox();
             this.methodLabel = new System.Windows.Forms.Label();
             this.addBackstoryButton = new System.Windows.Forms.Button();
+            this.addSkillsButton = new System.Windows.Forms.Button();
             this.AbilityScoreGroupBox.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -702,11 +703,21 @@
             this.addBackstoryButton.UseVisualStyleBackColor = true;
             this.addBackstoryButton.Click += new System.EventHandler(this.addBackstoryButton_Click);
             // 
+            // addSkillsButton
+            // 
+            this.addSkillsButton.Location = new System.Drawing.Point(410, 286);
+            this.addSkillsButton.Name = "addSkillsButton";
+            this.addSkillsButton.Size = new System.Drawing.Size(100, 23);
+            this.addSkillsButton.TabIndex = 35;
+            this.addSkillsButton.Text = "Add Skills";
+            this.addSkillsButton.UseVisualStyleBackColor = true;
+            // 
             // newCharacterGenerator
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(567, 442);
+            this.Controls.Add(this.addSkillsButton);
             this.Controls.Add(this.addBackstoryButton);
             this.Controls.Add(this.AbilityScoreGroupBox);
             this.Controls.Add(this.heightTextBox);
@@ -809,5 +820,6 @@
         private System.Windows.Forms.CheckBox reRollOneBox;
         private System.Windows.Forms.Button addBackstoryButton;
         private System.Windows.Forms.Button RacialModifierButton;
+        private System.Windows.Forms.Button addSkillsButton;
     }
 }
