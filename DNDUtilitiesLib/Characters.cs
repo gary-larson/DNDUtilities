@@ -53,6 +53,25 @@ namespace DNDUtilitiesLib
             get;
             set;
         }
+        public string Race
+        {
+            get { return race; }
+            set
+            {
+                // set race
+                race = value;
+                // get namekeys
+                List<NameKey> raceIDs = Races.retrieveAllRaces();
+                // set race_id
+                foreach (NameKey res in raceIDs)
+                {
+                    if (res.name.Equals(race)){
+                        race_id = res.key;
+                    }
+                }
+            }
+        }
+
 
         public int race_id
         {

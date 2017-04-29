@@ -23,6 +23,9 @@ namespace UICharacterCreation
         List<CheckBox> swapBoxes;
         List<int> AbilityModifiers;
         List<TextBox> scoreBoxes;
+        List<int> baseAbilityScores;
+        bool SkillsValid;           // a simple boolean to proactively check if skills are still valid!
+        bool RacialModifierApplied; // keeping track of if you applied racial Junk yet!
 
         public newCharacterGenerator()
         {
@@ -35,7 +38,6 @@ namespace UICharacterCreation
             this.PC = new CharacterSheet();             // to hold all the data
 
             //-----------------------------Object Creation----------------------------------------//
-            Classes tClasses = new Classes();           // When the functions become static i'll fix this
             List<Label> abilityLabels = new List<Label>()
             {
                 abilityLabel1, abilityLabel2, abilityLabel3,
@@ -52,12 +54,13 @@ namespace UICharacterCreation
                 swapBox4, swapBox5, swapBox6
             };
             AbilityModifiers = new List<int>();
+            baseAbilityScores = new List<int>() { 0, 0, 0, 0, 0, 0 };
 
             //------------------------Storage of possible-----------------------------------------//
-            this.PotientialClasses = tClasses.retrieveAllNames();   // to generate 
-            this.PotientialRaces = Races.retrieveAll();            // to generate
-            this.PotientialAlignments = Alignments.retrieveAll();
-            this.CharacterAttributes = Abilities.retrieveAll();     // these dont go in a dropdown but this way we have the information
+            this.PotientialClasses = Classes.retrieveAllClasses();     // to generate 
+            this.PotientialRaces = Races.retrieveAllRaces();            // to generate
+            this.PotientialAlignments = Alignments.retrieveAllAlignments();
+            this.CharacterAttributes = Abilities.retrieveAllAbilities();     // these dont go in a dropdown but this way we have the information
 
             //------------------------pushing list->combobox--------------------------------------//
             foreach (NameKey pClass in PotientialClasses)
@@ -83,7 +86,8 @@ namespace UICharacterCreation
             raceComboBox.SelectedIndex = 0;
             alignmentComboBox.SelectedIndex = 0;
             abilityGenerationSelector.SelectedIndex = 0;
-
+            SkillsValid = false;
+            RacialModifierApplied = false;
             // all the other values should be calculates off these values, hoepfully. 
         }
 
@@ -97,6 +101,7 @@ namespace UICharacterCreation
                 dietyTextBox, eyesTextBox, hairTextBox, skinTextBox
             };
             bool invalid = false;
+            invalid = !SkillsValid;     // if the skills are valid, then invalid remains false. Else, this is invalid. 
 
             // Does Data Exist?  ( non-numberic validations )
             foreach(TextBox textField in Verifications)
@@ -153,7 +158,8 @@ namespace UICharacterCreation
                 PC.charInfo.hair = hairTextBox.Text;
                 PC.charInfo.skin = skinTextBox.Text;
                 // PC.charInfo.description // Autoset by the Description Dialgo Box
-                if (PC.charInfo.save())
+                PC.charInfo.save();
+                if (PC.ID != -1)
                 {
                     MessageBox.Show("Characters: Saved successfully!");
                 }
@@ -229,47 +235,94 @@ namespace UICharacterCreation
                 // Roll 1d6 4 times
                 // add the highest 3 values
                 // repeat six times
-                foreach (TextBox aBox in scoreBoxes)
+                for(int i = 0; i < scoreBoxes.Count(); i++)
                 {
                     List<int> values = new List<int>()
                     {
                         rollXdY(1,6, seed), rollXdY(1,6, seed), rollXdY(1,6, seed), rollXdY(1,6, seed)
                     };
                     values.Sort();      // Values is now sorted least to greatest
-                    aBox.Text = (values[1] + values[2] + values[3]).ToString();
+                    baseAbilityScores[i] = values[1] + values[2] + values[3];
                     // Value[0] discarded due to being the lowest
                 }
-                generateAbilityModifiers(scoreBoxes);
+                updateScoreBoxes();
+                generateAbilityModifiers();
 
             }
             else if (abilityGenerationSelector.Text == "1d8 + 10")
             {
-                foreach (TextBox aBox in scoreBoxes)
+                for (int i = 0; i < scoreBoxes.Count(); i++)
                 {
                     // simple. not often good stats, but rarely bad ones
-                    aBox.Text = (rollXdY(1, 8, seed) + 10).ToString();
+                    baseAbilityScores[i] = (rollXdY(1, 8, seed) + 10);
                 }
-                generateAbilityModifiers(scoreBoxes);
+                updateScoreBoxes();
+                generateAbilityModifiers();
             }
             else if (abilityGenerationSelector.Text == "Manual Input")
             {
                 // needs to enable editing on the stat boxes
                 setScoreEdits(scoreBoxes, true);
+                RacialModifierButton.Text = "Disabled";
+                RacialModifierApplied = true;
             }
             else
             {
                 MessageBox.Show("Hopefully this Isn't a live demo, this is an error!\nDice option not found!");
             }
         }
+
+        private void getRacialModifiers(out List<int> IDs, out List<int> val)
+        {
+            IDs = new List<int>();  // IDs start at 1. just a BTW. 
+            val = new List<int>();
+            PC.charInfo.Race = raceComboBox.SelectedItem.ToString();
+            int success = Racial_ability_adjustment.modArrays(PC.charInfo.race_id, out IDs, out val);
+            // MessageBox.Show("ID = " + IDs[0].ToString() + "\nValue = " + val[0].ToString());
+        }
+
+        private void updateScoreBoxes()
+        {
+            // checks baseScores, and Racial modifiers applied, and updates the cosmetic stuff
+            if (!RacialModifierApplied)
+            {
+                // run this is we arent displaying racial modifiers
+                for (int i = 0; i < scoreBoxes.Count; i++)
+                {
+                    scoreBoxes[i].Text = baseAbilityScores[i].ToString();
+                }
+            }
+            else
+            {
+                List<int> IDs;
+                List<int> val;
+                getRacialModifiers(out IDs, out val);
+                for (int i = 0; i < scoreBoxes.Count; i++)
+                {
+
+                    int modifier = 0;
+                    for (int j = 0; j < IDs.Count(); j++)
+                    { 
+                        if (IDs[j] == i+1)
+                        {
+                            // if the (adjusted) ID in the array matches the ID of this stat, modift the scire
+                            modifier = val[j];
+                        }
+                    }
+                    scoreBoxes[i].Text = (modifier+baseAbilityScores[i]).ToString();
+                }
+            }
+        }
         
-        private void generateAbilityModifiers(List<TextBox> AbilityScores)
+        private void generateAbilityModifiers()
         {
             // Always send this all six ability scoreboxes, please!
+                // this was fixed by making the scoreboxes an integrel part of the class
             int temp = 0;
             AbilityModifiers.Clear();       // helps ensure data integrity
-            for (int i = 0; i < AbilityScores.Count(); i++)
+            for (int i = 0; i < scoreBoxes.Count(); i++)
             {
-                if (int.TryParse(AbilityScores[i].Text, out temp))
+                if (int.TryParse(scoreBoxes[i].Text, out temp))
                 {
                     // FLOOR (stat/2 -5)
                     AbilityModifiers.Add((int)Math.Floor((double)temp / 2 - 5));
@@ -306,6 +359,7 @@ namespace UICharacterCreation
 
         private void setScoreEdits(List<TextBox> fields, bool value)
         {
+            // a general use mass-set editability function
             foreach (TextBox box in fields)
             {
                 box.Enabled = value;
@@ -316,7 +370,7 @@ namespace UICharacterCreation
         {
             // THIS FUNCTION IS EXPRESSLY FOR ABILITY SCORES
             // DO NOT USE THIS FOR HP OR OTHER THINGS
-            // this is, notibly, designed to be expanded to toher stat generation systems tho
+            // this is, notibly, designed to be expanded to other stat generation systems tho
             int result = 0;
             int min;
 
@@ -391,8 +445,50 @@ namespace UICharacterCreation
 
         private void abilityTextBox_TextChanged(object sender, EventArgs e)
         {
+            if (abilityGenerationSelector.Text == "Manual Input")
+            {
+                // assume the player's data is good, or hand rolled, IDK. 
+                for (int i = 0; i < scoreBoxes.Count(); i++)
+                {
+                    try
+                    {
+                        baseAbilityScores[i] = int.Parse(scoreBoxes[i].Text);
+                    }
+                    catch (Exception ea)
+                    {
+                        // Cant do junk with that :c
+                    }
+                }
+            }
+            SkillsValid = false; // this is a Brute Force approach. ass attributes are not hard coded, we dont know _which_ skill changed
+            generateAbilityModifiers();
+        }
 
-            generateAbilityModifiers(scoreBoxes);
+        private void raceComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (RacialModifierApplied)
+            {
+                // re-run racial modifier application
+            }
+            // else: we're fine. 
+        }
+
+        private void RacialModifier_Click(object sender, EventArgs e)
+        {
+            // Change text on the button
+            // alter the displayed values
+            if (RacialModifierApplied == false)
+            {
+                RacialModifierButton.Text = "Hide Racial Modifiers";
+                RacialModifierApplied = true;
+                updateScoreBoxes();
+            }
+            else if (RacialModifierApplied == true)
+            {
+                RacialModifierButton.Text = "Apply Racial Modifiers";
+                RacialModifierApplied = false;
+                updateScoreBoxes();
+            }
         }
     }
 }

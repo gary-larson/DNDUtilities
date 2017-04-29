@@ -56,7 +56,7 @@
             this.weightTextBox = new System.Windows.Forms.TextBox();
             this.heightTextBox = new System.Windows.Forms.TextBox();
             this.AbilityScoreGroupBox = new System.Windows.Forms.GroupBox();
-            this.disclaimerLabel = new System.Windows.Forms.Label();
+            this.RacialModifierButton = new System.Windows.Forms.Button();
             this.rollDiceButton = new System.Windows.Forms.Button();
             this.reRollOneBox = new System.Windows.Forms.CheckBox();
             this.swapBox6 = new System.Windows.Forms.CheckBox();
@@ -128,6 +128,7 @@
             this.raceComboBox.Name = "raceComboBox";
             this.raceComboBox.Size = new System.Drawing.Size(121, 21);
             this.raceComboBox.TabIndex = 3;
+            this.raceComboBox.SelectedIndexChanged += new System.EventHandler(this.raceComboBox_SelectedIndexChanged);
             // 
             // pcNameLabel
             // 
@@ -329,7 +330,7 @@
             // 
             // AbilityScoreGroupBox
             // 
-            this.AbilityScoreGroupBox.Controls.Add(this.disclaimerLabel);
+            this.AbilityScoreGroupBox.Controls.Add(this.RacialModifierButton);
             this.AbilityScoreGroupBox.Controls.Add(this.rollDiceButton);
             this.AbilityScoreGroupBox.Controls.Add(this.reRollOneBox);
             this.AbilityScoreGroupBox.Controls.Add(this.swapBox6);
@@ -369,14 +370,15 @@
             this.AbilityScoreGroupBox.TabStop = false;
             this.AbilityScoreGroupBox.Text = "Ability Scores";
             // 
-            // disclaimerLabel
+            // RacialModifierButton
             // 
-            this.disclaimerLabel.AutoSize = true;
-            this.disclaimerLabel.Location = new System.Drawing.Point(132, 254);
-            this.disclaimerLabel.Name = "disclaimerLabel";
-            this.disclaimerLabel.Size = new System.Drawing.Size(217, 13);
-            this.disclaimerLabel.TabIndex = 31;
-            this.disclaimerLabel.Text = "*These are your stats before Racial modifiers";
+            this.RacialModifierButton.Location = new System.Drawing.Point(135, 253);
+            this.RacialModifierButton.Name = "RacialModifierButton";
+            this.RacialModifierButton.Size = new System.Drawing.Size(162, 23);
+            this.RacialModifierButton.TabIndex = 31;
+            this.RacialModifierButton.Text = "Apply Racial Modifiers";
+            this.RacialModifierButton.UseVisualStyleBackColor = true;
+            this.RacialModifierButton.Click += new System.EventHandler(this.RacialModifier_Click);
             // 
             // rollDiceButton
             // 
@@ -805,7 +807,7 @@
         private System.Windows.Forms.Label abilityModLabel;
         private System.Windows.Forms.Button rollDiceButton;
         private System.Windows.Forms.CheckBox reRollOneBox;
-        private System.Windows.Forms.Label disclaimerLabel;
         private System.Windows.Forms.Button addBackstoryButton;
+        private System.Windows.Forms.Button RacialModifierButton;
     }
 }
