@@ -56,7 +56,7 @@
             this.weightTextBox = new System.Windows.Forms.TextBox();
             this.heightTextBox = new System.Windows.Forms.TextBox();
             this.AbilityScoreGroupBox = new System.Windows.Forms.GroupBox();
-            this.RacialModifierButton = new System.Windows.Forms.Button();
+            this.disclaimerLabel = new System.Windows.Forms.Label();
             this.rollDiceButton = new System.Windows.Forms.Button();
             this.reRollOneBox = new System.Windows.Forms.CheckBox();
             this.swapBox6 = new System.Windows.Forms.CheckBox();
@@ -90,7 +90,6 @@
             this.abilityGenerationSelector = new System.Windows.Forms.ComboBox();
             this.methodLabel = new System.Windows.Forms.Label();
             this.addBackstoryButton = new System.Windows.Forms.Button();
-            this.addSkillsButton = new System.Windows.Forms.Button();
             this.AbilityScoreGroupBox.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -129,7 +128,6 @@
             this.raceComboBox.Name = "raceComboBox";
             this.raceComboBox.Size = new System.Drawing.Size(121, 21);
             this.raceComboBox.TabIndex = 3;
-            this.raceComboBox.SelectedIndexChanged += new System.EventHandler(this.raceComboBox_SelectedIndexChanged);
             // 
             // pcNameLabel
             // 
@@ -331,7 +329,7 @@
             // 
             // AbilityScoreGroupBox
             // 
-            this.AbilityScoreGroupBox.Controls.Add(this.RacialModifierButton);
+            this.AbilityScoreGroupBox.Controls.Add(this.disclaimerLabel);
             this.AbilityScoreGroupBox.Controls.Add(this.rollDiceButton);
             this.AbilityScoreGroupBox.Controls.Add(this.reRollOneBox);
             this.AbilityScoreGroupBox.Controls.Add(this.swapBox6);
@@ -371,15 +369,14 @@
             this.AbilityScoreGroupBox.TabStop = false;
             this.AbilityScoreGroupBox.Text = "Ability Scores";
             // 
-            // RacialModifierButton
+            // disclaimerLabel
             // 
-            this.RacialModifierButton.Location = new System.Drawing.Point(135, 253);
-            this.RacialModifierButton.Name = "RacialModifierButton";
-            this.RacialModifierButton.Size = new System.Drawing.Size(162, 23);
-            this.RacialModifierButton.TabIndex = 31;
-            this.RacialModifierButton.Text = "Apply Racial Modifiers";
-            this.RacialModifierButton.UseVisualStyleBackColor = true;
-            this.RacialModifierButton.Click += new System.EventHandler(this.RacialModifier_Click);
+            this.disclaimerLabel.AutoSize = true;
+            this.disclaimerLabel.Location = new System.Drawing.Point(132, 254);
+            this.disclaimerLabel.Name = "disclaimerLabel";
+            this.disclaimerLabel.Size = new System.Drawing.Size(217, 13);
+            this.disclaimerLabel.TabIndex = 31;
+            this.disclaimerLabel.Text = "*These are your stats before Racial modifiers";
             // 
             // rollDiceButton
             // 
@@ -703,22 +700,11 @@
             this.addBackstoryButton.UseVisualStyleBackColor = true;
             this.addBackstoryButton.Click += new System.EventHandler(this.addBackstoryButton_Click);
             // 
-            // addSkillsButton
-            // 
-            this.addSkillsButton.Location = new System.Drawing.Point(410, 286);
-            this.addSkillsButton.Name = "addSkillsButton";
-            this.addSkillsButton.Size = new System.Drawing.Size(100, 23);
-            this.addSkillsButton.TabIndex = 35;
-            this.addSkillsButton.Text = "Add Skills";
-            this.addSkillsButton.UseVisualStyleBackColor = true;
-            this.addSkillsButton.Click += new System.EventHandler(this.addSkillsButton_Click);
-            // 
             // newCharacterGenerator
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(567, 442);
-            this.Controls.Add(this.addSkillsButton);
             this.Controls.Add(this.addBackstoryButton);
             this.Controls.Add(this.AbilityScoreGroupBox);
             this.Controls.Add(this.heightTextBox);
@@ -819,8 +805,7 @@
         private System.Windows.Forms.Label abilityModLabel;
         private System.Windows.Forms.Button rollDiceButton;
         private System.Windows.Forms.CheckBox reRollOneBox;
+        private System.Windows.Forms.Label disclaimerLabel;
         private System.Windows.Forms.Button addBackstoryButton;
-        private System.Windows.Forms.Button RacialModifierButton;
-        private System.Windows.Forms.Button addSkillsButton;
     }
 }

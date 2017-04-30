@@ -17,7 +17,7 @@ namespace DNDUtilitiesLib
         public int skill_id
         {
             get;
-            private set;
+            privateset;
         }
 
         public virtual int adjustment
