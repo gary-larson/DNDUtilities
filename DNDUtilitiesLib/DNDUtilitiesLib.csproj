@@ -114,6 +114,7 @@
     <Compile Include="Power_disciplines.cs" />
     <Compile Include="Power_subdisciplines.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SkillInfo.cs" />
     <Compile Include="Skills.cs" />
     <Compile Include="Skill_adjustments.cs" />
     <Compile Include="Skill_subtypes.cs" />

@@ -14,7 +14,7 @@ namespace DNDUtilitiesLib
             private set;
         }
 
-        public virtual string name
+        public string name
         {
             get;
             set;
@@ -32,43 +32,43 @@ namespace DNDUtilitiesLib
             private set;
         }
 
-        public virtual string descriptor
+        public string descriptor
         {
             get;
             set;
         }
 
-        public virtual string level
+        public string level
         {
             get;
             set;
         }
 
-        public virtual string display
+        public string display
         {
             get;
             set;
         }
 
-        public virtual string maifesting_time
+        public string maifesting_time
 	    {
 		    get;
 		    set;
 	    }
 
-        public virtual string range
+        public string range
         {
             get;
             set;
         }
 
-        public virtual string target
+        public string target
         {
             get;
             set;
         }
 
-        public virtual string area
+        public string area
         {
             get;
             set;
@@ -134,30 +134,11 @@ namespace DNDUtilitiesLib
             set;
         }
 
-        private List<String> fieldList
-        {
-            get;
-            set;
-        }
-
-        public virtual void delete(int Key)
-        {
-            throw new System.NotImplementedException();
-        }
-
-        public virtual Powers retrieve(int Key)
-        {
-            throw new System.NotImplementedException();
-        }
-
-        public virtual void save(int Key)
-        {
-            throw new System.NotImplementedException();
-        }
+        
 
         public override string ToString()
         {
-            throw new System.NotImplementedException();
+            return name;
         }
 
     }
