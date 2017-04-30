@@ -8,6 +8,11 @@ namespace DNDUtilitiesLib
 {
     public class Class_skills : DBTable_bridge
     {
+
+        const string TABLE = "class_skills";
+        const string LIST_TABLE = "skills";
+        const string FIELD1 = "class_id";
+        const string FIELD2 = "skill_id";
         public int class_id
         {
             get;
@@ -20,42 +25,34 @@ namespace DNDUtilitiesLib
             private set;
         }
 
-        public virtual Classes classes
+        /// <summary>
+        /// Default constructor
+        /// </summary>
+        public Class_skills()
         {
-            get;
-            set;
+            class_id = -1;
+            skill_id = -1;
         }
 
-        public virtual Skills skills
+        /// <summary>
+        /// Constructor to assign values to fields
+        /// </summary>
+        /// <param name="characterKey">Character key</param>
+        /// <param name="featKey">Feat key</param>
+        public Class_skills(int classKey, int skillKey)
         {
-            get;
-            set;
+            class_id = classKey;
+            skill_id = skillKey;
         }
 
-        private List<String> fieldList
+        /// <summary>
+        /// Gets all skills for the class
+        /// </summary>
+        /// <param name="key">the class key</param>
+        /// <returns>List of name and keys for the skills</returns>
+        public static List<NameKey> retrieveAllSkills(int key)
         {
-            get;
-            set;
-        }
-
-        public virtual void delete(int Key)
-        {
-            throw new System.NotImplementedException();
-        }
-
-        public virtual Class_skills retrieve(int Key)
-        {
-            throw new System.NotImplementedException();
-        }
-
-        public virtual void save(int Key)
-        {
-            throw new System.NotImplementedException();
-        }
-
-        public override string ToString()
-        {
-            throw new System.NotImplementedException();
+            return retrieveAll(TABLE, LIST_TABLE, FIELD2, FIELD1, key);
         }
 
     }

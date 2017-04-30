@@ -48,7 +48,7 @@ namespace DNDUtilitiesLib
         
 
 
-        /* public List<NameKey> retrieveAll(string table, string listTable, string field)
+         public static List<NameKey> retrieveAll(string table, string field, int key)
          {
              List<NameKey> l = new List<NameKey>();
              using (SQLiteConnection conn = new SQLiteConnection())
@@ -56,24 +56,26 @@ namespace DNDUtilitiesLib
                  conn.ConnectionString = CONNECTION_STR;
                  conn.Open();
 
-                 String sql = "SELECT " + field + ", name FROM " + table;
+                 String sql = "SELECT " + field + ", name FROM " + table + " WHERE skill_id = @id1";
                  SQLiteCommand command = conn.CreateCommand();
                  command.CommandText = sql;
                  command.CommandType = System.Data.CommandType.Text;
 
-                 using (SQLiteDataReader read = command.ExecuteReader())
+                command.Parameters.AddWithValue("id1", key);
+
+                using (SQLiteDataReader read = command.ExecuteReader())
                  {
                      while (read.Read())
                      {
-                         int key = read.GetInt32(0);
+                         int iKey = read.GetInt32(0);
                          string name = read.GetString(1);
-                         NameKey nk = new NameKey(key, name);
+                         NameKey nk = new NameKey(iKey, name);
                          l.Add(nk);
                      }
                  }
                  conn.Close();
                  return l;
              }
-         } not needed */
+         }
     }
 }
