@@ -1,5 +1,5 @@
-﻿using DNDUtilitiesLib;
-using DNDUtilities;
+﻿using DNDUtilities;
+using DNDUtilitiesLib;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -143,8 +143,26 @@ namespace UICharacterCreation
             else
             {
                 // save the man
+
+                //------------------------------------------determine IDs generated-----------------------------------------//
                 // MessageBox.Show("SUCC sesss");
-                                PC.charInfo.name = pcNameTextBox.Text;
+                NameKey classNK = new NameKey(-1, "bober"); 
+                foreach (NameKey pClass in PotientialClasses)
+                {
+                    if (pClass.name.Equals(classComboBox.SelectedItem.ToString()))
+                    {
+                        classNK = pClass;
+                    }
+                }
+                NameKey raceNK = new NameKey(-1, "boring");
+                foreach (NameKey pRace in PotientialRaces)
+                {
+                    if (pRace.name.Equals(raceComboBox.SelectedItem.ToString()){
+                        raceNK = pRace;
+                    }
+
+                }
+                PC.charInfo.name = pcNameTextBox.Text;
                 PC.charInfo.player_name = playerNameTextBox.Text;
                 PC.charInfo.number_of_classes = 1;  // because a level 1 PC only has this
                 PC.charInfo.race = raceComboBox.SelectedItem.ToString();
@@ -168,24 +186,17 @@ namespace UICharacterCreation
                     MessageBox.Show("Characters: Save failed Gracefully!");
                 }
                 // MessageBox.Show(PC.charInfo.ToString()); // not the best certification but hey it works.
-                int classID = 0;
-                foreach (NameKey pClass in PotientialClasses)
-                {
-                    if (pClass.ToString().Equals(classComboBox.SelectedItem.ToString()))
-                    {
-                        classID = pClass.key;
-                    }
-                }
-                PC.classLevels = new Character_classes(PC.ID, classID, 1, 1);
+
+                PC.classLevels = new Character_classes(PC.ID, classNK.key, 1, 1);
                 PC.classLevels.save();      // not a bool just hope it works
                 Classes UsedClass = new Classes();
-                UsedClass.retrieveRecord(classID);
+                UsedClass.retrieveRecord(classNK.key);
                 PC.HP = new Character_hit_points(PC.ID, 1, UsedClass.hit_die+AbilityModifiers[3]);
                                             // stores properly calculated HP in the box. 
                 // Languages needs its own UI
                 // Feats needs its own UI
                 // Equipment needs its own UI
-                // skills need their own UI
+                // skills need their own UI     ( IN PROGRESS! )
                 // (combat) stats need their own UI (for display)
                     // dont do them until after the other things are tackled though. 
 
@@ -276,8 +287,16 @@ namespace UICharacterCreation
         {
             IDs = new List<int>();  // IDs start at 1. just a BTW. 
             val = new List<int>();
+            int selectedID =  -1;
+            foreach (NameKey pr in PotientialRaces)
+            {
+                if (pr.name.Equals(raceComboBox.SelectedItem.ToString()))
+                {
+                    selectedID = pr.key;
+                }
+            }
             PC.charInfo.race = raceComboBox.SelectedItem.ToString();
-            // int success = Racial_ability_adjustment.modArrays(PC.charInfo.race_id, out IDs, out val);
+            int success = Racial_ability_adjustment.modArrays(selectedID, out IDs, out val);
             // MessageBox.Show("ID = " + IDs[0].ToString() + "\nValue = " + val[0].ToString());
         }
 
@@ -454,7 +473,7 @@ namespace UICharacterCreation
                     {
                         baseAbilityScores[i] = int.Parse(scoreBoxes[i].Text);
                     }
-                    catch (Exception ea)
+                    catch (Exception yeah)
                     {
                         // Cant do junk with that :c
                     }
@@ -468,6 +487,7 @@ namespace UICharacterCreation
         {
             if (RacialModifierApplied)
             {
+                updateScoreBoxes();
                 // re-run racial modifier application
             }
             // else: we're fine. 
