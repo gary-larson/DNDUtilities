@@ -36,7 +36,7 @@ namespace UICharacterCreation
         public Character_hit_points HP;
         public Character_languages languages;
         public Character_possessions possessions;
-        public Character_skills skills;
+        public List<Character_skills> skills;
         public Character_spells spells;
         public Character_stats stats;
         public Character_wounds wounds;
@@ -58,7 +58,7 @@ namespace UICharacterCreation
             HP = new Character_hit_points();
             languages = new Character_languages();
             possessions = new Character_possessions();
-            skills = new Character_skills();
+            skills = new List<Character_skills>();
             spells = new Character_spells();
             stats = new Character_stats();
             wounds = new Character_wounds();
@@ -69,6 +69,15 @@ namespace UICharacterCreation
             // This populates a CharacterSheet with the proper character information
             // this also isnt implemented yet so just.... 
             // ignore me for now
+        }
+
+        public void saveSkills()
+        {
+            foreach (Character_skills skill in skills)
+            {
+                /// int character_id, int skill_id, int skill_rank, int skill_modifier, int ability_modifier, int misc_modifier)
+                skill.save(ID, skill.skill_id);
+            }
         }
     }
 }
