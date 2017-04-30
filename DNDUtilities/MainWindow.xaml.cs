@@ -126,16 +126,20 @@ namespace DNDUtilities
             //          a.temp_modifier = 3;
             //          a.save();
             //  bool b = a.delete(1, 1);
-           /*     List<NameKey> nk = Skill_subtypes.retrieveAllSubTypes(8);
-            foreach (NameKey n in nk)
-             {
-                   s += n.ToString();
-             } */
-            List<SkillInfo> l = Class_skills.retrieveAllSkills(8, 3);
-            foreach (SkillInfo si in l)
-            {
-                s += si.ToString();
-            }
+            /*     List<NameKey> nk = Skill_subtypes.retrieveAllSubTypes(8);
+             foreach (NameKey n in nk)
+              {
+                    s += n.ToString();
+              } */
+            /*   List<SkillInfo> l = Class_skills.retrieveAllSkills(8, 3);
+               foreach (SkillInfo si in l)
+               {
+                   s += si.ToString();
+               } */
+            int[] i = new int[4];
+            i = Racial_ability_adjustment.retrieveRacialAdjustments(1);
+            s = "Ability_id: " + i[0] + " adjustment " + i[1] +
+                "Ability_id: " + i[2] + " adjustment " + i[3];
             // a.player_name = "Keith";
             // a.save();
             //s = result.ToString();
