@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Data.SQLite;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -9,13 +8,16 @@ namespace DNDUtilitiesLib
 {
     public class Skill_subtypes : DBTable_lookup
     {
+        // Declare constants
+        const string TABLE = "skill_subtypes";
+        const string FIELD = "subtype_id";
         public int subtype_id
         {
             get;
             private set;
         }
 
-        public virtual string name
+        public string name
         {
             get;
             set;
@@ -27,57 +29,38 @@ namespace DNDUtilitiesLib
             private set;
         }
 
-        private List<String> fieldList
+        // Declare constructors
+        public Skill_subtypes()
         {
-            get;
-            set;
+            subtype_id = -1;
+            name = "";
+            skill_id = -1;
         }
 
-        public static List<NameKey> retrieveAllSubskillsfor(int skillID)
+        public Skill_subtypes(int subtypeKey, string subtype, int skillKey)
         {
-            List<NameKey> result = new List<NameKey>();
-            using (SQLiteConnection conn = new SQLiteConnection())
-            {
-                conn.ConnectionString = CONNECTION_STR;
-                conn.Open();
-
-                String sql = "select subtype_id, name from skill_subtypes where skill_id = @id";
-                SQLiteCommand command = conn.CreateCommand();
-                command.CommandText = sql;
-                command.CommandType = System.Data.CommandType.Text;
-                command.Parameters.Add(new SQLiteParameter("@id", skillID));
-
-                using (SQLiteDataReader read = command.ExecuteReader())
-                {
-                    while (read.Read())
-                    {
-                        NameKey temp = new NameKey(read.GetInt32(0), read.GetString(1));
-                        result.Add(temp);
-                    }
-                }
-            }
-
-            return result;
+            subtype_id = subtypeKey;
+            name = subtype;
+            skill_id = skillKey;
         }
 
-        public virtual void delete(int Key)
+        /// <summary>
+        /// gets all records 
+        /// </summary>
+        /// <param name="key">the skill key to locate</param>
+        /// <returns>returns a List with name and subtype_id</returns>
+        public static List<NameKey> retrieveAllSubTypes(int skillKey)
         {
-            throw new System.NotImplementedException();
+            return retrieveAll(TABLE, FIELD, skillKey);
         }
 
-        public virtual Skill_subtypes retrieve(int Key)
-        {
-            throw new System.NotImplementedException();
-        }
-
-        public virtual void save(int Key)
-        {
-            throw new System.NotImplementedException();
-        }
-
+        /// <summary>
+        /// outputs object as a string
+        /// </summary>
+        /// <returns>String representing object</returns>
         public override string ToString()
         {
-            throw new System.NotImplementedException();
+            return "SubType_id: " + subtype_id + " Name: " + name + " skill_id: " + skill_id;
         }
     }
 }

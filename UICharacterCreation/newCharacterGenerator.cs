@@ -276,8 +276,8 @@ namespace UICharacterCreation
         {
             IDs = new List<int>();  // IDs start at 1. just a BTW. 
             val = new List<int>();
-            PC.charInfo.Race = raceComboBox.SelectedItem.ToString();
-            int success = Racial_ability_adjustment.modArrays(PC.charInfo.race_id, out IDs, out val);
+            PC.charInfo.race = raceComboBox.SelectedItem.ToString();
+            // int success = Racial_ability_adjustment.modArrays(PC.charInfo.race_id, out IDs, out val);
             // MessageBox.Show("ID = " + IDs[0].ToString() + "\nValue = " + val[0].ToString());
         }
 

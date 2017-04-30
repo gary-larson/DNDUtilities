@@ -114,10 +114,11 @@ namespace DNDUtilities
             //s = cw.ToString();
             //s = cw.ToString();
             // s = id.ToString(); 
-            // Character_skills a = new Character_skills();
-            Proficiencies p = new Proficiencies();
-            p.retrieveRecord(1);
-            s = p.ToString();
+            //Class_skills a = new Class_skills();
+
+            //Proficiencies p = new Proficiencies();
+            //p.retrieveRecord(1);
+            //s = p.ToString();
             //bool b = Character_hit_points.delete(2, 6);
             //int result = Character_hit_points.GetTotalHitPoints(1);
             //          a.modifier = 1;
@@ -125,11 +126,11 @@ namespace DNDUtilities
             //          a.temp_modifier = 3;
             //          a.save();
             //  bool b = a.delete(1, 1);
-   /*             List<NameKey> nk = Spells.retrieveAllSpells();
+                List<NameKey> nk = Skill_subtypes.retrieveAllSubTypes(8);
             foreach (NameKey n in nk)
              {
                    s += n.ToString();
-             } */
+             }
             // a.player_name = "Keith";
             // a.save();
             //s = result.ToString();
