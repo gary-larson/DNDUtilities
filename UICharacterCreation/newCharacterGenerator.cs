@@ -317,8 +317,6 @@ namespace UICharacterCreation
 
         private void getRacialModifiers(out List<int> IDs, out List<int> val)
         {
-            IDs = new List<int>();  // IDs start at 1. just a BTW. 
-            val = new List<int>();
             int selectedID =  -1;
             foreach (NameKey pr in PotientialRaces)
             {
@@ -328,6 +326,10 @@ namespace UICharacterCreation
                 }
             }
             PC.charInfo.race = raceComboBox.SelectedItem.ToString();
+            int[] modadj = { 0, 0, 0, 0 };
+            modadj = Racial_ability_adjustment.retrieveRacialAdjustments(selectedID);
+            IDs = new List<int>() { modadj[0], modadj[2] };
+            val = new List<int>() { modadj[1], modadj[3] };
             // int success = Racial_ability_adjustment.modArrays(selectedID, out IDs, out val);
             // MessageBox.Show("ID = " + IDs[0].ToString() + "\nValue = " + val[0].ToString());
         }
