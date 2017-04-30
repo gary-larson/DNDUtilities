@@ -55,7 +55,7 @@ namespace UICharacterCreation
                 // check if a skill has subtyping, and go from there
                 // magical
                 int currentIndex = 0; // this is for the boxes, iirc. 
-                List<int> classSkills = Class_skills.getSkillsForClass(classID);    // IDs of the skills a clas sis good with. 
+                List<int> classSkills = new List<int>();//Class_skills.getSkillsForClass(classID);    // IDs of the skills a clas sis good with. 
                 List<NameKey> SkillChoices = Skills.retrieveAllSkills();            // All the skills we will put in the thing
 
                 List<Abilities> abilityInfo = new List<Abilities>()
@@ -63,7 +63,7 @@ namespace UICharacterCreation
                     new Abilities() // by putting this here, we bump the other indexes up by 1, ensuring that their index = ability IDs
                 };
                 for (int i = 1; i <= 6; i++) {
-                    abilityInfo.Add(Abilities.staticRetrieveRecord(i));
+                    //abilityInfo.Add(Abilities.staticRetrieveRecord(i));
                 }
                 // populates a useful array. 
 
@@ -72,7 +72,7 @@ namespace UICharacterCreation
                 {
                     List<int> adjustedSkillIDs;
                     List<int> adjustedSkillModifiers;
-                    Skill_adjustments.getSkillAdjustmentsforRace(raceID, out adjustedSkillIDs, out adjustedSkillModifiers);
+                    //Skill_adjustments.getSkillAdjustmentsforRace(raceID, out adjustedSkillIDs, out adjustedSkillModifiers);
                     // Misc. modifiers, affected by things like spells and Equipment and race. 
                     // I might try to get race going later. 
 
@@ -80,8 +80,9 @@ namespace UICharacterCreation
                     // ugh ok ill get race information in this also :C
 
                     // itterates through all skills availe
-                    Skills tempSkill = Skills.retrieve(s.key);
-                    if (tempSkill.has_subtype.ToUpper() == "YES")
+                    Skills tempSkill = new Skills();
+                    tempSkill = tempSkill.retrieve(s.key);
+                    if (true) //(tempSkill.has_subtype.ToUpper() == "YES")
                     {
                         // subtyped things get 4 entries, unless they're speak language. 
                         if (tempSkill.name == "Speak Language")
@@ -99,15 +100,15 @@ namespace UICharacterCreation
                         }
                         else
                         {
-                            List<NameKey> subtypes = Skill_subtypes.retrieveAllSubskillsfor(tempSkill.skill_id);
+                            //List<NameKey> subtypes = Skill_subtypes.retrieveAllSubskillsfor(tempSkill.skill_id);
                             for (int i = 0; i < 4; i++)
                             {
                                 // to provide VARIETY you can select up to 4 different versions of this. 
-                                Labeling(currentIndex, tempSkill, adjustedSkillIDs, adjustedSkillModifiers, abilityInfo, classSkills);
+                                //Labeling(currentIndex, tempSkill, adjustedSkillIDs, adjustedSkillModifiers, abilityInfo, classSkills);
                                 SubSkillComboBox[currentIndex].DropDownStyle = ComboBoxStyle.DropDownList;
-                                foreach (NameKey sub in subtypes) {
-                                    SubSkillComboBox[currentIndex].Items.Add(sub);
-                                }
+                               // foreach (NameKey sub in subtypes) {
+                                 //   SubSkillComboBox[currentIndex].Items.Add(sub);
+                                //}
                                 // SubSkillComboBox[currentIndex].SelectedIndex = 0;
                                 currentIndex++;
                             }
