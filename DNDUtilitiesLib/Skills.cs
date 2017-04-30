@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.SQLite;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -27,7 +28,11 @@ namespace DNDUtilitiesLib
             get;
             private set;
         }
-
+        public string has_subtype
+        {
+            get;
+            private set;
+        }
         public string trained
         {
             get;
@@ -117,9 +122,46 @@ namespace DNDUtilitiesLib
             throw new System.NotImplementedException();
         }
 
-        public Skills retrieve(int Key)
+        public static Skills retrieve(int Key)
         {
-            throw new System.NotImplementedException();
+            Skills output = new Skills();
+            // retrieves all records of a Skill, and presents them as a Skill item.
+                // Name, subtype, key_ability_id, the rest can be IGNORED on this page
+            // i think this counts as something we needed but ill work on implementing it. 
+            using (SQLiteConnection conn = new SQLiteConnection())
+            {
+                conn.ConnectionString = CONNECTION_STR;
+                conn.Open();
+
+                string sql = "SELECT name, subtype, key_ability_id FROM skills WHERE skill_ID = @skillID";
+                SQLiteCommand command = conn.CreateCommand();
+                command.CommandText = sql;
+                command.CommandType = System.Data.CommandType.Text;
+                command.Parameters.Add(new SQLiteParameter("skillID", Key.ToString()));
+
+                using (SQLiteDataReader read = command.ExecuteReader())
+                {
+                    int temp_key_ability_id = -1;
+                    while (read.Read())
+                    {
+                        string temp_name = read.GetString(0);
+                        string temp_subtype = read.GetString(1);
+                        try
+                        {
+                            temp_key_ability_id = read.GetInt32(2);
+                        }
+                        catch ( Exception e)
+                        {
+                            temp_key_ability_id = -1;
+                        }
+                        output.name = temp_name;
+                        output.has_subtype = temp_subtype;
+                        output.key_ability_id = temp_key_ability_id;
+                    }
+                }
+                conn.Close();
+            }
+            return output;
         }
 
         /// <summary>

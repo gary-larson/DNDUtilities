@@ -490,5 +490,12 @@ namespace UICharacterCreation
                 updateScoreBoxes();
             }
         }
+
+        private void addSkillsButton_Click(object sender, EventArgs e)
+        {
+            skillSelection skillStuff;
+            skillStuff = new skillSelection("new", 3, 4, baseAbilityScores);
+            skillStuff.ShowDialog();
+        }
     }
 }

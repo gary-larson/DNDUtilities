@@ -711,6 +711,7 @@
             this.addSkillsButton.TabIndex = 35;
             this.addSkillsButton.Text = "Add Skills";
             this.addSkillsButton.UseVisualStyleBackColor = true;
+            this.addSkillsButton.Click += new System.EventHandler(this.addSkillsButton_Click);
             // 
             // newCharacterGenerator
             // 

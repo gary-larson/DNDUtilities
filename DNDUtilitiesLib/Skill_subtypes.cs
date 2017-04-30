@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.SQLite;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -30,6 +31,33 @@ namespace DNDUtilitiesLib
         {
             get;
             set;
+        }
+
+        public static List<NameKey> retrieveAllSubskillsfor(int skillID)
+        {
+            List<NameKey> result = new List<NameKey>();
+            using (SQLiteConnection conn = new SQLiteConnection())
+            {
+                conn.ConnectionString = CONNECTION_STR;
+                conn.Open();
+
+                String sql = "select subtype_id, name from skill_subtypes where skill_id = @id";
+                SQLiteCommand command = conn.CreateCommand();
+                command.CommandText = sql;
+                command.CommandType = System.Data.CommandType.Text;
+                command.Parameters.Add(new SQLiteParameter("@id", skillID));
+
+                using (SQLiteDataReader read = command.ExecuteReader())
+                {
+                    while (read.Read())
+                    {
+                        NameKey temp = new NameKey(read.GetInt32(0), read.GetString(1));
+                        result.Add(temp);
+                    }
+                }
+            }
+
+            return result;
         }
 
         public virtual void delete(int Key)

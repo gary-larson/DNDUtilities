@@ -50,7 +50,7 @@
             this.labelSkillName2 = new System.Windows.Forms.Label();
             this.labelClassSkill2 = new System.Windows.Forms.Label();
             this.subskill4 = new System.Windows.Forms.ComboBox();
-            this.totalMo4 = new System.Windows.Forms.Label();
+            this.totalMod4 = new System.Windows.Forms.Label();
             this.miscMod4 = new System.Windows.Forms.Label();
             this.attribMod4 = new System.Windows.Forms.Label();
             this.skilrankUD4 = new System.Windows.Forms.NumericUpDown();
@@ -119,7 +119,7 @@
             this.skilrankUD13 = new System.Windows.Forms.NumericUpDown();
             this.labelSkillName13 = new System.Windows.Forms.Label();
             this.labelClassSkill13 = new System.Windows.Forms.Label();
-            this.comboBox12 = new System.Windows.Forms.ComboBox();
+            this.subskill12 = new System.Windows.Forms.ComboBox();
             this.totalMod12 = new System.Windows.Forms.Label();
             this.miscMod12 = new System.Windows.Forms.Label();
             this.attribMod12 = new System.Windows.Forms.Label();
@@ -405,6 +405,7 @@
             this.classSkillLabel2 = new System.Windows.Forms.Label();
             this.attribModHeadr2 = new System.Windows.Forms.Label();
             this.skillNameLabel2 = new System.Windows.Forms.Label();
+            this.skillSubmitButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.skilrankUD1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.skilrankUD2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.skilrankUD4)).BeginInit();
@@ -661,14 +662,14 @@
             this.subskill4.Size = new System.Drawing.Size(80, 21);
             this.subskill4.TabIndex = 34;
             // 
-            // totalMo4
+            // totalMod4
             // 
-            this.totalMo4.AutoSize = true;
-            this.totalMo4.Location = new System.Drawing.Point(479, 139);
-            this.totalMo4.Name = "totalMo4";
-            this.totalMo4.Size = new System.Drawing.Size(42, 13);
-            this.totalMo4.TabIndex = 33;
-            this.totalMo4.Text = "N/A - 0";
+            this.totalMod4.AutoSize = true;
+            this.totalMod4.Location = new System.Drawing.Point(479, 139);
+            this.totalMod4.Name = "totalMod4";
+            this.totalMod4.Size = new System.Drawing.Size(42, 13);
+            this.totalMod4.TabIndex = 33;
+            this.totalMod4.Text = "N/A - 0";
             // 
             // miscMod4
             // 
@@ -1303,13 +1304,13 @@
             this.labelClassSkill13.TabIndex = 91;
             this.labelClassSkill13.Text = "?";
             // 
-            // comboBox12
+            // subskill12
             // 
-            this.comboBox12.FormattingEnabled = true;
-            this.comboBox12.Location = new System.Drawing.Point(159, 351);
-            this.comboBox12.Name = "comboBox12";
-            this.comboBox12.Size = new System.Drawing.Size(80, 21);
-            this.comboBox12.TabIndex = 90;
+            this.subskill12.FormattingEnabled = true;
+            this.subskill12.Location = new System.Drawing.Point(159, 351);
+            this.subskill12.Name = "subskill12";
+            this.subskill12.Size = new System.Drawing.Size(80, 21);
+            this.subskill12.TabIndex = 90;
             // 
             // totalMod12
             // 
@@ -3957,11 +3958,21 @@
             this.skillNameLabel2.TabIndex = 371;
             this.skillNameLabel2.Text = "Skill Name:";
             // 
+            // skillSubmitButton
+            // 
+            this.skillSubmitButton.Location = new System.Drawing.Point(742, 770);
+            this.skillSubmitButton.Name = "skillSubmitButton";
+            this.skillSubmitButton.Size = new System.Drawing.Size(75, 23);
+            this.skillSubmitButton.TabIndex = 377;
+            this.skillSubmitButton.Text = "Submit Skills";
+            this.skillSubmitButton.UseVisualStyleBackColor = true;
+            // 
             // skillSelection
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1164, 772);
+            this.ClientSize = new System.Drawing.Size(1164, 805);
+            this.Controls.Add(this.skillSubmitButton);
             this.Controls.Add(this.totalModheadr2);
             this.Controls.Add(this.miscModheadr);
             this.Controls.Add(this.skillranksLabel2);
@@ -4248,7 +4259,7 @@
             this.Controls.Add(this.skilrankUD13);
             this.Controls.Add(this.labelSkillName13);
             this.Controls.Add(this.labelClassSkill13);
-            this.Controls.Add(this.comboBox12);
+            this.Controls.Add(this.subskill12);
             this.Controls.Add(this.totalMod12);
             this.Controls.Add(this.miscMod12);
             this.Controls.Add(this.attribMod12);
@@ -4305,7 +4316,7 @@
             this.Controls.Add(this.labelSkillName5);
             this.Controls.Add(this.labelClassSkill5);
             this.Controls.Add(this.subskill4);
-            this.Controls.Add(this.totalMo4);
+            this.Controls.Add(this.totalMod4);
             this.Controls.Add(this.miscMod4);
             this.Controls.Add(this.attribMod4);
             this.Controls.Add(this.skilrankUD4);
@@ -4422,7 +4433,7 @@
         private System.Windows.Forms.Label labelSkillName2;
         private System.Windows.Forms.Label labelClassSkill2;
         private System.Windows.Forms.ComboBox subskill4;
-        private System.Windows.Forms.Label totalMo4;
+        private System.Windows.Forms.Label totalMod4;
         private System.Windows.Forms.Label miscMod4;
         private System.Windows.Forms.Label attribMod4;
         private System.Windows.Forms.NumericUpDown skilrankUD4;
@@ -4491,7 +4502,7 @@
         private System.Windows.Forms.NumericUpDown skilrankUD13;
         private System.Windows.Forms.Label labelSkillName13;
         private System.Windows.Forms.Label labelClassSkill13;
-        private System.Windows.Forms.ComboBox comboBox12;
+        private System.Windows.Forms.ComboBox subskill12;
         private System.Windows.Forms.Label totalMod12;
         private System.Windows.Forms.Label miscMod12;
         private System.Windows.Forms.Label attribMod12;
@@ -4777,5 +4788,6 @@
         private System.Windows.Forms.Label attribModHeadr2;
         private System.Windows.Forms.Label skillNameLabel2;
         private System.Windows.Forms.Label totalMod40;
+        private System.Windows.Forms.Button skillSubmitButton;
     }
 }

@@ -87,6 +87,35 @@ namespace DNDUtilitiesLib
                 }
             }
         }
+        public static Abilities staticRetrieveRecord(int Key)
+        {
+            int ability_id = -1;
+            string name = "-1";
+            string abbreviation = "-1";
+            using (SQLiteConnection conn = new SQLiteConnection())
+            {
+                conn.ConnectionString = CONNECTION_STR;
+                conn.Open();
+
+                String sql = "select ability_id, name, abbreviation from abilities where ability_id = @id";
+                SQLiteCommand command = conn.CreateCommand();
+                command.CommandText = sql;
+                command.CommandType = System.Data.CommandType.Text;
+                command.Parameters.Add(new SQLiteParameter("@id", Key.ToString()));
+
+                using (SQLiteDataReader read = command.ExecuteReader())
+                {
+                    while (read.Read())
+                    {
+                        ability_id = read.GetInt32(0);
+                        name = read.GetString(1);
+                        abbreviation = read.GetString(2);
+                    }
+                    Abilities Result = new Abilities(ability_id, name, abbreviation);
+                    return Result;
+                }
+            }
+        }
 
 
 
