@@ -94,6 +94,30 @@ namespace UICharacterCreation
 
         private void submitGeneralInfo_Click(object sender, EventArgs e)
         {
+            DialogResult result = MessageBox.Show("Saving will overwrite, Continue?", "Confirmation", MessageBoxButtons.YesNo);
+            if (result == DialogResult.Yes)
+            {
+                // save the character
+                List<int> tBiomet;
+                List<int> tStats;
+                if (validatePC(out tBiomet, out tStats))
+                {
+                    savePC(tBiomet, tStats);
+                }
+                else
+                {
+                    MessageBox.Show("Invalid Values Provided, Please Check the Red Feilds and Try again");
+                }
+            }
+            else if (result == DialogResult.No)
+            {
+                //  dont for now
+            }
+        }
+
+        private bool validatePC(out List<int> tBiomet, out List<int> tStats)
+        {
+
             // These are all currently Seperate If-Statements 
             // so i can go back in alter and give more precise declarations of bad
             List<TextBox> Verifications = new List<TextBox>() {
@@ -104,7 +128,7 @@ namespace UICharacterCreation
             invalid = !SkillsValid;     // if the skills are valid, then invalid remains false. Else, this is invalid. 
 
             // Does Data Exist?  ( non-numberic validations )
-            foreach(TextBox textField in Verifications)
+            foreach (TextBox textField in Verifications)
             {
                 textField.BackColor = Color.Empty;      // resets the color of a field
                 if (String.IsNullOrEmpty(textField.Text) || String.IsNullOrWhiteSpace(textField.Text))
@@ -124,83 +148,91 @@ namespace UICharacterCreation
             {
                 heightTextBox, weightTextBox, ageTextBox
             };
-            List<int> tBiomet = new List<int>();        // height, Weight, Age
+            tBiomet = new List<int>();        // height, Weight, Age
 
             List<TextBox> scoreBoxes = new List<TextBox>()
             {
                 abilityTextBox1, abilityTextBox2, abilityTextBox3,
                 abilityTextBox4, abilityTextBox5, abilityTextBox6
             };
-            List<int> tStats = new List<int>();         // in order based on the IDs
+            tStats = new List<int>();         // in order based on the IDs
 
             invalid = (!validateIntFields(biometrics, out tBiomet) || invalid);
-            invalid = ( !validateIntFields(scoreBoxes, out tStats) || invalid);
+            invalid = (!validateIntFields(scoreBoxes, out tStats) || invalid);
 
-            if (invalid)
+            return !invalid;            // true if good false if bad
+        }
+
+
+        private void savePC(List<int> tBiomet, List<int> tStats)
+        {
+            // save the man
+
+            //------------------------------------------determine IDs generated-----------------------------------------//
+            // MessageBox.Show("SUCC sesss");
+            NameKey classNK = new NameKey(-1, "bober");
+            foreach (NameKey pClass in PotientialClasses)
             {
-                MessageBox.Show("Invalid Values Provided, Please Check the Red Feilds and Try again");
+                if (pClass.name.Equals(classComboBox.SelectedItem.ToString()))
+                {
+                    classNK = pClass;
+                }
+            }
+            NameKey raceNK = new NameKey(-1, "boring");
+            foreach (NameKey pRace in PotientialRaces)
+            {
+                if (pRace.name.Equals(raceComboBox.SelectedItem.ToString()))
+                {
+                    raceNK = pRace;
+                }
+
+            }
+            NameKey aligNK = new NameKey(-1, "Litterally Satan");
+            foreach (NameKey pAlign in PotientialAlignments)
+            {
+                if (pAlign.name.Equals(alignmentComboBox.SelectedItem.ToString()))
+                {
+                    aligNK = pAlign;
+                }
+            }
+            PC.charInfo.name = pcNameTextBox.Text;
+            PC.charInfo.player_name = playerNameTextBox.Text;
+            PC.charInfo.number_of_classes = 1;  // because a level 1 PC only has this
+            PC.charInfo.race = raceNK.name;
+            PC.charInfo.alignment = aligNK.name;
+            // PC.charInfo.alignment_id = aligNK.key; // set by SAVE function
+            PC.charInfo.deity = dietyTextBox.Text;
+            PC.charInfo.gender = genderTextBox.Text;
+            PC.charInfo.height = tBiomet[0];
+            PC.charInfo.weight = tBiomet[1];
+            PC.charInfo.age = tBiomet[2];
+            PC.charInfo.eyes = eyesTextBox.Text;
+            PC.charInfo.hair = hairTextBox.Text;
+            PC.charInfo.skin = skinTextBox.Text;
+            // PC.charInfo.description // Autoset by the Description Dialgo Box
+            PC.charInfo.save();
+            if (PC.ID != -1)
+            {
+                MessageBox.Show("Characters: Saved successfully!");
             }
             else
             {
-                // save the man
-
-                //------------------------------------------determine IDs generated-----------------------------------------//
-                // MessageBox.Show("SUCC sesss");
-                NameKey classNK = new NameKey(-1, "bober"); 
-                foreach (NameKey pClass in PotientialClasses)
-                {
-                    if (pClass.name.Equals(classComboBox.SelectedItem.ToString()))
-                    {
-                        classNK = pClass;
-                    }
-                }
-                NameKey raceNK = new NameKey(-1, "boring");
-                foreach (NameKey pRace in PotientialRaces)
-                {
-                    if (pRace.name.Equals(raceComboBox.SelectedItem.ToString()){
-                        raceNK = pRace;
-                    }
-
-                }
-                PC.charInfo.name = pcNameTextBox.Text;
-                PC.charInfo.player_name = playerNameTextBox.Text;
-                PC.charInfo.number_of_classes = 1;  // because a level 1 PC only has this
-                PC.charInfo.race = raceComboBox.SelectedItem.ToString();
-                PC.charInfo.alignment = alignmentComboBox.SelectedItem.ToString();
-                PC.charInfo.deity = dietyTextBox.Text;
-                PC.charInfo.gender = genderTextBox.Text;
-                PC.charInfo.height = tBiomet[0];
-                PC.charInfo.weight = tBiomet[1];
-                PC.charInfo.age = tBiomet[2];
-                PC.charInfo.eyes = eyesTextBox.Text;
-                PC.charInfo.hair = hairTextBox.Text;
-                PC.charInfo.skin = skinTextBox.Text;
-                // PC.charInfo.description // Autoset by the Description Dialgo Box
-                PC.charInfo.save();
-                if (PC.ID != -1)
-                {
-                    MessageBox.Show("Characters: Saved successfully!");
-                }
-                else
-                {
-                    MessageBox.Show("Characters: Save failed Gracefully!");
-                }
-                // MessageBox.Show(PC.charInfo.ToString()); // not the best certification but hey it works.
-
-                PC.classLevels = new Character_classes(PC.ID, classNK.key, 1, 1);
-                PC.classLevels.save();      // not a bool just hope it works
-                Classes UsedClass = new Classes();
-                UsedClass.retrieveRecord(classNK.key);
-                PC.HP = new Character_hit_points(PC.ID, 1, UsedClass.hit_die+AbilityModifiers[3]);
-                                            // stores properly calculated HP in the box. 
-                // Languages needs its own UI
-                // Feats needs its own UI
-                // Equipment needs its own UI
-                // skills need their own UI     ( IN PROGRESS! )
-                // (combat) stats need their own UI (for display)
-                    // dont do them until after the other things are tackled though. 
-
+                MessageBox.Show("Characters: Save failed Gracefully!");
             }
+            // MessageBox.Show(PC.charInfo.ToString()); // not the best certification but hey it works.
+
+            PC.classLevels = new Character_classes(PC.ID, classNK.key, 1, 1);
+            PC.classLevels.save();      // not a bool just hope it works
+            Classes UsedClass = new Classes();
+            UsedClass.retrieveRecord(classNK.key);
+            PC.HP = new Character_hit_points(PC.ID, 1, UsedClass.hit_die + AbilityModifiers[3]);
+            // stores properly calculated HP in the box. 
+            // Languages needs its own UI
+            // Feats needs its own UI
+            // Equipment needs its own UI
+            // skills need their own UI     ( IN PROGRESS! )
+            // (combat) stats need their own UI (for display)
+            // dont do them until after the other things are tackled though. 
         }
 
         private bool validateIntFields(List<TextBox> input, out List<int> output)
@@ -296,7 +328,7 @@ namespace UICharacterCreation
                 }
             }
             PC.charInfo.race = raceComboBox.SelectedItem.ToString();
-            int success = Racial_ability_adjustment.modArrays(selectedID, out IDs, out val);
+            // int success = Racial_ability_adjustment.modArrays(selectedID, out IDs, out val);
             // MessageBox.Show("ID = " + IDs[0].ToString() + "\nValue = " + val[0].ToString());
         }
 
