@@ -104,8 +104,7 @@ namespace DNDUtilitiesLib
         /// </summary>
         /// <param name="characterKey">part of primary key</param>
         /// <param name="level">part of primary key</param>
-        /// <returns>Object with record</returns>
-        public Character_hit_points retrieveRecord(int characterKey, int level)
+        public void retrieveRecord(int characterKey, int level)
         {
 
             using (SQLiteConnection conn = new SQLiteConnection())
@@ -137,7 +136,7 @@ namespace DNDUtilitiesLib
                     }
                 }
                 conn.Close();
-                return this;
+                //return this;
             }
         }
 

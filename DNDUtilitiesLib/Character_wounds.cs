@@ -114,8 +114,7 @@ namespace DNDUtilitiesLib
         /// </summary>
         /// <param name="characterKey">part of primary key</param>
         /// <param name="level">part of primary key</param>
-        /// <returns>Object with record</returns>
-        public Character_wounds retrieveRecord(int woundKey)
+        public void retrieveRecord(int woundKey)
         {
 
             using (SQLiteConnection conn = new SQLiteConnection())
@@ -155,7 +154,7 @@ namespace DNDUtilitiesLib
                     }
                 }
                 conn.Close();
-                return this;
+               // return this;
             }
         }
 

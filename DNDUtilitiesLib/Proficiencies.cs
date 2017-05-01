@@ -57,8 +57,7 @@ namespace DNDUtilitiesLib
         /// Gets this object to the record determined by character_id
         /// </summary>
         /// <param name="Key"></param>
-        /// <returns> this object </returns>
-        public Proficiencies retrieveRecord(int Key)
+        public void retrieveRecord(int Key)
         {
 
             using (SQLiteConnection conn = new SQLiteConnection())
@@ -93,7 +92,7 @@ namespace DNDUtilitiesLib
                         class_id = read.GetInt32(4);
                         description = read[5].ToString();
                     }
-                    return this;
+                    //return this;
                 }
             }
         }

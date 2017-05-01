@@ -178,13 +178,12 @@ namespace DNDUtilitiesLib
             set;
         }
 
-        private List<String> fieldList
-        {
-            get;
-            set;
-        }
-
-        public Classes retrieveRecord(int key)
+        
+        /// <summary>
+        /// Retrieves record from the database and populates this object
+        /// </summary>
+        /// <param name="key">the class id to be returned</param>
+        public void retrieveRecord(int key)
         {
             using (SQLiteConnection conn = new SQLiteConnection())
             {
@@ -211,7 +210,7 @@ namespace DNDUtilitiesLib
                         ability = read[4].ToString();
                         spell_type = read[5].ToString();
                     }
-                    return this;
+                    //return this;
                 }
             }
         }
@@ -242,11 +241,6 @@ namespace DNDUtilitiesLib
                     return ls;
                 }
             }
-        }
-
-        public virtual void save(int Key)
-        {
-            throw new System.NotImplementedException();
         }
 
         public override string ToString()

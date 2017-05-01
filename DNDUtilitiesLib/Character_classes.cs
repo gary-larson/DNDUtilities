@@ -91,8 +91,7 @@ namespace DNDUtilitiesLib
         /// </summary>
         /// <param name="characterKey">part of primary key</param>
         /// <param name="classKey">part of primary key</param>
-        /// <returns>Object with record</returns>
-        public Character_classes retrieveRecord(int characterKey, int classKey)
+        public void retrieveRecord(int characterKey, int classKey)
         {
 
             using (SQLiteConnection conn = new SQLiteConnection())
@@ -130,7 +129,7 @@ namespace DNDUtilitiesLib
                     }
                 }
                 conn.Close();
-                return this;
+               // return this;
             }
         }
 

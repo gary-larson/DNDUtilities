@@ -336,8 +336,7 @@ namespace DNDUtilitiesLib
         /// Retrieve record from database
         /// </summary>
         /// <param name="characterKey">To determine record to get</param>
-        /// <returns>this object populated from database if record exists</returns>
-        public Character_stats retrieveRecord(int characterKey)
+        public void retrieveRecord(int characterKey)
         {
 
             using (SQLiteConnection conn = new SQLiteConnection())
@@ -456,7 +455,7 @@ namespace DNDUtilitiesLib
                     }
                 }
                 conn.Close();
-                return this;
+               // return this;
             }
         }
 
