@@ -22,7 +22,7 @@ namespace UICharacterCreation
         List<Label> AttributeModLabels;
         List<Label> miscModLabels;
         List<Label> totalModLabels;
-        List<int> IDinThisPosition; // this is "what skill ID is using this spot in the UI"
+        List<int> IDinPos;          // this is "what skill ID is using this spot in the UI", 52 spot array
         int effectiveIntMod;        // stuff. 
         int pointsToSpend;          // keeps track of how many are left
         List<int> attributes;
@@ -46,7 +46,12 @@ namespace UICharacterCreation
             {
                 attribMods.Add((int)Math.Floor((double)attributes[i] / 2 - 5));
             }
-
+            // 0 = str, normal IDs are this +1
+            // 1 = dex
+            // 2 = con
+            // 3 = int
+            // 4 = wis
+            // 5 = cha
 
             // ------------------------------------------- Populate form Lists! ------------------------------------------ //
             initArr();
@@ -55,49 +60,48 @@ namespace UICharacterCreation
                 // get the list of _all Skills_
                 // check if a skill has subtyping, and go from there
                 // magical
-                int currentIndex = 0; // this is for the boxes, iirc. 
-                List<int> classSkills = new List<int>();//Class_skills.getSkillsForClass(classID);    // IDs of the skills a clas sis good with. 
+                int cI = 0; // Current index, as in 'where in the 52 are we". this is for the boxes
+                List<NameKey> classSkills = new List<NameKey>();
+                classSkills = Class_skills.retrieveAllSkills(classID);              // IDs of the skills a clas sis good with. 
                 List<NameKey> SkillChoices = Skills.retrieveAllSkills();            // All the skills we will put in the thing
 
-                List<Abilities> abilityInfo = new List<Abilities>()
-                {
-                    new Abilities() // by putting this here, we bump the other indexes up by 1, ensuring that their index = ability IDs
-                };
-                for (int i = 1; i <= 6; i++) {
-                    //abilityInfo.Add(Abilities.staticRetrieveRecord(i));
-                }
-                // populates a useful array. 
 
-                
-                foreach(NameKey s in SkillChoices)
+
+                // itterates through all skills availe                              // TempSkill starts at 0, IDs start at 1
+                List<SkillInfo> tempSkill = new List<SkillInfo>();                  // OPERATES OFF THE "ID IN POS" METHOD
+                tempSkill = Class_skills.retrieveAllSkills(classID, raceID);        // WHICH IS TO SAY YOU WANT 
+                                                                                    // tempSkill[IDinPos[cI]-1]
+                                                                                    // ID in pos 0 = 1
+                                                                                    // Ci = 0
+                                                                                    // ID for first skill 1
+                                                                                    // position of skill_id 1 in tempskill = 0
+                                                                                    // i hate subtyped skills. 
+                foreach (NameKey s in SkillChoices)
                 {
-                    List<int> adjustedSkillIDs;
-                    List<int> adjustedSkillModifiers;
-                    //Skill_adjustments.getSkillAdjustmentsforRace(raceID, out adjustedSkillIDs, out adjustedSkillModifiers);
+                    IDinPos[cI] = s.key;      // sets the ID in this position to the key of the currently selexcted SkillChoice
+                    
                     // Misc. modifiers, affected by things like spells and Equipment and race. 
-                    // I might try to get race going later. 
+                    // I might try to get race going later. // should be going now. 
 
                     // adjusted int mod = attributes[3] + possible racial modifier. 
                     // ugh ok ill get race information in this also :C
 
-                    // itterates through all skills availe
-                    Skills tempSkill = new Skills();
-                    tempSkill = tempSkill.retrieve(s.key);
-                    if (true) //(tempSkill.has_subtype.ToUpper() == "YES")
+
+                    if (tempSkill[IDinPos[cI] - 1].subType.ToUpper() == "YES")
                     {
                         // subtyped things get 4 entries, unless they're speak language. 
-                        if (tempSkill.name == "Speak Language")
+                        if (tempSkill[IDinPos[cI] - 1].name == "Speak Language")
                         {
                             // Dont do normal things because this one is weird
-                            ClassSkillLabels[currentIndex].Text = "NO";             // 2 skillpoints per language
-                            SkillNamelabels[currentIndex].Text = tempSkill.name;    // sets the name label
-                            AttributeModLabels[currentIndex].Text = "N/A";
-                            miscModLabels[currentIndex].Text = "N/A";
-                            totalModLabels[currentIndex].Text = "0 Languages Gained";
-                            SubSkillComboBox[currentIndex].Enabled = false;         // disables unneeded box
+                            ClassSkillLabels[cI].Text = "NO";             // 2 skillpoints per language
+                            SkillNamelabels[cI].Text = tempSkill[IDinPos[cI] - 1].name;    // sets the name label
+                            AttributeModLabels[cI].Text = "N/A";
+                            miscModLabels[cI].Text = "N/A";
+                            totalModLabels[cI].Text = "0 Languages Gained";
+                            SubSkillComboBox[cI].Enabled = false;         // disables unneeded box
                             // Technically we _could_ use that box, but this system will instead just make the languages UI aware that the player cna use more languages
                                     // eventually. 
-                            currentIndex++;
+                            cI++;
                         }
                         else
                         {
@@ -105,13 +109,16 @@ namespace UICharacterCreation
                             for (int i = 0; i < 4; i++)
                             {
                                 // to provide VARIETY you can select up to 4 different versions of this. 
-                                //Labeling(currentIndex, tempSkill, adjustedSkillIDs, adjustedSkillModifiers, abilityInfo, classSkills);
-                                SubSkillComboBox[currentIndex].DropDownStyle = ComboBoxStyle.DropDownList;
-                               // foreach (NameKey sub in subtypes) {
-                                 //   SubSkillComboBox[currentIndex].Items.Add(sub);
-                                //}
-                                // SubSkillComboBox[currentIndex].SelectedIndex = 0;
-                                currentIndex++;
+                                Labeling(cI, tempSkill, classSkills);
+
+                                SubSkillComboBox[cI].DropDownStyle = ComboBoxStyle.DropDownList;
+
+                                List<NameKey> subtypes = Skill_subtypes.retrieveAllSubTypes(IDinPos[cI]);
+                                foreach (NameKey sub in subtypes) {
+                                    SubSkillComboBox[cI].Items.Add(sub);
+                                }
+                                // SubSkillComboBox[cI].SelectedIndex = 0;
+                                cI++;
                             }
                         }
                     }
@@ -119,12 +126,12 @@ namespace UICharacterCreation
                     {
                         // no subtyping, just 1 entry.
                         //--------------------Sets everything _but_ the combobox--------------------------//
-                        Labeling(currentIndex, tempSkill, adjustedSkillIDs, adjustedSkillModifiers, abilityInfo, classSkills);
+                        Labeling(cI, tempSkill, classSkills);
 
                         //-----------------------Set ComboBox----------------------------------------//
-                        SubSkillComboBox[currentIndex].Enabled = false;         // disables unneeded box
+                        SubSkillComboBox[cI].Enabled = false;         // disables unneeded box
 
-                        currentIndex++; // we are finished with this row of boxes, and thus move on to the next. 
+                        cI++; // we are finished with this row of boxes, and thus move on to the next. 
                     }
                 }
 
@@ -279,7 +286,7 @@ namespace UICharacterCreation
             };
 
             // intentional dummy values
-            IDinThisPosition = new List<int>()
+            IDinPos = new List<int>()
             {
                 -1, -1, -1, -1,
                 -1, -1, -1, -1,
@@ -345,61 +352,56 @@ namespace UICharacterCreation
             };
         }
 
-        public void Labeling(int currentIndex, Skills tempSkill, List<int> adjustedSkillIDs, List<int>adjustedSkillModifiers, List<Abilities> abilityInfo, List<int> classSkills)
+        public void Labeling(int cI, List<SkillInfo> tempSkill, List<NameKey> classSkills)
         {
-
             //------------------------------class skill labels---------------------------------------------//
-            ClassSkillLabels[currentIndex].Text = "NO";     // reset this from the default "unknown"
-            foreach (int skillID in classSkills)
+            ClassSkillLabels[cI].Text = "NO";     // reset this from the default "unknown"
+            foreach (NameKey skillID in classSkills)
             {
-                if (skillID == tempSkill.skill_id)
+                if (skillID.key == tempSkill[cI].skill_id)
                 {
                     // if this _is_ a class skill
-                    ClassSkillLabels[currentIndex].Text = "YES";
+                    ClassSkillLabels[cI].Text = "YES";
                 }
             }
             //--------------------------------Set Skill name Label----------------------------------------------//
-            SkillNamelabels[currentIndex].Text = tempSkill.name;    // sets the name label
+            SkillNamelabels[cI].Text = tempSkill[IDinPos[cI] - 1].name;    // sets the name label
 
             //------------------------------------Set attribute Mod Label---------------------------------------//
-            attributeModForSkill[currentIndex] = attribMods[tempSkill.key_ability_id-1];
-            if (attributeModForSkill[currentIndex] >= 0)
+            attributeModForSkill[cI] = attribMods[tempSkill[IDinPos[cI] - 1].ability_id - 1];
+            if (attributeModForSkill[cI] >= 0)
             {
                 // Take the current attribute mod label, set it equal to the current skil's ability's abbr, and add the number at the end. 
-                AttributeModLabels[currentIndex].Text = abilityInfo[tempSkill.key_ability_id].abbreviation + ": +" + attributeModForSkill[currentIndex].ToString();
+                AttributeModLabels[cI].Text = tempSkill[IDinPos[cI] - 1].ability + ": +" + attributeModForSkill[cI].ToString();
             }
             else
             {
                 // the lack of a sign is the only difference here. 
-                AttributeModLabels[currentIndex].Text = abilityInfo[tempSkill.key_ability_id].abbreviation + ": " + attributeModForSkill[currentIndex].ToString();
+                AttributeModLabels[cI].Text = tempSkill[IDinPos[cI] - 1].ability + ": " + attributeModForSkill[cI].ToString();
             }
 
             //------------------------------------MiscModLabel Assignments-------------------------------------------------------------//
-            miscModLabels[currentIndex].Text = "+0";
-            for (int i = 0; i<adjustedSkillIDs.Count; i++)
+            miscModLabels[cI].Text = "+0";
+            // Checks if the current skill is modified
+
+            MiscModForSkills[cI] = tempSkill[IDinPos[cI] - 1].adjustment;
+            if (MiscModForSkills[cI] >= 0)
             {
-                // Checks if the current skill is modified
-                if (adjustedSkillIDs[i] == tempSkill.skill_id)
-                {
-                    MiscModForSkills[currentIndex] = adjustedSkillModifiers[i];
-                    if (MiscModForSkills[currentIndex] >= 0)
-                    {
-                        miscModLabels[currentIndex].Text = "+" + MiscModForSkills[currentIndex].ToString();
-                    }
-                    else
-                    {
-                        miscModLabels[currentIndex].Text = MiscModForSkills[currentIndex].ToString();
-                    }
-                }
-            }
-            totalModForSkills[currentIndex] = MiscModForSkills[currentIndex] + attributeModForSkill[currentIndex] + (int)SkillRankUD[currentIndex].Value;
-            if (totalModForSkills[currentIndex] >= 0)
-            {
-                totalModLabels[currentIndex].Text = "+" + totalModForSkills[currentIndex].ToString();
+                miscModLabels[cI].Text = "+" + MiscModForSkills[cI].ToString();
             }
             else
             {
-                totalModLabels[currentIndex].Text = totalModForSkills[currentIndex].ToString();
+                miscModLabels[cI].Text = MiscModForSkills[cI].ToString();
+            }
+
+            totalModForSkills[cI] = MiscModForSkills[cI] + attributeModForSkill[cI] + (int)SkillRankUD[cI].Value;
+            if (totalModForSkills[cI] >= 0)
+            {
+                totalModLabels[cI].Text = "+" + totalModForSkills[cI].ToString();
+            }
+            else
+            {
+                totalModLabels[cI].Text = totalModForSkills[cI].ToString();
             }
         }
     }

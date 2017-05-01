@@ -170,31 +170,9 @@ namespace UICharacterCreation
 
             //------------------------------------------determine IDs generated-----------------------------------------//
             // MessageBox.Show("SUCC sesss");
-            NameKey classNK = new NameKey(-1, "bober");
-            foreach (NameKey pClass in PotientialClasses)
-            {
-                if (pClass.name.Equals(classComboBox.SelectedItem.ToString()))
-                {
-                    classNK = pClass;
-                }
-            }
-            NameKey raceNK = new NameKey(-1, "boring");
-            foreach (NameKey pRace in PotientialRaces)
-            {
-                if (pRace.name.Equals(raceComboBox.SelectedItem.ToString()))
-                {
-                    raceNK = pRace;
-                }
-
-            }
-            NameKey aligNK = new NameKey(-1, "Litterally Satan");
-            foreach (NameKey pAlign in PotientialAlignments)
-            {
-                if (pAlign.name.Equals(alignmentComboBox.SelectedItem.ToString()))
-                {
-                    aligNK = pAlign;
-                }
-            }
+            NameKey classNK = currentClass();
+            NameKey raceNK = currentRace();
+            NameKey aligNK = currentAlignment();
             PC.charInfo.name = pcNameTextBox.Text;
             PC.charInfo.player_name = playerNameTextBox.Text;
             PC.charInfo.number_of_classes = 1;  // because a level 1 PC only has this
@@ -314,24 +292,50 @@ namespace UICharacterCreation
                 MessageBox.Show("Hopefully this Isn't a live demo, this is an error!\nDice option not found!");
             }
         }
-
+        private List<int> getModifiedStats()
+        {
+            // these functions are seperate because i fear legacy code
+            List<int> IDs;
+            List<int> val;
+            getRacialModifiers(out IDs, out val);
+            List<int> result = getModifiedStats(IDs, val);
+            return result;
+        }
+        private List<int> getModifiedStats(List<int> IDs, List<int> val)
+        {
+            // take stat array, modify by IDs, generate list out. 
+            List<int> results = new List<int>();
+            foreach (int s in baseAbilityScores)
+            {
+                results.Add(s);
+            }
+            for (int i = 0; i < results.Count; i++)
+            {
+                int modifier = 0;
+                for (int j = 0; j < IDs.Count(); j++)
+                {
+                    if (IDs[j] == i + 1)
+                    {
+                        // if the (adjusted) ID in the array matches the ID of this stat, modift the scire
+                        modifier = val[j];
+                    }
+                }
+                results[i] = (modifier + baseAbilityScores[i]);
+            }
+            return results;
+        }
+        
         private void getRacialModifiers(out List<int> IDs, out List<int> val)
         {
-            int selectedID =  -1;
-            foreach (NameKey pr in PotientialRaces)
-            {
-                if (pr.name.Equals(raceComboBox.SelectedItem.ToString()))
-                {
-                    selectedID = pr.key;
-                }
-            }
-            PC.charInfo.race = raceComboBox.SelectedItem.ToString();
             int[] modadj = { 0, 0, 0, 0 };
-            modadj = Racial_ability_adjustment.retrieveRacialAdjustments(selectedID);
+            modadj = Racial_ability_adjustment.retrieveRacialAdjustments(currentRace().key);
+            //MessageBox.Show("ID = " + modadj[0].ToString() + "\nValue = " + modadj[1].ToString() + "\n" +
+            //                "ID = " + modadj[2].ToString() + "\nValue = " + modadj[3].ToString());
             IDs = new List<int>() { modadj[0], modadj[2] };
             val = new List<int>() { modadj[1], modadj[3] };
             // int success = Racial_ability_adjustment.modArrays(selectedID, out IDs, out val);
-            // MessageBox.Show("ID = " + IDs[0].ToString() + "\nValue = " + val[0].ToString());
+            //MessageBox.Show("ID = " + IDs[0].ToString() + "\nValue = " + val[0].ToString() + "\n" +
+            //                "ID = " + IDs[1].ToString() + "\nValue = " + val[1].ToString());
         }
 
         private void updateScoreBoxes()
@@ -347,26 +351,50 @@ namespace UICharacterCreation
             }
             else
             {
-                List<int> IDs;
-                List<int> val;
-                getRacialModifiers(out IDs, out val);
+                List<int> stats = getModifiedStats();
                 for (int i = 0; i < scoreBoxes.Count; i++)
                 {
-
-                    int modifier = 0;
-                    for (int j = 0; j < IDs.Count(); j++)
-                    { 
-                        if (IDs[j] == i+1)
-                        {
-                            // if the (adjusted) ID in the array matches the ID of this stat, modift the scire
-                            modifier = val[j];
-                        }
-                    }
-                    scoreBoxes[i].Text = (modifier+baseAbilityScores[i]).ToString();
+                    scoreBoxes[i].Text = (stats[i]).ToString();
                 }
             }
         }
-        
+        private NameKey currentRace()
+        {
+            NameKey result = new NameKey(1, "man");
+            foreach (NameKey pr in PotientialRaces)
+            {
+                if (pr.name.Equals(raceComboBox.SelectedItem.ToString()))
+                {
+                    result = pr;
+                }
+            }
+            return result;
+        }
+        private NameKey currentClass()
+        {
+            NameKey result = new NameKey(-1, "boring");
+            foreach (NameKey pRace in PotientialRaces)
+            {
+                if (pRace.name.Equals(raceComboBox.SelectedItem.ToString()))
+                {
+                    result = pRace;
+                }
+            }
+            return result;
+        }
+        private NameKey currentAlignment()
+        {
+            NameKey result = new NameKey(-1, "Litterally Satan");
+            foreach (NameKey pAlign in PotientialAlignments)
+            {
+                if (pAlign.name.Equals(alignmentComboBox.SelectedItem.ToString()))
+                {
+                    result = pAlign;
+                }
+            }
+            return result;
+        }
+
         private void generateAbilityModifiers()
         {
             // Always send this all six ability scoreboxes, please!
@@ -548,7 +576,7 @@ namespace UICharacterCreation
         private void addSkillsButton_Click(object sender, EventArgs e)
         {
             skillSelection skillStuff;
-            skillStuff = new skillSelection("new", 3, 4, baseAbilityScores);
+            skillStuff = new skillSelection("new", currentClass().key, currentRace().key, getModifiedStats());
             skillStuff.ShowDialog();
         }
     }
