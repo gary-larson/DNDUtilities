@@ -132,7 +132,7 @@ namespace DNDUtilitiesLib
                 String sql = "SELECT s.skill_id, s.name, sa.adjustment, s.subtype, s.key_ability_id, " +
                     "(SELECT name from abilities WHERE ability_id = key_ability_id) AS ability_name " +
                     "FROM skills s, skill_subtypes ss, skill_adjustments sa " +
-                    "WHERE s.skill_id = ss.skill_id AND AND ss.skill_id = sa.skill_id " +
+                    "WHERE s.skill_id = ss.skill_id AND ss.skill_id = sa.skill_id AND " +
                         "(sa.race_id = @id1 OR sa.class_id = @id2)";
                 SQLiteCommand command = conn.CreateCommand();
                 command.CommandText = sql;
