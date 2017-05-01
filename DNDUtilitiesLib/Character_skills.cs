@@ -99,8 +99,7 @@ namespace DNDUtilitiesLib
         /// </summary>
         /// <param name="characterKey">character key</param>
         /// <param name="skillkey">skill key</param>
-        /// <returns></returns>
-        public Character_skills retrieveRecord(int characterKey, int skillKey)
+        public void retrieveRecord(int characterKey, int skillKey)
         {
             using (SQLiteConnection conn = new SQLiteConnection())
             {
@@ -128,7 +127,7 @@ namespace DNDUtilitiesLib
                         misc_modifier = read.GetInt32(6);
                         
                     }
-                    return this;
+                   // return this;
                 }
             }
         }

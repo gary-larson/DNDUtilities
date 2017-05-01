@@ -115,7 +115,9 @@ namespace DNDUtilities
             //s = cw.ToString();
             // s = id.ToString(); 
             //Class_skills a = new Class_skills();
-
+            Classes c = new Classes();
+            c.retrieveRecord(4);
+            s = c.ToString();
             //Proficiencies p = new Proficiencies();
             //p.retrieveRecord(1);
             //s = p.ToString();
@@ -136,10 +138,10 @@ namespace DNDUtilities
                {
                    s += si.ToString();
                } */
-            int[] i = new int[4];
+       /*     int[] i = new int[4];
             i = Racial_ability_adjustment.retrieveRacialAdjustments(1);
             s = "Ability_id: " + i[0] + " adjustment " + i[1] +
-                "Ability_id: " + i[2] + " adjustment " + i[3];
+                "Ability_id: " + i[2] + " adjustment " + i[3]; */
             // a.player_name = "Keith";
             // a.save();
             //s = result.ToString();

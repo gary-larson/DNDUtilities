@@ -196,15 +196,7 @@ namespace DNDUtilitiesLib
             set;
         }
 
-        public virtual void delete(int Key)
-        {
-            throw new System.NotImplementedException();
-        }
-
-        public Spells retrieve(int Key)
-        {
-            throw new System.NotImplementedException();
-        }
+        
 
         /// <summary>
         /// Get all spells names
@@ -215,14 +207,11 @@ namespace DNDUtilitiesLib
             return retrieveAll(TABLE, FIELD);
         }
 
-        public void save(int Key)
-        {
-            throw new System.NotImplementedException();
-        }
+        
 
         public override string ToString()
         {
-            throw new System.NotImplementedException();
+            return "Name: " + name;
         }
 
     }

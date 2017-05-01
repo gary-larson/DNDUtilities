@@ -100,8 +100,7 @@ namespace DNDUtilitiesLib
         /// </summary>
         /// <param name="characterKey">character key</param>
         /// <param name="equipmentkey">equipment key</param>
-        /// <returns></returns>
-        public Character_possessions retrieveRecord(int characterKey, int equipmentKey)
+        public void retrieveRecord(int characterKey, int equipmentKey)
         {
             using (SQLiteConnection conn = new SQLiteConnection())
             {
@@ -128,7 +127,7 @@ namespace DNDUtilitiesLib
                         magic_value = read.GetInt32(5);
                         special_properties = read[6].ToString();
                     }
-                    return this;
+                    //return this;
                 }
             }
         }

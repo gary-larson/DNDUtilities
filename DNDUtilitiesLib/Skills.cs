@@ -116,78 +116,126 @@ namespace DNDUtilitiesLib
             return retrieveAll(TABLE, FIELD);
         }
 
-        /*       /// <summary>
-               /// Retrieve record from database
-               /// </summary>
-               /// <param name="skillKey">To determine record to get</param>
-               /// <returns>this object populated from database if record exists</returns>
-               public Characters retrieveRecord(int skillKey)
-               {
+        /// <summary>
+        /// Gets all skills for the class
+        /// </summary>
+        /// <param name="classKey">the class key</param>
+        /// <param name="raceKey">the race key</param>
+        /// <returns>List of name and keys for the skills</returns>
+        public static List<SkillInfo> retrieveAllSkills(int classKey, int raceKey)
+        {
+            List<SkillInfo> l = new List<SkillInfo>();
+            using (SQLiteConnection conn = new SQLiteConnection())
+            {
+                conn.ConnectionString = CONNECTION_STR;
+                conn.Open();
+                String sql = "SELECT s.skill_id, s.name, sa.adjustment, s.subtype, s.key_ability_id, " +
+                    "(SELECT name from abilities WHERE ability_id = key_ability_id) AS ability_name " +
+                    "FROM skills s, skill_subtypes ss, skill_adjustments sa " +
+                    "WHERE s.skill_id = ss.skill_id AND AND ss.skill_id = sa.skill_id " +
+                        "(sa.race_id = @id1 OR sa.class_id = @id2)";
+                SQLiteCommand command = conn.CreateCommand();
+                command.CommandText = sql;
+                command.CommandType = System.Data.CommandType.Text;
 
-                   using (SQLiteConnection conn = new SQLiteConnection())
-                   {
-                       conn.ConnectionString = CONNECTION_STR;
-                       conn.Open();
+                command.Parameters.AddWithValue("id1", raceKey);
+                command.Parameters.AddWithValue("id2", classKey);
 
-                       String sql = "SELECT skill_id, name, subtype, key_ability_id, " +
-                           "(SELECT name FROM abilities WHERE characters.race_id = races.race_id), race_id, " +
-                           "(SELECT name FROM alignments WHERE characters.alignment_id = alignments.alignment_id), alignment_id, " +
-                           "deity, age, gender, height, weight, eyes, hair, skin, description, deleted " +
-                           "FROM characters WHERE character_id = @id1 AND deleted = 0";
-                       SQLiteCommand command = conn.CreateCommand();
-                       command.CommandText = sql;
-                       command.CommandType = System.Data.CommandType.Text;
-                       command.Parameters.Add(new SQLiteParameter("@id1", characterKey.ToString()));
+                using (SQLiteDataReader read = command.ExecuteReader())
+                {
+                    while (read.Read())
+                    {
+                        int key = read.GetInt32(0);
+                        string name = read.GetString(1);
+                        int adjustment = read.GetInt32(2);
+                        string subtype = read.GetString(3);
+                        int ability_id;
+                        if (read[4].GetType() != typeof(DBNull))
+                            ability_id = read.GetInt32(4);
+                        else
+                            ability_id = -1;
+                        string ability = read[5].ToString();
+                        SkillInfo si = new SkillInfo(key, name, adjustment, subtype, ability_id, ability);
+                        l.Add(si);
+                    }
+                }
+                conn.Close();
+                return l;
+            }
+        }
 
-                       using (SQLiteDataReader read = command.ExecuteReader())
-                       {
-                           if (read.Read())
-                           {
-                               this.character_id = read.GetInt32(0);
-                               this.name = read.GetString(1);
-                               this.player_name = read.GetString(2);
-                               this.number_of_classes = read.GetInt32(3);
-                               this.race = read.GetString(4);
-                               this.race_id = read.GetInt32(5);
-                               this.alignment = read.GetString(6);
-                               this.alignment_id = read.GetInt32(7);
-                               this.deity = read[8].ToString();
-                               this.age = read.GetInt32(9);
-                               this.gender = read.GetString(10);
-                               this.height = read.GetInt32(11);
-                               this.weight = read.GetInt32(12);
-                               this.eyes = read.GetString(13);
-                               this.hair = read.GetString(14);
-                               this.skin = read.GetString(15);
-                               this.description = read.GetString(16);
-                               this.deleted = read.GetInt32(17);
-                           }
-                           else
-                           {
-                               this.character_id = -1;
-                               this.name = null;
-                               this.player_name = null;
-                               this.number_of_classes = 0;
-                               this.race = null;
-                               this.race_id = -1;
-                               this.alignment = null;
-                               this.alignment_id = -1;
-                               this.deity = null;
-                               this.age = 0;
-                               this.gender = null;
-                               this.height = 0;
-                               this.weight = 0;
-                               this.eyes = null;
-                               this.hair = null;
-                               this.skin = null;
-                               this.description = null;
-                               this.deleted = 0;
-                           }
-                       }
-                       conn.Close();
-                       return this;
-                   }
-               } */
+        /*      /// <summary>
+              /// Retrieve record from database
+              /// </summary>
+              /// <param name="skillKey">To determine record to get</param>
+              /// <returns>this object populated from database if record exists</returns>
+              public Characters retrieveRecord(int skillKey)
+              {
+
+                  using (SQLiteConnection conn = new SQLiteConnection())
+                  {
+                      conn.ConnectionString = CONNECTION_STR;
+                      conn.Open();
+
+                      String sql = "SELECT skill_id, name, subtype, key_ability_id, " +
+                          "(SELECT name FROM abilities WHERE characters.race_id = races.race_id), race_id, " +
+                          "(SELECT name FROM alignments WHERE characters.alignment_id = alignments.alignment_id), alignment_id, " +
+                          "deity, age, gender, height, weight, eyes, hair, skin, description, deleted " +
+                          "FROM characters WHERE character_id = @id1 AND deleted = 0";
+                      SQLiteCommand command = conn.CreateCommand();
+                      command.CommandText = sql;
+                      command.CommandType = System.Data.CommandType.Text;
+                      command.Parameters.Add(new SQLiteParameter("@id1", characterKey.ToString()));
+
+                      using (SQLiteDataReader read = command.ExecuteReader())
+                      {
+                          if (read.Read())
+                          {
+                              this.character_id = read.GetInt32(0);
+                              this.name = read.GetString(1);
+                              this.player_name = read.GetString(2);
+                              this.number_of_classes = read.GetInt32(3);
+                              this.race = read.GetString(4);
+                              this.race_id = read.GetInt32(5);
+                              this.alignment = read.GetString(6);
+                              this.alignment_id = read.GetInt32(7);
+                              this.deity = read[8].ToString();
+                              this.age = read.GetInt32(9);
+                              this.gender = read.GetString(10);
+                              this.height = read.GetInt32(11);
+                              this.weight = read.GetInt32(12);
+                              this.eyes = read.GetString(13);
+                              this.hair = read.GetString(14);
+                              this.skin = read.GetString(15);
+                              this.description = read.GetString(16);
+                              this.deleted = read.GetInt32(17);
+                          }
+                          else
+                          {
+                              this.character_id = -1;
+                              this.name = null;
+                              this.player_name = null;
+                              this.number_of_classes = 0;
+                              this.race = null;
+                              this.race_id = -1;
+                              this.alignment = null;
+                              this.alignment_id = -1;
+                              this.deity = null;
+                              this.age = 0;
+                              this.gender = null;
+                              this.height = 0;
+                              this.weight = 0;
+                              this.eyes = null;
+                              this.hair = null;
+                              this.skin = null;
+                              this.description = null;
+                              this.deleted = 0;
+                          }
+                      }
+                      conn.Close();
+                      return this;
+                  }
+              } */
 
         public override string ToString()
         {

@@ -42,8 +42,7 @@ namespace DNDUtilitiesLib
         /// Gets record based on ability_id
         /// </summary>
         /// <param name="Key"></param>
-        /// <returns>the record requested</returns>
-        public Alignments retrieveRecord(int Key)
+        public void retrieveRecord(int Key)
         {
 
             using (SQLiteConnection conn = new SQLiteConnection())
@@ -64,7 +63,7 @@ namespace DNDUtilitiesLib
                         alignment_id = read.GetInt32(0);
                         name = read.GetString(1);
                     }
-                    return this;
+                   // return this;
                 }
             }
         }
