@@ -115,9 +115,9 @@ namespace DNDUtilities
             //s = cw.ToString();
             // s = id.ToString(); 
             //Class_skills a = new Class_skills();
-            Classes c = new Classes();
-            c.retrieveRecord(4);
-            s = c.ToString();
+            //Classes c = new Classes();
+            //c.retrieveRecord(4);
+            //s = c.ToString();
             //Proficiencies p = new Proficiencies();
             //p.retrieveRecord(1);
             //s = p.ToString();
@@ -138,16 +138,24 @@ namespace DNDUtilities
                {
                    s += si.ToString();
                } */
-       /*     int[] i = new int[4];
-            i = Racial_ability_adjustment.retrieveRacialAdjustments(1);
-            s = "Ability_id: " + i[0] + " adjustment " + i[1] +
-                "Ability_id: " + i[2] + " adjustment " + i[3]; */
+            /*     int[] i = new int[4];
+                 i = Racial_ability_adjustment.retrieveRacialAdjustments(1);
+                 s = "Ability_id: " + i[0] + " adjustment " + i[1] +
+                     "Ability_id: " + i[2] + " adjustment " + i[3]; */
             // a.player_name = "Keith";
             // a.save();
             //s = result.ToString();
             // label.Content = a.ToString();
             // label.Content = b + " " + s;
             //label.Content = result.ToString();
+            Spell_level sl = new Spell_level();
+            // sl.save();
+            // s = "Good";
+            //int[] i = new int[6];
+            //i = Racial_ability_adjustment.retrieveRacialAdjustments(7);
+            //s = "Ability: " + i[0] + " Mod: " + i[1] +
+            //    " Ability: " + i[2] + " Mod: " + i[3] +
+            //    " Ability: " + i[4] + " Mod: " + i[5];
             label.Content = s;
 
         }
