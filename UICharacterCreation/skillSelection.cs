@@ -69,7 +69,7 @@ namespace UICharacterCreation
 
                 // itterates through all skills availe                              // TempSkill starts at 0, IDs start at 1
                 List<SkillInfo> tempSkill = new List<SkillInfo>();                  // OPERATES OFF THE "ID IN POS" METHOD
-                tempSkill = Class_skills.retrieveAllSkills(classID, raceID);        // WHICH IS TO SAY YOU WANT 
+                tempSkill = Skills.retrieveAllSkills(classID, raceID);              // WHICH IS TO SAY YOU WANT 
                                                                                     // tempSkill[IDinPos[cI]-1]
                                                                                     // ID in pos 0 = 1
                                                                                     // Ci = 0
