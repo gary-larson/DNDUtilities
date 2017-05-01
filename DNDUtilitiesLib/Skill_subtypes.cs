@@ -60,7 +60,7 @@ namespace DNDUtilitiesLib
         /// <returns>String representing object</returns>
         public override string ToString()
         {
-            return "SubType_id: " + subtype_id + " Name: " + name + " skill_id: " + skill_id;
+            return "SubType_id: " + subtype_id + " Name: " + name + " skill_id:  " + skill_id;
         }
     }
 }

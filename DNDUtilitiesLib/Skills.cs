@@ -129,17 +129,18 @@ namespace DNDUtilitiesLib
             {
                 conn.ConnectionString = CONNECTION_STR;
                 conn.Open();
-                String sql = "SELECT s.skill_id, s.name, sa.adjustment, s.subtype, s.key_ability_id, " +
-                    "(SELECT name from abilities WHERE ability_id = key_ability_id) AS ability_name " +
-                    "FROM skills s, skill_subtypes ss, skill_adjustments sa " +
-                    "WHERE s.skill_id = ss.skill_id AND ss.skill_id = sa.skill_id AND " +
-                        "(sa.race_id = @id1 OR sa.class_id = @id2)";
+                String sql = "SELECT skill_id, name, " +
+                     "(SELECT adjustment FROM skill_adjustments WHERE race_id = @id1 AND skill_id = skills.skill_id) AS adjustment, " +
+                     "subType, key_ability_id AS ability_id, " +
+                     "(SELECT name FROM abilities where ability_id = key_ability_id) AS ability " +
+                     "FROM skills";
+                
                 SQLiteCommand command = conn.CreateCommand();
                 command.CommandText = sql;
                 command.CommandType = System.Data.CommandType.Text;
 
                 command.Parameters.AddWithValue("id1", raceKey);
-                command.Parameters.AddWithValue("id2", classKey);
+                //command.Parameters.AddWithValue("id2", classKey);
 
                 using (SQLiteDataReader read = command.ExecuteReader())
                 {
