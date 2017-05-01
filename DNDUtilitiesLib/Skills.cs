@@ -148,7 +148,10 @@ namespace DNDUtilitiesLib
                     {
                         int key = read.GetInt32(0);
                         string name = read.GetString(1);
-                        int adjustment = read.GetInt32(2);
+                        int adjustment;
+                        if (read[2].GetType() != typeof(DBNull))
+                            adjustment = read.GetInt32(2);
+                        else adjustment = 0;
                         string subtype = read.GetString(3);
                         int ability_id;
                         if (read[4].GetType() != typeof(DBNull))

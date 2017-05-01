@@ -119,6 +119,7 @@
     <Compile Include="Skill_adjustments.cs" />
     <Compile Include="Skill_subtypes.cs" />
     <Compile Include="Spells.cs" />
+    <Compile Include="Spell_level.cs" />
     <Compile Include="Spell_schools.cs" />
     <Compile Include="Spell_subschools.cs" />
     <Compile Include="Spell_types.cs" />
