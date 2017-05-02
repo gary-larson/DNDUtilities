@@ -93,11 +93,11 @@
     <Compile Include="skillSelection.Designer.cs">
       <DependentUpon>skillSelection.cs</DependentUpon>
     </Compile>
-    <Compile Include="newCharacterGenerator.cs">
+    <Compile Include="characterSheetForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="newCharacterGenerator.Designer.cs">
-      <DependentUpon>newCharacterGenerator.cs</DependentUpon>
+    <Compile Include="characterSheetForm.Designer.cs">
+      <DependentUpon>characterSheetForm.cs</DependentUpon>
     </Compile>
     <Compile Include="SelectionForm.cs">
       <SubType>Form</SubType>
@@ -110,8 +110,8 @@
     <EmbeddedResource Include="backstory.resx">
       <DependentUpon>backstory.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="newCharacterGenerator.resx">
-      <DependentUpon>newCharacterGenerator.cs</DependentUpon>
+    <EmbeddedResource Include="characterSheetForm.resx">
+      <DependentUpon>characterSheetForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SelectionForm.resx">
       <DependentUpon>SelectionForm.cs</DependentUpon>

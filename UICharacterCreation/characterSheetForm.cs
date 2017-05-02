@@ -13,8 +13,9 @@ using System.Windows.Forms;
 
 namespace UICharacterCreation
 {
-    public partial class newCharacterGenerator : Form
+    public partial class characterSheetForm : Form
     {
+        string mode;
         CharacterSheet PC;
         List<NameKey> PotientialClasses;
         List<NameKey> PotientialRaces;
@@ -27,10 +28,21 @@ namespace UICharacterCreation
         bool SkillsValid;           // a simple boolean to proactively check if skills are still valid!
         bool RacialModifierApplied; // keeping track of if you applied racial Junk yet!
 
-        public newCharacterGenerator()
+        public characterSheetForm()
         {
+            mode = "new";       // IDK if i'll actulaly need this but im keeping it here for easier use. 
             InitializeComponent();
             populateDropdowns();
+        }
+
+        public characterSheetForm(int charID)
+        {
+            mode = "view";
+            InitializeComponent();  //dont touch this, it's a default important thing of importance. 
+            populateDropdowns();
+            // fill in with character Data. 
+            PC.charInfo.retrieveRecord(charID);
+            PC.
         }
         public void populateDropdowns()
         {
@@ -162,8 +174,6 @@ namespace UICharacterCreation
 
             return !invalid;            // true if good false if bad
         }
-
-
         private void savePC(List<int> tBiomet, List<int> tStats)
         {
             // save the man
@@ -198,10 +208,32 @@ namespace UICharacterCreation
                 MessageBox.Show("Characters: Save failed Gracefully!");
             }
             // MessageBox.Show(PC.charInfo.ToString()); // not the best certification but hey it works.
-
+            PC.abilityScores = new List<Character_abilities>();
+            List<int> modifiedStats = getModifiedStats();
+            for(int i = 0; i < CharacterAttributes.Count; i++)
+            {
+                PC.abilityScores.Add(new Character_abilities(PC.ID, CharacterAttributes[i].key, AbilityModifiers[i], modifiedStats[i], 0));
+            }
+            
             PC.classLevels = new Character_classes(PC.ID, classNK.key, 1, 1);
             PC.classLevels.save();      // not a bool just hope it works
             Classes UsedClass = new Classes();
+            if (SkillsValid)
+            {
+                List<Character_skills> newskills = new List<Character_skills>();
+                // save skills
+                foreach (Character_skills oldSkill in PC.skills)
+                {
+                    // updates this with the character ID! nice!
+                    newskills.Add(new Character_skills(PC.ID, oldSkill.skill_id, oldSkill.skill_rank, oldSkill.ability_modifier, oldSkill.skill_modifier, oldSkill.misc_modifier));
+                }
+                PC.skills = newskills;
+                PC.saveSkills();
+            }
+            else
+            {
+                MessageBox.Show("Please generate Valid Skills before continueing! \n(Race, Class, and ability score changes invalidate your skills)");
+            }
             UsedClass.retrieveRecord(classNK.key);
             PC.HP = new Character_hit_points(PC.ID, 1, UsedClass.hit_die + AbilityModifiers[3]);
             // stores properly calculated HP in the box. 
@@ -211,8 +243,8 @@ namespace UICharacterCreation
             // skills need their own UI     ( IN PROGRESS! )
             // (combat) stats need their own UI (for display)
             // dont do them until after the other things are tackled though. 
+            this.Close();
         }
-
         private bool validateIntFields(List<TextBox> input, out List<int> output)
         {
             // chews through INPUT text boxes and attempts to extract the text as ints
@@ -242,7 +274,6 @@ namespace UICharacterCreation
             }
             return valid;
         }
-
         private void rollDiceButton_Click(object sender, EventArgs e)
         {
             Random seed = new Random();         // to avoid issues
@@ -323,21 +354,19 @@ namespace UICharacterCreation
                 results[i] = (modifier + baseAbilityScores[i]);
             }
             return results;
-        }
-        
+        }  
         private void getRacialModifiers(out List<int> IDs, out List<int> val)
         {
-            int[] modadj = { 0, 0, 0, 0 };
+            int[] modadj = { 0, 0, 0, 0, 0, 0 };
             modadj = Racial_ability_adjustment.retrieveRacialAdjustments(currentRace().key);
             //MessageBox.Show("ID = " + modadj[0].ToString() + "\nValue = " + modadj[1].ToString() + "\n" +
             //                "ID = " + modadj[2].ToString() + "\nValue = " + modadj[3].ToString());
-            IDs = new List<int>() { modadj[0], modadj[2] };
-            val = new List<int>() { modadj[1], modadj[3] };
+            IDs = new List<int>() { modadj[0], modadj[2], modadj[4] };
+            val = new List<int>() { modadj[1], modadj[3], modadj[5] };
             // int success = Racial_ability_adjustment.modArrays(selectedID, out IDs, out val);
             //MessageBox.Show("ID = " + IDs[0].ToString() + "\nValue = " + val[0].ToString() + "\n" +
             //                "ID = " + IDs[1].ToString() + "\nValue = " + val[1].ToString());
         }
-
         private void updateScoreBoxes()
         {
             // checks baseScores, and Racial modifiers applied, and updates the cosmetic stuff
@@ -373,11 +402,11 @@ namespace UICharacterCreation
         private NameKey currentClass()
         {
             NameKey result = new NameKey(-1, "boring");
-            foreach (NameKey pRace in PotientialRaces)
+            foreach (NameKey pClass in PotientialClasses)
             {
-                if (pRace.name.Equals(raceComboBox.SelectedItem.ToString()))
+                if (pClass.name.Equals(classComboBox.SelectedItem.ToString()))
                 {
-                    result = pRace;
+                    result = pClass;
                 }
             }
             return result;
@@ -394,7 +423,6 @@ namespace UICharacterCreation
             }
             return result;
         }
-
         private void generateAbilityModifiers()
         {
             // Always send this all six ability scoreboxes, please!
@@ -437,7 +465,6 @@ namespace UICharacterCreation
                 }
             }
         }
-
         private void setScoreEdits(List<TextBox> fields, bool value)
         {
             // a general use mass-set editability function
@@ -446,7 +473,6 @@ namespace UICharacterCreation
                 box.Enabled = value;
             }
         }
-
         private int rollXdY(int X, int Y, Random seed)
         {
             // THIS FUNCTION IS EXPRESSLY FOR ABILITY SCORES
@@ -474,7 +500,6 @@ namespace UICharacterCreation
 
             return result;
         }
-
         private void swapBox_CheckedChanged(object sender, EventArgs e)
         {
             int numChecked = 0;
@@ -503,7 +528,6 @@ namespace UICharacterCreation
                 swapBoxes[trueBoxes[1]].Checked = false;    // reset these so that it is slightly more usable. 
             }
         }
-
         private void addBackstoryButton_Click(object sender, EventArgs e)
         {
             backstory bckStory;
@@ -523,7 +547,24 @@ namespace UICharacterCreation
 
             //MessageBox.Show(PC.charInfo.description);
         }
-
+        private void addSkillsButton_Click(object sender, EventArgs e)
+        {
+            skillSelection skillStuff;
+            if (SkillsValid == false)
+            {
+                skillStuff = new skillSelection("new", currentClass().key, currentRace().key, getModifiedStats());
+            }
+            else
+            {
+                skillStuff = new skillSelection(currentClass().key, currentRace().key, getModifiedStats(), PC.skills);
+            }
+            skillStuff.ShowDialog();
+            if (skillStuff.valid)
+            {
+                PC.skills = skillStuff.result;
+                SkillsValid = true;
+            }
+        }
         private void abilityTextBox_TextChanged(object sender, EventArgs e)
         {
             if (abilityGenerationSelector.Text == "Manual Input")
@@ -544,7 +585,6 @@ namespace UICharacterCreation
             SkillsValid = false; // this is a Brute Force approach. ass attributes are not hard coded, we dont know _which_ skill changed
             generateAbilityModifiers();
         }
-
         private void raceComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (RacialModifierApplied)
@@ -554,7 +594,6 @@ namespace UICharacterCreation
             }
             // else: we're fine. 
         }
-
         private void RacialModifier_Click(object sender, EventArgs e)
         {
             // Change text on the button
@@ -571,13 +610,6 @@ namespace UICharacterCreation
                 RacialModifierApplied = false;
                 updateScoreBoxes();
             }
-        }
-
-        private void addSkillsButton_Click(object sender, EventArgs e)
-        {
-            skillSelection skillStuff;
-            skillStuff = new skillSelection("new", currentClass().key, currentRace().key, getModifiedStats());
-            skillStuff.ShowDialog();
         }
     }
 }

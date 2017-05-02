@@ -552,6 +552,7 @@
             this.skilrankUD1.Name = "skilrankUD1";
             this.skilrankUD1.Size = new System.Drawing.Size(34, 20);
             this.skilrankUD1.TabIndex = 9;
+            this.skilrankUD1.ValueChanged += new System.EventHandler(this.skilrank_ValueChanged);
             // 
             // attribMod1
             // 
@@ -635,6 +636,7 @@
             this.skilrankUD2.Name = "skilrankUD2";
             this.skilrankUD2.Size = new System.Drawing.Size(34, 20);
             this.skilrankUD2.TabIndex = 16;
+            this.skilrankUD2.ValueChanged += new System.EventHandler(this.skilrank_ValueChanged);
             // 
             // labelSkillName2
             // 
@@ -700,6 +702,7 @@
             this.skilrankUD4.Name = "skilrankUD4";
             this.skilrankUD4.Size = new System.Drawing.Size(34, 20);
             this.skilrankUD4.TabIndex = 30;
+            this.skilrankUD4.ValueChanged += new System.EventHandler(this.skilrank_ValueChanged);
             // 
             // labelSkillName4
             // 
@@ -765,6 +768,7 @@
             this.skilrankUD3.Name = "skilrankUD3";
             this.skilrankUD3.Size = new System.Drawing.Size(34, 20);
             this.skilrankUD3.TabIndex = 23;
+            this.skilrankUD3.ValueChanged += new System.EventHandler(this.skilrank_ValueChanged);
             // 
             // labelSkillName3
             // 
@@ -830,6 +834,7 @@
             this.skilrankUD8.Name = "skilrankUD8";
             this.skilrankUD8.Size = new System.Drawing.Size(34, 20);
             this.skilrankUD8.TabIndex = 58;
+            this.skilrankUD8.ValueChanged += new System.EventHandler(this.skilrank_ValueChanged);
             // 
             // labelSkillName8
             // 
@@ -895,6 +900,7 @@
             this.skilrankUD7.Name = "skilrankUD7";
             this.skilrankUD7.Size = new System.Drawing.Size(34, 20);
             this.skilrankUD7.TabIndex = 51;
+            this.skilrankUD7.ValueChanged += new System.EventHandler(this.skilrank_ValueChanged);
             // 
             // labelSkillName7
             // 
@@ -960,6 +966,7 @@
             this.skilrankUD6.Name = "skilrankUD6";
             this.skilrankUD6.Size = new System.Drawing.Size(34, 20);
             this.skilrankUD6.TabIndex = 44;
+            this.skilrankUD6.ValueChanged += new System.EventHandler(this.skilrank_ValueChanged);
             // 
             // labelSkillName6
             // 
@@ -1025,6 +1032,7 @@
             this.skilrankUD5.Name = "skilrankUD5";
             this.skilrankUD5.Size = new System.Drawing.Size(34, 20);
             this.skilrankUD5.TabIndex = 37;
+            this.skilrankUD5.ValueChanged += new System.EventHandler(this.skilrank_ValueChanged);
             // 
             // labelSkillName5
             // 
@@ -1090,6 +1098,7 @@
             this.skilrankUD16.Name = "skilrankUD16";
             this.skilrankUD16.Size = new System.Drawing.Size(34, 20);
             this.skilrankUD16.TabIndex = 114;
+            this.skilrankUD16.ValueChanged += new System.EventHandler(this.skilrank_ValueChanged);
             // 
             // labelSkillName16
             // 
@@ -1155,6 +1164,7 @@
             this.skilrankUD15.Name = "skilrankUD15";
             this.skilrankUD15.Size = new System.Drawing.Size(34, 20);
             this.skilrankUD15.TabIndex = 107;
+            this.skilrankUD15.ValueChanged += new System.EventHandler(this.skilrank_ValueChanged);
             // 
             // labelSkillName15
             // 
@@ -1220,6 +1230,7 @@
             this.skilrankUD14.Name = "skilrankUD14";
             this.skilrankUD14.Size = new System.Drawing.Size(34, 20);
             this.skilrankUD14.TabIndex = 100;
+            this.skilrankUD14.ValueChanged += new System.EventHandler(this.skilrank_ValueChanged);
             // 
             // labelSkillName14
             // 
@@ -1285,6 +1296,7 @@
             this.skilrankUD13.Name = "skilrankUD13";
             this.skilrankUD13.Size = new System.Drawing.Size(34, 20);
             this.skilrankUD13.TabIndex = 93;
+            this.skilrankUD13.ValueChanged += new System.EventHandler(this.skilrank_ValueChanged);
             // 
             // labelSkillName13
             // 
@@ -1350,6 +1362,7 @@
             this.skilrankUD12.Name = "skilrankUD12";
             this.skilrankUD12.Size = new System.Drawing.Size(34, 20);
             this.skilrankUD12.TabIndex = 86;
+            this.skilrankUD12.ValueChanged += new System.EventHandler(this.skilrank_ValueChanged);
             // 
             // labelSkillName12
             // 
@@ -1415,6 +1428,7 @@
             this.skilrankUD11.Name = "skilrankUD11";
             this.skilrankUD11.Size = new System.Drawing.Size(34, 20);
             this.skilrankUD11.TabIndex = 79;
+            this.skilrankUD11.ValueChanged += new System.EventHandler(this.skilrank_ValueChanged);
             // 
             // labelSkillName11
             // 
@@ -1480,6 +1494,7 @@
             this.skilrankUD10.Name = "skilrankUD10";
             this.skilrankUD10.Size = new System.Drawing.Size(34, 20);
             this.skilrankUD10.TabIndex = 72;
+            this.skilrankUD10.ValueChanged += new System.EventHandler(this.skilrank_ValueChanged);
             // 
             // labelSkillName10
             // 
@@ -1545,6 +1560,7 @@
             this.skilrankUD9.Name = "skilrankUD9";
             this.skilrankUD9.Size = new System.Drawing.Size(34, 20);
             this.skilrankUD9.TabIndex = 65;
+            this.skilrankUD9.ValueChanged += new System.EventHandler(this.skilrank_ValueChanged);
             // 
             // labelSkillName9
             // 
@@ -1610,6 +1626,7 @@
             this.skilrankUD26.Name = "skilrankUD26";
             this.skilrankUD26.Size = new System.Drawing.Size(34, 20);
             this.skilrankUD26.TabIndex = 184;
+            this.skilrankUD26.ValueChanged += new System.EventHandler(this.skilrank_ValueChanged);
             // 
             // labelSkillName26
             // 
@@ -1675,6 +1692,7 @@
             this.skilrankUD25.Name = "skilrankUD25";
             this.skilrankUD25.Size = new System.Drawing.Size(34, 20);
             this.skilrankUD25.TabIndex = 177;
+            this.skilrankUD25.ValueChanged += new System.EventHandler(this.skilrank_ValueChanged);
             // 
             // labelSkillName25
             // 
@@ -1740,6 +1758,7 @@
             this.skilrankUD24.Name = "skilrankUD24";
             this.skilrankUD24.Size = new System.Drawing.Size(34, 20);
             this.skilrankUD24.TabIndex = 170;
+            this.skilrankUD24.ValueChanged += new System.EventHandler(this.skilrank_ValueChanged);
             // 
             // labelSkillName24
             // 
@@ -1805,6 +1824,7 @@
             this.skilrankUD23.Name = "skilrankUD23";
             this.skilrankUD23.Size = new System.Drawing.Size(34, 20);
             this.skilrankUD23.TabIndex = 163;
+            this.skilrankUD23.ValueChanged += new System.EventHandler(this.skilrank_ValueChanged);
             // 
             // labelSkillName23
             // 
@@ -1870,6 +1890,7 @@
             this.skilrankUD22.Name = "skilrankUD22";
             this.skilrankUD22.Size = new System.Drawing.Size(34, 20);
             this.skilrankUD22.TabIndex = 156;
+            this.skilrankUD22.ValueChanged += new System.EventHandler(this.skilrank_ValueChanged);
             // 
             // labelSkillName22
             // 
@@ -1935,6 +1956,7 @@
             this.skilrankUD21.Name = "skilrankUD21";
             this.skilrankUD21.Size = new System.Drawing.Size(34, 20);
             this.skilrankUD21.TabIndex = 149;
+            this.skilrankUD21.ValueChanged += new System.EventHandler(this.skilrank_ValueChanged);
             // 
             // labelSkillName21
             // 
@@ -2000,6 +2022,7 @@
             this.skilrankUD20.Name = "skilrankUD20";
             this.skilrankUD20.Size = new System.Drawing.Size(34, 20);
             this.skilrankUD20.TabIndex = 142;
+            this.skilrankUD20.ValueChanged += new System.EventHandler(this.skilrank_ValueChanged);
             // 
             // labelSkillName20
             // 
@@ -2065,6 +2088,7 @@
             this.skilrankUD19.Name = "skilrankUD19";
             this.skilrankUD19.Size = new System.Drawing.Size(34, 20);
             this.skilrankUD19.TabIndex = 135;
+            this.skilrankUD19.ValueChanged += new System.EventHandler(this.skilrank_ValueChanged);
             // 
             // labelSkillName19
             // 
@@ -2130,6 +2154,7 @@
             this.skilrankUD18.Name = "skilrankUD18";
             this.skilrankUD18.Size = new System.Drawing.Size(34, 20);
             this.skilrankUD18.TabIndex = 128;
+            this.skilrankUD18.ValueChanged += new System.EventHandler(this.skilrank_ValueChanged);
             // 
             // labelSkillName18
             // 
@@ -2195,6 +2220,7 @@
             this.skilrankUD17.Name = "skilrankUD17";
             this.skilrankUD17.Size = new System.Drawing.Size(34, 20);
             this.skilrankUD17.TabIndex = 121;
+            this.skilrankUD17.ValueChanged += new System.EventHandler(this.skilrank_ValueChanged);
             // 
             // labelSkillName17
             // 
@@ -2260,6 +2286,7 @@
             this.skilrankUD52.Name = "skilrankUD52";
             this.skilrankUD52.Size = new System.Drawing.Size(34, 20);
             this.skilrankUD52.TabIndex = 366;
+            this.skilrankUD52.ValueChanged += new System.EventHandler(this.skilrank_ValueChanged);
             // 
             // labelSkillName52
             // 
@@ -2325,6 +2352,7 @@
             this.skilrankUD51.Name = "skilrankUD51";
             this.skilrankUD51.Size = new System.Drawing.Size(34, 20);
             this.skilrankUD51.TabIndex = 359;
+            this.skilrankUD51.ValueChanged += new System.EventHandler(this.skilrank_ValueChanged);
             // 
             // labelSkillName51
             // 
@@ -2390,6 +2418,7 @@
             this.skilrankUD50.Name = "skilrankUD50";
             this.skilrankUD50.Size = new System.Drawing.Size(34, 20);
             this.skilrankUD50.TabIndex = 352;
+            this.skilrankUD50.ValueChanged += new System.EventHandler(this.skilrank_ValueChanged);
             // 
             // labelSkillName50
             // 
@@ -2455,6 +2484,7 @@
             this.skilrankUD49.Name = "skilrankUD49";
             this.skilrankUD49.Size = new System.Drawing.Size(34, 20);
             this.skilrankUD49.TabIndex = 345;
+            this.skilrankUD49.ValueChanged += new System.EventHandler(this.skilrank_ValueChanged);
             // 
             // labelSkillName49
             // 
@@ -2520,6 +2550,7 @@
             this.skilrankUD48.Name = "skilrankUD48";
             this.skilrankUD48.Size = new System.Drawing.Size(34, 20);
             this.skilrankUD48.TabIndex = 338;
+            this.skilrankUD48.ValueChanged += new System.EventHandler(this.skilrank_ValueChanged);
             // 
             // labelSkillName48
             // 
@@ -2585,6 +2616,7 @@
             this.skilrankUD47.Name = "skilrankUD47";
             this.skilrankUD47.Size = new System.Drawing.Size(34, 20);
             this.skilrankUD47.TabIndex = 331;
+            this.skilrankUD47.ValueChanged += new System.EventHandler(this.skilrank_ValueChanged);
             // 
             // labelSkillName47
             // 
@@ -2650,6 +2682,7 @@
             this.skilrankUD46.Name = "skilrankUD46";
             this.skilrankUD46.Size = new System.Drawing.Size(34, 20);
             this.skilrankUD46.TabIndex = 324;
+            this.skilrankUD46.ValueChanged += new System.EventHandler(this.skilrank_ValueChanged);
             // 
             // labelSkillName46
             // 
@@ -2715,6 +2748,7 @@
             this.skilrankUD45.Name = "skilrankUD45";
             this.skilrankUD45.Size = new System.Drawing.Size(34, 20);
             this.skilrankUD45.TabIndex = 317;
+            this.skilrankUD45.ValueChanged += new System.EventHandler(this.skilrank_ValueChanged);
             // 
             // labelSkillName45
             // 
@@ -2780,6 +2814,7 @@
             this.skilrankUD44.Name = "skilrankUD44";
             this.skilrankUD44.Size = new System.Drawing.Size(34, 20);
             this.skilrankUD44.TabIndex = 310;
+            this.skilrankUD44.ValueChanged += new System.EventHandler(this.skilrank_ValueChanged);
             // 
             // labelSkillName44
             // 
@@ -2845,6 +2880,7 @@
             this.skilrankUD43.Name = "skilrankUD43";
             this.skilrankUD43.Size = new System.Drawing.Size(34, 20);
             this.skilrankUD43.TabIndex = 303;
+            this.skilrankUD43.ValueChanged += new System.EventHandler(this.skilrank_ValueChanged);
             // 
             // labelSkillName43
             // 
@@ -2910,6 +2946,7 @@
             this.skilrankUD42.Name = "skilrankUD42";
             this.skilrankUD42.Size = new System.Drawing.Size(34, 20);
             this.skilrankUD42.TabIndex = 296;
+            this.skilrankUD42.ValueChanged += new System.EventHandler(this.skilrank_ValueChanged);
             // 
             // labelSkillName42
             // 
@@ -2975,6 +3012,7 @@
             this.skilrankUD41.Name = "skilrankUD41";
             this.skilrankUD41.Size = new System.Drawing.Size(34, 20);
             this.skilrankUD41.TabIndex = 289;
+            this.skilrankUD41.ValueChanged += new System.EventHandler(this.skilrank_ValueChanged);
             // 
             // labelSkillName41
             // 
@@ -3040,6 +3078,7 @@
             this.skilrankUD40.Name = "skilrankUD40";
             this.skilrankUD40.Size = new System.Drawing.Size(34, 20);
             this.skilrankUD40.TabIndex = 282;
+            this.skilrankUD40.ValueChanged += new System.EventHandler(this.skilrank_ValueChanged);
             // 
             // labelSkillName40
             // 
@@ -3105,6 +3144,7 @@
             this.skilrankUD39.Name = "skilrankUD39";
             this.skilrankUD39.Size = new System.Drawing.Size(34, 20);
             this.skilrankUD39.TabIndex = 275;
+            this.skilrankUD39.ValueChanged += new System.EventHandler(this.skilrank_ValueChanged);
             // 
             // labelSkillName39
             // 
@@ -3170,6 +3210,7 @@
             this.skilrankUD38.Name = "skilrankUD38";
             this.skilrankUD38.Size = new System.Drawing.Size(34, 20);
             this.skilrankUD38.TabIndex = 268;
+            this.skilrankUD38.ValueChanged += new System.EventHandler(this.skilrank_ValueChanged);
             // 
             // labelSkillName38
             // 
@@ -3235,6 +3276,7 @@
             this.skilrankUD37.Name = "skilrankUD37";
             this.skilrankUD37.Size = new System.Drawing.Size(34, 20);
             this.skilrankUD37.TabIndex = 261;
+            this.skilrankUD37.ValueChanged += new System.EventHandler(this.skilrank_ValueChanged);
             // 
             // labelSkillName37
             // 
@@ -3300,6 +3342,7 @@
             this.skilrankUD36.Name = "skilrankUD36";
             this.skilrankUD36.Size = new System.Drawing.Size(34, 20);
             this.skilrankUD36.TabIndex = 254;
+            this.skilrankUD36.ValueChanged += new System.EventHandler(this.skilrank_ValueChanged);
             // 
             // labelSkillName36
             // 
@@ -3365,6 +3408,7 @@
             this.skilrankUD35.Name = "skilrankUD35";
             this.skilrankUD35.Size = new System.Drawing.Size(34, 20);
             this.skilrankUD35.TabIndex = 247;
+            this.skilrankUD35.ValueChanged += new System.EventHandler(this.skilrank_ValueChanged);
             // 
             // labelSkillName35
             // 
@@ -3430,6 +3474,7 @@
             this.skilrankUD34.Name = "skilrankUD34";
             this.skilrankUD34.Size = new System.Drawing.Size(34, 20);
             this.skilrankUD34.TabIndex = 240;
+            this.skilrankUD34.ValueChanged += new System.EventHandler(this.skilrank_ValueChanged);
             // 
             // labelSkillName34
             // 
@@ -3495,6 +3540,7 @@
             this.skilrankUD33.Name = "skilrankUD33";
             this.skilrankUD33.Size = new System.Drawing.Size(34, 20);
             this.skilrankUD33.TabIndex = 233;
+            this.skilrankUD33.ValueChanged += new System.EventHandler(this.skilrank_ValueChanged);
             // 
             // labelSkillName33
             // 
@@ -3560,6 +3606,7 @@
             this.skilrankUD32.Name = "skilrankUD32";
             this.skilrankUD32.Size = new System.Drawing.Size(34, 20);
             this.skilrankUD32.TabIndex = 226;
+            this.skilrankUD32.ValueChanged += new System.EventHandler(this.skilrank_ValueChanged);
             // 
             // labelSkillName32
             // 
@@ -3625,6 +3672,7 @@
             this.skilrankUD31.Name = "skilrankUD31";
             this.skilrankUD31.Size = new System.Drawing.Size(34, 20);
             this.skilrankUD31.TabIndex = 219;
+            this.skilrankUD31.ValueChanged += new System.EventHandler(this.skilrank_ValueChanged);
             // 
             // labelSkillName31
             // 
@@ -3690,6 +3738,7 @@
             this.skilrankUD30.Name = "skilrankUD30";
             this.skilrankUD30.Size = new System.Drawing.Size(34, 20);
             this.skilrankUD30.TabIndex = 212;
+            this.skilrankUD30.ValueChanged += new System.EventHandler(this.skilrank_ValueChanged);
             // 
             // labelSkillName30
             // 
@@ -3755,6 +3804,7 @@
             this.skilrankUD29.Name = "skilrankUD29";
             this.skilrankUD29.Size = new System.Drawing.Size(34, 20);
             this.skilrankUD29.TabIndex = 205;
+            this.skilrankUD29.ValueChanged += new System.EventHandler(this.skilrank_ValueChanged);
             // 
             // labelSkillName29
             // 
@@ -3820,6 +3870,7 @@
             this.skilrankUD28.Name = "skilrankUD28";
             this.skilrankUD28.Size = new System.Drawing.Size(34, 20);
             this.skilrankUD28.TabIndex = 198;
+            this.skilrankUD28.ValueChanged += new System.EventHandler(this.skilrank_ValueChanged);
             // 
             // labelSkillName28
             // 
@@ -3885,6 +3936,7 @@
             this.skilrankUD27.Name = "skilrankUD27";
             this.skilrankUD27.Size = new System.Drawing.Size(34, 20);
             this.skilrankUD27.TabIndex = 191;
+            this.skilrankUD27.ValueChanged += new System.EventHandler(this.skilrank_ValueChanged);
             // 
             // labelSkillName27
             // 
@@ -3966,6 +4018,7 @@
             this.skillSubmitButton.TabIndex = 377;
             this.skillSubmitButton.Text = "Submit Skills";
             this.skillSubmitButton.UseVisualStyleBackColor = true;
+            this.skillSubmitButton.Click += new System.EventHandler(this.skillSubmitButton_Click);
             // 
             // skillSelection
             // 

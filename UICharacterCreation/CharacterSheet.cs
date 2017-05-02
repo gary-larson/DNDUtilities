@@ -29,17 +29,17 @@ namespace UICharacterCreation
         // Character Stats are combat statistics, saves, and the like.
         // Character Wounds are injuries incurred to characters.... Why are we tracking this. 
 
-        public Characters charInfo;
-        public Character_abilities abilityScores;
-        public Character_classes classLevels;
-        public Character_feats charFeats;
-        public Character_hit_points HP;
-        public Character_languages languages;
-        public Character_possessions possessions;
-        public List<Character_skills> skills;
-        public Character_spells spells;
-        public Character_stats stats;
-        public Character_wounds wounds;
+        public Characters charInfo;                         // this works!
+        public List<Character_abilities> abilityScores;     // this works!
+        public List<Character_classes> classLevels;               // this kinda works!
+        public Character_feats charFeats;                   // no
+        public Character_hit_points HP;                     // this kinda works!
+        public Character_languages languages;               // no
+        public Character_possessions possessions;           // no
+        public List<Character_skills> skills;               // this BETTER work!
+        public Character_spells spells;                     // no
+        public Character_stats stats;                       // HAHAHAH no
+        public Character_wounds wounds;                     // why was this made
 
         public int ID
         {
@@ -52,8 +52,8 @@ namespace UICharacterCreation
         public CharacterSheet()
         {
             charInfo = new Characters();
-            abilityScores = new Character_abilities();
-            classLevels = new Character_classes();
+            abilityScores = new List<Character_abilities>();
+            classLevels = new List<Character_classes>();
             charFeats = new Character_feats();
             HP = new Character_hit_points();
             languages = new Character_languages();
@@ -77,6 +77,34 @@ namespace UICharacterCreation
             {
                 /// int character_id, int skill_id, int skill_rank, int skill_modifier, int ability_modifier, int misc_modifier)
                 skill.save(ID, skill.skill_id);
+            }
+        }
+
+        public void saveAbilities()
+        {
+            foreach (Character_abilities a in abilityScores)
+            {
+                a.save(ID, a.ability_id);
+            }
+        }
+        public void retrieveAll(int charID)
+        {
+            // update this function withthe functional bits!
+            charInfo.retrieveRecord(charID);
+            Character_abilities bob = new Character_abilities();
+            for (int i = 1; i <= 6; i++)
+            {
+                bob.retrieveRecord(charID, i);
+                abilityScores.Add(bob);
+            }
+            classLevels.retrieveRecord(charID);
+            HP.retrieveRecord(charID, charInfo.career_level);
+            Character_skills billy = new Character_skills();
+            List<Character_skills> Billy2 = new List<Character_skills>();
+            List<NameKey> characterSkills = Character_skills.retrieveAllSkills(ID);
+            foreach (NameKey n in characterSkills)
+            {
+                Billy2.Add(new Character_skills.retrieveRecord())
             }
         }
     }

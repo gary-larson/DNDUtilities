@@ -1,6 +1,6 @@
 ﻿namespace UICharacterCreation
 {
-    partial class newCharacterGenerator
+    partial class characterSheetForm
     {
         /// <summary>
         /// Required designer variable.
@@ -713,7 +713,7 @@
             this.addSkillsButton.UseVisualStyleBackColor = true;
             this.addSkillsButton.Click += new System.EventHandler(this.addSkillsButton_Click);
             // 
-            // newCharacterGenerator
+            // characterSheetForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -748,7 +748,7 @@
             this.Controls.Add(this.raceLabel);
             this.Controls.Add(this.ClassLabel);
             this.Controls.Add(this.classComboBox);
-            this.Name = "newCharacterGenerator";
+            this.Name = "characterSheetForm";
             this.Text = "Character Creator";
             this.AbilityScoreGroupBox.ResumeLayout(false);
             this.AbilityScoreGroupBox.PerformLayout();

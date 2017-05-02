@@ -31,11 +31,14 @@ namespace UICharacterCreation
             if (selection == "New Character")
             {
                 // Call form for new character Creation!
-                newCharacterGenerator newPC = new newCharacterGenerator();
-                newPC.Show();
-                this.Hide();
+                characterSheetForm newPC = new characterSheetForm();
+                newPC.ShowDialog();
             }
-                else if (selection == "Edit Character")
+            else if (selection == "View Character")
+            {
+
+            }
+                else 
             {
                 // Call form for Character editing!
                 MessageBox.Show("Coming soon!");
