@@ -134,25 +134,7 @@ namespace DNDUtilitiesLib
             return retrieveAll(TABLE, FIELD);
         }
 
-        public void delete(int Key)
-        {
-            throw new System.NotImplementedException();
-        }
-
-        public Equipments retrieve(int Key)
-        {
-            throw new System.NotImplementedException();
-        }
-
-        public virtual void save(int Key)
-        {
-            throw new System.NotImplementedException();
-        }
-
-        public override string ToString()
-        {
-            throw new System.NotImplementedException();
-        }
+        
 
     }
 

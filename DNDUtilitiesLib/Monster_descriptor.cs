@@ -14,43 +14,19 @@ namespace DNDUtilitiesLib
             private set;
         }
 
-        public virtual string name
+        public string name
         {
             get;
             set;
         }
 
-        public virtual Monsters monsters
+        public Monsters monsters
         {
             get;
             set;
         }
 
-        private List<String> fieldList
-        {
-            get;
-            set;
-        }
-
-        public virtual void delete(int Key)
-        {
-            throw new System.NotImplementedException();
-        }
-
-        public virtual Monster_descriptor retrieve(int Key)
-        {
-            throw new System.NotImplementedException();
-        }
-
-        public virtual void save(int Key)
-        {
-            throw new System.NotImplementedException();
-        }
-
-        public override string ToString()
-        {
-            throw new System.NotImplementedException();
-        }
+        
 
     }
 

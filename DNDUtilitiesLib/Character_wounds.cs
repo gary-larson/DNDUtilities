@@ -158,7 +158,7 @@ namespace DNDUtilitiesLib
             }
         }
 
-        public static List<Character_wounds> retrievAllCharacters(int characterKey)
+        public static List<Character_wounds> retrieveAllWounds(int characterKey)
         {
             List<Character_wounds> l = new List<Character_wounds>();
 

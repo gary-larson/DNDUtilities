@@ -14,103 +14,79 @@ namespace DNDUtilitiesLib
             private set;
         }
 
-        public virtual string name
+        public string name
         {
             get;
             set;
         }
 
-        public virtual string granted_powers
+        public string granted_powers
         {
             get;
             set;
         }
 
-        public virtual string spell_1
+        public string spell_1
         {
             get;
             set;
         }
 
-        public virtual string spell_2
+        public string spell_2
         {
             get;
             set;
         }
 
-        public virtual string spell_3
+        public string spell_3
         {
             get;
             set;
         }
 
-        public virtual string spell_4
+        public string spell_4
         {
             get;
             set;
         }
 
-        public virtual string spell_5
+        public string spell_5
         {
             get;
             set;
         }
 
-        public virtual string spell_6
+        public string spell_6
         {
             get;
             set;
         }
 
-        public virtual string spell_7
+        public string spell_7
         {
             get;
             set;
         }
 
-        public virtual string spell_8
+        public string spell_8
         {
             get;
             set;
         }
 
-        public virtual string spell_9
+        public string spell_9
         {
             get;
             set;
         }
 
-        public virtual string full_text
+        public string full_text
         {
             get;
             set;
         }
 
-        private List<String> fieldList
-        {
-            get;
-            set;
-        }
-
-        public virtual void delete(int Key)
-        {
-            throw new System.NotImplementedException();
-        }
-
-        public virtual Domains retrieve(int Key)
-        {
-            throw new System.NotImplementedException();
-        }
-
-        public virtual void save(int Key)
-        {
-            throw new System.NotImplementedException();
-        }
-
-        public override string ToString()
-        {
-            throw new System.NotImplementedException();
-        }
+        
 
     }
 

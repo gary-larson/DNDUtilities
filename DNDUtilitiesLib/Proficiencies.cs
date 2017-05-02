@@ -205,11 +205,7 @@ namespace DNDUtilitiesLib
             }
         }
 
-        public void save(int Key)
-        {
-            throw new System.NotImplementedException();
-        }
-
+        
         public override string ToString()
         {
             return "Weapon_proficiency_id: " + weapon_proficiency_id + " Equipment_id: " + equipment_id +

@@ -15,36 +15,12 @@ namespace DNDUtilitiesLib
             private set;
         }
 
-        public virtual string name
+        public string name
         {
             get;
             set;
         }
 
-        private List<String> fieldList
-        {
-            get;
-            set;
-        }
-
-        public virtual void delete(int Key)
-        {
-            throw new System.NotImplementedException();
-        }
-
-        public virtual Equipment_category retrieve(int Key)
-        {
-            throw new System.NotImplementedException();
-        }
-
-        public virtual void save(int Key)
-        {
-            throw new System.NotImplementedException();
-        }
-
-        public override string ToString()
-        {
-            throw new System.NotImplementedException();
-        }
+        
     }
 }

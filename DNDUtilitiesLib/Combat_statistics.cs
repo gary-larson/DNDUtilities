@@ -14,54 +14,34 @@ namespace DNDUtilitiesLib
             private set;
         }
 
-        public virtual string name
+        public string name
         {
             get;
             set;
         }
 
-        public virtual string description
+        public string description
         {
             get;
             set;
         }
 
-        internal virtual string FIELD
+        internal string FIELD
         {
             get;
             set;
         }
 
-        internal virtual string FIELD_LIST
+        internal string FIELD_LIST
         {
             get;
             set;
         }
 
-        internal virtual string TABLE
+        internal string TABLE
         {
             get;
             set;
-        }
-
-        public virtual void delete(int Key)
-        {
-            throw new System.NotImplementedException();
-        }
-
-        public virtual Domains retrieve(int Key)
-        {
-            throw new System.NotImplementedException();
-        }
-
-        public virtual void save(int Key)
-        {
-            throw new System.NotImplementedException();
-        }
-
-        public virtual string ToString()
-        {
-            throw new System.NotImplementedException();
         }
     }
 }

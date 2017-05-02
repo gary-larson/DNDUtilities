@@ -46,9 +46,6 @@ namespace DNDUtilitiesLib
 
         
 
-        public virtual string ToString()
-        {
-            throw new System.NotImplementedException();
-        }
+        
     }
 }

@@ -20,13 +20,13 @@ namespace DNDUtilitiesLib
 		    private set;
 	    }
 
-        public virtual string name
+        public string name
         {
             get;
             set;
         }
 
-        public virtual string altname
+        public string altname
         {
             get;
             set;
@@ -50,199 +50,175 @@ namespace DNDUtilitiesLib
             private set;
         }
 
-        public virtual string hit_dice
+        public string hit_dice
         {
             get;
             set;
         }
 
-        public virtual string initiative
+        public string initiative
         {
             get;
             set;
         }
 
-        public virtual string speed
+        public string speed
         {
             get;
             set;
         }
 
-        public virtual string armor_class
+        public string armor_class
         {
             get;
             set;
         }
 
-        public virtual int base_attack
+        public int base_attack
         {
             get;
             set;
         }
 
-        public virtual int grapple
+        public int grapple
         {
             get;
             set;
         }
 
-        public virtual string attack
+        public string attack
         {
             get;
             set;
         }
 
-        public virtual string full_attack
+        public string full_attack
         {
             get;
             set;
         }
 
-        public virtual string space
+        public string space
         {
             get;
             set;
         }
 
-        public virtual string reach
+        public string reach
         {
             get;
             set;
         }
 
-        public virtual string special_attacks
+        public string special_attacks
 	    {
 		    get;
 		    set;
 	    }
 
-        public virtual string special_qualities
+        public string special_qualities
 	    {
 		    get;
 		    set;
 	    }
 
-	    public virtual string saves
+	    public string saves
         {
             get;
             set;
         }
 
-        public virtual string abilities
+        public string abilities
         {
             get;
             set;
         }
 
-        public virtual string skills
+        public string skills
         {
             get;
             set;
         }
 
-        public virtual string bonus_feats
+        public string bonus_feats
         {
             get;
             set;
         }
 
-        public virtual string feats
+        public string feats
         {
             get;
             set;
         }
 
-        public virtual string epic_feats
+        public string epic_feats
         {
             get;
             set;
         }
 
-        public virtual string environment
+        public string environment
         {
             get;
             set;
         }
 
-        public virtual string organization
+        public string organization
         {
             get;
             set;
         }
 
-        public virtual string challenge_rating
+        public string challenge_rating
         {
             get;
             set;
         }
 
-        public virtual string treasure
+        public string treasure
         {
             get;
             set;
         }
 
-        public virtual string alignment
+        public string alignment
         {
             get;
             set;
         }
 
-        public virtual string advancement
+        public string advancement
         {
             get;
             set;
         }
 
-        public virtual string level_adjustment
+        public string level_adjustment
         {
             get;
             set;
         }
 
-        public virtual string special_abilities
+        public string special_abilities
 	        {
 		        get;
 		        set;
 	        }
 
-	        public virtual string stat_block
+	        public string stat_block
         {
             get;
             set;
         }
 
-        public virtual string full_text
+        public string full_text
         {
             get;
             set;
         }
 
-        private List<String> fieldList
-        {
-            get;
-            set;
-        }
-
-        public virtual void delete(int Key)
-        {
-            throw new System.NotImplementedException();
-        }
-
-        public virtual Monsters retrieve(int Key)
-        {
-            throw new System.NotImplementedException();
-        }
-
-        public virtual void save(int Key)
-        {
-            throw new System.NotImplementedException();
-        }
-
-        public override string ToString()
-        {
-            throw new System.NotImplementedException();
-        }
+        
 
     }
 }

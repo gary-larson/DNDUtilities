@@ -25,16 +25,7 @@ namespace DNDUtilitiesLib
 
         
 
-        public void delete(int Key)
-        {
-            throw new System.NotImplementedException();
-        }
-
-        public Domains retrieve(int Key)
-        {
-            throw new System.NotImplementedException();
-        }
-
+        
         /// <summary>
         /// Get all language names
         /// </summary>
@@ -44,14 +35,6 @@ namespace DNDUtilitiesLib
             return retrieveAll(TABLE, FIELD);
         }
 
-        public void save(int Key)
-        {
-            throw new System.NotImplementedException();
-        }
-
-        public override string ToString()
-        {
-            throw new System.NotImplementedException();
-        }
+        
     }
 }

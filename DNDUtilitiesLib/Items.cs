@@ -14,103 +14,79 @@ namespace DNDUtilitiesLib
             private set;
         }
 
-        public virtual string name
+        public string name
         {
             get;
             set;
         }
 
-        public virtual string category
+        public string category
         {
             get;
             set;
         }
 
-        public virtual string subcategory
+        public string subcategory
         {
             get;
             set;
         }
 
-        public virtual string special_ability
+        public string special_ability
         {
             get;
             set;
         }
 
-        public virtual string aura
+        public string aura
         {
             get;
             set;
         }
 
-        public virtual int caster_level
+        public int caster_level
         {
             get;
             set;
         }
 
-        public virtual string price
+        public string price
         {
             get;
             set;
         }
 
-        public virtual int manifester_level
+        public int manifester_level
         {
             get;
             set;
         }
 
-        public virtual string prerequisite
+        public string prerequisite
         {
             get;
             set;
         }
 
-        public virtual string cost
+        public string cost
         {
             get;
             set;
         }
 
-        public virtual string weight
+        public string weight
         {
             get;
             set;
         }
 
-        public virtual string full_text
+        public string full_text
         {
             get;
             set;
         }
 
-        private List<String> fieldList
-        {
-            get;
-            set;
-        }
-
-        public virtual void delete(int Key)
-        {
-            throw new System.NotImplementedException();
-        }
-
-        public virtual Items retrieve(int Key)
-        {
-            throw new System.NotImplementedException();
-        }
-
-        public virtual void save(int Key)
-        {
-            throw new System.NotImplementedException();
-        }
-
-        public override string ToString()
-        {
-            throw new System.NotImplementedException();
-        }
+        
 
     }
 

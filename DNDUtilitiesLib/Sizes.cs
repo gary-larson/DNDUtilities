@@ -22,16 +22,7 @@ namespace DNDUtilitiesLib
             set;
         }
 
-        public void delete(int Key)
-        {
-            throw new System.NotImplementedException();
-        }
-
-        public Sizes retrieve(int Key)
-        {
-            throw new System.NotImplementedException();
-        }
-
+        
         /// <summary>
         /// Get all sizes names
         /// </summary>
@@ -41,14 +32,6 @@ namespace DNDUtilitiesLib
             return retrieveAll(TABLE, FIELD);
         }
 
-        public virtual void save(int Key)
-        {
-            throw new System.NotImplementedException();
-        }
-
-        public override string ToString()
-        {
-            throw new System.NotImplementedException();
-        }
+        
     }
 }

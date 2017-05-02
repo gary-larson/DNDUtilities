@@ -29,7 +29,7 @@ namespace DNDUtilitiesLib
         }
 
         /// <summary>
-        /// Constructor to populate all fields
+        /// Constructor to populate all native fields
         /// </summary>
         /// <param name="character_id">primary key</param>
         /// <param name="class_id">primary key</param>
@@ -50,6 +50,7 @@ namespace DNDUtilitiesLib
         /// <param name="class_id">primary key</param>
         /// <param name="level"> level of class</param>
         /// <param name="caster_level">spell caster level</param>
+        /// <param name="className">Name of the class</param>
         public Character_classes(int character_id, int class_id, string classname, int level, int caster_level)
         {
             this.character_id = character_id;

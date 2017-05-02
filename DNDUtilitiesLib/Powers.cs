@@ -74,61 +74,61 @@ namespace DNDUtilitiesLib
             set;
         }
 
-        public virtual string effect
+        public string effect
         {
             get;
             set;
         }
 
-        public virtual string duration
+        public string duration
         {
             get;
             set;
         }
 
-        public virtual string saving_throw
+        public string saving_throw
 	    {
 		    get;
 		    set;
 	    }
 
-        public virtual string power_points
+        public string power_points
         {
             get;
             set;
         }
 
-        public virtual string power_resistance
+        public string power_resistance
         {
             get;
             set;
         }
 
-        public virtual string short_description
+        public string short_description
 	    {
-		    get;
+            get;
 		    set;
 	    }
 
-	    public virtual string xp_cost
+	    public string xp_cost
         {
             get;
             set;
         }
 
-        public virtual string description
+        public string description
         {
             get;
             set;
         }
 
-        public virtual string augment
+        public string augment
         {
             get;
             set;
         }
 
-        public virtual string full_text
+        public string full_text
         {
             get;
             set;
