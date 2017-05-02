@@ -32,22 +32,20 @@ namespace UICharacterCreation
         List<int> MiscModForSkills;     // same as above, but more likely to be 0. 
         List<int> totalModForSkills;
         List<int> oldUDValues;          // holds prior skill ranks for the sake of point calculations
+        List<SkillInfo> tempSkill;
         public List<Character_skills> result;
 
-        public skillSelection(int characterID)
+        public skillSelection(CharacterSheet PC)
         {
-            List<NameKey> characterSkills = Character_skills.retrieveAllSkills(characterID);    // List<namekey> of Modified skills for Character
-                                                                                                // populate based on this at some point aaaaaaa
-                                                                                                // this is EDIT functionality, new chars just overwrite
-        }
+            InitializeComponent();
+            // PC does need to be an initialized character sheet but i'll just throw errors if things break. 
+            initArr();
 
-        public skillSelection(int classID, int raceID, List<int> abilityScores, List<Character_skills> SkillInput)
-        {
-            universalInitialization2(classID, raceID, abilityScores);           // do the generic stuff
-            blankCharacterData(classID, raceID);                                // populate the skeleton
-            foreach (Character_skills input in SkillInput)
+            universalInitialization2(PC.classLevels.Last().class_id, PC.charInfo.race_id, PC.getAbilityScores());
+            blankCharacterData(PC.classLevels.Last().class_id, PC.charInfo.race_id);
+            foreach (Character_skills input in PC.skills)
             {
-                for(int i = 0; i < ClassSkillLabels.Count; i++)
+                for (int i = 0; i < ClassSkillLabels.Count; i++)
                 {
                     if (IDinPos[i] == input.skill_id)
                     {
@@ -60,9 +58,38 @@ namespace UICharacterCreation
                     }
                 }
             }
+            buttons2View();
+
         }
+
+        public skillSelection(int classID, int raceID, List<int> abilityScores, List<Character_skills> SkillInput)
+        {
+            InitializeComponent();
+            initArr();
+            universalInitialization2(classID, raceID, abilityScores);           // do the generic stuff
+            blankCharacterData(classID, raceID);                                // populate the skeleton
+            foreach (Character_skills input in SkillInput)
+            {
+                for (int i = 0; i < ClassSkillLabels.Count; i++)
+                {
+                    if (IDinPos[i] == input.skill_id)
+                    {
+                        SkillRankUD[i].Value = input.skill_rank;
+                        attributeModForSkill[i] = input.ability_modifier;
+                        MiscModForSkills[i] = input.misc_modifier;
+                        totalModForSkills[i] = input.skill_modifier;
+                        pointsToSpend = 0;      // you can only get here with 0 points to spend using this method. 
+                        break;
+                    }
+                }
+            }
+
+        }
+
         public skillSelection(string typing, int classID, int raceID, List<int> abilityScores)
         {
+            InitializeComponent();
+
             universalInitialization2(classID, raceID, abilityScores);
             // ------------------------------------------- Populate form Lists! ------------------------------------------ //
             initArr();
@@ -75,6 +102,7 @@ namespace UICharacterCreation
             {
                 // view stuff/code
                 // some day Q.Q
+                // TODAY IS THAT DAY
             }
 
 
@@ -314,7 +342,7 @@ namespace UICharacterCreation
             List<NameKey> SkillChoices = Skills.retrieveAllSkills();            // All the skills we will put in the thing
             int cI = 0;                             // Current index, as in 'where in the 52 are we". this is for the boxes
             // itterates through all skills availe                              // TempSkill starts at 0, IDs start at 1
-            List<SkillInfo> tempSkill = new List<SkillInfo>();                  // OPERATES OFF THE "ID IN POS" METHOD
+            tempSkill = new List<SkillInfo>();                                  // OPERATES OFF THE "ID IN POS" METHOD
             tempSkill = Skills.retrieveAllSkills(classID, raceID);              // WHICH IS TO SAY YOU WANT 
                                                                                 // tempSkill[IDinPos[cI]-1]
                                                                                 // ID in pos 0 = 1
@@ -460,17 +488,24 @@ namespace UICharacterCreation
             }
             int currentUDVal = (int)SkillRankUD[cI].Value;
             totalModForSkills[cI] = MiscModForSkills[cI] + attributeModForSkill[cI] + currentUDVal;
-            if (totalModForSkills[cI] >= 0)
+            if (tempSkill[IDinPos[cI] - 1].name == "Speak Language")
             {
-                totalModLabels[cI].Text = "+" + totalModForSkills[cI].ToString();
+                totalModLabels[cI].Text = currentUDVal + " Languages Gained";
             }
             else
-            {
-                totalModLabels[cI].Text = totalModForSkills[cI].ToString();
+            { 
+                if (totalModForSkills[cI] >= 0)
+                {
+                    totalModLabels[cI].Text = "+" + totalModForSkills[cI].ToString();
+                }
+                else
+                {
+                    totalModLabels[cI].Text = totalModForSkills[cI].ToString();
+                }
             }
-
             // calculate this based on the U/D's value versus the old one. 
             int pointsSpent = currentUDVal - oldUDValues[cI];       // points *spent*
+            oldUDValues[cI] = currentUDVal;
             if (ClassSkillLabels[cI].Text.Equals("YES"))
             {
                 // 1 to 1 point / rank costs
@@ -494,7 +529,7 @@ namespace UICharacterCreation
                 valid = true;
                 this.Close();
             }
-            else if (pointsToSpend < 0)
+            else if (pointsToSpend > 0)
             {
                 MessageBox.Show("Please spend all skillpoints before trying to save!");
             }
@@ -516,11 +551,26 @@ namespace UICharacterCreation
             return result;
         }
 
+        private void buttons2View()
+        {
+            // take all the control surfaces, and lock them to be uneditable. 
+
+            foreach (ComboBox sb in SubSkillComboBox)
+            {
+                sb.Enabled = false;
+            }
+            foreach(NumericUpDown nud in SkillRankUD)
+            {
+                nud.Enabled = false;
+            }
+            skillSubmitButton.Text = "Exit";
+        }
+
         private void universalInitialization2(int classID, int raceID, List<int> abilityScores)
         {
             // adjIntMod is the Intelegence modifier of a character after accounting for race adn such. 
             // abilityscores should be an array of the 6 scores in the normal order. 
-            InitializeComponent();
+
             attributes = new List<int>();
             attributes = abilityScores;
             // --------------------------------- Calculate ability modifiers!-------------------------------------//
@@ -552,6 +602,7 @@ namespace UICharacterCreation
                 pointsToSpend = 4;                                          // i cant find the source right now but this is a thing. i think. 
             }
             updatePointsremainingLabel();
+
         }
     }
 }

@@ -36,7 +36,8 @@ namespace UICharacterCreation
             }
             else if (selection == "View Character")
             {
-
+                viewSelector charselect = new viewSelector();
+                charselect.ShowDialog();
             }
                 else 
             {

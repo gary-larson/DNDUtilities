@@ -51,6 +51,23 @@ namespace UICharacterCreation
 
         public CharacterSheet()
         {
+            initComponenants();
+
+        }
+
+        public CharacterSheet(int ID)
+        {
+
+            // This populates a CharacterSheet with the proper character information
+            // this also isnt implemented yet so just.... 
+            // ignore me for now
+            // lets DO THIS. 
+            initComponenants();
+            retrieveAll(ID);
+            // turns out you can make your life a lot easier with properly implemented rfunctions lmao
+        }
+        public void initComponenants()
+        {
             charInfo = new Characters();
             abilityScores = new List<Character_abilities>();
             classLevels = new List<Character_classes>();
@@ -63,14 +80,6 @@ namespace UICharacterCreation
             stats = new Character_stats();
             wounds = new Character_wounds();
         }
-
-        public CharacterSheet(int ID)
-        {
-            // This populates a CharacterSheet with the proper character information
-            // this also isnt implemented yet so just.... 
-            // ignore me for now
-        }
-
         public void saveSkills()
         {
             foreach (Character_skills skill in skills)
@@ -84,9 +93,20 @@ namespace UICharacterCreation
         {
             foreach (Character_abilities a in abilityScores)
             {
-                a.save(ID, a.ability_id);
+                a.save();
             }
         }
+
+        public List<int> getAbilityScores()
+        {
+            List<int> result = new List<int>();
+            foreach (Character_abilities cab in abilityScores)
+            {
+                result.Add(cab.temp);               // this is in line with prior functionality that was brute forced. 
+            }
+            return result;
+        }
+
         public void retrieveAll(int charID)
         {
             // update this function withthe functional bits!
@@ -97,8 +117,7 @@ namespace UICharacterCreation
                 bob.retrieveRecord(charID, i);
                 abilityScores.Add(bob);
             }
-            Character_classes john = new Character_classes();
-            classLevels = john.retrieveAll(ID);             // assuming this function is implemented, this should work... 
+            classLevels = Character_classes.retrieveAllClasses(ID);             // assuming this function is implemented, this should work... 
             HP.retrieveRecord(charID, charInfo.career_level);
             Character_skills billy = new Character_skills();
             List<NameKey> characterSkills = Character_skills.retrieveAllSkills(ID);

@@ -41,7 +41,82 @@ namespace UICharacterCreation
             InitializeComponent();  //dont touch this, it's a default important thing of importance. 
             populateDropdowns();
             // fill in with character Data. 
-            PC.retrieveAll(charID);
+            PC = new CharacterSheet(charID);
+            // look if that doesnt work i need to retire
+            // now we need to populate labels based on PC info. 
+
+            pcNameTextBox.Text = PC.charInfo.name;
+            pcNameTextBox.Enabled = false;
+            playerNameTextBox.Text = PC.charInfo.player_name;
+            playerNameTextBox.Enabled = false;
+            dietyTextBox.Text = PC.charInfo.deity;
+            dietyTextBox.Enabled = false;
+
+            int raceindex = -1;
+            for (int i = 0; i < PotientialRaces.Count(); i++)
+            {
+                if (PotientialRaces[i].key == PC.charInfo.race_id)
+                {
+                    raceindex = i;
+                }
+            }
+            raceComboBox.SelectedIndex = raceindex;
+            raceComboBox.Enabled = false;
+
+            int classindex = -1;
+            for (int i = 0; i < PotientialClasses.Count(); i++)
+            {
+                if (PotientialClasses[i].key == PC.classLevels.Last().class_id)
+                {
+                    classindex = i;
+                }
+            }
+            classComboBox.SelectedIndex = classindex;
+            classComboBox.Enabled = false;
+
+            int alignindex = -1;
+            for (int i = 0; i < PotientialAlignments.Count; i++)
+            {
+                if (PotientialAlignments[i].key == PC.charInfo.alignment_id)
+                {
+                    alignindex = i;
+                }
+            }
+            alignmentComboBox.SelectedIndex = alignindex;
+            alignmentComboBox.Enabled = false;
+
+            genderTextBox.Text = PC.charInfo.gender;
+            genderTextBox.Enabled = false;
+
+            heightTextBox.Text = PC.charInfo.height.ToString();
+            heightTextBox.Enabled = false;
+
+            weightTextBox.Text = PC.charInfo.weight.ToString();
+            weightTextBox.Enabled = false;
+
+            ageTextBox.Text = PC.charInfo.age.ToString();
+            ageTextBox.Enabled = false;
+
+            eyesTextBox.Text = PC.charInfo.eyes;
+            eyesTextBox.Enabled = false;
+
+            hairTextBox.Text = PC.charInfo.hair;
+            hairTextBox.Enabled = false;
+
+            skinTextBox.Text = PC.charInfo.skin;
+            skinTextBox.Enabled = false;
+            baseAbilityScores = PC.getAbilityScores();
+            updateScoreBoxes();     // why rewrite code when it alrady exists :3
+            setScoreEdits(scoreBoxes, false);
+            foreach (CheckBox s in swapBoxes)
+            {
+                s.Enabled = false;
+            }
+            rollDiceButton.Enabled = false;
+            abilityGenerationSelector.Enabled = false;
+            reRollOneBox.Enabled = false;
+            submitGeneralInfo.Text = "Exit";
+
         }
         public void populateDropdowns()
         {
@@ -59,6 +134,10 @@ namespace UICharacterCreation
                 abilityTextBox1, abilityTextBox2, abilityTextBox3,
                 abilityTextBox4, abilityTextBox5, abilityTextBox6
             };
+            foreach (TextBox t in scoreBoxes)
+            {
+                t.Text = "0";
+            }
             swapBoxes = new List<CheckBox>()
             {
                 swapBox1, swapBox2, swapBox3,
@@ -105,24 +184,31 @@ namespace UICharacterCreation
 
         private void submitGeneralInfo_Click(object sender, EventArgs e)
         {
-            DialogResult result = MessageBox.Show("Saving will overwrite, Continue?", "Confirmation", MessageBoxButtons.YesNo);
-            if (result == DialogResult.Yes)
+            if (mode == "view")
             {
-                // save the character
-                List<int> tBiomet;
-                List<int> tStats;
-                if (validatePC(out tBiomet, out tStats))
-                {
-                    savePC(tBiomet, tStats);
-                }
-                else
-                {
-                    MessageBox.Show("Invalid Values Provided, Please Check the Red Feilds and Try again");
-                }
+                this.Close();
             }
-            else if (result == DialogResult.No)
+            else
             {
-                //  dont for now
+                DialogResult result = MessageBox.Show("Saving will overwrite, Continue?", "Confirmation", MessageBoxButtons.YesNo);
+                if (result == DialogResult.Yes)
+                {
+                    // save the character
+                    List<int> tBiomet;
+                    List<int> tStats;
+                    if (validatePC(out tBiomet, out tStats))
+                    {
+                        savePC(tBiomet, tStats);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Invalid Values Provided, Please Check the Red Feilds and Try again");
+                    }
+                }
+                else if (result == DialogResult.No)
+                {
+                    //  dont for now
+                }
             }
         }
 
@@ -197,23 +283,22 @@ namespace UICharacterCreation
             PC.charInfo.hair = hairTextBox.Text;
             PC.charInfo.skin = skinTextBox.Text;
             // PC.charInfo.description // Autoset by the Description Dialgo Box
+            if (string.IsNullOrEmpty(PC.charInfo.description))
+            {
+                PC.charInfo.description = "An unknown warrior, or something cool.";
+            }
             PC.charInfo.save();
-            if (PC.ID != -1)
-            {
-                MessageBox.Show("Characters: Saved successfully!");
-            }
-            else
-            {
-                MessageBox.Show("Characters: Save failed Gracefully!");
-            }
+
             // MessageBox.Show(PC.charInfo.ToString()); // not the best certification but hey it works.
             PC.abilityScores = new List<Character_abilities>();
             List<int> modifiedStats = getModifiedStats();
             for(int i = 0; i < CharacterAttributes.Count; i++)
             {
                 PC.abilityScores.Add(new Character_abilities(PC.ID, CharacterAttributes[i].key, AbilityModifiers[i], modifiedStats[i], 0));
+                // MessageBox.Show("Id: " + PC.abilityScores[i].ability_id.ToString() + "Value: " + PC.abilityScores[i].temp.ToString());
+                // those values are right. 
             }
-            
+            PC.saveAbilities();
             PC.classLevels.Add( new Character_classes(PC.ID, classNK.key, 1, 1));
             foreach (Character_classes a in PC.classLevels)
             {
@@ -245,6 +330,14 @@ namespace UICharacterCreation
             // skills need their own UI     ( IN PROGRESS! )
             // (combat) stats need their own UI (for display)
             // dont do them until after the other things are tackled though. 
+            if (PC.ID != -1)
+            {
+                MessageBox.Show("Characters: Saved successfully!");
+            }
+            else
+            {
+                MessageBox.Show("Characters: Save failed Gracefully!");
+            }
             this.Close();
         }
         private bool validateIntFields(List<TextBox> input, out List<int> output)
@@ -433,13 +526,21 @@ namespace UICharacterCreation
             AbilityModifiers.Clear();       // helps ensure data integrity
             for (int i = 0; i < scoreBoxes.Count(); i++)
             {
-                if (int.TryParse(scoreBoxes[i].Text, out temp))
+                if (!string.IsNullOrWhiteSpace(scoreBoxes[i].Text))
                 {
-                    // FLOOR (stat/2 -5)
-                    AbilityModifiers.Add((int)Math.Floor((double)temp / 2 - 5));
+                    if (int.TryParse(scoreBoxes[i].Text, out temp))
+                    {
+                        // FLOOR (stat/2 -5)
+                        AbilityModifiers.Add((int)Math.Floor((double)temp / 2 - 5));
+                    }
+                    else
+                    {
+                        AbilityModifiers.Add(0);
+                    }
                 }
                 else
                 {
+                    // also incase of  whitesace
                     AbilityModifiers.Add(0);        // in case of stupid, a dummy value
                                                     // also, an advantage in handling the undead
                 }
@@ -536,14 +637,16 @@ namespace UICharacterCreation
             if (String.IsNullOrEmpty(PC.charInfo.description))
             {
                 bckStory = new backstory();
-            } else
+            }
+            else
             {
                 bckStory = new backstory(PC.charInfo.description);
             }
             
             bckStory.ShowDialog();
-            if (bckStory.valid == true)
+            if (bckStory.valid == true && mode != "view")
             {
+                // we will allow you to try to edit the backstory, adn then discard the changes. 
                 PC.charInfo.description = bckStory.Story2;
             }
 
@@ -552,17 +655,27 @@ namespace UICharacterCreation
         private void addSkillsButton_Click(object sender, EventArgs e)
         {
             skillSelection skillStuff;
-            if (SkillsValid == false)
+            if (mode == "view")
             {
-                skillStuff = new skillSelection("new", currentClass().key, currentRace().key, getModifiedStats());
+                skillStuff = new skillSelection(PC);
             }
             else
             {
-                skillStuff = new skillSelection(currentClass().key, currentRace().key, getModifiedStats(), PC.skills);
+
+                if (SkillsValid == false)
+                {
+                    skillStuff = new skillSelection("new", currentClass().key, currentRace().key, getModifiedStats());
+                }
+                else
+                {
+                    skillStuff = new skillSelection(currentClass().key, currentRace().key, getModifiedStats(), PC.skills);
+                }
             }
             skillStuff.ShowDialog();
             if (skillStuff.valid)
             {
+                // im not worried about this, if the form is viewed, resaving the same data is just  alittle tiring, 
+                // and will be discarded anyways. 
                 PC.skills = skillStuff.result;
                 SkillsValid = true;
             }

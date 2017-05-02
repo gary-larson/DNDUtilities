@@ -107,6 +107,12 @@
     </Compile>
     <Compile Include="UISelection.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="viewSelector.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="viewSelector.Designer.cs">
+      <DependentUpon>viewSelector.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="backstory.resx">
       <DependentUpon>backstory.cs</DependentUpon>
     </EmbeddedResource>
@@ -128,6 +134,9 @@
     </Compile>
     <EmbeddedResource Include="skillSelection.resx">
       <DependentUpon>skillSelection.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="viewSelector.resx">
+      <DependentUpon>viewSelector.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
