@@ -127,7 +127,7 @@ namespace UICharacterCreation
             foreach (NameKey n in characterSkills)
             {
                 Beep.retrieveRecord(charID, n.key);
-                skills.Add(Beep);
+                skills.Add( new Character_skills(charID, Beep.skill_id, Beep.skill_rank, Beep.skill_modifier, Beep.ability_modifier, Beep.misc_modifier));
             }
         }
     }
