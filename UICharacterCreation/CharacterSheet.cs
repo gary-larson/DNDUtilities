@@ -116,7 +116,8 @@ namespace UICharacterCreation
             for (int i = 1; i <= 6; i++)
             {
                 bob.retrieveRecord(charID, i);
-                abilityScores.Add(bob);
+                 // int ability_id, int modifier, int temp, int temp_modifier)
+                abilityScores.Add(new Character_abilities(charID, bob.ability_id, bob.modifier, bob.temp, bob.temp_modifier));
             }
             classLevels = Character_classes.retrieveAllClasses(ID);             // assuming this function is implemented, this should work... 
             HP.retrieveRecord(charID, charInfo.career_level);
