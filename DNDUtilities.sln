@@ -13,7 +13,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ModelingProjectLib", "Model
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DNDUtilitiesLib", "DNDUtilitiesLib\DNDUtilitiesLib.csproj", "{621B7D27-26D7-488E-9B30-843BFC321F87}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UICharacterCreation", "UICharacterCreation\UICharacterCreation.csproj", "{446AE92D-8E17-41A1-ACAA-13C780F0AB4F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UserInterface", "UICharacterCreation\UserInterface.csproj", "{446AE92D-8E17-41A1-ACAA-13C780F0AB4F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

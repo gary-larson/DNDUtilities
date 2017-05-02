@@ -41,8 +41,7 @@ namespace UICharacterCreation
             InitializeComponent();  //dont touch this, it's a default important thing of importance. 
             populateDropdowns();
             // fill in with character Data. 
-            PC.charInfo.retrieveRecord(charID);
-            PC.
+            PC.retrieveAll(charID);
         }
         public void populateDropdowns()
         {
@@ -215,8 +214,11 @@ namespace UICharacterCreation
                 PC.abilityScores.Add(new Character_abilities(PC.ID, CharacterAttributes[i].key, AbilityModifiers[i], modifiedStats[i], 0));
             }
             
-            PC.classLevels = new Character_classes(PC.ID, classNK.key, 1, 1);
-            PC.classLevels.save();      // not a bool just hope it works
+            PC.classLevels.Add( new Character_classes(PC.ID, classNK.key, 1, 1));
+            foreach (Character_classes a in PC.classLevels)
+            {
+                a.save();      // not a bool just hope it works
+            }
             Classes UsedClass = new Classes();
             if (SkillsValid)
             {

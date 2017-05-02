@@ -31,7 +31,7 @@ namespace UICharacterCreation
 
         public Characters charInfo;                         // this works!
         public List<Character_abilities> abilityScores;     // this works!
-        public List<Character_classes> classLevels;               // this kinda works!
+        public List<Character_classes> classLevels;         // this kinda works!
         public Character_feats charFeats;                   // no
         public Character_hit_points HP;                     // this kinda works!
         public Character_languages languages;               // no
@@ -97,14 +97,16 @@ namespace UICharacterCreation
                 bob.retrieveRecord(charID, i);
                 abilityScores.Add(bob);
             }
-            classLevels.retrieveRecord(charID);
+            Character_classes john = new Character_classes();
+            classLevels = john.retrieveAll(ID);             // assuming this function is implemented, this should work... 
             HP.retrieveRecord(charID, charInfo.career_level);
             Character_skills billy = new Character_skills();
-            List<Character_skills> Billy2 = new List<Character_skills>();
             List<NameKey> characterSkills = Character_skills.retrieveAllSkills(ID);
+            Character_skills Beep = new Character_skills();
             foreach (NameKey n in characterSkills)
             {
-                Billy2.Add(new Character_skills.retrieveRecord())
+                Beep.retrieveRecord(charID, n.key);
+                skills.Add(Beep);
             }
         }
     }
