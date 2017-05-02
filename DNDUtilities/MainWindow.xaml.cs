@@ -116,8 +116,9 @@ namespace DNDUtilities
             // s = id.ToString(); 
             //Class_skills a = new Class_skills();
             //Classes c = new Classes();
-            //c.retrieveRecord(4);
-            //s = c.ToString();
+            Races c = new Races();
+            c.retrieveRecord(4);
+            s = c.ToString();
             //Proficiencies p = new Proficiencies();
             //p.retrieveRecord(1);
             //s = p.ToString();
@@ -128,7 +129,7 @@ namespace DNDUtilities
             //          a.temp_modifier = 3;
             //          a.save();
             //  bool b = a.delete(1, 1);
-            /*     List<NameKey> nk = Skill_subtypes.retrieveAllSubTypes(8);
+        /*    List<NameKey> nk = Class_skills.retrieveAllSkills(3);
              foreach (NameKey n in nk)
               {
                     s += n.ToString();
@@ -145,10 +146,11 @@ namespace DNDUtilities
             // a.player_name = "Keith";
             // a.save();
             //s = result.ToString();
+            //Class_skills.retrieveAllSkills(1);
             // label.Content = a.ToString();
             // label.Content = b + " " + s;
             //label.Content = result.ToString();
-            Spell_level sl = new Spell_level();
+            //Spell_level sl = new Spell_level();
             // sl.save();
             // s = "Good";
             //int[] i = new int[6];
