@@ -1,4 +1,5 @@
-﻿using DNDUtilitiesLib;
+﻿using DNDUtilities;
+using DNDUtilitiesLib;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,6 +15,7 @@ namespace UICharacterCreation
 
     public partial class skillSelection : Form
     {
+        public bool valid;
         List<Label> ClassSkillLabels;
         List<Label> SkillNamelabels;
         List<ComboBox> SubSkillComboBox;
@@ -21,7 +23,7 @@ namespace UICharacterCreation
         List<Label> AttributeModLabels;
         List<Label> miscModLabels;
         List<Label> totalModLabels;
-        List<int> IDinThisPosition; // this is "what skill ID is using this spot in the UI"
+        List<int> IDinPos;          // this is "what skill ID is using this spot in the UI", 52 spot array
         int effectiveIntMod;        // stuff. 
         int pointsToSpend;          // keeps track of how many are left
         List<int> attributes;
@@ -29,110 +31,80 @@ namespace UICharacterCreation
         List<int> attributeModForSkill; // maintains track of math things
         List<int> MiscModForSkills;     // same as above, but more likely to be 0. 
         List<int> totalModForSkills;
+        List<int> oldUDValues;          // holds prior skill ranks for the sake of point calculations
+        List<SkillInfo> tempSkill;
+        public List<Character_skills> result;
+
+        public skillSelection(CharacterSheet PC)
+        {
+            InitializeComponent();
+            // PC does need to be an initialized character sheet but i'll just throw errors if things break. 
+            initArr();
+
+            universalInitialization2(PC.classLevels.Last().class_id, PC.charInfo.race_id, PC.getAbilityScores());
+            blankCharacterData(PC.classLevels.Last().class_id, PC.charInfo.race_id);
+            foreach (Character_skills input in PC.skills)
+            {
+                for (int i = 0; i < ClassSkillLabels.Count; i++)
+                {
+                    if (IDinPos[i] == input.skill_id)
+                    {
+                        SkillRankUD[i].Value = input.skill_rank;
+                        attributeModForSkill[i] = input.ability_modifier;
+                        MiscModForSkills[i] = input.misc_modifier;
+                        totalModForSkills[i] = input.skill_modifier;
+                        pointsToSpend = 0;      // you can only get here with 0 points to spend using this method. 
+                        break;
+                    }
+                }
+            }
+            buttons2View();
+
+        }
+
+        public skillSelection(int classID, int raceID, List<int> abilityScores, List<Character_skills> SkillInput)
+        {
+            InitializeComponent();
+            initArr();
+            universalInitialization2(classID, raceID, abilityScores);           // do the generic stuff
+            blankCharacterData(classID, raceID);                                // populate the skeleton
+            foreach (Character_skills input in SkillInput)
+            {
+                for (int i = 0; i < ClassSkillLabels.Count; i++)
+                {
+                    if (IDinPos[i] == input.skill_id)
+                    {
+                        SkillRankUD[i].Value = input.skill_rank;
+                        attributeModForSkill[i] = input.ability_modifier;
+                        MiscModForSkills[i] = input.misc_modifier;
+                        totalModForSkills[i] = input.skill_modifier;
+                        pointsToSpend = 0;      // you can only get here with 0 points to spend using this method. 
+                        break;
+                    }
+                }
+            }
+
+        }
 
         public skillSelection(string typing, int classID, int raceID, List<int> abilityScores)
         {
-            //
-            // adjIntMod is the Intelegence modifier of a character after accounting for race adn such. 
-            // abilityscores should be an array of the 6 scores in the normal order. 
             InitializeComponent();
-            attributes = new List<int>();
-            attributes = abilityScores;
-            // --------------------------------- Calculate ability modifiers!-------------------------------------//
-            attribMods = new List<int>();
-            attribMods.Clear();       // helps ensure data integrity
-            for (int i = 0; i < attributes.Count(); i++)
-            {
-                attribMods.Add((int)Math.Floor((double)attributes[i] / 2 - 5));
-            }
 
-
+            universalInitialization2(classID, raceID, abilityScores);
             // ------------------------------------------- Populate form Lists! ------------------------------------------ //
             initArr();
             if (typing == "new")
             {
-                // get the list of _all Skills_
-                // check if a skill has subtyping, and go from there
-                // magical
-                int currentIndex = 0; // this is for the boxes, iirc. 
-                List<int> classSkills = new List<int>();//Class_skills.getSkillsForClass(classID);    // IDs of the skills a clas sis good with. 
-                List<NameKey> SkillChoices = Skills.retrieveAllSkills();            // All the skills we will put in the thing
-
-                List<Abilities> abilityInfo = new List<Abilities>()
-                {
-                    new Abilities() // by putting this here, we bump the other indexes up by 1, ensuring that their index = ability IDs
-                };
-                for (int i = 1; i <= 6; i++) {
-                    //abilityInfo.Add(Abilities.staticRetrieveRecord(i));
-                }
-                // populates a useful array. 
-
-                
-                foreach(NameKey s in SkillChoices)
-                {
-                    List<int> adjustedSkillIDs;
-                    List<int> adjustedSkillModifiers;
-                    //Skill_adjustments.getSkillAdjustmentsforRace(raceID, out adjustedSkillIDs, out adjustedSkillModifiers);
-                    // Misc. modifiers, affected by things like spells and Equipment and race. 
-                    // I might try to get race going later. 
-
-                    // adjusted int mod = attributes[3] + possible racial modifier. 
-                    // ugh ok ill get race information in this also :C
-
-                    // itterates through all skills availe
-                    Skills tempSkill = new Skills();
-                    tempSkill = tempSkill.retrieve(s.key);
-                    if (true) //(tempSkill.has_subtype.ToUpper() == "YES")
-                    {
-                        // subtyped things get 4 entries, unless they're speak language. 
-                        if (tempSkill.name == "Speak Language")
-                        {
-                            // Dont do normal things because this one is weird
-                            ClassSkillLabels[currentIndex].Text = "NO";             // 2 skillpoints per language
-                            SkillNamelabels[currentIndex].Text = tempSkill.name;    // sets the name label
-                            AttributeModLabels[currentIndex].Text = "N/A";
-                            miscModLabels[currentIndex].Text = "N/A";
-                            totalModLabels[currentIndex].Text = "0 Languages Gained";
-                            SubSkillComboBox[currentIndex].Enabled = false;         // disables unneeded box
-                            // Technically we _could_ use that box, but this system will instead just make the languages UI aware that the player cna use more languages
-                                    // eventually. 
-                            currentIndex++;
-                        }
-                        else
-                        {
-                            //List<NameKey> subtypes = Skill_subtypes.retrieveAllSubskillsfor(tempSkill.skill_id);
-                            for (int i = 0; i < 4; i++)
-                            {
-                                // to provide VARIETY you can select up to 4 different versions of this. 
-                                //Labeling(currentIndex, tempSkill, adjustedSkillIDs, adjustedSkillModifiers, abilityInfo, classSkills);
-                                SubSkillComboBox[currentIndex].DropDownStyle = ComboBoxStyle.DropDownList;
-                               // foreach (NameKey sub in subtypes) {
-                                 //   SubSkillComboBox[currentIndex].Items.Add(sub);
-                                //}
-                                // SubSkillComboBox[currentIndex].SelectedIndex = 0;
-                                currentIndex++;
-                            }
-                        }
-                    }
-                    else
-                    {
-                        // no subtyping, just 1 entry.
-                        //--------------------Sets everything _but_ the combobox--------------------------//
-                        Labeling(currentIndex, tempSkill, adjustedSkillIDs, adjustedSkillModifiers, abilityInfo, classSkills);
-
-                        //-----------------------Set ComboBox----------------------------------------//
-                        SubSkillComboBox[currentIndex].Enabled = false;         // disables unneeded box
-
-                        currentIndex++; // we are finished with this row of boxes, and thus move on to the next. 
-                    }
-                }
-
-
+                // this function is going to be picked apart to help make things happen
+                blankCharacterData(classID, raceID);
             }
             else
             {
                 // view stuff/code
+                // some day Q.Q
+                // TODAY IS THAT DAY
             }
+
 
 
             // typing = view:       Disable controls and just allow viewing. 
@@ -278,7 +250,7 @@ namespace UICharacterCreation
             };
 
             // intentional dummy values
-            IDinThisPosition = new List<int>()
+            IDinPos = new List<int>()
             {
                 -1, -1, -1, -1,
                 -1, -1, -1, -1,
@@ -342,64 +314,295 @@ namespace UICharacterCreation
                 0, 0, 0, 0,
                 0, 0, 0, 0
             };
-        }
-
-        public void Labeling(int currentIndex, Skills tempSkill, List<int> adjustedSkillIDs, List<int>adjustedSkillModifiers, List<Abilities> abilityInfo, List<int> classSkills)
-        {
-
-            //------------------------------class skill labels---------------------------------------------//
-            ClassSkillLabels[currentIndex].Text = "NO";     // reset this from the default "unknown"
-            foreach (int skillID in classSkills)
+            oldUDValues = new List<int>()
             {
-                if (skillID == tempSkill.skill_id)
+                0, 0, 0, 0,
+                0, 0, 0, 0,
+                0, 0, 0, 0,
+                0, 0, 0, 0,
+                0, 0, 0, 0,
+                0, 0, 0, 0,
+                0, 0, 0, 0,
+                0, 0, 0, 0,
+                0, 0, 0, 0,
+                0, 0, 0, 0,
+                0, 0, 0, 0,
+                0, 0, 0, 0,
+                0, 0, 0, 0
+            };
+        }
+        public void blankCharacterData(int classID, int raceID)
+        {
+            // get the list of _all Skills_
+            // check if a skill has subtyping, and go from there
+            // magical
+            // Current index, as in 'where in the 52 are we". this is for the boxes
+            List<NameKey> classSkills = new List<NameKey>();
+            classSkills = Class_skills.retrieveAllSkills(classID);              // IDs of the skills a clas sis good with. 
+            List<NameKey> SkillChoices = Skills.retrieveAllSkills();            // All the skills we will put in the thing
+            int cI = 0;                             // Current index, as in 'where in the 52 are we". this is for the boxes
+            // itterates through all skills availe                              // TempSkill starts at 0, IDs start at 1
+            tempSkill = new List<SkillInfo>();                                  // OPERATES OFF THE "ID IN POS" METHOD
+            tempSkill = Skills.retrieveAllSkills(classID, raceID);              // WHICH IS TO SAY YOU WANT 
+                                                                                // tempSkill[IDinPos[cI]-1]
+                                                                                // ID in pos 0 = 1
+                                                                                // Ci = 0
+                                                                                // ID for first skill 1
+                                                                                // position of skill_id 1 in tempskill = 0
+                                                                                // i hate subtyped skills. 
+            foreach (NameKey s in SkillChoices)
+            {
+
+                IDinPos[cI] = s.key;      // sets the ID in this position to the key of the currently selexcted SkillChoice
+                //  MessageBox.Show("IDinPOS[ci] = " + IDinPos[cI].ToString() + "\n" +
+                //                  "cI = " + cI.ToString());
+
+                //  Exception duck = new Exception();
+                //  throw duck;     // cant insert a break so fuck it. 
+
+                // Misc. modifiers, affected by things like spells and Equipment and race. 
+                // I might try to get race going later. // should be going now. 
+
+                // adjusted int mod = attributes[3] + possible racial modifier. 
+                // ugh ok ill get race information in this also :C
+
+
+                if (tempSkill[IDinPos[cI] - 1].subType.ToUpper() == "YES")
+                {
+                    // subtyped things get 4 entries, unless they're speak language. 
+                    if (tempSkill[IDinPos[cI] - 1].name == "Speak Language")
+                    {
+                        // Dont do normal things because this one is weird
+                        ClassSkillLabels[cI].Text = "NO";             // 2 skillpoints per language
+                        SkillNamelabels[cI].Text = tempSkill[IDinPos[cI] - 1].name;    // sets the name label
+                        AttributeModLabels[cI].Text = "N/A";
+                        miscModLabels[cI].Text = "N/A";
+                        totalModLabels[cI].Text = "0 Languages Gained";
+                        SubSkillComboBox[cI].Enabled = false;         // disables unneeded box
+                                                                      // Technically we _could_ use that box, but this system will instead just make the languages UI aware that the player cna use more languages
+                        cI++;                                         // eventually. 
+                    }
+                    else
+                    {
+                        //List<NameKey> subtypes = Skill_subtypes.retrieveAllSubskillsfor(tempSkill.skill_id);
+                        for (int i = 0; i < 4; i++)
+                        {
+
+                            IDinPos[cI] = s.key;     // sets the ID in this position to the key of the currently selexcted SkillChoice
+                                                                    // this has to be replicated here, because reasons! (if this was absent the ID would be -1)
+                                                                    // to provide VARIETY you can select up to 4 different versions of this. 
+                            Labeling(cI, tempSkill, classSkills);
+                            SubSkillComboBox[cI].DropDownStyle = ComboBoxStyle.DropDownList;
+
+                            List<NameKey> subtypes = Skill_subtypes.retrieveAllSubTypes(IDinPos[cI]);
+                            foreach (NameKey sub in subtypes)
+                            {
+                                SubSkillComboBox[cI].Items.Add(sub);
+                            }
+                            // SubSkillComboBox[cI].SelectedIndex = 0;
+                            cI++;       // this increments seperately because it is NEEDED. or something
+                                        // look i just hate subskills. 
+                        }
+                    }
+                }
+                else
+                {
+                    // no subtyping, just 1 entry.
+                    //--------------------Sets everything _but_ the combobox--------------------------//
+                    Labeling(cI, tempSkill, classSkills);
+
+                    //-----------------------Set ComboBox----------------------------------------//
+                    SubSkillComboBox[cI].Enabled = false;         // disables unneeded box
+                    cI++;
+                }
+                // we are finished with this row of boxes, and thus move on to the next. 
+            }
+        }
+        public void updatePointsremainingLabel()
+        {
+            labelPoints.Text = pointsToSpend.ToString() + " points remaining";
+        }
+        public void Labeling(int cI, List<SkillInfo> tempSkill, List<NameKey> classSkills)
+        {
+            //------------------------------class skill labels---------------------------------------------//
+            ClassSkillLabels[cI].Text = "NO";     // reset this from the default "unknown"
+            foreach (NameKey skillID in classSkills)
+            {
+                if (skillID.key == tempSkill[IDinPos[cI] - 1].skill_id)
                 {
                     // if this _is_ a class skill
-                    ClassSkillLabels[currentIndex].Text = "YES";
+                    ClassSkillLabels[cI].Text = "YES";
                 }
             }
             //--------------------------------Set Skill name Label----------------------------------------------//
-            SkillNamelabels[currentIndex].Text = tempSkill.name;    // sets the name label
+            SkillNamelabels[cI].Text = tempSkill[IDinPos[cI] - 1].name;    // sets the name label
 
             //------------------------------------Set attribute Mod Label---------------------------------------//
-            attributeModForSkill[currentIndex] = attribMods[tempSkill.key_ability_id-1];
-            if (attributeModForSkill[currentIndex] >= 0)
+            attributeModForSkill[cI] = attribMods[tempSkill[IDinPos[cI] - 1].ability_id - 1];
+            if (attributeModForSkill[cI] >= 0)
             {
                 // Take the current attribute mod label, set it equal to the current skil's ability's abbr, and add the number at the end. 
-                AttributeModLabels[currentIndex].Text = abilityInfo[tempSkill.key_ability_id].abbreviation + ": +" + attributeModForSkill[currentIndex].ToString();
+                AttributeModLabels[cI].Text = tempSkill[IDinPos[cI] - 1].ability + ": +" + attributeModForSkill[cI].ToString();
             }
             else
             {
                 // the lack of a sign is the only difference here. 
-                AttributeModLabels[currentIndex].Text = abilityInfo[tempSkill.key_ability_id].abbreviation + ": " + attributeModForSkill[currentIndex].ToString();
+                AttributeModLabels[cI].Text = tempSkill[IDinPos[cI] - 1].ability + ": " + attributeModForSkill[cI].ToString();
             }
 
             //------------------------------------MiscModLabel Assignments-------------------------------------------------------------//
-            miscModLabels[currentIndex].Text = "+0";
-            for (int i = 0; i<adjustedSkillIDs.Count; i++)
+            miscModLabels[cI].Text = "+0";
+            // Checks if the current skill is modified
+
+            MiscModForSkills[cI] = tempSkill[IDinPos[cI] - 1].adjustment;
+            if (MiscModForSkills[cI] >= 0)
             {
-                // Checks if the current skill is modified
-                if (adjustedSkillIDs[i] == tempSkill.skill_id)
-                {
-                    MiscModForSkills[currentIndex] = adjustedSkillModifiers[i];
-                    if (MiscModForSkills[currentIndex] >= 0)
-                    {
-                        miscModLabels[currentIndex].Text = "+" + MiscModForSkills[currentIndex].ToString();
-                    }
-                    else
-                    {
-                        miscModLabels[currentIndex].Text = MiscModForSkills[currentIndex].ToString();
-                    }
-                }
-            }
-            totalModForSkills[currentIndex] = MiscModForSkills[currentIndex] + attributeModForSkill[currentIndex] + (int)SkillRankUD[currentIndex].Value;
-            if (totalModForSkills[currentIndex] >= 0)
-            {
-                totalModLabels[currentIndex].Text = "+" + totalModForSkills[currentIndex].ToString();
+                miscModLabels[cI].Text = "+" + MiscModForSkills[cI].ToString();
             }
             else
             {
-                totalModLabels[currentIndex].Text = totalModForSkills[currentIndex].ToString();
+                miscModLabels[cI].Text = MiscModForSkills[cI].ToString();
             }
+
+            totalModForSkills[cI] = MiscModForSkills[cI] + attributeModForSkill[cI] + (int)SkillRankUD[cI].Value;
+            if (totalModForSkills[cI] >= 0)
+            {
+                totalModLabels[cI].Text = "+" + totalModForSkills[cI].ToString();
+            }
+            else
+            {
+                totalModLabels[cI].Text = totalModForSkills[cI].ToString();
+            }
+        }
+        private void skilrank_ValueChanged(object sender, EventArgs e)
+        {
+            // update modifier labels
+            // updates points remaining
+            int cI = 0;
+            for (cI = 0; cI < SkillRankUD.Count; cI++)
+            {
+                if ((NumericUpDown)sender == SkillRankUD[cI])
+                {
+                    break;      // determines the index of the affected row. a linear time operation because just (*^^&&^ hardcoding this
+                }
+            }
+            int currentUDVal = (int)SkillRankUD[cI].Value;
+            totalModForSkills[cI] = MiscModForSkills[cI] + attributeModForSkill[cI] + currentUDVal;
+            if (tempSkill[IDinPos[cI] - 1].name == "Speak Language")
+            {
+                totalModLabels[cI].Text = currentUDVal + " Languages Gained";
+            }
+            else
+            { 
+                if (totalModForSkills[cI] >= 0)
+                {
+                    totalModLabels[cI].Text = "+" + totalModForSkills[cI].ToString();
+                }
+                else
+                {
+                    totalModLabels[cI].Text = totalModForSkills[cI].ToString();
+                }
+            }
+            // calculate this based on the U/D's value versus the old one. 
+            int pointsSpent = currentUDVal - oldUDValues[cI];       // points *spent*
+            oldUDValues[cI] = currentUDVal;
+            if (ClassSkillLabels[cI].Text.Equals("YES"))
+            {
+                // 1 to 1 point / rank costs
+                pointsToSpend = pointsToSpend - pointsSpent;
+            }
+            else
+            {
+                // assume that it is not a class skill. this system wont handle half-ranks, sorry bub
+                pointsToSpend = pointsToSpend - (2 * pointsSpent);
+            }
+            updatePointsremainingLabel();
+        }
+
+        private void skillSubmitButton_Click(object sender, EventArgs e)
+        {
+            if (pointsToSpend == 0)
+            {
+                // this tells the sending form that the data in here is valid!
+                // we're going to add some code to package the data up more neatly though, to keep processing in-house
+                StoreData();
+                valid = true;
+                this.Close();
+            }
+            else if (pointsToSpend > 0)
+            {
+                MessageBox.Show("Please spend all skillpoints before trying to save!");
+            }
+            else
+            {
+                MessageBox.Show("Please don't overspend skillpoints!");
+            }
+        }
+
+        private List<Character_skills> StoreData()
+        {
+            // generates a List of CharacterSkills for the main form to use. 
+            result = new List<Character_skills>();
+            for (int cI = 0; cI < SkillRankUD.Count; cI++)
+            {
+                result.Add(new Character_skills(-1, IDinPos[cI], (int)SkillRankUD[cI].Value, totalModForSkills[cI], attributeModForSkill[cI], MiscModForSkills[cI]));
+            }
+            // These need the Character IDs tacked on
+            return result;
+        }
+
+        private void buttons2View()
+        {
+            // take all the control surfaces, and lock them to be uneditable. 
+
+            foreach (ComboBox sb in SubSkillComboBox)
+            {
+                sb.Enabled = false;
+            }
+            foreach(NumericUpDown nud in SkillRankUD)
+            {
+                nud.Enabled = false;
+            }
+            skillSubmitButton.Text = "Exit";
+        }
+
+        private void universalInitialization2(int classID, int raceID, List<int> abilityScores)
+        {
+            // adjIntMod is the Intelegence modifier of a character after accounting for race adn such. 
+            // abilityscores should be an array of the 6 scores in the normal order. 
+
+            attributes = new List<int>();
+            attributes = abilityScores;
+            // --------------------------------- Calculate ability modifiers!-------------------------------------//
+            attribMods = new List<int>();
+            attribMods.Clear();       // helps ensure data integrity
+            for (int i = 0; i < attributes.Count(); i++)
+            {
+                attribMods.Add((int)Math.Floor((double)attributes[i] / 2 - 5));
+            }
+            // 0 = str, normal IDs are this +1
+            // 1 = dex
+            // 2 = con
+            // 3 = int
+            // 4 = wis
+            // 5 = cha
+            // ------------------------------------------Setup other things that are less crazy----------------------------//
+            Races tempRace = new Races();
+            tempRace.retrieveRecord(raceID);
+            // Exception duck = new Exception();
+            // throw duck;// DUCKY IS THROWN BECAUSE OF THAT ISSUE!, that issue being "retrieve record doesnt exist" (yet)
+            Classes tempClass = new Classes();
+            tempClass.retrieveRecord(classID);
+
+            effectiveIntMod = attribMods[3] + (int)(tempRace.extra_skill_points / 4.0);
+            pointsToSpend = (tempClass.skill_points + effectiveIntMod) * 4;   // this is times four due to the first level stuff.
+                                                                              // yes, races have their starting skillpoints set to lvl 1 and i (x/4)*4
+            if (pointsToSpend < 1)
+            {
+                pointsToSpend = 4;                                          // i cant find the source right now but this is a thing. i think. 
+            }
+            updatePointsremainingLabel();
+
         }
     }
 }

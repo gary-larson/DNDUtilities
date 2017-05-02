@@ -42,6 +42,7 @@ namespace DNDUtilitiesLib
             set;
         }
 
+        // this is treated as the score itself right now, because reworking the table would be dumb. 
         public int temp
         {
             get;

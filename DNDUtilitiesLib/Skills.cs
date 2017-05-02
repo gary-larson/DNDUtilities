@@ -7,6 +7,11 @@ using System.Threading.Tasks;
 
 namespace DNDUtilitiesLib
 {
+    // AS OF (presentation day)
+    // CONCENTRATION appears in the Skills DB twice. 
+    // im not changing my UI to deal with this right now. 
+    // so keep it in mind
+    // this comment is in your files, gary, so you see the change here and check it out 
     public class Skills : DBTable
     {
         public const string TABLE = "skills";

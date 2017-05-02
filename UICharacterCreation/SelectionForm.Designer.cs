@@ -39,7 +39,8 @@
             this.selectedFunction.FormattingEnabled = true;
             this.selectedFunction.Items.AddRange(new object[] {
             "New Character",
-            "Edit Character"});
+            "Edit Character",
+            "View Character"});
             this.selectedFunction.Location = new System.Drawing.Point(57, 65);
             this.selectedFunction.Name = "selectedFunction";
             this.selectedFunction.Size = new System.Drawing.Size(121, 21);
@@ -60,9 +61,9 @@
             this.DirectiveLabel.AutoSize = true;
             this.DirectiveLabel.Location = new System.Drawing.Point(54, 26);
             this.DirectiveLabel.Name = "DirectiveLabel";
-            this.DirectiveLabel.Size = new System.Drawing.Size(142, 13);
+            this.DirectiveLabel.Size = new System.Drawing.Size(138, 13);
             this.DirectiveLabel.TabIndex = 2;
-            this.DirectiveLabel.Text = "What would you like to Edit?";
+            this.DirectiveLabel.Text = "What would you like to Do?";
             // 
             // SelectionForm
             // 

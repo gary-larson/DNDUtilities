@@ -1,6 +1,6 @@
 ﻿namespace UICharacterCreation
 {
-    partial class newCharacterGenerator
+    partial class characterSheetForm
     {
         /// <summary>
         /// Required designer variable.
@@ -547,6 +547,8 @@
             this.abilityTextBox6.Name = "abilityTextBox6";
             this.abilityTextBox6.Size = new System.Drawing.Size(42, 20);
             this.abilityTextBox6.TabIndex = 14;
+            this.abilityTextBox6.Text = "0";
+            this.abilityTextBox6.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.abilityTextBox6.TextChanged += new System.EventHandler(this.abilityTextBox_TextChanged);
             // 
             // abilityTextBox5
@@ -557,6 +559,8 @@
             this.abilityTextBox5.Name = "abilityTextBox5";
             this.abilityTextBox5.Size = new System.Drawing.Size(42, 20);
             this.abilityTextBox5.TabIndex = 13;
+            this.abilityTextBox5.Text = "0";
+            this.abilityTextBox5.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.abilityTextBox5.TextChanged += new System.EventHandler(this.abilityTextBox_TextChanged);
             // 
             // abilityTextBox4
@@ -567,6 +571,8 @@
             this.abilityTextBox4.Name = "abilityTextBox4";
             this.abilityTextBox4.Size = new System.Drawing.Size(42, 20);
             this.abilityTextBox4.TabIndex = 12;
+            this.abilityTextBox4.Text = "0";
+            this.abilityTextBox4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.abilityTextBox4.TextChanged += new System.EventHandler(this.abilityTextBox_TextChanged);
             // 
             // abilityTextBox3
@@ -577,6 +583,8 @@
             this.abilityTextBox3.Name = "abilityTextBox3";
             this.abilityTextBox3.Size = new System.Drawing.Size(42, 20);
             this.abilityTextBox3.TabIndex = 11;
+            this.abilityTextBox3.Text = "0";
+            this.abilityTextBox3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.abilityTextBox3.TextChanged += new System.EventHandler(this.abilityTextBox_TextChanged);
             // 
             // abilityTextBox2
@@ -587,6 +595,8 @@
             this.abilityTextBox2.Name = "abilityTextBox2";
             this.abilityTextBox2.Size = new System.Drawing.Size(42, 20);
             this.abilityTextBox2.TabIndex = 10;
+            this.abilityTextBox2.Text = "0";
+            this.abilityTextBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.abilityTextBox2.TextChanged += new System.EventHandler(this.abilityTextBox_TextChanged);
             // 
             // abilityTextBox1
@@ -597,6 +607,8 @@
             this.abilityTextBox1.Name = "abilityTextBox1";
             this.abilityTextBox1.Size = new System.Drawing.Size(42, 20);
             this.abilityTextBox1.TabIndex = 9;
+            this.abilityTextBox1.Text = "0";
+            this.abilityTextBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.abilityTextBox1.TextChanged += new System.EventHandler(this.abilityTextBox_TextChanged);
             // 
             // abilityScoreValue
@@ -713,7 +725,7 @@
             this.addSkillsButton.UseVisualStyleBackColor = true;
             this.addSkillsButton.Click += new System.EventHandler(this.addSkillsButton_Click);
             // 
-            // newCharacterGenerator
+            // characterSheetForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -748,7 +760,7 @@
             this.Controls.Add(this.raceLabel);
             this.Controls.Add(this.ClassLabel);
             this.Controls.Add(this.classComboBox);
-            this.Name = "newCharacterGenerator";
+            this.Name = "characterSheetForm";
             this.Text = "Character Creator";
             this.AbilityScoreGroupBox.ResumeLayout(false);
             this.AbilityScoreGroupBox.PerformLayout();
