@@ -129,11 +129,11 @@ namespace DNDUtilities
             //          a.temp_modifier = 3;
             //          a.save();
             //  bool b = a.delete(1, 1);
-        /*    List<NameKey> nk = Class_skills.retrieveAllSkills(3);
-             foreach (NameKey n in nk)
-              {
-                    s += n.ToString();
-              } */
+            /*    List<NameKey> nk = Class_skills.retrieveAllSkills(3);
+                 foreach (NameKey n in nk)
+                  {
+                        s += n.ToString();
+                  } */
             /*   List<SkillInfo> l = Class_skills.retrieveAllSkills(8, 3);
                foreach (SkillInfo si in l)
                {
@@ -158,6 +158,12 @@ namespace DNDUtilities
             //s = "Ability: " + i[0] + " Mod: " + i[1] +
             //    " Ability: " + i[2] + " Mod: " + i[3] +
             //    " Ability: " + i[4] + " Mod: " + i[5];
+            List<Character_classes> l;
+            l = Character_classes.retrieveAllClasses(1);
+            foreach (Character_classes cc in l)
+            {
+                s += cc.ToString();
+            }
             label.Content = s;
 
         }

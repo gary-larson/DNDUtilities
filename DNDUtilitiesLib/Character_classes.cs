@@ -43,6 +43,22 @@ namespace DNDUtilitiesLib
             this.caster_level = caster_level;
         }
 
+        /// <summary>
+        /// Constructor to populate all fields
+        /// </summary>
+        /// <param name="character_id">primary key</param>
+        /// <param name="class_id">primary key</param>
+        /// <param name="level"> level of class</param>
+        /// <param name="caster_level">spell caster level</param>
+        public Character_classes(int character_id, int class_id, string classname, int level, int caster_level)
+        {
+            this.character_id = character_id;
+            this.class_id = class_id;
+            this.level = level;
+            this.caster_level = caster_level;
+            this.className = classname;
+        }
+
         // setup fields with properties
         public int character_id
         {
@@ -130,6 +146,50 @@ namespace DNDUtilitiesLib
                 }
                 conn.Close();
                // return this;
+            }
+        }
+
+        /// <summary>
+        /// Gets all class records indicated by character key
+        /// </summary>
+        /// <param name="characterKey">part of primary key</param>
+        /// <param name="classKey">part of primary key</param>
+        /// <returns>a List of character classes</returns>
+        public static List<Character_classes> retrieveAllClasses(int characterKey)
+        {
+            // declare variables
+            List<Character_classes> l = new List<Character_classes>();
+
+            using (SQLiteConnection conn = new SQLiteConnection())
+            {
+                conn.ConnectionString = CONNECTION_STR;
+                conn.Open();
+
+                String sql = "SELECT character_id, class_id, (SELECT name FROM classes WHERE class_id = character_classes.class_id), level, caster_level " +
+                    "FROM character_classes " +
+                    "WHERE character_id = @id1 AND deleted = 0";
+                SQLiteCommand command = conn.CreateCommand();
+                command.CommandText = sql;
+                command.CommandType = System.Data.CommandType.Text;
+                command.Parameters.Add(new SQLiteParameter("id1", characterKey.ToString()));
+                
+
+                using (SQLiteDataReader read = command.ExecuteReader())
+                {
+                    while (read.Read())
+                    {
+                        int character_id = read.GetInt32(0);
+                        int class_id = read.GetInt32(1);
+                        string className = read.GetString(2);
+                        int level = read.GetInt32(3);
+                        int caster_level = read.GetInt32(4);
+                        Character_classes cc = new Character_classes(character_id,
+                            class_id, className, level, caster_level);
+                        l.Add(cc);
+                    }
+                }
+                conn.Close();
+                return l;
             }
         }
 
