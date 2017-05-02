@@ -99,6 +99,7 @@ namespace UICharacterCreation
 
         public List<int> getAbilityScores()
         {
+            // currently returns last ability score in all 6 positions
             List<int> result = new List<int>();
             foreach (Character_abilities cab in abilityScores)
             {

@@ -106,6 +106,12 @@ namespace UICharacterCreation
             skinTextBox.Text = PC.charInfo.skin;
             skinTextBox.Enabled = false;
             baseAbilityScores = PC.getAbilityScores();
+            /* foreach (int score in baseAbilityScores)
+             {
+             // this is only returning whatever the last ability is right now...
+                 MessageBox.Show(score.ToString());
+             } */
+            // MessageBox.Show("count: " + baseAbilityScores.Count.ToString() + "\n"+ "1/2/3/4/5/6 : " + baseAbilityScores[0] + baseAbilityScores[2] + baseAbilityScores[3] + baseAbilityScores[4] + baseAbilityScores[5]);
             updateScoreBoxes();     // why rewrite code when it alrady exists :3
             setScoreEdits(scoreBoxes, false);
             foreach (CheckBox s in swapBoxes)
@@ -134,10 +140,7 @@ namespace UICharacterCreation
                 abilityTextBox1, abilityTextBox2, abilityTextBox3,
                 abilityTextBox4, abilityTextBox5, abilityTextBox6
             };
-            foreach (TextBox t in scoreBoxes)
-            {
-                t.Text = "0";
-            }
+
             swapBoxes = new List<CheckBox>()
             {
                 swapBox1, swapBox2, swapBox3,
@@ -291,8 +294,9 @@ namespace UICharacterCreation
 
             // MessageBox.Show(PC.charInfo.ToString()); // not the best certification but hey it works.
             PC.abilityScores = new List<Character_abilities>();
-            List<int> modifiedStats = getModifiedStats();
-            for(int i = 0; i < CharacterAttributes.Count; i++)
+            List<int> modifiedStats = getModifiedStats();   // These are the right numbers
+            // MessageBox.Show("count: " + modifiedStats.Count.ToString() + "\n" + "1/2/3/4/5/6 : " + modifiedStats[0] + modifiedStats[1] + modifiedStats[2] + modifiedStats[3] + modifiedStats[4] + modifiedStats[5]);
+            for (int i = 0; i < CharacterAttributes.Count; i++)
             {
                 PC.abilityScores.Add(new Character_abilities(PC.ID, CharacterAttributes[i].key, AbilityModifiers[i], modifiedStats[i], 0));
                 // MessageBox.Show("Id: " + PC.abilityScores[i].ability_id.ToString() + "Value: " + PC.abilityScores[i].temp.ToString());
